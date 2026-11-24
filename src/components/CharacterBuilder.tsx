@@ -211,7 +211,7 @@ export default function CharacterBuilder() {
 
   function chooseOutlawGear(name: string) {
     setDraft((current) => {
-      let nextGear: GearSelection[] = current.gear.flatMap((item) => {
+      let nextGear: GearSelection[] = current.gear.flatMap((item): GearSelection[] => {
         if (item.source !== 'outlaw-bonus') return [item];
         if (item.name === 'Plumber Badge' && current.plumberAffiliated) {
           return [{ name: item.name, source: 'plumber-issue' }];
