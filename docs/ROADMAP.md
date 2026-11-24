@@ -4,8 +4,12 @@
 - [x] Identificar a fonte de regras: Quickstart v1 fornecido pelo usuário.
 - [x] Criar inventário de seções e páginas.
 - [x] Registrar catálogo inicial de espécies, Archetypes, aptidões, Skills, Traits e equipamentos.
+- [x] Fazer primeira passagem página a página em Species, Archetypes e Evolutionary Aptitudes Grade 1; publicar dados estruturados com referências (audit pass 01).
 - [ ] Revisar os dados de forma cruzada com cada página e validar contra uma segunda leitura.
-- [ ] Resolver ambiguidades que afetam automatizações.
+- [x] Registrar ambiguidades conhecidas que afetam automatizações.
+- [ ] Resolver ambiguidades que dependem de decisão do GM ou esclarecimento editorial.
+- [ ] Auditar Skills, Traits e Weapons/Gear (pp. 69–73).
+- [ ] Cruzar os cinco personagens prontos e exemplos da aventura para criar fixtures de regressão.
 - [ ] Criar fixtures de personagens de referência presentes no PDF.
 
 **Gate:** não iniciar automação de uma regra sem fonte e teste de referência.

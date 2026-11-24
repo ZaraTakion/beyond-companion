@@ -64,6 +64,6 @@ docs/rules-audit/             inventário e questões pendentes
 
 ## Estado do projeto
 
-A auditoria atual é estrutural e inicial. A revisão mecânica linha a linha de cada habilidade, o cruzamento dos personagens prontos e os testes de regressão ainda estão pendentes. Consulte `docs/ROADMAP.md` para o plano de trabalho e os gates de qualidade.
+A primeira passagem de auditoria conferiu as páginas de espécies (7), Archetypes (5) e Evolutionary Aptitudes (26), com 77 habilidades de Grade 1 resumidas em dados versionados e referências de página. A revisão mecânica de Skills, Traits, equipamentos, pré-gerados e exemplos de combate ainda está pendente. Consulte `docs/ROADMAP.md` e `docs/rules-audit/` para o estado detalhado.
 
 Contribuições que alterem regras devem citar a página da fonte e distinguir fatos transcritos, interpretação e house rules. Consulte `CONTRIBUTING.md`.
