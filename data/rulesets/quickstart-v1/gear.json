@@ -1,0 +1,93 @@
+{
+  "rulesetId": "ben10-beyond-quickstart-v1",
+  "status": "page-checked-summary",
+  "coreWeaponsAndGear": [
+    {
+      "id": "blaster",
+      "name": "Blaster",
+      "category": "Standard Long-Range Weapon",
+      "pax": 1,
+      "sourcePage": 72,
+      "summary": "+1 Attack roll em Near range; causa 1d6 Energy damage. Pode alternar entre plasma letal e stun não letal como Free Action."
+    },
+    {
+      "id": "energy-cuffs",
+      "name": "Energy Cuffs",
+      "category": "Tactical Restraint",
+      "pax": 1,
+      "sourcePage": 72,
+      "chargesPerEpisode": 3,
+      "summary": "Gasta 1 charge e uma Action para aplicar a alvo Close ou Near; concede Immobilized. Para quebrar, alvo precisa vencer Hard Force ou Agility Test. Contra alvo ativo e não disposto, requer melee attack bem-sucedido ou Grapple; aplicação é automática contra alvo já Immobilized, Stunned ou Defeated. Tentativas de forçar ou abrir causam 1d6 Electrical damage."
+    },
+    {
+      "id": "holo-viewer",
+      "name": "Holo-Viewer",
+      "category": "Infiltration Tool",
+      "pax": 1,
+      "sourcePage": 72,
+      "chargesPerEpisode": 3,
+      "summary": "Gasta charge para projetar holograma de distração; inimigos Near fazem Challenging Mind Test ou desperdiçam próximo ataque. Também pode gastar charge para Advantage em Hack Test contra fechadura eletrônica."
+    },
+    {
+      "id": "id-mask",
+      "name": "ID Mask",
+      "category": "Gadget",
+      "pax": 1,
+      "sourcePage": 73,
+      "chargesPerEpisode": 3,
+      "summary": "Activation 1 Action. Camuflagem holográfica altera aparência, pele e voz; concede Advantage em Subterfuge e testes sociais ligados ao disfarce. Um charge mantém disfarce por uma Scene ou até ser encerrado. Toque físico revela a forma real."
+    },
+    {
+      "id": "magno-traction-boots",
+      "name": "Magno-Traction Boots",
+      "category": "Tactical Equipment",
+      "pax": 2,
+      "sourcePage": 73,
+      "summary": "Passive. Imunidade a desorientação de gravidade zero e a ser empurrado por vento ou gravidade; andar em paredes metálicas não conta como Difficult Terrain."
+    },
+    {
+      "id": "plumber-badge",
+      "name": "Plumber Badge",
+      "category": "Standard Plumber Issue",
+      "pax": 0,
+      "conditionalPax": 1,
+      "sourcePage": 73,
+      "summary": "0 PAX para Heroes afiliados; 1 PAX para não afiliados. Tradutor universal, comunicação criptografada de squad, localizador de longo alcance, mapa holográfico da Location e beacon de emergência."
+    },
+    {
+      "id": "uv-sun-burst-flare",
+      "name": "UV Sun-Burst Flare",
+      "category": "Gadget",
+      "pax": 1,
+      "sourcePage": 73,
+      "chargesPerEpisode": 3,
+      "summary": "Activation 1 Action. Explosão de radiação solar ultravioleta em Near; alvo faz Challenging Agility ou Resistance Test ou fica Blinded por 1 round. Criaturas phased ou invisíveis são reveladas e perdem camuflagem."
+    }
+  ],
+  "adventureRewards": [
+    {
+      "id": "chrono-skipper-watch",
+      "name": "Chrono-Skipper Watch",
+      "sourcePage": 43,
+      "summary": "+1 Initiative. Uma vez por Scene, como Reaction, faz atacante rerrolar hit contra o usuário ou rerrola Agility/Precision Test fracassado. Depois, cabelo fica estático por 1 round."
+    },
+    {
+      "id": "galvanic-grapple-spool",
+      "name": "Galvanic Grapple-Spool",
+      "sourcePage": 43,
+      "summary": "+1 Agility Tests para escalar ou Acrobatics. Gasta 1 Action e 1 Energy para lançar microcabo em Near e puxar-se 2 Range categories ou capturar arma de mão com Opposed Precision vs Force. Natural 1 puxa objeto metálico solto aleatório."
+    },
+    {
+      "id": "planchakule-fix-it-torch",
+      "name": "Planchaküle Fix-It Torch",
+      "sourcePage": 43,
+      "summary": "Advantage em Alien Tech Tests para reparar veículos ou contornar fechaduras mecânicas. Gasta 1 Action e 1 Energy para restaurar 2 DR perdido por ácido/sabotagem ou soldar porta até exigir Challenging Force Test para romper. Emite faíscas perto de maquinaria desacompanhada."
+    },
+    {
+      "id": "tetramand-impact-knuckles",
+      "name": "Tetramand Impact Knuckles",
+      "sourcePage": 43,
+      "summary": "+1 Physical damage em ataques melee desarmados. Gasta 1 Action e 2 Energy para onda de choque; alvos Close fazem Challenging Agility Test ou ficam Prone. Ruído de ventilação causa Disadvantage em Agility Tests para Sneak/Hide."
+    }
+  ]
+}

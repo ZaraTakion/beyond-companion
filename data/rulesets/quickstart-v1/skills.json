@@ -1,0 +1,235 @@
+{
+  "rulesetId": "ben10-beyond-quickstart-v1",
+  "status": "page-checked-summary",
+  "paxPerSkill": 4,
+  "skills": [
+    {
+      "id": "acrobatics",
+      "name": "Acrobatics",
+      "sourcePage": 69,
+      "benefits": [
+        {
+          "name": "Scaling & Vaulting",
+          "summary": "Advantage ao escalar superfícies verticais, saltar entre telhados ou executar manobras acrobáticas."
+        },
+        {
+          "name": "Acrobatic Leap",
+          "summary": "Uma vez por Episode, realiza um salto ou stunt aéreo extraordinário com sucesso automático."
+        },
+        {
+          "name": "Freerunning",
+          "summary": "Ao atravessar gaps, rubble em queda ou ledges altos, reduz a Tension em 5 para alcançar o destino rapidamente."
+        }
+      ]
+    },
+    {
+      "id": "alien-tech",
+      "name": "Alien Tech",
+      "sourcePage": 69,
+      "benefits": [
+        {
+          "name": "Engineering Expertise",
+          "summary": "Advantage ao reparar starships danificadas ou desarmar gatilhos explosivos high-tech."
+        },
+        {
+          "name": "Jury-Rig Overclock",
+          "summary": "Uma vez por Episode, sucesso automático ao contornar uma fechadura alienígena complexa ou reparar dispositivo tecnológico quebrado improvisadamente."
+        },
+        {
+          "name": "High-Level Mastery",
+          "summary": "Reduz a Tension em 5 ao analisar, operar ou fazer engenharia reversa de tecnologia alienígena desconhecida."
+        }
+      ]
+    },
+    {
+      "id": "astro-navigation",
+      "name": "Astro-Navigation",
+      "sourcePage": 69,
+      "benefits": [
+        {
+          "name": "Cosmic Navigation",
+          "summary": "Advantage ao traçar coordenadas de hyperdrive, navegar anomalias espaciais ou sobreviver em gravidade zero."
+        },
+        {
+          "name": "Null Void Shortcut",
+          "summary": "Uma vez por Episode, sucesso automático ao localizar uma fenda espacial, jump-gate ou rota de saída dimensional."
+        },
+        {
+          "name": "Space-Farer's Instinct",
+          "summary": "Reduz Tension em 5 ao calcular vetores de reentrada atmosférica ou evitar hazards espaciais como campos de asteroides e flares solares."
+        }
+      ]
+    },
+    {
+      "id": "emergency-first-aid",
+      "name": "Emergency First Aid",
+      "sourcePage": 69,
+      "benefits": [
+        {
+          "name": "Medical Expertise",
+          "summary": "Advantage ao tratar ferimentos, estabilizar aliados ou fazer triagem de civis em campo."
+        },
+        {
+          "name": "Lifesaver",
+          "summary": "Uma vez por Episode, sucesso automático para estabilizar um aliado ou civil morrendo ou Defeated durante uma crise de alto risco."
+        },
+        {
+          "name": "Mass Triage",
+          "summary": "Reduz Tension em 5 ao tratar vítimas civis ou trauma ambiental em Rescue Scenes."
+        }
+      ]
+    },
+    {
+      "id": "galactic-history",
+      "name": "Galactic History",
+      "sourcePage": 70,
+      "benefits": [
+        {
+          "name": "Historical Expertise",
+          "summary": "Advantage ao recordar história alienígena obscura, mitos planetários ou origem de relíquias."
+        },
+        {
+          "name": "Archival Breakthrough",
+          "summary": "Uma vez por Episode, sucesso automático ao decifrar inscrição alienígena antiga, mapa estelar histórico ou puzzle precursor."
+        },
+        {
+          "name": "Ruins Analysis",
+          "summary": "Reduz Tension em 5 ao investigar monumentos alienígenas antigos, templos perdidos ou complexos de ruínas."
+        }
+      ]
+    },
+    {
+      "id": "investigation",
+      "name": "Investigation",
+      "sourcePage": 70,
+      "benefits": [
+        {
+          "name": "Deductive Expertise",
+          "summary": "Advantage ao analisar cena de crime, procurar pistas ocultas ou rastrear rastros de energia residual."
+        },
+        {
+          "name": "Eurekan Deduction",
+          "summary": "Uma vez por Episode, sucesso automático ao resolver mistério complexo ou descobrir pista vital escondida em uma Location."
+        },
+        {
+          "name": "Blast Reconstruction",
+          "summary": "Reduz Tension em 5 ao examinar marcas de queimadura, ácido ou destroços para deduzir a espécie alienígena ou arma responsável."
+        }
+      ]
+    },
+    {
+      "id": "piloting",
+      "name": "Piloting",
+      "sourcePage": 70,
+      "benefits": [
+        {
+          "name": "Flight & Drive Mastery",
+          "summary": "Advantage em manobras evasivas de alta velocidade, dogfights e perseguições de veículos."
+        },
+        {
+          "name": "Ace Stunt",
+          "summary": "Uma vez por Episode, sucesso automático em stunt aéreo impossível, como atravessar canyon estreito ou evitar uma salva de mísseis."
+        },
+        {
+          "name": "High-Speed Chase",
+          "summary": "Reduz Tension em 5 ao perseguir veículo inimigo ou escapar por tráfego aéreo urbano."
+        }
+      ]
+    },
+    {
+      "id": "subterfuge",
+      "name": "Subterfuge",
+      "sourcePage": 70,
+      "benefits": [
+        {
+          "name": "Covert Expertise",
+          "summary": "Advantage ao passar furtivamente por guardas, arrombar fechaduras ou plantar rastreadores sem ser notado."
+        },
+        {
+          "name": "Ghost Slip",
+          "summary": "Uma vez por Episode, sucesso automático para escapar de algemas físicas, grapples ou armadilhas de teia adesiva."
+        },
+        {
+          "name": "Shadow Infiltration",
+          "summary": "Reduz Tension em 5 ao contornar grades de segurança, seguir suspeitos ou navegar cofres restritos de spaceports."
+        }
+      ]
+    },
+    {
+      "id": "survival",
+      "name": "Survival",
+      "sourcePage": 70,
+      "benefits": [
+        {
+          "name": "Wilderness Expertise",
+          "summary": "Advantage ao rastrear bestas selvagens, encontrar água potável em mundos não mapeados ou preparar armadilhas de sobrevivência."
+        },
+        {
+          "name": "Apex Survival",
+          "summary": "Uma vez por Episode, sucesso automático para atravessar hazard ambiental severo, como pântano tóxico, cinzas vulcânicas ou terremoto."
+        },
+        {
+          "name": "Death-World Navigation",
+          "summary": "Reduz Tension em 5 ao suportar temperaturas planetárias extremas ou rastrear presa em fuga por biomas selvagens."
+        }
+      ]
+    },
+    {
+      "id": "tech",
+      "name": "Tech",
+      "sourcePage": 71,
+      "benefits": [
+        {
+          "name": "Hacker",
+          "summary": "Com ferramentas adequadas, recebe Advantage em Tests para invadir sistemas e quebrar códigos."
+        },
+        {
+          "name": "Reverse Engineering",
+          "summary": "Pode passar uma Scene estudando item tecnológico para entender como funciona."
+        },
+        {
+          "name": "Gadgeteer",
+          "summary": "No início de cada Episode, escolhe um Gadget para carregar até o fim do Episode."
+        }
+      ]
+    },
+    {
+      "id": "xenobiology",
+      "name": "Xenobiology",
+      "sourcePage": 71,
+      "benefits": [
+        {
+          "name": "Anatomical Expertise",
+          "summary": "Advantage ao analisar estrutura biológica alienígena, tratar aliado não humano em campo ou sintetizar antivenenos."
+        },
+        {
+          "name": "Diagnostic Breakthrough",
+          "summary": "Uma vez por Episode durante Interlude, sucesso automático para neutralizar mutágeno biológico ativo, parasita alienígena ou toxina química."
+        },
+        {
+          "name": "Species Insight",
+          "summary": "Reduz Tension em 5 ao analisar ameaça alienígena conhecida e identificar sua Complication natural ou fraqueza biológica."
+        }
+      ]
+    },
+    {
+      "id": "xeno-diplomacy",
+      "name": "Xeno-Diplomacy",
+      "sourcePage": 71,
+      "benefits": [
+        {
+          "name": "Peacekeeping Expertise",
+          "summary": "Advantage ao reduzir tensão entre grupos hostis, persuadir monarcas alienígenas ou recitar protocolo de setor."
+        },
+        {
+          "name": "Treaty Override",
+          "summary": "Uma vez por Episode, sucesso automático para persuadir autoridades alienígenas hostis ou oficiais Plumber a conceder imunidade temporária ou autorização."
+        },
+        {
+          "name": "Crowd De-escalation",
+          "summary": "Reduz Tension em 5 ao acalmar multidões civis em pânico durante invasões globais ou biohazards."
+        }
+      ]
+    }
+  ]
+}

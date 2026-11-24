@@ -1,0 +1,94 @@
+{
+  "rulesetId": "ben10-beyond-quickstart-v1",
+  "status": "page-checked-summary",
+  "traits": {
+    "basic": [
+      {
+        "id": "alien-companion",
+        "name": "Alien Companion",
+        "pax": 2,
+        "sourcePage": 71,
+        "summary": "Companheiro cadete, besta alienígena treinada ou drone AI age na Initiative do personagem e recebe 1 Action no Turn dele. Tem 1 Condition Box; pode usar Help ou ataque básico com Attack Bonus do personagem, causando 1d6 dano de tipo escolhido na aquisição."
+      },
+      {
+        "id": "brave",
+        "name": "Brave",
+        "pax": 2,
+        "sourcePage": 71,
+        "summary": "Imunidade aos status Frightened e Shaken; Advantage em Spirit Tests contra intimidação alienígena."
+      },
+      {
+        "id": "insolent-quip",
+        "name": "Insolent Quip",
+        "pax": 2,
+        "sourcePage": 71,
+        "summary": "Uma vez por Episode, faz piada ou comentário sarcástico em personagem; se os demais jogadores realmente rirem, recebe Advantage na próxima rolagem."
+      },
+      {
+        "id": "public-hero",
+        "name": "Public Hero",
+        "pax": 2,
+        "sourcePage": 71,
+        "summary": "Advantage em testes sociais com pessoas que reconhecem o herói. Uma vez por Episode, ao resolver crise ou resgatar civis em público, ganha 1 Hero Point."
+      },
+      {
+        "id": "reckless-youth",
+        "name": "Reckless Youth",
+        "pax": 2,
+        "sourcePage": 71,
+        "summary": "Uma vez por Episode, ao agir impulsivamente sem plano, recebe Advantage em Agility ou Force Test e +1 Energy. Complication: Disadvantage em testes sociais para convencer autoridades adultas rígidas ou diplomatas."
+      },
+      {
+        "id": "tiny-scale",
+        "name": "Tiny Scale",
+        "pax": 2,
+        "sourcePage": 71,
+        "summary": "Disponível apenas para Galvan ou outra espécie pequena. Concede +1 Defense e Advantage em Agility Tests para Sneak, Hide ou manter equilíbrio."
+      },
+      {
+        "id": "trusted-contact",
+        "name": "Trusted Contact",
+        "pax": 2,
+        "sourcePage": 72,
+        "summary": "Uma vez por Episode, contata informante, comerciante de Undertown ou oficial aposentado para obter informação crucial, item que não seja arma ou safehouse temporário."
+      },
+      {
+        "id": "undertown-regular",
+        "name": "Undertown Regular",
+        "pax": 2,
+        "sourcePage": 72,
+        "summary": "Advantage para se orientar em mercados clandestinos, comprar itens no mercado negro ou localizar esconderijo fora da rede."
+      }
+    ],
+    "intermediary": [
+      {
+        "id": "alien-utility-bag",
+        "name": "Alien Utility Bag",
+        "pax": 4,
+        "sourcePage": 72,
+        "summary": "Carrega três utility charges por Episode, como dispositivo EMP, adhesive gel bomb, cryptographic sequencer ou holographic decoy; cada uso exige Action."
+      },
+      {
+        "id": "catchphrase",
+        "name": "Catchphrase",
+        "pax": 4,
+        "sourcePage": 72,
+        "summary": "Uma vez por Episode, grita frase característica enquanto age para ganhar 1 Hero Point."
+      },
+      {
+        "id": "heroic-bloodline",
+        "name": "Heroic Bloodline",
+        "pax": 4,
+        "sourcePage": 72,
+        "summary": "Advantage em testes sociais com autoridades intergalácticas e historiadores; começa cada Episode com 1 Hero Point adicional. Inimigos que conhecem a família podem persegui-lo primeiro."
+      },
+      {
+        "id": "venerable-mentor",
+        "name": "Venerable Mentor",
+        "pax": 4,
+        "sourcePage": 72,
+        "summary": "Uma vez por Episode, recorda conselho do mentor para ganhar Advantage em um Test ou limpar Confused, Shaken ou Frightened."
+      }
+    ]
+  }
+}
