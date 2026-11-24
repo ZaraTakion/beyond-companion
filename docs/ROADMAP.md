@@ -7,8 +7,8 @@
 - [x] Auditar Species, Archetypes e Evolutionary Aptitudes Grade 1 (audit pass 01).
 - [x] Auditar Skills, Traits e Weapons/Gear; separar sete opções de compra de quatro recompensas da aventura (audit pass 02).
 - [x] Auditar regras nucleares de criação, Tests, combate, dano, condições, Rescue/Interlude e recursos (audit pass 03).
-- [ ] Auditar Power-Ups e seus exemplos.
-- [ ] Auditar os cinco personagens prontos (pp. 8–14) e os exemplos da aventura (pp. 31–43).
+- [x] Auditar Power-Ups, Fuse Bots, Plumber Squad e Threat Archetypes do Quickstart (audit pass 04).
+- [ ] Auditar os cinco personagens prontos (pp. 8–14) e aventura introdutória (pp. 35–43).
 - [ ] Revisar todos os dados com segunda leitura visual e testes cruzados.
 - [x] Registrar ambiguidades conhecidas que afetam automatizações.
 - [ ] Resolver ambiguidades que dependem de decisão do GM ou esclarecimento editorial.

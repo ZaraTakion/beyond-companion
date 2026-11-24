@@ -1,0 +1,218 @@
+{
+  "rules": {
+    "rulesetId": "ben10-beyond-quickstart-v1",
+    "sourcePages": [
+      27,
+      28,
+      29,
+      30
+    ],
+    "statuses": [
+      "page-checked-summary"
+    ],
+    "plugIn": {
+      "actionPointCost": 1,
+      "duration": "Até o fim da Scene, ou até o usuário desligar como Free Action."
+    },
+    "oneAtATime": "Um Hero pode manter apenas um Power-Up ativo; conectar outro desliga o anterior.",
+    "anyHero": "Qualquer Hero pode usar qualquer Power-Up; Fuse Bots adaptam o corpo à anatomia exigida.",
+    "gainsWhileActive": [
+      "Creative Uses de todas as Evolutionary Aptitudes da espécie de origem.",
+      "Grade 1 nas duas Aptitudes listadas no perfil do Power-Up; custos de Energy seguem as regras normais.",
+      "Unique Perception da espécie de origem, que pode ser usada em Perspective Splice."
+    ],
+    "excluded": "Não recebe a Complication da espécie de origem; recebe o Drawback específico do Power-Up.",
+    "drawback": "Sempre ativo enquanto o Power-Up estiver conectado; quando causar problema real, Hero ganha 1 Hero Point.",
+    "pushingLimit": {
+      "cost": "Gasta 1 Hero Point em Power Surge para uma Aptitude do Power-Up.",
+      "specialRisk": "Durante o surge, qualquer Failure em Test usando o Power-Up aciona Overload, não apenas Critical Failure."
+    },
+    "overload": {
+      "triggers": [
+        "Critical Failure em Test usando Power-Up",
+        "Villain Point gasto pelo GM em Power Glitch contra Power-Up"
+      ],
+      "outcome": "Ativa Danger do Power-Up. Não pode ser desligado até o perigo ser resolvido, normalmente com Rescue Action ou Help de aliado."
+    },
+    "unexpectedComplication": "Gancho narrativo que o GM pode introduzir gastando Villain Point.",
+    "categories": {
+      "xenoJack": "Material genético ou físico conhecido de uma espécie é usado em dispositivo/adaptação para reproduzir suas capacidades em outro hospedeiro.",
+      "alienator": "Relíquia, dispositivo ou material de origem misteriosa que produz efeitos semelhantes a habilidades alienígenas conhecidas.",
+      "omniUp": "Objeto de origem desconhecida com efeitos reconhecíveis, repetíveis e relativamente controláveis."
+    },
+    "fuseBots": "Micromáquinas que conectam Power-Ups mecânicos ao corpo, criando interfaces/adaptações. Sob estresse podem interpretar sinais incorretamente, produzir adaptação inesperada ou falhar ao reverter a forma."
+  },
+  "items": [
+    {
+      "id": "inferno-core",
+      "name": "Inferno Core",
+      "kind": "Alienator",
+      "sourceSpecies": "Pyronite",
+      "sourcePages": [
+        30
+      ],
+      "grade1Aptitudes": [
+        "Flight",
+        "Pyrokinesis"
+      ],
+      "creativeUsesOnly": [
+        "Energy Blast",
+        "Self-Sustenance"
+      ],
+      "uniquePerception": {
+        "name": "Heat Vision",
+        "summary": "Advantage em Mind (Survival ou Investigation) para avaliar inflamabilidade, ponto de fusão e segurança térmica; alvos criogênicos, coolant, criaturas de sangue frio e correntes frias ficam evidentes."
+      },
+      "drawback": {
+        "name": "Running Hot",
+        "summary": "Emite calor mesmo sem usar o Power-Up; pode derreter Fuse Bots, dificultar uso de equipamento delicado, incendiar objetos próximos, prejudicar furtividade e exigir combustível/água adicionais."
+      },
+      "danger": {
+        "name": "Critical Mass",
+        "summary": "Uso prolongado ou intenso aumenta a temperatura até ameaçar uma detonação térmica viva."
+      },
+      "unexpectedComplication": {
+        "name": "Heartbeat Response",
+        "summary": "O pulso misterioso da pedra acelera perto de fontes poderosas de energia."
+      },
+      "physicalForm": "Pedra vulcânica escura com veios de aparência derretida."
+    },
+    {
+      "id": "kharathex-crown",
+      "name": "Kharathex Crown",
+      "kind": "Alienator",
+      "sourceSpecies": "Petrosapien",
+      "sourcePages": [
+        30,
+        31
+      ],
+      "grade1Aptitudes": [
+        "Exoskeletal Dermis",
+        "Geokinesis"
+      ],
+      "creativeUsesOnly": [
+        "Cellular Regeneration",
+        "Energy Blast"
+      ],
+      "uniquePerception": {
+        "name": "Resonance",
+        "summary": "Percebe vibrações acústicas em matéria sólida; Advantage em Mind (Investigation) para identificar falhas em pedra/metal, cavidades subterrâneas e movimento de objetos pesados pelo solo até uma milha."
+      },
+      "drawback": {
+        "name": "Crystal Creep",
+        "summary": "Cristal cresce progressivamente pelo corpo, tornando movimentos e tarefas delicadas mais difíceis e dificultando remover a Crown."
+      },
+      "danger": {
+        "name": "Petrification",
+        "summary": "O usuário fica selado em uma carapaça cristalina, consciente mas incapaz de se mover até alguém reverter ou quebrar a formação com segurança."
+      },
+      "unexpectedComplication": {
+        "name": "An Inconvenient Truth",
+        "summary": "As cores da Crown revelam emoções e podem denunciar blefes, medo ou sentimentos que o usuário preferia esconder."
+      },
+      "physicalForm": "Pequeno cristal multifacetado de cores mutáveis."
+    },
+    {
+      "id": "loud-cloud",
+      "name": "Loud Cloud",
+      "kind": "Xeno-Jack",
+      "sourceSpecies": "Sonorosian",
+      "sourcePages": [
+        31
+      ],
+      "grade1Aptitudes": [
+        "Duplication",
+        "Vocal Resonators"
+      ],
+      "creativeUsesOnly": [
+        "Enhanced Senses"
+      ],
+      "uniquePerception": {
+        "name": "Echonavigation",
+        "summary": "Percebe o mundo como faixas de áudio sobrepostas; consegue isolar sussurro em estádio, reproduzir voz/som ouvido e inferir frequência de ressonância de materiais."
+      },
+      "drawback": {
+        "name": "Feedback",
+        "summary": "Cada duplicata divide atenção; muitas ao mesmo tempo provocam dor de cabeça, tontura e confusão entre memórias."
+      },
+      "danger": {
+        "name": "Resonance Cascade",
+        "summary": "Duplicatas podem ignorar comandos e gerar interferência sônica destrutiva; sem recuperar harmonia, o dispositivo pode sobrecarregar e ferir audição de todos."
+      },
+      "unexpectedComplication": {
+        "name": "Voices in Your Head",
+        "summary": "Duplicatas parecem terminar frases, acessar memórias ou receber instruções que o usuário não deu."
+      },
+      "physicalForm": "Disco prateado com pequenos alto-falantes e câmaras ressonantes."
+    },
+    {
+      "id": "smack-pack",
+      "name": "Pelarotan Rolling Rig / Smack Pack",
+      "kind": "Xeno-Jack",
+      "sourceSpecies": "Arburian Pelarota",
+      "sourcePages": [
+        32
+      ],
+      "grade1Aptitudes": [
+        "Density Manipulation",
+        "Sphere Form"
+      ],
+      "creativeUsesOnly": [
+        "Exoskeletal Dermis",
+        "Hyper Leaping"
+      ],
+      "uniquePerception": {
+        "name": "Kinetic Gyroscope",
+        "summary": "Orientação perfeita: não sente tontura, sabe sempre o norte verdadeiro e calcula onde objetos caindo ou lançados irão aterrissar."
+      },
+      "drawback": {
+        "name": "Momentum",
+        "summary": "Acelerar é simples; virar e parar são difíceis, especialmente em corredores estreitos, lugares lotados ou perto de objetos frágeis."
+      },
+      "danger": {
+        "name": "Lockdown",
+        "summary": "Impacto extremo ou sobrecarga ativa protocolos que selam o usuário dentro da esfera até o sistema entender que está seguro."
+      },
+      "unexpectedComplication": {
+        "name": "Autopilot Override",
+        "summary": "Navegação antiga pode assumir o controle e tentar chegar a coordenadas ausentes dos mapas estelares atuais."
+      },
+      "physicalForm": "Cápsula de sobrevivência esférica transformada em arnês de placas blindadas."
+    },
+    {
+      "id": "seed-of-flor-verdance",
+      "name": "Seed of Flor Verdance / Root Awakening",
+      "kind": "Alienator",
+      "sourceSpecies": "Florauna",
+      "sourcePages": [
+        32,
+        33
+      ],
+      "grade1Aptitudes": [
+        "Extensible Organics",
+        "Phytokinesis"
+      ],
+      "creativeUsesOnly": [
+        "Cellular Regeneration",
+        "Toxicity"
+      ],
+      "uniquePerception": {
+        "name": "Root Network Communion",
+        "summary": "Ao tocar solo ou planta viva, acessa sinais químicos da rede vegetal e conhece clima do último mês, toxinas no solo e perturbações recentes de maquinaria ou criaturas."
+      },
+      "drawback": {
+        "name": "Hungry Roots",
+        "summary": "A semente exige muitos nutrientes e água; o usuário sente fome e sede e sofre em ambientes secos."
+      },
+      "danger": {
+        "name": "Taking Root",
+        "summary": "Sob estresse grave ou fome, raízes se prendem a superfícies para alimentar a semente, podendo imobilizar o usuário."
+      },
+      "unexpectedComplication": {
+        "name": "The Call of the Wild",
+        "summary": "A semente percebe sinais vegetais que o usuário não percebe; vinhas podem reagir, florescer ou apontar para algo invisível."
+      },
+      "physicalForm": "Vagem translúcida e pulsante; deve ser engolida, cria vinhas pelo corpo e retorna após seu ciclo natural."
+    }
+  ]
+}

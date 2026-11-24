@@ -1,0 +1,73 @@
+{
+  "sourcePages": [
+    33,
+    34
+  ],
+  "squad": {
+    "creation": "Escolher tipo de Squad; cada tipo fornece uma Base e Special Ability. O Quickstart inclui Plumber Squad.",
+    "plumberSquad": {
+      "bases": [
+        {
+          "name": "Abandoned Plumber Outpost",
+          "summary": "Posto Plumber abandonado, aparência antiga mas ainda energizado, adequado como base escondida."
+        },
+        {
+          "name": "The Rustbucket",
+          "summary": "Veículo antigo com tecnologia avançada escondida sob a carcaça desgastada; útil para viajar, mas com espaço limitado."
+        }
+      ],
+      "chooseOneSpecialAbility": [
+        {
+          "name": "Basic Training",
+          "summary": "Recebe +1 Defense para cada outro Plumber na mesma Zone, até máximo igual ao Tier."
+        },
+        {
+          "name": "Nose for Trouble",
+          "summary": "Cada membro tem Advantage no primeiro Test de cada Scene para encontrar pistas."
+        },
+        {
+          "name": "Plumber's Arsenal",
+          "summary": "No início de cada Episode, cada membro escolhe um Gadget Plumber (Energy Cuffs, Holo-Viewer, ID Mask ou UV Sun-Burst Flare), com 1 charge que se perde se não for usado até o fim do Episode."
+        }
+      ]
+    }
+  },
+  "threatArchetypes": [
+    {
+      "name": "Brute",
+      "summary": "Ameaça focada em força física.",
+      "trait": {
+        "name": "Relentless Force",
+        "summary": "Primeira rolagem de Damage do Brute em cada Turn é feita com Advantage."
+      }
+    },
+    {
+      "name": "General",
+      "summary": "Comandante que coordena tropas.",
+      "traits": [
+        {
+          "name": "Tactical Movement",
+          "summary": "No início do Turn, pode mover um aliado 1 Range category gratuitamente."
+        },
+        {
+          "name": "Who Let You Rest?",
+          "summary": "Uma vez por Episode, pode remover a Condition Defeated de um aliado que não seja Minion."
+        }
+      ]
+    },
+    {
+      "name": "Minion",
+      "summary": "Inimigo de horda, derrotado por um golpe.",
+      "traits": [
+        {
+          "name": "Straightforward",
+          "summary": "Minion tem apenas 1 Action por Turn."
+        },
+        {
+          "name": "Thug Life",
+          "summary": "Qualquer quantidade de Damage derrota Minion; não tem Condition Boxes."
+        }
+      ]
+    }
+  ]
+}
