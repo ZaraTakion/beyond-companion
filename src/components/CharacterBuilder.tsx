@@ -104,24 +104,13 @@ export default function CharacterBuilder() {
         nextSkills = [...nextSkills, { name: 'Tech', source: 'archetype' }];
       }
 
-      let nextGear: GearSelection[] = current.gear.map((item) => {
-        if (item.source !== 'outlaw-bonus') return item;
+      const nextGear: GearSelection[] = current.gear.flatMap((item) => {
+        if (item.source !== 'outlaw-bonus') return [item];
         if (item.name === 'Plumber Badge' && current.plumberAffiliated) {
-          return { name: item.name, source: 'plumber-issue' } as GearSelection;
+          return [{ name: item.name, source: 'plumber-issue' }];
         }
-        return { name: item.name, source: 'purchased' } as GearSelection;
+        return [];
       });
-
-      if (archetypeId === 'outlaw') {
-        const existing = nextGear.find((item) => item.name === 'ID Mask');
-        if (existing) {
-          nextGear = nextGear.map((item) =>
-            item.name === 'ID Mask' ? { name: item.name, source: 'outlaw-bonus' } as GearSelection : item,
-          );
-        } else {
-          nextGear = [...nextGear, { name: 'ID Mask', source: 'outlaw-bonus' }];
-        }
-      }
 
       return {
         ...current,
@@ -222,12 +211,12 @@ export default function CharacterBuilder() {
 
   function chooseOutlawGear(name: string) {
     setDraft((current) => {
-      let nextGear: GearSelection[] = current.gear.map((item) => {
-        if (item.source !== 'outlaw-bonus') return item;
+      let nextGear: GearSelection[] = current.gear.flatMap((item) => {
+        if (item.source !== 'outlaw-bonus') return [item];
         if (item.name === 'Plumber Badge' && current.plumberAffiliated) {
-          return { name: item.name, source: 'plumber-issue' };
+          return [{ name: item.name, source: 'plumber-issue' }];
         }
-        return { name: item.name, source: 'purchased' };
+        return [];
       });
       if (name) {
         const existing = nextGear.find((item) => item.name === name);
@@ -452,7 +441,10 @@ export default function CharacterBuilder() {
             {archetype.id === 'outlaw' && <label className="field outlaw-select">Item gratuito do Outlaw
               <select value={outlawBonusGear} onChange={(event) => chooseOutlawGear(event.target.value)}>
                 <option value="">Selecione um item gratuito...</option>
-                {gearCatalog.coreWeaponsAndGear.map((item) => <option key={item.id} value={item.name}>{item.name}</option>)}
+                {gearCatalog.coreWeaponsAndGear.filter((item) => {
+                  const existing = draft.gear.find((gear) => gear.name === item.name);
+                  return !existing || existing.source === 'outlaw-bonus' || (item.name === 'Plumber Badge' && !draft.plumberAffiliated && existing.source === 'purchased');
+                }).map((item) => <option key={item.id} value={item.name}>{item.name}</option>)}
               </select>
             </label>}
             <div className="catalogue-picks">
