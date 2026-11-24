@@ -168,7 +168,8 @@ export default function CharacterBuilder() {
 
   function chooseVersatilitySkill(name: string) {
     setDraft((current) => {
-      const remaining = current.skills.filter((item) => item.source !== 'versatility' && item.name !== name);
+      if (name && current.skills.some((item) => item.name === name && item.source !== 'versatility')) return current;
+      const remaining = current.skills.filter((item) => item.source !== 'versatility');
       const nextSkills: SkillSelection[] = name
         ? [...remaining, { name, source: 'versatility' }]
         : remaining;
@@ -192,7 +193,8 @@ export default function CharacterBuilder() {
 
   function chooseVersatilityTrait(name: string) {
     setDraft((current) => {
-      const remaining = current.traits.filter((item) => item.source !== 'versatility' && item.name !== name);
+      if (name && current.traits.some((item) => item.name === name && item.source !== 'versatility')) return current;
+      const remaining = current.traits.filter((item) => item.source !== 'versatility');
       const nextTraits: TraitSelection[] = name
         ? [...remaining, { name, category: 'basic', source: 'versatility' }]
         : remaining;
@@ -264,7 +266,6 @@ export default function CharacterBuilder() {
   ];
   const visibleIssues = showAllIssues ? issues : issues.slice(0, 4);
   const remainingPax = validation.ledger.remaining;
-  const selectedGear = new Set(draft.gear.map((item) => item.name));
 
   return (
     <section className="builder">
@@ -377,7 +378,7 @@ export default function CharacterBuilder() {
             {species.id === 'human' && <label className="field">Skill gratuita de Versatility
               <select value={versatilitySkill} onChange={(event) => chooseVersatilitySkill(event.target.value)}>
                 <option value="">Selecione uma Skill...</option>
-                {skillsCatalog.skills.map((item) => <option key={item.id} value={item.name}>{item.name}</option>)}
+                {skillsCatalog.skills.map((item) => <option key={item.id} value={item.name} disabled={archetype.id === 'techno-brain' && item.name === 'Tech'}>{item.name}</option>)}
               </select>
             </label>}
             {archetype.id === 'techno-brain' && <div className="free-note">Tech é concedida gratuitamente pelo Archetype Techno-Brain.</div>}
@@ -404,7 +405,7 @@ export default function CharacterBuilder() {
             {species.id === 'human' && <label className="field">Basic Trait gratuita de Versatility
               <select value={versatilityTrait} onChange={(event) => chooseVersatilityTrait(event.target.value)}>
                 <option value="">Selecione um Basic Trait...</option>
-                {traitsCatalog.traits.basic.map((item) => <option key={item.id} value={item.name}>{item.name}</option>)}
+                {traitsCatalog.traits.basic.map((item) => <option key={item.id} value={item.name} disabled={draft.traits.some((trait) => trait.name === item.name && trait.source === 'purchased')}>{item.name}</option>)}
               </select>
             </label>}
             <div className="selection-heading"><strong>Basic Traits compradas</strong><span>2 PAX cada</span></div>

@@ -419,8 +419,8 @@ export function validateCharacter(draft: CharacterDraft): CharacterValidation {
 
   if (draft.plumberAffiliated) {
     const badge = draft.gear.find((item) => item.name === 'Plumber Badge');
-    if (badge && badge.source !== 'plumber-issue') {
-      addIssue(issues, 'PLUMBER_BADGE_SOURCE', 'Plumber Badge de personagem afiliado deve usar a concessão Plumber Issue.');
+    if (badge && badge.source !== 'plumber-issue' && !(archetype?.id === 'outlaw' && badge.source === 'outlaw-bonus')) {
+      addIssue(issues, 'PLUMBER_BADGE_SOURCE', 'Plumber Badge de personagem afiliado deve ser concedido por Plumber Issue ou pelo bônus gratuito de Outlaw.');
     }
   } else {
     const badge = draft.gear.find((item) => item.name === 'Plumber Badge' && item.source === 'plumber-issue');
