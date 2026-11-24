@@ -1,0 +1,278 @@
+{
+  "rulesetId": "ben10-beyond-quickstart-v1",
+  "status": "page-checked-summary",
+  "species": [
+    {
+      "id": "auguravian",
+      "name": "Auguravian",
+      "homeworld": "Solumbra",
+      "sourcePages": [
+        51,
+        52
+      ],
+      "aptitudes": [
+        "Enhanced Agility",
+        "Hyper Leaping",
+        "Natural Weapons",
+        "Vocal Resonators"
+      ],
+      "complication": {
+        "name": "Cadence Fixation",
+        "summary": "Quando um adversário rompe o ritmo do personagem por uma finta errática, hazard imprevisível ou pulso sônico irregular, o personagem hesita ou se compromete demais, sofre Disadvantage no teste e ganha 1 Hero Point."
+      },
+      "uniquePerception": {
+        "name": "Songtide Mapping",
+        "summary": "Ecos permitem inferir a integridade estrutural de lugares, identificar frequências capazes de quebrar barreiras não fortificadas e perceber alterações na frequência cardíaca associadas a mentira ou preparação para lutar."
+      },
+      "groups": [
+        {
+          "name": "Spurianthropes",
+          "alias": "Spurian",
+          "summary": "Grupo robusto e incapaz de voar, adaptado aos galhos inferiores e intermediários das florestas de Solumbra; possui pernas traseiras musculosas, garras, esporões e chamados rítmicos."
+        },
+        {
+          "name": "Minimus",
+          "alias": "Minus",
+          "summary": "Descendentes de raptores noturnos, com adaptações sensoriais para caça e navegação no escuro, observação acústica e movimento silencioso."
+        },
+        {
+          "name": "Cantavians",
+          "alias": "Canta",
+          "summary": "Possuem flexibilidade vocal, memória auditiva e capacidade de reproduzir ampla variedade de sons; atuam frequentemente como intérpretes, historiadores, artistas e diplomatas."
+        }
+      ],
+      "sophornithNote": "O Quickstart diz que existem seis grupos principais de Sophorniths, mas descreve apenas três nesta seção.",
+      "paths": [
+        {
+          "name": "Cantavian Harmonic Mimic",
+          "summary": "Recebe bônus igual ao Tier em Subterfuge e testes sociais envolvendo imitação vocal ou sons de distração. Pode gastar 1 Action e 2 Energy para emitir um som falso ou grito desorientador contra inimigo Near, impondo penalidade igual ao Tier no próximo Attack roll ou Mind Test."
+        },
+        {
+          "name": "Minimus Night-Raptor",
+          "summary": "Recebe bônus igual ao Tier em Agility Tests para Sneak/Hide e em Defense ao usar Active Dodge. Ataques melee ou com Natural Weapons contra alvos desprevenidos ou isolados ignoram DR igual ao Tier."
+        },
+        {
+          "name": "Spurian Spur-Striker",
+          "summary": "Adiciona dano Physical igual ao Tier a ataques desarmados, chutes e Natural Weapons; recebe bônus igual ao Tier em Force Tests para empurrar, derrubar ou deixar alvos Prone."
+        }
+      ]
+    },
+    {
+      "id": "galvan",
+      "name": "Galvan",
+      "homeworld": "Galvan Prime",
+      "sourcePages": [
+        52,
+        53
+      ],
+      "aptitudes": [
+        "Enhanced Senses",
+        "Hyper-Cognition"
+      ],
+      "complication": {
+        "name": "Physical Fragility",
+        "summary": "Por ser pequeno, recebe +1 Tier Die de dano adicional de golpes contundentes e explosões."
+      },
+      "uniquePerception": {
+        "name": "Micro-Diagnostic",
+        "summary": "Os olhos compostos funcionam como microscópios: permitem observar detalhes celulares, resíduos químicos, microfraturas e identificar venenos pela inspeção visual."
+      },
+      "paths": [
+        {
+          "name": "Cyber-Infiltrator",
+          "summary": "Recebe bônus igual ao Tier em Hack Tests."
+        },
+        {
+          "name": "Master Architect",
+          "summary": "Recebe bônus igual ao Tier em testes para reparar, contornar ou sabotar maquinaria física."
+        },
+        {
+          "name": "Micro-Acrobat",
+          "summary": "Recebe bônus igual ao Tier em Defense contra ataques físicos de oponentes maiores."
+        }
+      ]
+    },
+    {
+      "id": "human",
+      "name": "Human",
+      "homeworld": "Earth",
+      "sourcePages": [
+        53,
+        54
+      ],
+      "aptitudes": [
+        "Omni-Tech Arsenal",
+        "Versatility"
+      ],
+      "complication": {
+        "name": "Unenhanced Vulnerability",
+        "summary": "Sem armadura natural ou resistência a energia, sofre Disadvantage em Resistance Tests contra ambientes cósmicos ou elementais sem equipamento apropriado."
+      },
+      "uniquePerception": {
+        "name": "Does Anybody Else Find This Strange?",
+        "summary": "O senso comum permite perceber incongruências em situações alienígenas ou aparentemente estranhas."
+      },
+      "notes": [
+        "Versatility concede uma Skill adicional e um Basic Trait gratuitamente."
+      ],
+      "paths": [
+        {
+          "name": "Tactical Leader",
+          "summary": "Uma vez por Round, como Free Action, concede a um aliado bônus igual ao Tier na próxima rolagem durante uma crise."
+        },
+        {
+          "name": "Universal Adaptor",
+          "summary": "Recebe bônus igual ao Tier em Skill Tests de Skills que possui."
+        },
+        {
+          "name": "Unwavering Will",
+          "summary": "Recebe bônus igual ao Tier em Spirit Tests para resistir a controle mental, medo ou desespero."
+        }
+      ]
+    },
+    {
+      "id": "kineceleran",
+      "name": "Kineceleran",
+      "homeworld": "Kinet",
+      "sourcePages": [
+        54
+      ],
+      "aptitudes": [
+        "Enhanced Agility",
+        "Enhanced Durability",
+        "Frictionless Acceleration"
+      ],
+      "complication": {
+        "name": "Cold Sensitivity",
+        "summary": "Frio extremo ou hazards adesivos pegajosos travam os feet-orbs; o personagem fica Slowed e não pode usar habilidades de velocidade por 2 rounds."
+      },
+      "uniquePerception": {
+        "name": "Everything Is So Slow",
+        "summary": "O cérebro processa informações tão rapidamente que o restante do mundo parece se mover em câmera lenta."
+      },
+      "paths": [
+        {
+          "name": "Sonic Accelerator",
+          "summary": "Gasta 1 Action e 2 Energy para criar um vácuo ao passar correndo; alvos Close fazem Opposed Agility Test contra Agility + Tier do personagem ou caem Prone e soltam o que seguram."
+        },
+        {
+          "name": "Speed-Beast Striker",
+          "summary": "Ao acertar um Melee Attack, pode gastar 1 Action para atacar novamente, adicionando +1 Tier Die."
+        },
+        {
+          "name": "Surface Skimmer",
+          "summary": "Pode correr sobre água e superfícies perigosas; recebe bônus igual ao Tier em Agility Tests realizados em alta velocidade."
+        }
+      ]
+    },
+    {
+      "id": "necrofrigian",
+      "name": "Necrofrigian",
+      "homeworld": "Kylmyys",
+      "sourcePages": [
+        54,
+        55
+      ],
+      "aptitudes": [
+        "Cryokinesis",
+        "Density Manipulation",
+        "Flight",
+        "Molecular Phasing"
+      ],
+      "complication": {
+        "name": "Heat & Solar Vulnerability",
+        "summary": "Calor extremo ou fogo solar prejudica o controle de densidade; ataques dessas fontes causam dano dobrado."
+      },
+      "uniquePerception": {
+        "name": "Thermal Sight",
+        "summary": "Enxerga rastros térmicos deixados por criaturas vivas e máquinas usadas recentemente, mesmo na escuridão ou quando os alvos estão invisíveis. Recebe Advantage em Mind (Investigation) Tests para rastrear movimento ou identificar se uma área foi recentemente deixada."
+      },
+      "paths": [
+        {
+          "name": "Cooler Than Cool",
+          "summary": "Uma vez por Scene, como Free Action, desaparece e reaparece instantaneamente em algum lugar dentro de Near range."
+        },
+        {
+          "name": "Frostbite Phantom",
+          "summary": "Enquanto estiver em Phasing, recebe DR adicional igual ao Tier."
+        },
+        {
+          "name": "Ice Ghost",
+          "summary": "Uma vez por Round enquanto em Phasing, atravessa um alvo. Faz Opposed Spirit Test contra a maior entre Agility e Resistance do alvo; em sucesso, o alvo fica Slowed até o final do próximo Turn."
+        }
+      ]
+    },
+    {
+      "id": "pyronite",
+      "name": "Pyronite",
+      "homeworld": "Pyros",
+      "sourcePages": [
+        55
+      ],
+      "aptitudes": [
+        "Energy Blast",
+        "Flight",
+        "Pyrokinesis",
+        "Self-Sustenance"
+      ],
+      "complication": {
+        "name": "Extinguishing Submersion",
+        "summary": "Água ou espuma retardante apaga a chama; sofre 1 Tier Die de dano e não pode usar poderes de fogo por 2 rounds."
+      },
+      "uniquePerception": {
+        "name": "Heat Vision",
+        "summary": "Recebe Advantage em Mind (Survival ou Investigation) Tests para avaliar inflamabilidade, ponto de fusão e segurança térmica; criaturas de sangue frio, armadilhas criogênicas, vazamentos de coolant e correntes frias destacam-se na percepção."
+      },
+      "paths": [
+        {
+          "name": "Flare Aviator",
+          "summary": "Enquanto voa, a primeira Move Action de cada Turn percorre uma categoria de Range adicional."
+        },
+        {
+          "name": "Molten Armor",
+          "summary": "Inimigos que atacam o personagem em melee recebem dano de fogo igual ao Tier."
+        },
+        {
+          "name": "Supernova Blaster",
+          "summary": "Seus ataques de fogo causam dano de fogo adicional igual ao Tier contra alvos que já estejam Burned."
+        }
+      ]
+    },
+    {
+      "id": "tetramand",
+      "name": "Tetramand",
+      "homeworld": "Khoros",
+      "sourcePages": [
+        56
+      ],
+      "aptitudes": [
+        "Enhanced Durability",
+        "Hyper Leaping",
+        "Hyper-Musculature",
+        "Poly-Limb Musculature"
+      ],
+      "complication": {
+        "name": "Overbearing Pride",
+        "summary": "Recusar um desafio físico direto ou recuar de uma luta fere o orgulho guerreiro; o personagem sofre Disadvantage no próximo Test."
+      },
+      "uniquePerception": {
+        "name": "Quad-Grip",
+        "summary": "Percebe alavancas e estresse estrutural; pode inferir densidade óssea, capacidade de carga e pontos de ruptura de barreiras ou veículos."
+      },
+      "paths": [
+        {
+          "name": "Four-Armed Gladiator",
+          "summary": "O segundo Melee Attack realizado em cada Turn causa dano adicional igual ao Tier."
+        },
+        {
+          "name": "Shockwave Champion",
+          "summary": "Gasta 2 Actions para liberar uma onda de choque; alvos Close fazem Opposed Resistance Test contra Force do personagem. Quem falha cai Prone e sofre dano igual a Tier Die + Tier."
+        },
+        {
+          "name": "Titan Wrestler",
+          "summary": "Recebe bônus igual ao Tier em Force Tests para erguer destroços pesados em Rescue Scenes."
+        }
+      ]
+    }
+  ]
+}

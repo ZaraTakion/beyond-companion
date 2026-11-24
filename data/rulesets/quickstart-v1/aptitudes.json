@@ -1,0 +1,806 @@
+{
+  "rulesetId": "ben10-beyond-quickstart-v1",
+  "status": "grade-1-page-checked-summary",
+  "generalRule": "For Grade 1 Active Grade Abilities, Energy cost is 1 unless the ability is Passive (0 Energy). An Action/Reaction also uses the corresponding Action Point under the battle rules.",
+  "aptitudes": [
+    {
+      "name": "Cellular Regeneration",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        56
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Basic Regeneration",
+          "activation": "Passive",
+          "effect": "No início de cada Turn, recupera Energy igual ao Tier.",
+          "sourcePage": 56,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Cleanse",
+          "activation": "Two Actions",
+          "effect": "Remove um status negativo contínuo, como Bleeding, Blinded, Burned, Corroded ou Poisoned.",
+          "sourcePage": 56,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Cryokinesis",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        57
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Frost Stream",
+          "activation": "Action",
+          "effect": "Ranged Attack contra alvo Near usando Precision ou Spirit; acerto causa Elemental damage igual a Tier Die + Spirit; Critical Hit também aplica Slowed.",
+          "sourcePage": 57,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Glacial Slide",
+          "activation": "Action",
+          "effect": "Cria gelo e desliza 2 Range categories como Move Action; por 1 round, a área é Difficult Terrain para os demais.",
+          "sourcePage": 57,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Sub-Zero Parry",
+          "activation": "Reaction",
+          "effect": "Active Block contra arma física; adiciona Resistance à Defense e impõe −2 no próximo Attack roll do atacante.",
+          "sourcePage": 57,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Density Manipulation",
+      "paxPerGrade": 6,
+      "sourcePages": [
+        57
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Alloy Compression Strike",
+          "activation": "Action",
+          "effect": "O próximo ataque melee desarmado, incluindo Natural Weapons, causa +1 Tier Die de dano se acertar.",
+          "sourcePage": 57,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Dense Footing",
+          "activation": "Passive",
+          "effect": "Em solo sólido, recebe Advantage em Tests para resistir a shove, arremesso ou condição Prone.",
+          "sourcePage": 57,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Weightless Feather",
+          "activation": "Free Action",
+          "effect": "Reduz massa quase a zero até o fim do Turn, fica imune a dano de queda e pode tentar Challenging Agility Test para mover 2 Range categories; sofre Disadvantage contra empurrões, Prone ou ser lançado pelo vento.",
+          "sourcePage": 57,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Duplication",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        58
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Coordinated Distraction",
+          "activation": "Free Action",
+          "effect": "Uma vez por Turn, um clone distrai e concede Advantage ao próximo Attack roll de aliado Close.",
+          "sourcePage": 58,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Mitotic Split",
+          "activation": "Action",
+          "effect": "Cria duplicata em Close; tem os mesmos stats e Skills e age no Turn do usuário usando os Action Points dele; qualquer dano direto a desfaz. Limite de duas duplicatas neste Grade.",
+          "sourcePage": 58,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Shared Awareness",
+          "activation": "Passive",
+          "effect": "Duplicatas compartilham visão e audição; recebe bônus de Defense igual ao Tier contra ataques de inimigos na mesma Zone de qualquer clone.",
+          "sourcePage": 58,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Energy Blast",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        59
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Focused Blast",
+          "activation": "Action",
+          "effect": "Ranged Attack contra alvo Near; em acerto causa Tier Die + Damage Attribute.",
+          "sourcePage": 59,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Precision Cutter",
+          "activation": "Action",
+          "effect": "Micro-feixe derrete silenciosamente cadeados comuns ou vidro sem Test; segurança militar ou high-tech ainda exige Hack Test.",
+          "sourcePage": 59,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Recoil Propel",
+          "activation": "Reaction",
+          "effect": "Active Dodge contra um ataque; adiciona Grade +1 à Defense.",
+          "sourcePage": 59,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Enhanced Agility",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        59
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Cat-Like Reflexes",
+          "activation": "Passive",
+          "effect": "Recebe +3 Initiative e +2 Defense quando usa Active Dodge.",
+          "sourcePage": 59,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Surface Wall-Runner",
+          "activation": "Passive",
+          "effect": "Corre por paredes, janelas e troncos como parte do movimento normal; escalar não conta como Difficult Terrain.",
+          "sourcePage": 59,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Tumble Recovery",
+          "activation": "Reaction",
+          "effect": "Quando ataque ou tremor causaria Prone, recupera-se e permanece de pé.",
+          "sourcePage": 59,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Enhanced Durability",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        60
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Brace for Impact",
+          "activation": "Reaction",
+          "effect": "Quando ataque físico ou balístico acerta, reduz o dano em Resistance + Tier.",
+          "sourcePage": 60,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Dense Physiology",
+          "activation": "Passive",
+          "effect": "Recebe +1 Resistance por Grade.",
+          "sourcePage": 60,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Unshakable Posture",
+          "activation": "Action",
+          "effect": "Remove Shaken ou ignora knockback de tremor contínuo.",
+          "sourcePage": 60,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Enhanced Senses",
+      "paxPerGrade": 3,
+      "sourcePages": [
+        60
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Anti-Concealment Sweep",
+          "activation": "Action",
+          "effect": "Filtra luz e som para localizar ameaça invisível, phased ou camuflada em Near range.",
+          "sourcePage": 60,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Reflexive Tracking",
+          "activation": "Reaction",
+          "effect": "Acrescenta Grade +1 à Defense contra um ataque, antecipado por sons sutis e movimento do ar.",
+          "sourcePage": 60,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Sensory Radar",
+          "activation": "Passive",
+          "effect": "Recebe +5 Initiative e Advantage em Mind (Investigation) e Survival Tests quando sentidos aguçados forem relevantes.",
+          "sourcePage": 60,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Exoskeletal Dermis",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        60
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Flex Plates",
+          "activation": "Action",
+          "effect": "Duplica DR natural contra o próximo ataque físico recebido neste round.",
+          "sourcePage": 60,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Deflective Shell",
+          "activation": "Reaction",
+          "effect": "Adiciona +2 Defense contra incoming ranged fire.",
+          "sourcePage": 60,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Dense Chitin Plating",
+          "activation": "Passive",
+          "effect": "Recebe +2 DR e +1 Resistance por Grade.",
+          "sourcePage": 60,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Extensible Organics",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        60
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Elongated Grasp",
+          "activation": "Action",
+          "effect": "Estende o alcance de ataques desarmados e melee para Near por 1 round.",
+          "sourcePage": 60,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Prehensile Snatch",
+          "activation": "Action",
+          "effect": "Tenta arrancar arma ou item de alvo Near com Opposed Precision ou Agility contra Force ou Agility.",
+          "sourcePage": 60,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Tensile Physiology",
+          "activation": "Passive",
+          "effect": "Pode passar por grades/canos estreitos e recebe +2 DR contra ataques físicos contundentes.",
+          "sourcePage": 60,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Flight",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        61
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Aerial Extraction",
+          "activation": "Passive",
+          "effect": "Pode carregar aliado ou civil enquanto voa sem custo extra de movimento; sem esta habilidade, só pode voar sozinho.",
+          "sourcePage": 61,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Aerial Touchdown",
+          "activation": "Passive",
+          "effect": "Entrar em batalha vindo do ar adiciona Grade à Initiative.",
+          "sourcePage": 61,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Tactical Flight",
+          "activation": "Passive",
+          "effect": "Advantage em Agility Tests para manobras aéreas enquanto voa.",
+          "sourcePage": 61,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Frictionless Acceleration",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        62
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Enhanced Reflexes",
+          "activation": "Passive",
+          "effect": "Recebe +5 Initiative e Advantage em Agility Tests para evitar obstáculos ambientais.",
+          "sourcePage": 62,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Frictionless Defense",
+          "activation": "Free Action",
+          "effect": "Se mover 2 ou mais Range categories durante o Turn, recebe +2 Defense contra ataques ranged até o próximo Turn.",
+          "sourcePage": 62,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Sprint Acceleration",
+          "activation": "Action",
+          "effect": "Cobre 2 Range categories com uma única Move Action.",
+          "sourcePage": 62,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Geokinesis",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        62
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Seismic Footing",
+          "activation": "Passive",
+          "effect": "Em contato com pedra, concreto ou solo, recebe Advantage em Mind Tests para rastrear alvos por vibrações do chão.",
+          "sourcePage": 62,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Shard Projectile",
+          "activation": "Action",
+          "effect": "Dispara fragmentos em Near range; escolhe Force ou Precision para ataque e dano Physical; Critical Hit deixa alvo Prone.",
+          "sourcePage": 62,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Tectonic Bastion",
+          "activation": "Reaction",
+          "effect": "Ergue placa de pedra/cristal para bloquear ataque, adicionando Grade +2 Defense; a placa permanece como cover até fim da Scene.",
+          "sourcePage": 62,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Hyper Leaping",
+      "paxPerGrade": 3,
+      "sourcePages": [
+        62
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Heroic Landing",
+          "activation": "Free Action",
+          "effect": "Ao chegar a uma Scene com salto estiloso, adiciona Grade à Initiative.",
+          "sourcePage": 62,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Mighty Spring",
+          "activation": "Action",
+          "effect": "Salta 2 Range categories em uma Move Action, ignorando hazards no trajeto, mas não no ponto de chegada.",
+          "sourcePage": 62,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Vaulting Strike",
+          "activation": "Free Action",
+          "effect": "Ao impulsionar-se em parede/obstáculo durante movimento, recebe +1 dano no próximo melee attack do Turn.",
+          "sourcePage": 62,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Hyper-Cognition",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        63
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Bigger Brain",
+          "activation": "Passive",
+          "effect": "Recebe +3 Mind.",
+          "sourcePage": 63,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Predictive Targeting",
+          "activation": "Action",
+          "effect": "Ataca com blaster ou arma de energia usando Mind em vez de Precision.",
+          "sourcePage": 63,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Quick Code Hack",
+          "activation": "Action",
+          "effect": "Faz Hack Test com Advantage para contornar fechaduras, câmeras ou sensores eletrônicos.",
+          "sourcePage": 63,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Hyper-Musculature",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        63
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Brute Force",
+          "activation": "Action",
+          "effect": "Adiciona Grade ao dano Physical quando acerta.",
+          "sourcePage": 63,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Heavy Push",
+          "activation": "Action",
+          "effect": "Depois de acertar melee, faz Opposed Force Test contra Force do alvo; em sucesso, empurra 2 Range categories e deixa Prone.",
+          "sourcePage": 63,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Rescue Strength",
+          "activation": "Action",
+          "effect": "Recebe Advantage em Force Tests em Rescue Scenes para erguer vigas caídas ou sustentar destroços.",
+          "sourcePage": 63,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Molecular Phasing",
+      "paxPerGrade": 6,
+      "sourcePages": [
+        64
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Ethereal Step",
+          "activation": "Free Action",
+          "effect": "Próxima Movement Action ignora Difficult Terrain e hazards no chão.",
+          "sourcePage": 64,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Phasing",
+          "activation": "Action",
+          "effect": "Atravessa objetos sólidos até o início do próximo Turn; enquanto phased, recebe bônus de Defense e DR igual a Grade +1; não pode fazer ataques físicos exceto com habilidades específicas.",
+          "sourcePage": 64,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Weightless Drift",
+          "activation": "Passive",
+          "effect": "Advantage em testes de equilíbrio e imunidade a dano de queda.",
+          "sourcePage": 64,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Natural Weapons",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        64
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Biological Lethality",
+          "activation": "Passive",
+          "effect": "Adiciona Grade às attack rolls com Natural Weapons e permite rerrolar resultados 1 nos Damage dice.",
+          "sourcePage": 64,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Rending Laceration",
+          "activation": "Action",
+          "effect": "Após acertar, faz Opposed Force ou Precision contra Resistance; em sucesso, deixa alvo Bleeding por 1 round.",
+          "sourcePage": 64,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Unsheathed Ambush",
+          "activation": "Free Action",
+          "effect": "Revela arma natural durante o golpe e recebe Advantage no primeiro melee strike da Scene.",
+          "sourcePage": 64,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Omni-Tech Arsenal",
+      "paxPerGrade": 6,
+      "sourcePages": [
+        65
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Deflector Micro-Mesh",
+          "activation": "Reaction",
+          "effect": "Adiciona Mind ou Precision +2 à Defense contra um ataque melee ou ranged.",
+          "sourcePage": 65,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Proto-Tool Modular Configuration",
+          "activation": "Free Action",
+          "effect": "Alterna entre Energy Blade (melee, Tier Die + Force Energy damage), Plasma Carbine (ranged Near com stats de Blaster), Energy Net (grapple Near) e Kinetic Grapple Cable (move 1 Range category ou captura item solto).",
+          "sourcePage": 65,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Scout Drone",
+          "activation": "Action",
+          "effect": "Drone opera em Range Far para explorar dutos, rastrear calor/movimento ou projetar holograma; inimigos na Zone fazem Challenging Mind Test ou desperdiçam o próximo ataque no holograma.",
+          "sourcePage": 65,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "System Infiltration",
+          "activation": "Action",
+          "effect": "Em Near, faz Mind Test com Advantage contra Tension do dispositivo para abrir portas, loop de câmeras, desativar tripwires ou ativar sprinklers.",
+          "sourcePage": 65,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Phytokinesis",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        66
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Entangling Roots",
+          "activation": "Action",
+          "effect": "Alvo Near faz Challenging Agility Test ou fica Immobilized.",
+          "sourcePage": 66,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Irritant Puff",
+          "activation": "Action",
+          "effect": "Alvo Close faz Resistance Test contra Spirit do usuário ou fica Shaken.",
+          "sourcePage": 66,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Plant Whispers",
+          "activation": "Action",
+          "effect": "Lê traços químicos em plantas para rastrear alvos; faz uma pergunta ao GM sobre o ambiente e recebe resposta verdadeira.",
+          "sourcePage": 66,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Poly-Limb Musculature",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        66
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Interposing Arm Guard",
+          "activation": "Reaction",
+          "effect": "Active Block contra melee strike; adiciona Grade +2 à Defense em vez de Resistance.",
+          "sourcePage": 66,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Multi-Grip Advantage",
+          "activation": "Passive",
+          "effect": "Advantage em Force e Agility Tests para grapple, escalar, evitar ser desarmado ou segurar portas pesadas.",
+          "sourcePage": 66,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Synchronized Flurry",
+          "activation": "Action",
+          "effect": "Ataca até dois alvos Close com membros diferentes; faz uma attack roll e causa dano Physical base em cada alvo atingido.",
+          "sourcePage": 66,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Pyrokinesis",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        67
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Cauterize Wound",
+          "activation": "Action",
+          "effect": "Toca aliado Bleeding em Close e remove Bleeding; uma vez por Episode também pode remover uma Condition do aliado.",
+          "sourcePage": 67,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Plasma Stream",
+          "activation": "Action",
+          "effect": "Ranged Attack em Near; em acerto causa Fire damage igual a Tier Die + Damage Attribute e incendeia terreno inflamável atingido.",
+          "sourcePage": 67,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Thermal Retaliation",
+          "activation": "Reaction",
+          "effect": "Quando ataque físico melee acerta, atacante recebe Fire damage igual ao Grade.",
+          "sourcePage": 67,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Self-Sustenance",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        67
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Metabolic Purge",
+          "activation": "Action",
+          "effect": "Remove Poisoned ou Bleeding.",
+          "sourcePage": 67,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Sealed Respiration",
+          "activation": "Passive",
+          "effect": "Imunidade a afogamento, fumaça, ar rarefeito e gases tóxicos, incluindo armas químicas e esporos.",
+          "sourcePage": 67,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Sphere Form",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        68
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Momentum Cushion",
+          "activation": "Passive",
+          "effect": "Enquanto enrolado em Sphere Form, não recebe dano de queda, independentemente da altura ou superfície de impacto.",
+          "sourcePage": 68,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Shell Deflection",
+          "activation": "Reaction",
+          "effect": "Enquanto já estiver enrolado, adiciona Grade +1 Defense contra ranged fire.",
+          "sourcePage": 68,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Tuck & Roll",
+          "activation": "Action",
+          "effect": "Enrola-se; permanece assim por múltiplos Turns e desenrola como Free Action. Enquanto enrolado, recebe +2 DR contra Physical strikes e move 2 Range categories por Move Action.",
+          "sourcePage": 68,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Toxicity",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        68
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Adhesive Slime Puddle",
+          "activation": "Action",
+          "effect": "Espalha lodo em Zone adjacente, tornando-a Difficult Terrain por 1 round para aliados e inimigos.",
+          "sourcePage": 68,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Caustic Spit",
+          "activation": "Action",
+          "effect": "Ranged Attack em Near; causa Acid damage igual a Tier Die + Spirit; alvo faz Opposed Resistance Test contra Spirit ou fica Corroded por 1 round.",
+          "sourcePage": 68,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Venomous Reaction",
+          "activation": "Passive",
+          "effect": "Quem acerta o personagem com Close melee strike sofre 2 Acid ou Poison damage; ativa em todo melee hit, inclusive ataques múltiplos.",
+          "sourcePage": 68,
+          "confidence": "summary-checked"
+        }
+      ]
+    },
+    {
+      "name": "Vocal Resonators",
+      "paxPerGrade": 3,
+      "sourcePages": [
+        69
+      ],
+      "grade1EnergyRule": "Grade 1 costs 1 Energy when used, unless the ability is Passive (0 Energy), following the general Grade/Energy rule.",
+      "abilities": [
+        {
+          "name": "Acoustic Pulse",
+          "activation": "Action",
+          "effect": "Ranged Attack em Near com onda vibratória; causa Energy damage igual a Tier Die + Spirit; Critical Hit empurra alvo 1 Range category.",
+          "sourcePage": 69,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Echolocation Sweep",
+          "activation": "Action",
+          "effect": "Uma vez por Round, identifica todos os alvos escondidos, invisíveis ou phased que estejam tocando superfície sólida na Location.",
+          "sourcePage": 69,
+          "confidence": "summary-checked"
+        },
+        {
+          "name": "Vibrational Deflection",
+          "activation": "Reaction",
+          "effect": "Contra projéteis frágeis de vidro, cristal ou similar, adiciona +3 Defense.",
+          "sourcePage": 69,
+          "confidence": "summary-checked"
+        }
+      ]
+    }
+  ]
+}

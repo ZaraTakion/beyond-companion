@@ -1,0 +1,226 @@
+{
+  "rulesetId": "ben10-beyond-quickstart-v1",
+  "status": "page-checked-summary",
+  "archetypes": [
+    {
+      "id": "brawler",
+      "name": "Brawler",
+      "sourcePages": [
+        47,
+        48
+      ],
+      "bonus": "+2 Physical damage em todos os Melee Attacks.",
+      "flaw": {
+        "name": "Short Fuse",
+        "summary": "Uma vez por Round, ao errar um melee attack em ambiente lotado ou frágil, a Scene Tension ambiental aumenta em +2 até o fim da Scene."
+      },
+      "abilities": [
+        {
+          "name": "Clustered Clasp",
+          "activation": "Action",
+          "actionPointCost": 1,
+          "energyCost": 2,
+          "summary": "Opposed Force Test contra Agility ou Force de alvo Close. Em sucesso, Immobilized e sofre dano Physical igual a Force do usuário no início de cada Turn; para escapar, o alvo gasta Action e vence Opposed Force ou Agility Test."
+        },
+        {
+          "name": "Humungousaur Logic",
+          "activation": "Passive",
+          "actionPointCost": 0,
+          "energyCost": 0,
+          "summary": "Recebe +1 em todos os Melee Attack rolls por Condition Box marcada na ficha."
+        },
+        {
+          "name": "I'm So Angry Right Now!",
+          "activation": "Free Action",
+          "actionPointCost": 0,
+          "energyCost": 2,
+          "frequency": "Once per Episode",
+          "summary": "Remove um status que esteja impedindo o personagem, como Immobilized, Slowed ou Prone."
+        },
+        {
+          "name": "It's Punching Time!",
+          "activation": "Action",
+          "actionPointCost": 1,
+          "energyCost": 1,
+          "summary": "Ao atacar barreira física, blindagem de veículo ou estrutura não fortificada, ignora bônus de cover na Defense e o DR do alvo."
+        }
+      ]
+    },
+    {
+      "id": "outlaw",
+      "name": "Outlaw",
+      "sourcePages": [
+        48
+      ],
+      "bonus": "Começa com um item gratuito da lista Weapons and Gear.",
+      "flaw": {
+        "name": "Bad Reputation",
+        "summary": "Autoridades rígidas, forças de segurança e magistrados Plumber desconfiam do personagem; ele tem Disadvantage em Spirit Tests ao lidar com eles."
+      },
+      "abilities": [
+        {
+          "name": "Bounty Hunter Reflex",
+          "activation": "Reaction",
+          "actionPointCost": 1,
+          "energyCost": 2,
+          "summary": "Quando um inimigo em Near range usa Movement Action para correr ou reposicionar-se, permite realizar um Attack gratuito contra ele."
+        },
+        {
+          "name": "Cheap Shot",
+          "activation": "Passive",
+          "actionPointCost": 0,
+          "energyCost": 0,
+          "summary": "Causa +2 dano a qualquer alvo com status negativo, como Immobilized, Stunned, Shaken ou Frozen."
+        },
+        {
+          "name": "Slip the Plumber Cuffs",
+          "activation": "Action",
+          "actionPointCost": 1,
+          "energyCost": 2,
+          "summary": "Como parte da ação, faz Force ou Agility Test com Advantage para escapar de algemas, grapples ou armadilhas adesivas."
+        },
+        {
+          "name": "Undertown Connections",
+          "activation": "Action",
+          "actionPointCost": 1,
+          "energyCost": 0,
+          "frequency": "Once per Episode",
+          "summary": "Encontra contatos de armas no mercado clandestino, depósitos de contrabando tecnológico ou médicos alienígenas ilegais em cidade ou porto espacial apropriado, conforme decisão do GM."
+        }
+      ]
+    },
+    {
+      "id": "prodigy",
+      "name": "Prodigy",
+      "sourcePages": [
+        48,
+        49
+      ],
+      "bonus": "Recebe 1 Hero Point adicional no início de cada Episode.",
+      "flaw": {
+        "name": "Overconfident Risk-Taker",
+        "summary": "Ao tentar Test Extreme ou Impossible sem esperar ajuda ou um plano, o GM recebe 1 Villain Point adicional."
+      },
+      "abilities": [
+        {
+          "name": "Accidental Masterpiece",
+          "activation": "Action plus d20 activation roll 15+",
+          "actionPointCost": 1,
+          "energyCost": 0,
+          "summary": "Por 1 round, uma Evolutionary Aptitude ou Power não custa Energy e os Tests feitos com ela recebem Advantage. Requer resultado 15 ou maior no d20."
+        },
+        {
+          "name": "Going Hero!",
+          "activation": "Free Action",
+          "actionPointCost": 0,
+          "energyCost": 0,
+          "frequency": "Once per Episode",
+          "summary": "Quando falha em um Test, rola novamente e mantém o maior resultado."
+        },
+        {
+          "name": "Smoothie-Fueled Adrenaline",
+          "activation": "Action",
+          "actionPointCost": 1,
+          "energyCost": 3,
+          "summary": "Em Battle Scene ou Rescue Scene, limpa a Condition Box marcada mais grave, priorizando Wounded antes de Tired."
+        },
+        {
+          "name": "What Does This Button Do?!",
+          "activation": "Free Action",
+          "actionPointCost": 0,
+          "energyCost": 2,
+          "summary": "Concede Advantage no próximo Test de um aliado em Near range."
+        }
+      ]
+    },
+    {
+      "id": "protector",
+      "name": "Protector",
+      "sourcePages": [
+        49,
+        50
+      ],
+      "bonus": "Recebe Advantage em Tests de Rescue Scenes para evacuar civis, conter hazards ambientais ou receber ataques por outros.",
+      "flaw": {
+        "name": "Code of Protection",
+        "summary": "Quando civis ou aliados estão em perigo imediato, não pode atacar vilão até resolver todos os hazards ativos com civis em perigo na Zone; prioridade: civis, depois aliados, depois ofensiva."
+      },
+      "abilities": [
+        {
+          "name": "Civilians First",
+          "activation": "Passive",
+          "actionPointCost": 0,
+          "energyCost": 0,
+          "frequency": "Once per Episode",
+          "summary": "Durante Rescue Scene, marca uma Condition Box para ganhar 1 Hero Point."
+        },
+        {
+          "name": "I Got Your Back!",
+          "activation": "Action",
+          "actionPointCost": 1,
+          "energyCost": 3,
+          "frequency": "Once per Episode",
+          "summary": "Escolhe aliado em Near range; limpa 1 Condition Box marcada e concede Advantage no próximo Test dele."
+        },
+        {
+          "name": "Inspiring Bastion",
+          "activation": "Action",
+          "actionPointCost": 1,
+          "energyCost": 2,
+          "summary": "Todos os aliados conscientes em Near range recebem +2 Defense até o início do próximo Turn do personagem."
+        },
+        {
+          "name": "You'll Have to Get Through Me!",
+          "activation": "Reaction",
+          "actionPointCost": 1,
+          "energyCost": 2,
+          "summary": "Quando aliado ou civil em Near range é alvo de ataque, intercepta; recebe os status e metade do dano em vez do alvo."
+        }
+      ]
+    },
+    {
+      "id": "techno-brain",
+      "name": "Techno-Brain",
+      "sourcePages": [
+        50,
+        51
+      ],
+      "bonus": "Recebe a Skill Tech gratuitamente.",
+      "flaw": {
+        "name": "Overthinking",
+        "summary": "Initiative é 10 + Agility − Mind, em vez de 10 + Agility."
+      },
+      "abilities": [
+        {
+          "name": "Galvan Science, Bro!",
+          "activation": "Action",
+          "actionPointCost": 1,
+          "energyCost": 2,
+          "summary": "Até o fim da Scene, usa Mind em vez de Precision nas attack rolls com blasters de alta tecnologia ou armas pesadas de energia."
+        },
+        {
+          "name": "Have You Tried Turning It Off and On Again?",
+          "activation": "Action",
+          "actionPointCost": 1,
+          "energyCost": 2,
+          "summary": "Uma vez por Scene, identifica imediatamente como funciona um novo tipo de tecnologia; uma vez por Episode, repara equipamento quebrado ou restaura 1 charge de Gadget."
+        },
+        {
+          "name": "Jury-Rigged Invention",
+          "activation": "Action",
+          "actionPointCost": 1,
+          "energyCost": 1,
+          "frequency": "Once per Episode",
+          "summary": "Converte sucata em Gadget temporário com 1 charge, como flash-stun pellet, adhesive gel ou signal jammer; dura até ser usado ou a Scene acabar."
+        },
+        {
+          "name": "Override",
+          "activation": "Action",
+          "actionPointCost": 1,
+          "energyCost": 2,
+          "summary": "Faz Mind (Alien Tech) Test contra Defense do robô ou Scene Tension; em sucesso, desativa ou controla drone/turret automatizado por 1 round. Não funciona em seres vivos ou sencientes."
+        }
+      ]
+    }
+  ]
+}
