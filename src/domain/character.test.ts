@@ -106,6 +106,25 @@ describe('Tier D character domain', () => {
     expect(result.issues.some((issue) => issue.code === 'ARCHETYPE_ABILITY_MISMATCH')).toBe(true);
   });
 
+  it('charges an unaffiliated Hero 1 PAX for the Plumber Badge', () => {
+    const draft = createSkipDraft();
+    draft.plumberAffiliated = false;
+    draft.gear = draft.gear.map((item) =>
+      item.name === 'Plumber Badge' ? { ...item, source: 'purchased' } : item,
+    );
+    const ledger = calculatePaxLedger(draft);
+    expect(ledger.entries.find((entry) => entry.label === 'Plumber Badge')?.cost).toBe(1);
+    expect(ledger.spent).toBe(31);
+  });
+
+  it('includes the Reckless Youth +1 Energy benefit in derived Energy', () => {
+    const draft = createSkipDraft();
+    draft.traits = [{ name: 'Reckless Youth', category: 'basic', source: 'purchased' }];
+    const stats = deriveCharacterStats(draft);
+    expect(stats.energy).toBe(12);
+    expect(stats.energyBreakdown).toContain('Reckless Youth: +1 Energy.');
+  });
+
   it('does not charge free species/archetype benefits to PAX', () => {
     const draft = createTikkDraft();
     const ledger = calculatePaxLedger(draft);

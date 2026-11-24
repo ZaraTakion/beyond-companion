@@ -76,6 +76,7 @@ export interface PaxLedger {
 export interface DerivedStats {
   tier: 'D';
   energy: number;
+  energyBreakdown: string[];
   defense: number;
   initiative: number;
   attackBonus: number;
@@ -213,11 +214,20 @@ export function calculatePaxLedger(draft: CharacterDraft): PaxLedger {
     }
 
     const free = selection.source !== 'purchased';
+    const cost = free
+      ? 0
+      : selection.name === 'Plumber Badge' && !draft.plumberAffiliated
+        ? (item.conditionalPax ?? 1)
+        : item.pax;
     entries.push({
       id: `gear-${selection.name.toLowerCase().replaceAll(' ', '-')}-${selection.source}`,
       label: selection.name,
-      detail: free ? `Concedido gratuitamente por ${selection.source}.` : 'Equipamento comprado.',
-      cost: free ? 0 : item.pax,
+      detail: free
+        ? `Concedido gratuitamente por ${selection.source}.`
+        : selection.name === 'Plumber Badge' && !draft.plumberAffiliated
+          ? 'Plumber Badge para personagem não afiliado: custo condicional de 1 PAX.'
+          : 'Equipamento comprado.',
+      cost,
       source: 'gear',
       free,
     });
@@ -276,6 +286,15 @@ export function deriveCharacterStats(draft: CharacterDraft): DerivedStats {
   }
 
   const hasTinyScale = draft.traits.some((item) => item.name === 'Tiny Scale');
+  const hasRecklessYouth = draft.traits.some((item) => item.name === 'Reckless Youth');
+  const energy = 10
+    + (isNonNegativeInteger(draft.energyBought) ? draft.energyBought : 0)
+    + (hasRecklessYouth ? 1 : 0);
+  const energyBreakdown = [
+    'Tier D base Energy: 10.',
+    ...(draft.energyBought > 0 ? [`Energy comprado: +${draft.energyBought}.`] : []),
+    ...(hasRecklessYouth ? ['Reckless Youth: +1 Energy.'] : []),
+  ];
   const defense = 12 + (hasTinyScale ? 1 : 0);
   const defenseBreakdown = [
     'Tier D base Defense: 12.',
@@ -284,7 +303,8 @@ export function deriveCharacterStats(draft: CharacterDraft): DerivedStats {
 
   return {
     tier: 'D',
-    energy: 10 + (isNonNegativeInteger(draft.energyBought) ? draft.energyBought : 0),
+    energy,
+    energyBreakdown,
     defense,
     initiative,
     attackBonus: 0,
