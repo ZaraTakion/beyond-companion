@@ -65,6 +65,80 @@ function createTikkDraft(): CharacterDraft {
   };
 }
 
+
+function createBraxxaDraft(): CharacterDraft {
+  return {
+    name: 'Braxxa fixture',
+    speciesId: 'tetramand',
+    archetypeId: 'brawler',
+    evolutionaryPath: 'Four-Armed Gladiator',
+    archetypeAbilities: ['Clustered Clasp', "It's Punching Time!"],
+    attributes: { ...baseAttributes, force: 3, mind: 1, resistance: 2 },
+    energyBought: 0,
+    aptitudePurchases: [
+      { name: 'Hyper-Musculature', grade: 1 },
+      { name: 'Poly-Limb Musculature', grade: 1 },
+    ],
+    skills: [],
+    traits: [{ name: 'Catchphrase', category: 'intermediary', source: 'purchased' }],
+    gear: [{ name: 'Plumber Badge', source: 'plumber-issue' }],
+    plumberAffiliated: true,
+  };
+}
+
+function createVesDraft(): CharacterDraft {
+  return {
+    name: 'Ves fixture',
+    speciesId: 'necrofrigian',
+    archetypeId: 'outlaw',
+    evolutionaryPath: 'Frostbite Phantom',
+    archetypeAbilities: ['Slip the Plumber Cuffs', 'Undertown Connections'],
+    attributes: { ...baseAttributes, spirit: 2 },
+    energyBought: 0,
+    aptitudePurchases: [
+      { name: 'Cryokinesis', grade: 1 },
+      { name: 'Flight', grade: 1 },
+      { name: 'Molecular Phasing', grade: 1 },
+    ],
+    skills: [
+      { name: 'Subterfuge', source: 'purchased' },
+      { name: 'Xeno-Diplomacy', source: 'purchased' },
+    ],
+    traits: [],
+    gear: [
+      { name: 'Holo-Viewer', source: 'purchased' },
+      { name: 'ID Mask', source: 'outlaw-bonus' },
+      { name: 'Plumber Badge', source: 'plumber-issue' },
+    ],
+    plumberAffiliated: true,
+  };
+}
+
+function createJaxDraft(): CharacterDraft {
+  return {
+    name: 'Jax fixture',
+    speciesId: 'human',
+    archetypeId: 'protector',
+    evolutionaryPath: 'Universal Adaptor',
+    archetypeAbilities: ['I Got Your Back!', "You'll Have to Get Through Me!"],
+    attributes: { ...baseAttributes, agility: 1, mind: 1, precision: 1, spirit: 1 },
+    energyBought: 1,
+    aptitudePurchases: [{ name: 'Omni-Tech Arsenal', grade: 1 }],
+    skills: [
+      { name: 'Emergency First Aid', source: 'versatility' },
+      { name: 'Piloting', source: 'purchased' },
+      { name: 'Xeno-Diplomacy', source: 'purchased' },
+    ],
+    traits: [{ name: 'Brave', category: 'basic', source: 'versatility' }],
+    gear: [
+      { name: 'Blaster', source: 'purchased' },
+      { name: 'Energy Cuffs', source: 'purchased' },
+      { name: 'Plumber Badge', source: 'plumber-issue' },
+    ],
+    plumberAffiliated: true,
+  };
+}
+
 describe('Tier D character domain', () => {
   it('reconciles a Skip-like character to exactly 30 PAX', () => {
     const result = validateCharacter(createSkipDraft());
@@ -78,6 +152,22 @@ describe('Tier D character domain', () => {
       attackBonus: 0,
       tierDie: '1d6',
     });
+  });
+
+  it('reconciles the Braxxa, Ves and Jax pre-generated builds', () => {
+    const fixtures = [
+      { draft: createBraxxaDraft(), expectedSpent: 30, expectedInitiative: 10, expectedEnergy: 10 },
+      { draft: createVesDraft(), expectedSpent: 30, expectedInitiative: 10, expectedEnergy: 10 },
+      { draft: createJaxDraft(), expectedSpent: 30, expectedInitiative: 11, expectedEnergy: 11 },
+    ];
+
+    for (const fixture of fixtures) {
+      const result = validateCharacter(fixture.draft);
+      expect(result.valid, result.issues.map((issue) => issue.message).join('; ')).toBe(true);
+      expect(result.ledger.spent).toBe(fixture.expectedSpent);
+      expect(result.derivedStats.initiative).toBe(fixture.expectedInitiative);
+      expect(result.derivedStats.energy).toBe(fixture.expectedEnergy);
+    }
   });
 
   it('reconciles Tikk Mind and Initiative using Aptitude bonuses', () => {
