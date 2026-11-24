@@ -9,9 +9,8 @@
 - [x] Auditar regras nucleares de criação, Tests, combate, dano, condições, Rescue/Interlude e recursos (audit pass 03).
 - [x] Auditar Power-Ups, Fuse Bots, Plumber Squad e Threat Archetypes do Quickstart (audit pass 04).
 - [x] Catalogar os cinco personagens prontos e reconciliar exemplos básicos de Initiative, dano e PAX (audit pass 05).
-- [ ] Auditar aventura introdutória (pp. 35–43), incluindo Threats, clocks, reforços e rewards.
-- [ ] Revisar todos os dados com segunda leitura visual e testes cruzados.
-- [x] Registrar ambiguidades conhecidas que afetam automatizações.
+- [x] Catalogar aventura introdutória: Truths, locais, clocks, rescue objectives, threats e rewards (audit pass 06).
+- [ ] Fazer segunda leitura cruzada e corrigir divergências ou ambiguidades.
 - [ ] Resolver ambiguidades que dependem de decisão do GM ou esclarecimento editorial.
 
 **Gate:** não iniciar automação de uma regra sem fonte e teste de referência.

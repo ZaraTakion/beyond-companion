@@ -1,0 +1,324 @@
+{
+  "rulesetId": "ben10-beyond-quickstart-v1",
+  "name": "Rush Hour in Undertown",
+  "tier": "D",
+  "intendedPlayers": "3–5",
+  "sourcePages": [
+    35,
+    43
+  ],
+  "environmentalHazards": [
+    {
+      "level": "D",
+      "name": "Harsh Weather / Smoke",
+      "summary": "Visão obscurecida; ataques ranged sofrem Disadvantage; Tension aumenta em +2.",
+      "sourcePage": 35
+    },
+    {
+      "level": "C",
+      "name": "Toxic Fumes / Extreme Heat",
+      "summary": "Alvos orgânicos sem proteção sofrem 1d6 damage no início do Turn e marcam Condition Tired.",
+      "sourcePage": 35
+    }
+  ],
+  "setup": {
+    "dangerClockSegments": 6,
+    "truthChoices": [
+      "The Frozen Block",
+      "The Living Battery",
+      "The Dirty Badge"
+    ],
+    "instructions": [
+      "Escolher uma Truth secretamente antes do Episode.",
+      "Registrar quem está no caminhão, o que transporta e o efeito de um ataque contra a carga.",
+      "Preparar Cheat Card com Complications, Archetype Flaws e Unique Perceptions dos Heroes."
+    ]
+  },
+  "escalation": {
+    "tierD": {
+      "summary": "Hazards ambientais, linhas de visão bloqueadas, Difficult Terrain, Disadvantage em ataques ranged/visual Mind Tests e +2 Scene Tension; inimigos padrão Tier D."
+    },
+    "tierC": {
+      "triggers": [
+        "Short Fuse é acionado duas vezes",
+        "Dano massivo à propriedade",
+        "Falhas em Rescue Actions importantes",
+        "Danger Clock passa de 3 segmentos"
+      ],
+      "summary": "Ruptured pipes/live cables criam Level C hazard; alvos desprotegidos sofrem 1d6 Energy damage no início do Turn e fazem Challenging Resistance Test ou marcam Tired; segunda falha consecutiva também causa Slowed. Um Sotoraggian Veteran Enforcer Tier C entra como reforço."
+    }
+  },
+  "truths": [
+    {
+      "id": "frozen-block",
+      "name": "The Frozen Block",
+      "subtitle": "Desperate Workers",
+      "whatHappened": "Dois trabalhadores, Kael (Florauna) e Toma (Kraaho), desviam um Gravimetric Sub-Station Regulator para manter aquecimento e água de Sector 12 após um slumlord corrupto cortar os serviços para expulsar inquilinos.",
+      "ifDiscoveredEarly": "Kael e Toma ajudam contra mercenários com Phytokinesis e Pyrokinesis.",
+      "climax": "Desacoplar o regulador superaquecido sem cortar a rede de suporte de vida e reunir provas para emitir warrant contra Vexx.",
+      "sourcePages": [
+        37,
+        42
+      ]
+    },
+    {
+      "id": "living-battery",
+      "name": "The Living Battery",
+      "subtitle": "Accidental Joyride",
+      "whatHappened": "Um jovem Nosedeenian ficou preso no bloco do motor de um hauler; sobrecarregou os controles e está conduzindo o caminhão sem intenção. Sotoraggians são caçadores de espécies raras tentando capturá-lo para um colecionador.",
+      "climax": "Atacar o Nosedeenian causa divisão em duplicatas e curtos na estação; o squad precisa atraí-lo pacificamente com bateria extra ou Electrokinesis.",
+      "sourcePages": [
+        37,
+        42
+      ]
+    },
+    {
+      "id": "dirty-badge",
+      "name": "The Dirty Badge",
+      "subtitle": "Cadet Cover-Up",
+      "whatHappened": "Dois tech-cadets Plumber fora de serviço sobrecarregaram um Null-Core Stabilizer experimental e tentam descartá-lo em dutos de magma antes que destrua parte de Undertown. Sotoraggians são comerciantes de armas rivais querendo roubar o core.",
+      "climax": "Após o core ser descartado, os cadets pedem que seus nomes sejam retirados do relatório oficial para evitar expulsão.",
+      "sourcePages": [
+        38,
+        42
+      ]
+    }
+  ],
+  "acts": {
+    "teaser": {
+      "description": "Patrulha em Level 4 Plaza; caminhão de manutenção Plumber foge e Sotoraggian rocket-skiffs atacam enquanto um hover-cart com sopa quente ameaça turistas. Não iniciar Initiative de imediato.",
+      "sourcePage": 38
+    },
+    "actI": {
+      "description": "Investigação em três locais; jogadores podem dividir-se ou permanecer juntos.",
+      "ruleOfTwo": "Assim que o squad obtiver duas pistas sólidas — natureza da carga e destino Sub-Level Station 9 — avançar para Act II.",
+      "locations": [
+        {
+          "name": "Glarb's Curio Bazaar",
+          "level": 4,
+          "sceneTension": 15,
+          "summary": "Mercado lotado com shoppers em pânico e vapor; ranged attacks e visual Mind Tests têm Disadvantage enquanto crowd/steam persistirem; environmental Tension +2. Acalmar Glarb com Challenging Spirit/Mind (Advantage com Xeno-Diplomacy ou limpeza) revela camera chip. Buscar rubble com Challenging Mind pode encontrar Grapple-Spool; ajudar limpeza pode render Kharathex Crown.",
+          "possibleFinds": [
+            "Galvanic Grapple-Spool",
+            "Kharathex Crown"
+          ],
+          "sourcePage": 38
+        },
+        {
+          "name": "The Black Hole Pub",
+          "sceneTension": 15,
+          "summary": "Bar subterrâneo em cavernas de manutenção, frequentado por miners, smugglers e alien regulars. Undertown Regular ou Outlaw Connections concede Advantage para se misturar. Conversa com bartender/informante (Challenging Spirit ou Mind) revela rota dos Sotoraggian e thermal charges.",
+          "possibleFinds": [
+            "Chrono-Skipper Watch or Magno-Traction Boots",
+            "Loud Cloud"
+          ],
+          "sourcePage": 39
+        },
+        {
+          "name": "Slagheap Salvage & Smelting Vats",
+          "sceneTension": 15,
+          "summary": "Ferro-velho industrial com conveyor belts que movem personagens 1 Range category por Round, scrap bundles suspensos e vats quentes. Challenging Mind (Investigation ou Alien Tech) identifica instabilidade da carga; investigar drone quebrado com Challenging Mind (Alien Tech) revela ordens interceptadas e Fix-It Torch.",
+          "possibleFinds": [
+            "Planchaküle Fix-It Torch",
+            "Smack Pack"
+          ],
+          "sourcePage": 39
+        }
+      ],
+      "sourcePages": [
+        38,
+        39
+      ]
+    },
+    "actII": {
+      "location": "Sub-Level Station 9",
+      "summary": "Terminal de trânsito subterrâneo abandonado sobre canal profundo. Caminhão está preso contra trem mag-lev parado com 30 passageiros alienígenas; mercenários atacam da passarela elevada.",
+      "zones": [
+        {
+          "name": "Control Mezzanine",
+          "rangeFromCargo": "Far",
+          "summary": "Passarela alta com cabine de controle enferrujada; mercenários mantêm terreno elevado."
+        },
+        {
+          "name": "Wet Boarding Platform",
+          "rangeFromCargo": "Near",
+          "summary": "Plataforma cerâmica molhada, bagagem, kiosks e civis em pânico; correr em velocidade exige Challenging Agility Test ou o Hero fica Prone."
+        },
+        {
+          "name": "Tracks & Canal Edge",
+          "rangeFromCargo": "Close",
+          "summary": "Perto da carga e do trem inclinado sobre canal de drenagem."
+        }
+      ],
+      "dangerClock": {
+        "segments": 6,
+        "advance": "+1 segmento ao fim de cada Round; ataques melee perdidos perto de kiosks frágeis ou explosivos perto dos trilhos podem adicionar +1; GM também pode gastar Villain Point para pulso gravitacional.",
+        "thresholds": [
+          {
+            "segments": 2,
+            "name": "Zero-G Drift",
+            "summary": "Gravidade some; bagagens, bancos e civis não ancorados flutuam. Quem não voa e não usa Magno-Traction Boots tem Disadvantage em Agility Tests."
+          },
+          {
+            "segments": 4,
+            "name": "Heavy-G Crush",
+            "summary": "Gravidade aumenta e conduítes rompem; movimento entre Zones custa o dobro; alvos sem proteção sofrem 1d6 Energy damage no início do Turn e fazem Challenging Resistance Test ou marcam Tired; entra reforço Tier C."
+          },
+          {
+            "segments": 6,
+            "name": "Clock Full",
+            "summary": "O dispositivo implode em onda gravimétrica, colapsa a mezzanine e cada Hero marca 1 Condition Box."
+          }
+        ]
+      },
+      "dangerVariants": {
+        "frozen-block": [
+          "Gravimetric Surge & Station Collapse",
+          "Zero-G Drift",
+          "Heavy-G Crush",
+          "Gravimetric Implosion"
+        ],
+        "living-battery": [
+          "Power Surge & Station Blackout",
+          "Electrical Drift",
+          "Electromagnetic Crush",
+          "City-Wide Power Failure"
+        ],
+        "dirty-badge": [
+          "Null-Core Breach",
+          "Null-Core Interference",
+          "Null-Core Expansion",
+          "Null-Core Detonation"
+        ]
+      },
+      "rescueClocks": [
+        {
+          "name": "Patch the Cargo",
+          "size": "Major",
+          "segments": "one per Hero in Scene",
+          "summary": "Tikk usa Alien Tech ou Jax Omni-Tech Arsenal para conter a carga; Challenging Mind Test."
+        },
+        {
+          "name": "Anchor the Train",
+          "size": "Minor",
+          "segments": "half the Heroes, rounded up",
+          "summary": "Braxxa usa Hyper-Musculature/Rescue Strength ou Ves Cryokinesis para estabilizar acoplamentos; Challenging Force ou Spirit Test."
+        },
+        {
+          "name": "Evacuate Civilians",
+          "size": "Minor",
+          "segments": "half the Heroes, rounded up",
+          "summary": "Skip usa Frictionless Acceleration ou Ves Aerial Extraction para levar passageiros ao túnel seguro; Challenging Agility Test."
+        }
+      ],
+      "sourcePages": [
+        39,
+        40,
+        41
+      ]
+    },
+    "actIII": {
+      "summary": "Depois de os mercenários recuarem/serem derrotados e os Rescue Clocks serem preenchidos (ou Danger Clock encher), sai de Initiative e começa um standoff alinhado à Truth selecionada.",
+      "sourcePages": [
+        42,
+        43
+      ]
+    }
+  },
+  "threats": [
+    {
+      "name": "Sotoraggian Mercenary",
+      "tier": "D",
+      "archetype": "General",
+      "attributes": {
+        "agility": 2,
+        "force": 2,
+        "mind": 1,
+        "precision": 3,
+        "resistance": 2,
+        "spirit": 1
+      },
+      "energy": 12,
+      "defense": 15,
+      "dr": 1,
+      "initiative": 12,
+      "attackBonus": 1,
+      "tierDie": "1d6",
+      "attacks": [
+        "Plasma Carbine: 1d20+4, 1d6+2 Energy, Near/Far"
+      ],
+      "traits": [
+        "Tactical Movement",
+        "Who Let You Rest?"
+      ],
+      "gear": [
+        "UV Sun-Burst Flare",
+        "Inferno Core"
+      ],
+      "sourcePage": 40
+    },
+    {
+      "name": "Sotoraggian Mercenary Grunt",
+      "tier": "E Minion",
+      "archetype": "Minion",
+      "attributes": {
+        "agility": 1,
+        "force": 1,
+        "mind": 0,
+        "precision": 3,
+        "resistance": 1,
+        "spirit": 0
+      },
+      "defense": 12,
+      "initiative": 11,
+      "attackBonus": 0,
+      "tierDie": "1d6",
+      "attacks": [
+        "Plasma Carbine: 1d20+3, 1d6 Energy, Near/Far"
+      ],
+      "traits": [
+        "Straightforward",
+        "Thug Life"
+      ],
+      "gear": [
+        "One grunt carries Tetramand Impact Knuckles"
+      ],
+      "sourcePage": 41
+    },
+    {
+      "name": "Sotoraggian Veteran Enforcer",
+      "tier": "C Reinforcement",
+      "archetype": "Brute",
+      "attributes": {
+        "agility": 3,
+        "force": 3,
+        "mind": 2,
+        "precision": 4,
+        "resistance": 3,
+        "spirit": 2
+      },
+      "energy": 15,
+      "defense": 18,
+      "dr": 3,
+      "initiative": 13,
+      "attackBonus": 2,
+      "tierDie": "1d6",
+      "attacks": [
+        "Heavy Ordnance Carbine: 1d20+6, 1d6+3 Energy, Near/Far"
+      ],
+      "traits": [
+        "Relentless Force"
+      ],
+      "sourcePage": 41
+    }
+  ],
+  "rewards": {
+    "missionCompletion": "3 PAX por impedir mercenários e evitar colapso da Sub-Level Station 9.",
+    "perspectiveResolution": "+5 PAX se squad descobrir a verdade, evitar dano desnecessário e resolver standoff eticamente/pacificamente.",
+    "roleplayTeamwork": "+1 a +2 PAX para jogadores que explorarem Archetype Flaws ou combinarem Unique Perceptions via Perspective Splice.",
+    "tierAdvance": "Com 50 PAX totais, avança para Tier C: +5 base Energy, +2 base Defense, +1 Attack Bonus e Grade 2 Aptitudes. As regras Tier C/Grade 2 são remetidas ao Core Rulebook.",
+    "sourcePages": [
+      43
+    ]
+  }
+}
