@@ -1,0 +1,387 @@
+{
+  "rulesetId": "ben10-beyond-quickstart-v1",
+  "status": "page-checked-summary",
+  "tiers": {
+    "tierD": {
+      "pax": 30,
+      "baseEnergy": 10,
+      "baseDefense": 12,
+      "attackBonus": 0,
+      "tierDie": "1d6",
+      "aptitudeGradeLimit": 1,
+      "attributeCap": 3,
+      "sourcePages": [
+        15,
+        46,
+        47
+      ]
+    },
+    "tierBonusNote": "O texto indica +1 por Tier para Tier D, +2 para Tier C e assim por diante; apenas Tier D é jogável no Quickstart.",
+    "attributeNames": [
+      "Agility",
+      "Force",
+      "Mind",
+      "Precision",
+      "Resistance",
+      "Spirit"
+    ],
+    "sourcePages": [
+      15,
+      16
+    ]
+  },
+  "characterCreation": {
+    "attributeIncreasePax": 3,
+    "energyIncreasePax": 2,
+    "skillPax": 4,
+    "basicTraitPax": 2,
+    "intermediaryTraitPax": 4,
+    "archetypeAbilitiesAtTierD": 2,
+    "speciesGrants": [
+      "Creative Uses de todas as Evolutionary Aptitudes da espécie",
+      "Unique Perception",
+      "Complication",
+      "uma Evolutionary Path escolhida"
+    ],
+    "conditionTrack": [
+      "Tired",
+      "Wounded",
+      "Defeated"
+    ],
+    "conditionRules": {
+      "tired": "Custos de Energy para poderes aumentam em +2.",
+      "wounded": "Disadvantage em Tests físicos, salvo mitigação por Traits ou Powers.",
+      "defeated": "Incapacitado e incapaz de agir até ser estabilizado ou recuperado.",
+      "order": "Tired → Wounded → Defeated; não se marca Wounded sem marcar Tired antes.",
+      "extraBoxes": "Boxes extras de Powers ou efeitos são marcadas antes da trilha normal e contam como boxes Tired.",
+      "clearing": "Quando um efeito limpa Condition, limpar a mais grave primeiro."
+    },
+    "sourcePages": [
+      15,
+      16,
+      17,
+      46,
+      47
+    ]
+  },
+  "tests": {
+    "formula": "1d20 + Relevant Attribute + Bonuses",
+    "degrees": {
+      "criticalSuccess": "Resultado igual ou superior a Tension + 5, ou Natural 20.",
+      "success": "Resultado de Tension até Tension + 4.",
+      "failure": "Resultado de Tension −1 até Tension −4.",
+      "criticalFailure": "Resultado pelo menos 5 abaixo da Tension, ou Natural 1."
+    },
+    "advantage": "Rola 2d20 e mantém o maior.",
+    "disadvantage": "Rola 2d20 e mantém o menor.",
+    "cancellation": "Advantage e Disadvantage se cancelam um a um.",
+    "stacking": "Fontes distintas adicionais de Advantage adicionam +2 ao resultado por fonte adicional; fontes adicionais de Disadvantage impõem −2 por fonte adicional.",
+    "opposedTests": "Ambos rolam Test com Attribute relevante; maior resultado vence. Empate é decidido pelo maior resultado do dado; se o dado também empata, ambos rolam novamente. Opposed Test não usa Tension.",
+    "tierDTension": {
+      "routine": 12,
+      "challenging": 15,
+      "hard": 18,
+      "extreme": 21,
+      "impossible": "26+"
+    },
+    "sceneTension": "GM pode definir Tension compartilhada para Tests não opostos na Location; Traits, Aptitudes ou Skills podem reduzir Tension para ação específica.",
+    "unskilled": "Sem Skill apropriada ainda pode tentar, mas rola com Disadvantage; GM pode elevar a dificuldade em um nível.",
+    "sourcePages": [
+      18,
+      19
+    ]
+  },
+  "resources": {
+    "energy": "Reserva de poder, stamina ou combustível tecnológico. Powers, Archetype Abilities e manobras táticas podem consumir Energy.",
+    "heroPoints": {
+      "earnSources": [
+        "Catchphrase",
+        "Species Complication",
+        "Archetype Abilities",
+        "Traits específicos",
+        "atos criativos heroicos"
+      ],
+      "spendOptions": [
+        {
+          "name": "Favored by Fate",
+          "summary": "Transforma Test fracassado em sucesso automático ou concede +10 em rolagem crucial futura."
+        },
+        {
+          "name": "Introduce a Fact",
+          "summary": "Introduz detalhe plausível na Scene."
+        },
+        {
+          "name": "Plot Armor",
+          "summary": "Cancela narrativamente um ataque, explosão ou desastre ambiental por uma fuga cinematográfica estreita."
+        },
+        {
+          "name": "Power Surge",
+          "summary": "Uma Evolutionary Aptitude ou Power não custa Energy e seus Tests recebem Advantage até o fim da Scene; ao final, marca uma Condition Box."
+        },
+        {
+          "name": "Retcon",
+          "summary": "Revela preparação plausível estabelecida anteriormente."
+        }
+      ],
+      "sourcePages": [
+        20
+      ]
+    },
+    "villainPoints": {
+      "generation": "Sempre que um Hero gasta 1 Hero Point, GM recebe 1 Villain Point.",
+      "bankLimit": "Até o número de jogadores.",
+      "spendLimit": "No máximo 1 Villain Point por Scene.",
+      "twists": [
+        {
+          "name": "Countermeasure",
+          "summary": "Introduz ameaça/contramedida que explora Complication de espécie; a Threat recebe Advantage no próximo ataque contra o Hero afetado."
+        },
+        {
+          "name": "Dimensional Breach",
+          "summary": "Introduz minions ou aumenta Scene Tension da Location em +4 até o fim da Scene."
+        },
+        {
+          "name": "Megalomaniacal Monologue",
+          "summary": "Vilão interrompe a ação para discursar; cada Hero que escuta recebe 1 Hero Point e o vilão recupera 50% de Energy máxima. Um Hero pode interromper gastando Action Point ou Reaction."
+        },
+        {
+          "name": "Power Glitch",
+          "summary": "Eleva custos de Energy dos poderes de um Hero em +2 por 2 rounds."
+        },
+        {
+          "name": "Tech Overpower",
+          "summary": "Concede a uma Threat Power Surge por 2 rounds, ou limpa 2 Conditions marcadas, ou concede +3 DR por 2 rounds."
+        }
+      ],
+      "sourcePages": [
+        20,
+        21
+      ]
+    },
+    "omniDie": {
+      "die": "d10",
+      "use": "Adiciona o resultado a um Test ou substitui um Tier Die; depois de usar, é gasto.",
+      "starting": "Cada Hero começa cada Episode com 1 Omni Die; pode adquirir outro gastando 1 Hero Point.",
+      "critical": "10 em Test aciona Hero Time; 1 concede Villain Point ao GM.",
+      "heroTime": {
+        "limit": "Escolher um efeito; o mesmo efeito não pode ser usado mais de uma vez por Scene.",
+        "options": [
+          {
+            "name": "Energy Burst",
+            "summary": "Rola Omni Die novamente mesmo já gasto; adiciona-o além de dobrar o número de Tier Dice e soma o resultado ao dano."
+          },
+          {
+            "name": "Omni-Evolution",
+            "summary": "Ganha acesso a uma Evolutionary Aptitude ou Evolutionary Path da própria espécie até o fim do próximo Turn."
+          },
+          {
+            "name": "Time Paradox",
+            "summary": "Ganha um Movement Action ou Attack Action adicional durante o Round."
+          }
+        ]
+      },
+      "sourcePages": [
+        21
+      ]
+    }
+  },
+  "battle": {
+    "initiative": "10 + Agility; em empate, tied participants fazem Agility Test, vencedor age primeiro. Pode gastar Energy para aumentar Initiative no mesmo valor.",
+    "actionPointsPerTurn": 3,
+    "freeActions": "0 AP; exemplos incluem Catchphrase, largar arma, trocar configuração de Proto-Tool e fala breve.",
+    "reactions": {
+      "perRound": 1,
+      "actionPointCost": 1,
+      "requirement": "Deve reservar pelo menos 1 Action Point não gasto no próprio Turn para usar Reaction antes do próximo Turn."
+    },
+    "movement": {
+      "close": 0,
+      "near": 1,
+      "far": 2,
+      "veryFar": 3,
+      "difficultTerrain": "Dobra o custo de Actions de movimento.",
+      "standUp": 1,
+      "zones": "Location é dividida em Zones; qualquer pessoa na mesma Zone pode engajar em close combat; um Move Action alcança Zone adjacente."
+    },
+    "actions": {
+      "disarm": {
+        "actionPoints": 1,
+        "summary": "Alvo com item em Close ou Near; Opposed Precision/Force contra Force/Agility do alvo; sucesso remove o item da mão."
+      },
+      "grapple": {
+        "actionPoints": 1,
+        "summary": "Alvo Close; Opposed Force contra Agility/Force; sucesso causa Immobilized."
+      },
+      "shove": {
+        "actionPoints": 1,
+        "summary": "Melee attack; se acertar, Opposed Force; sucesso empurra 1 Range category ou deixa Prone."
+      },
+      "attack": {
+        "actionPoints": 1,
+        "summary": "Ataque básico contra Defense.",
+        "roll": "1d20 + PRE, FOR ou SPI + Tier Attack Bonus vs target Defense."
+      },
+      "suppressingFire": {
+        "actionPoints": 2,
+        "summary": "Até 3 alvos em uma área Near fazem Agility Test contra Scene Tension ou sofrem metade do dano e ficam Slowed ou Shaken."
+      },
+      "feint": {
+        "actionPoints": 1,
+        "summary": "Opposed Spirit/Mind contra Mind/Spirit; sucesso aplica Shaken ou Confused por 1 round e faz o alvo desperdiçar próxima Action ou Reaction atacando algo incorreto."
+      },
+      "help": {
+        "actionPoints": 1,
+        "summary": "Aliado Near recebe Advantage no próximo Attribute/Skill Test ou adiciona 1 segmento a Rescue Clock."
+      },
+      "inspire": {
+        "actionPoints": 1,
+        "energyCost": 2,
+        "alternative": "Spirit Test vs Scene Tension",
+        "summary": "Escolhe aliado consciente Near para remover Frightened, Shaken ou Confused; alternativamente, todos aliados Near recebem +2 na próxima rolagem d20."
+      },
+      "tacticalAssessment": {
+        "actionPoints": 1,
+        "summary": "Mind Test contra Scene Tension ou custo alternativo de 2 Energy; em sucesso escolhe inimigo Near e aliados recebem Advantage nos ataques até o próximo Turn do usuário, ou concede Move Action imediato a aliado Near."
+      },
+      "rescueAction": {
+        "actionPoints": 1,
+        "summary": "Em Rescue Scene, ação bem-sucedida preenche 1 Progress Segment da Rescue Clock ativa."
+      },
+      "firstAid": {
+        "actionPoints": 1,
+        "summary": "Emergency First Aid Test; sucesso limpa 1 minor Condition ou estabiliza aliado Defeated."
+      },
+      "hack": {
+        "actionPoints": 1,
+        "summary": "Mind (Tech ou Subterfuge) Test para invadir mainframes, contornar sensores ou ligar motor de nave."
+      },
+      "useGadget": {
+        "actionPoints": 1,
+        "summary": "Usa um item/Gadget."
+      }
+    },
+    "reactionsList": {
+      "activeBlock": "Adiciona Resistance à Defense contra ataques recebidos.",
+      "activeDodge": "Adiciona Agility à Defense contra ataques recebidos.",
+      "interceptBlow": "Intercede por aliado/civil em Close ou Near; recebe dano e status no lugar dele."
+    },
+    "sourcePages": [
+      21,
+      22,
+      23
+    ]
+  },
+  "damage": {
+    "formula": "Tier Die + atributo indicado pela Aptitude/Ability",
+    "types": {
+      "elemental": "Fogo, frio, ácido, veneno e outras forças elementais; usa Force quando causado por ataque desarmado ou Melee.",
+      "pulse": "Energy blasts, eletricidade, radiação, sonic e energia bruta; usa Force ou Spirit conforme Aptitude.",
+      "magical": "Spells, artefatos e outras fontes mágicas; usa Spirit.",
+      "physical": "Socos, armas melee e projéteis; usa Force em ataques desarmados e Melee.",
+      "psychic": "Telepatia, ilusões e poderes mentais; usa Mind."
+    },
+    "rangedDamage": "Ataques Physical ou Elemental com arma ranged não adicionam Attribute ao dano, salvo se um Power disser o contrário.",
+    "criticalHit": "Em Attack Test com Critical Success, rola o dobro de Tier Dice.",
+    "damageReduction": "Subtrai DR de cada dano antes de reduzir Energy; DR de fontes diferentes soma salvo regra em contrário; pode ser limitado a tipos de dano.",
+    "optionalCondition": "Ao receber dano, pode escolher marcar Condition para ignorar todo o dano daquele ataque.",
+    "zeroEnergy": "Ao ficar sem Energy, recebe Vulnerable. Depois, qualquer dano força marcar Condition; Critical Hit força marcar duas.",
+    "fallDamage": "1d8 Physical damage por Range category de queda.",
+    "sourcePages": [
+      23,
+      24
+    ]
+  },
+  "statusConditions": {
+    "Bleeding": "Perde Energy igual ao Tier bonus no início de cada Turn.",
+    "Blinded": "Disadvantage em ataques e Tests contra alvo; cover concede ao alvo o dobro do bônus de Defense.",
+    "Burned": "Recebe Fire damage no início de cada Turn.",
+    "Confused": "Não pode Reactions; no começo do Turn rola 1d6: 1–2 não faz nada; 3–4 faz basic strike contra criatura mais próxima; 5–6 age normalmente.",
+    "Corroded": "Recebe Acid damage no início de cada Turn.",
+    "Frightened": "Não pode mover voluntariamente para perto da fonte do medo; Disadvantage em Attack rolls e Attribute Tests enquanto a fonte estiver na linha de visão.",
+    "Frozen": "Não pode Actions nem Reactions; recebe +3 DR contra ranged energy attacks; Physical/impact ignora esse DR e causa dobro de Tier Dice; fogo/calor remove Frozen.",
+    "Immobilized": "Não pode Movement Actions.",
+    "Poisoned": "No início do Turn, recebe poison damage igual ao Tier bonus do envenenador e tem Disadvantage em Force, Agility e Resistance Tests.",
+    "Prone": "Não pode Movement Actions, exceto gastar 1 Action Point para levantar e remover Prone; ataques Close contra ele têm Advantage; ataques ranged de Near/Far contra ele têm Disadvantage.",
+    "Shaken": "Disadvantage em Attack rolls e Physical Attribute Tests.",
+    "Slowed": "Movement Actions custam o dobro de Actions.",
+    "Stunned": "Não pode Actions nem Reactions por 1 round.",
+    "Vulnerable": "Qualquer dano sofrido força marcar Condition em vez de reduzir Energy.",
+    "Weakened": "Powers custam +2 Energy; Force e Resistance Tests sofrem −2."
+  },
+  "rescue": {
+    "clocks": {
+      "fastLethal": {
+        "segments": 4,
+        "advance": "+1 ao fim de cada Round ou imediatamente em Critical Failure."
+      },
+      "standard": {
+        "segments": 6,
+        "advance": "+1 ao fim de cada Round ou quando GM gasta Villain Point para escalar hazard."
+      },
+      "macroCrisis": {
+        "segments": 8,
+        "advance": "+1 quando Heroes fazem Interlude, perdem tempo ou falham objetivo principal."
+      }
+    },
+    "rescueClockRules": [
+      "Toda Rescue Scene possui pelo menos uma Rescue Clock.",
+      "Cada sucesso em Rescue Action preenche 1 segment; Critical Success preenche 2.",
+      "Rescue Clock major tem um segmento por Hero na Scene; minor tem metade arredondada para cima.",
+      "Cada Hero pode preencher no máximo um segmento da mesma Rescue Clock por Round.",
+      "Quando uma Rescue Clock enche, GM pode revelar outra; nunca há mais Rescue Clocks abertas do que Heroes.",
+      "Em Battle Scene, Actions podem ser gastas para executar Rescue Actions.",
+      "Se Danger Clock enche, o pior evento acontece e o grupo lida com as consequências."
+    ],
+    "rescueActionCapPerTurn": 3,
+    "sourcePages": [
+      25,
+      26
+    ]
+  },
+  "interlude": {
+    "actionsPerHero": 2,
+    "options": [
+      {
+        "name": "Field Triage",
+        "summary": "Limpa Condition marcada mais grave (Wounded antes de Tired) ou estabiliza aliado Defeated, removendo a condição e restaurando 1 Energy."
+      },
+      {
+        "name": "Maintenance",
+        "summary": "Restaura todas as Gadget Charges gastas para 3/3 pelo Episode."
+      },
+      {
+        "name": "Rest and Recharge",
+        "summary": "Restaura Energy do Hero ao valor inicial."
+      },
+      {
+        "name": "Tactical Briefing",
+        "summary": "Skill Test contra Scene Tension padrão da Location; em sucesso, faz uma pergunta direta sobre fraqueza biológica, layout ou plano tático de ameaça futura. Todo squad ganha Reaction gratuita no primeiro Round da próxima Battle Scene, utilizável antes do primeiro Turn."
+      }
+    ],
+    "crisisEscalation": "Se Danger Clock estiver ativo durante Interlude, GM preenche 1 segmento. Se squad toma segundo Interlude consecutivo no mesmo lugar sem avançar missão, GM ganha 1 Villain Point.",
+    "sourcePages": [
+      26,
+      27
+    ]
+  },
+  "squadBonding": {
+    "principle": "Quando dois Heroes compartilham downtime e um sai da zona de conforto para honrar uma peculiaridade cultural do outro, ambos ganham 1 Hero Point.",
+    "examples": [
+      "Honor vs. Logic",
+      "Personal Space",
+      "Physical Dominance",
+      "Table Manners"
+    ],
+    "sourcePage": 27
+  },
+  "perspectiveSplice": {
+    "requirements": "Dois Heroes de espécies diferentes na mesma Location.",
+    "actionCostPerHero": 1,
+    "effect": "Cada um compartilha informação de sua Unique Perception para combinar perspectivas.",
+    "reward": "Uma execução bem-sucedida concede ao par 1 Hero Point utilizável para Introduce a Fact ou Retcon e nega 1 Villain Point ao GM por essa interação.",
+    "sourcePages": [
+      27,
+      28
+    ]
+  }
+}
