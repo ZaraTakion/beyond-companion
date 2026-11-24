@@ -1,0 +1,368 @@
+{
+  "rulesetId": "ben10-beyond-quickstart-v1",
+  "status": "page-checked-summary",
+  "heroes": [
+    {
+      "id": "skip",
+      "name": "Zyp “Skip” Fexx",
+      "species": "Kineceleran",
+      "archetype": "Prodigy",
+      "roleLabel": "Pathfinder",
+      "sourcePages": [
+        8,
+        9
+      ],
+      "attributes": {
+        "agility": 3,
+        "force": 0,
+        "mind": 1,
+        "precision": 1,
+        "resistance": 0,
+        "spirit": 0
+      },
+      "reported": {
+        "energy": 11,
+        "defense": 12,
+        "initiative": 21,
+        "attackBonus": 0,
+        "tierDie": "1d6"
+      },
+      "initiativeBreakdown": "10 + Agility 3 + Enhanced Reflexes 5 + Cat-Like Reflexes 3 = 21.",
+      "defenseNote": "Defense 12; Cat-Like Reflexes concede +2 quando usa Active Dodge.",
+      "purchases": {
+        "attributes": 15,
+        "aptitudes": 8,
+        "skills": 4,
+        "traits": 0,
+        "gear": 1,
+        "energy": 2,
+        "other": 0,
+        "total": 30
+      },
+      "aptitudes": [
+        {
+          "name": "Enhanced Agility",
+          "grade": 1
+        },
+        {
+          "name": "Enhanced Durability",
+          "grade": 0
+        },
+        {
+          "name": "Frictionless Acceleration",
+          "grade": 1
+        }
+      ],
+      "path": "Surface Skimmer",
+      "archetypeAbilities": [
+        "Going Hero!",
+        "What Does This Button Do?!"
+      ],
+      "skills": [
+        "Acrobatics"
+      ],
+      "traits": [],
+      "equipment": [
+        "Blaster",
+        "Plumber Badge"
+      ],
+      "notes": [
+        "Energy 11 implica +1 Energy comprado (2 PAX), necessário para fechar o orçamento de 30 PAX.",
+        "O nome Pathfinder é rótulo de papel/personagem; o Archetype mecânico é Prodigy."
+      ]
+    },
+    {
+      "id": "tikk",
+      "name": "Dr. Tikk “Tick” Voll",
+      "species": "Galvan",
+      "archetype": "Techno-Brain",
+      "roleLabel": "Thinkwright",
+      "sourcePages": [
+        9,
+        10
+      ],
+      "attributes": {
+        "agility": 0,
+        "force": 0,
+        "mind": 6,
+        "precision": 1,
+        "resistance": 0,
+        "spirit": 0
+      },
+      "reported": {
+        "energy": 10,
+        "defense": 12,
+        "initiative": 9,
+        "attackBonus": 0,
+        "tierDie": "1d6"
+      },
+      "initiativeBreakdown": "Overthinking: 10 + Agility 0 − Mind 6 = 4; Sensory Radar +5; total 9.",
+      "attackExamples": [
+        "Blaster: 1d20 +2 (Precision 1 + Blaster 1), 1d6 Energy.",
+        "Blaster with Predictive Targeting: 1d20 +7 (Mind 6 + Blaster 1), 1d6 Energy."
+      ],
+      "purchases": {
+        "attributes": 9,
+        "aptitudes": 8,
+        "skills": 4,
+        "traits": 4,
+        "gear": 2,
+        "energy": 0,
+        "other": 0,
+        "total": 27
+      },
+      "aptitudes": [
+        {
+          "name": "Enhanced Senses",
+          "grade": 1
+        },
+        {
+          "name": "Hyper-Cognition",
+          "grade": 1
+        }
+      ],
+      "path": "Master Architect",
+      "archetypeAbilities": [
+        "Have You Tried Turning It Off and On Again?",
+        "Jury-Rigged Invention"
+      ],
+      "skills": [
+        "Alien Tech",
+        "Tech (free from Archetype)"
+      ],
+      "traits": [
+        "Alien Utility Bag"
+      ],
+      "equipment": [
+        "Blaster",
+        "Holo-Viewer",
+        "Plumber Badge"
+      ],
+      "notes": [
+        "Mind +6 inclui +3 comprado no atributo e +3 de Bigger Brain; o cap +3 do atributo não conta o bônus da Aptitude.",
+        "O personagem tem 3 PAX não alocados pela reconstrução das compras listadas; não presumir compra não mostrada."
+      ]
+    },
+    {
+      "id": "braxxa",
+      "name": "Braxxa “Brax” Korr",
+      "species": "Tetramand",
+      "archetype": "Brawler",
+      "roleLabel": "Vanguard",
+      "sourcePages": [
+        10,
+        11
+      ],
+      "attributes": {
+        "agility": 0,
+        "force": 3,
+        "mind": 1,
+        "precision": 0,
+        "resistance": 2,
+        "spirit": 0
+      },
+      "reported": {
+        "energy": 10,
+        "defense": 12,
+        "initiative": 10,
+        "attackBonus": 0,
+        "tierDie": "1d6"
+      },
+      "attackExamples": [
+        "Four-Fisted Strike: 1d20 +3 (Force), 1d6 +5 Physical (Force 3 + Brawler 2).",
+        "Brute Force: 1 Action, 1 Energy; mesmo golpe com +1 dano.",
+        "Four-Armed Gladiator: segundo Melee Attack de cada Turn causa +1 dano."
+      ],
+      "purchases": {
+        "attributes": 18,
+        "aptitudes": 8,
+        "skills": 0,
+        "traits": 4,
+        "gear": 0,
+        "energy": 0,
+        "other": 0,
+        "total": 30
+      },
+      "aptitudes": [
+        {
+          "name": "Enhanced Durability",
+          "grade": 0
+        },
+        {
+          "name": "Hyper Leaping",
+          "grade": 0
+        },
+        {
+          "name": "Hyper-Musculature",
+          "grade": 1
+        },
+        {
+          "name": "Poly-Limb Musculature",
+          "grade": 1
+        }
+      ],
+      "path": "Four-Armed Gladiator",
+      "archetypeAbilities": [
+        "Clustered Clasp",
+        "It's Punching Time!"
+      ],
+      "skills": [],
+      "traits": [
+        "Catchphrase"
+      ],
+      "equipment": [
+        "Plumber Badge"
+      ],
+      "notes": [
+        "Dano base Four-Fisted Strike confirma Tier Die 1d6 + Force 3 + bônus Brawler +2."
+      ]
+    },
+    {
+      "id": "ves",
+      "name": "Vesphr “Ves” Rymgraev",
+      "species": "Necrofrigian",
+      "archetype": "Outlaw",
+      "roleLabel": "Lifeline",
+      "sourcePages": [
+        11,
+        12
+      ],
+      "attributes": {
+        "agility": 0,
+        "force": 0,
+        "mind": 0,
+        "precision": 0,
+        "resistance": 0,
+        "spirit": 2
+      },
+      "reported": {
+        "energy": 10,
+        "defense": 12,
+        "initiative": 10,
+        "attackBonus": 0,
+        "tierDie": "1d6"
+      },
+      "attackExamples": [
+        "Frost Stream: 1d20 +2 (Spirit), 1d6 +2 Elemental (cold); Critical Hit aplica Slowed."
+      ],
+      "purchases": {
+        "attributes": 6,
+        "aptitudes": 15,
+        "skills": 8,
+        "traits": 0,
+        "gear": 1,
+        "energy": 0,
+        "other": 0,
+        "total": 30
+      },
+      "aptitudes": [
+        {
+          "name": "Cryokinesis",
+          "grade": 1
+        },
+        {
+          "name": "Density Manipulation",
+          "grade": 0
+        },
+        {
+          "name": "Flight",
+          "grade": 1
+        },
+        {
+          "name": "Molecular Phasing",
+          "grade": 1
+        }
+      ],
+      "path": "Frostbite Phantom",
+      "archetypeAbilities": [
+        "Slip the Plumber Cuffs",
+        "Undertown Connections"
+      ],
+      "skills": [
+        "Subterfuge",
+        "Xeno-Diplomacy"
+      ],
+      "traits": [],
+      "equipment": [
+        "Holo-Viewer",
+        "ID Mask (free Outlaw item)",
+        "Plumber Badge"
+      ],
+      "notes": [
+        "Outlaw fornece um item gratuito; o ID Mask é identificado como item concedido pelo Archetype. Holo-Viewer completa 1 PAX de gear pago."
+      ]
+    },
+    {
+      "id": "jax",
+      "name": "Jax “Patch” Mercer",
+      "species": "Human",
+      "archetype": "Protector",
+      "roleLabel": "Deputy Plumber",
+      "sourcePages": [
+        13,
+        14
+      ],
+      "attributes": {
+        "agility": 1,
+        "force": 0,
+        "mind": 1,
+        "precision": 1,
+        "resistance": 0,
+        "spirit": 1
+      },
+      "reported": {
+        "energy": 11,
+        "defense": 12,
+        "initiative": 11,
+        "attackBonus": 0,
+        "tierDie": "1d6"
+      },
+      "attackExamples": [
+        "Blaster: 1d20 +2 (Precision 1 + Blaster 1), 1d6 Energy.",
+        "Energy Blade: 1d20 +1 (Precision), 1d6 Energy."
+      ],
+      "purchases": {
+        "attributes": 12,
+        "aptitudes": 6,
+        "skills": 8,
+        "traits": 0,
+        "gear": 2,
+        "energy": 2,
+        "other": 0,
+        "total": 30
+      },
+      "aptitudes": [
+        {
+          "name": "Omni-Tech Arsenal",
+          "grade": 1
+        },
+        {
+          "name": "Versatility",
+          "grade": 0
+        }
+      ],
+      "path": "Universal Adaptor",
+      "archetypeAbilities": [
+        "I Got Your Back!",
+        "You'll Have to Get Through Me!"
+      ],
+      "skills": [
+        "Emergency First Aid (free from Versatility)",
+        "Piloting",
+        "Xeno-Diplomacy"
+      ],
+      "traits": [
+        "Brave (free from Versatility)"
+      ],
+      "equipment": [
+        "Blaster",
+        "Energy Cuffs",
+        "Plumber Badge"
+      ],
+      "notes": [
+        "Versatility concede uma Skill e um Basic Trait gratuitos; Emergency First Aid e Brave estão identificados como bônus.",
+        "Energy 11 implica +1 Energy comprado (2 PAX)."
+      ]
+    }
+  ]
+}
