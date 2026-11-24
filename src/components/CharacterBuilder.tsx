@@ -104,7 +104,7 @@ export default function CharacterBuilder() {
         nextSkills = [...nextSkills, { name: 'Tech', source: 'archetype' }];
       }
 
-      const nextGear: GearSelection[] = current.gear.flatMap((item) => {
+      const nextGear: GearSelection[] = current.gear.flatMap((item): GearSelection[] => {
         if (item.source !== 'outlaw-bonus') return [item];
         if (item.name === 'Plumber Badge' && current.plumberAffiliated) {
           return [{ name: item.name, source: 'plumber-issue' }];

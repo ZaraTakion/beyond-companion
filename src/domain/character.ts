@@ -233,7 +233,13 @@ export function calculatePaxLedger(draft: CharacterDraft): PaxLedger {
     });
   }
 
-  const paxPurchases: PaxPurchase[] = entries.map(({ detail: _detail, ...purchase }) => purchase);
+  const paxPurchases: PaxPurchase[] = entries.map((purchase) => ({
+    id: purchase.id,
+    label: purchase.label,
+    cost: purchase.cost,
+    source: purchase.source,
+    free: purchase.free,
+  }));
   const summary = summarizePax(paxPurchases, TIER_D_PAX);
   if (!summary.valid) {
     addIssue(issues, 'PAX_BUDGET_EXCEEDED', `Orçamento excedido em ${Math.abs(summary.remaining)} PAX.`);
