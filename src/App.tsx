@@ -1,20 +1,21 @@
 import { useMemo, useState } from 'react';
 import { ruleset } from './data/ruleset';
+import CharacterBuilder from './components/CharacterBuilder';
 import './styles.css';
 
-type Tab = 'overview' | 'species' | 'archetypes' | 'aptitudes';
+type Tab = 'overview' | 'builder' | 'species' | 'archetypes' | 'aptitudes';
 
 export default function App() {
   const [tab, setTab] = useState<Tab>('overview');
   const [query, setQuery] = useState('');
 
   const species = useMemo(() => ruleset.species.filter((item) =>
-    `${item.name} ${item.homeworld} ${item.aptitudes.join(' ')} ${item.paths.join(' ')}`
+    (item.name + ' ' + item.homeworld + ' ' + item.aptitudes.join(' ') + ' ' + item.paths.join(' '))
       .toLowerCase().includes(query.toLowerCase()),
   ), [query]);
 
   const archetypes = useMemo(() => ruleset.archetypes.filter((item) =>
-    `${item.name} ${item.bonus} ${item.flaw} ${item.abilities.join(' ')}`
+    (item.name + ' ' + item.bonus + ' ' + item.flaw + ' ' + item.abilities.join(' '))
       .toLowerCase().includes(query.toLowerCase()),
   ), [query]);
 
@@ -46,6 +47,7 @@ export default function App() {
       <nav className="tabs" aria-label="Navegação principal">
         {([
           ['overview', 'Visão geral'],
+          ['builder', 'Criar ficha'],
           ['species', 'Espécies'],
           ['archetypes', 'Archetypes'],
           ['aptitudes', 'Aptitudes'],
@@ -71,8 +73,8 @@ export default function App() {
           <article className="panel status-panel">
             <div className="panel-kicker">PRÓXIMO MARCO</div>
             <h2>Criador Tier D</h2>
-            <p>O próximo módulo será o construtor guiado com orçamento PAX, limites de atributos e seleção de opções de espécie e Archetype.</p>
-            <span className="status-tag">Planejado · Fase 1</span>
+            <p>Primeira versão do construtor guiado: escolhas de espécie e Archetype, ledger de PAX, limites de Tier D e estatísticas derivadas.</p>
+            <span className="status-tag">Em implementação · Fase 1</span>
           </article>
           <article className="panel note-panel">
             <div className="panel-kicker">FIDELIDADE</div>
@@ -85,7 +87,9 @@ export default function App() {
         </section>
       )}
 
-      {tab !== 'overview' && (
+      {tab === 'builder' && <CharacterBuilder />}
+
+      {tab !== 'overview' && tab !== 'builder' && (
         <section className="catalogue">
           <div className="catalogue-heading">
             <div>
