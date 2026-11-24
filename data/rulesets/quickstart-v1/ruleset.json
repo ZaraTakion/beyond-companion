@@ -1,0 +1,564 @@
+{
+  "id": "ben10-beyond-quickstart-v1",
+  "displayName": "BEN 10: BEYOND — Quickstart v1",
+  "source": {
+    "file": "ben10-beyond-rpg-quickstart-v1.pdf",
+    "pageCount": 76,
+    "access": "user-provided PDF",
+    "policy": "Only facts mechanically transcribed or summarized from this PDF are treated as official for this ruleset."
+  },
+  "tierD": {
+    "pax": 30,
+    "baseEnergy": 10,
+    "baseDefense": 12,
+    "attackBonus": 0,
+    "tierDie": "1d6",
+    "aptitudeGradeLimit": 1,
+    "attributeCap": 3,
+    "initiative": "10 + Agility"
+  },
+  "characterCreation": {
+    "archetypeAbilitiesAtTierD": 2,
+    "speciesGrants": [
+      "creativeUsesForAllSpeciesAptitudes",
+      "uniquePerception",
+      "complication",
+      "oneEvolutionaryPath"
+    ],
+    "costs": {
+      "attributeIncrease": 3,
+      "energyIncrease": 2,
+      "skill": 4,
+      "basicTrait": 2,
+      "intermediaryTrait": 4,
+      "aptitudeGrade1": "cost listed per aptitude",
+      "equipment": "listed item cost"
+    }
+  },
+  "species": [
+    {
+      "id": "auguravian",
+      "name": "Auguravian",
+      "homeworld": "Solumbra",
+      "aptitudes": [
+        "Enhanced Agility",
+        "Hyper Leaping",
+        "Natural Weapons",
+        "Vocal Resonators"
+      ],
+      "complication": "Cadence Fixation",
+      "uniquePerception": "Songtide Mapping",
+      "paths": [
+        "Cantavian Harmonic Mimic",
+        "Minimus Night-Raptor",
+        "Spurian Spur-Striker"
+      ],
+      "sourcePages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "galvan",
+      "name": "Galvan",
+      "homeworld": "Galvan Prime",
+      "aptitudes": [
+        "Enhanced Senses",
+        "Hyper-Cognition"
+      ],
+      "complication": "Physical Fragility",
+      "uniquePerception": "Micro-Diagnostic",
+      "paths": [
+        "Cyber-Infiltrator",
+        "Master Architect",
+        "Micro-Acrobat"
+      ],
+      "sourcePages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "human",
+      "name": "Human",
+      "homeworld": "Earth",
+      "aptitudes": [
+        "Omni-Tech Arsenal",
+        "Versatility"
+      ],
+      "complication": "Unenhanced Vulnerability",
+      "uniquePerception": "Does Anybody Else Find This Strange?",
+      "paths": [
+        "Tactical Leader",
+        "Universal Adaptor",
+        "Unwavering Will"
+      ],
+      "sourcePages": [
+        53,
+        54
+      ],
+      "notes": [
+        "Versatility grants a bonus Skill and a Basic Trait for free."
+      ]
+    },
+    {
+      "id": "kineceleran",
+      "name": "Kineceleran",
+      "homeworld": "Kinet",
+      "aptitudes": [
+        "Enhanced Agility",
+        "Enhanced Durability",
+        "Frictionless Acceleration"
+      ],
+      "complication": "Cold Sensitivity",
+      "uniquePerception": "Everything Is So Slow",
+      "paths": [
+        "Sonic Accelerator",
+        "Speed-Beast Striker",
+        "Surface Skimmer"
+      ],
+      "sourcePages": [
+        54
+      ]
+    },
+    {
+      "id": "necrofrigian",
+      "name": "Necrofrigian",
+      "homeworld": "Kylmyys",
+      "aptitudes": [
+        "Cryokinesis",
+        "Density Manipulation",
+        "Flight",
+        "Molecular Phasing"
+      ],
+      "complication": "Heat & Solar Vulnerability",
+      "uniquePerception": "Thermal Sight",
+      "paths": [
+        "Cooler Than Cool",
+        "Frostbite Phantom",
+        "Ice Ghost"
+      ],
+      "sourcePages": [
+        54,
+        55
+      ]
+    },
+    {
+      "id": "pyronite",
+      "name": "Pyronite",
+      "homeworld": "Pyros",
+      "aptitudes": [
+        "Energy Blast",
+        "Flight",
+        "Pyrokinesis",
+        "Self-Sustenance"
+      ],
+      "complication": "Extinguishing Submersion",
+      "uniquePerception": "Heat Vision",
+      "paths": [
+        "Flare Aviator",
+        "Molten Armor",
+        "Supernova Blaster"
+      ],
+      "sourcePages": [
+        55
+      ]
+    },
+    {
+      "id": "tetramand",
+      "name": "Tetramand",
+      "homeworld": "Khoros",
+      "aptitudes": [
+        "Enhanced Durability",
+        "Hyper Leaping",
+        "Hyper-Musculature",
+        "Poly-Limb Musculature"
+      ],
+      "complication": "Overbearing Pride",
+      "uniquePerception": "Quad-Grip",
+      "paths": [
+        "Four-Armed Gladiator",
+        "Shockwave Champion",
+        "Titan Wrestler"
+      ],
+      "sourcePages": [
+        56
+      ]
+    }
+  ],
+  "archetypes": [
+    {
+      "id": "brawler",
+      "name": "Brawler",
+      "bonus": "+2 physical damage to all melee attacks",
+      "flaw": "Short Fuse",
+      "abilities": [
+        "Clustered Clasp",
+        "Humungousaur Logic",
+        "I'm So Angry Right Now!",
+        "It's Punching Time!"
+      ],
+      "sourcePages": [
+        47,
+        48
+      ]
+    },
+    {
+      "id": "outlaw",
+      "name": "Outlaw",
+      "bonus": "Start with one free item from Weapons and Gear",
+      "flaw": "Bad Reputation",
+      "abilities": [
+        "Bounty Hunter Reflex",
+        "Cheap Shot",
+        "Slip the Plumber Cuffs",
+        "Undertown Connections"
+      ],
+      "sourcePages": [
+        48
+      ]
+    },
+    {
+      "id": "prodigy",
+      "name": "Prodigy",
+      "bonus": "Gain 1 additional Hero Point at the start of every Episode",
+      "flaw": "Overconfident Risk-Taker",
+      "abilities": [
+        "Accidental Masterpiece",
+        "Going Hero!",
+        "Smoothie-Fueled Adrenaline",
+        "What Does This Button Do?!"
+      ],
+      "sourcePages": [
+        48,
+        49
+      ]
+    },
+    {
+      "id": "protector",
+      "name": "Protector",
+      "bonus": "Advantage on Tests in Rescue Scenes to evacuate civilians, contain hazards, or take hits for others",
+      "flaw": "Code of Protection",
+      "abilities": [
+        "Civilians First",
+        "I Got Your Back!",
+        "Inspiring Bastion",
+        "You'll Have to Get Through Me!"
+      ],
+      "sourcePages": [
+        49,
+        50
+      ]
+    },
+    {
+      "id": "techno-brain",
+      "name": "Techno-Brain",
+      "bonus": "Gain the Tech Skill for free",
+      "flaw": "Overthinking",
+      "abilities": [
+        "Galvan Science, Bro!",
+        "Have You Tried Turning It Off and On Again?",
+        "Jury-Rigged Invention",
+        "Override"
+      ],
+      "sourcePages": [
+        50,
+        51
+      ]
+    }
+  ],
+  "aptitudes": [
+    {
+      "name": "Cellular Regeneration",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        56
+      ]
+    },
+    {
+      "name": "Cryokinesis",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        57
+      ]
+    },
+    {
+      "name": "Density Manipulation",
+      "paxPerGrade": 6,
+      "sourcePages": [
+        57,
+        58
+      ]
+    },
+    {
+      "name": "Duplication",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        58
+      ]
+    },
+    {
+      "name": "Energy Blast",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        59
+      ]
+    },
+    {
+      "name": "Enhanced Agility",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        59
+      ]
+    },
+    {
+      "name": "Enhanced Durability",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        60
+      ]
+    },
+    {
+      "name": "Enhanced Senses",
+      "paxPerGrade": 3,
+      "sourcePages": [
+        60
+      ]
+    },
+    {
+      "name": "Exoskeletal Dermis",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        60
+      ]
+    },
+    {
+      "name": "Extensible Organics",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        60,
+        61
+      ]
+    },
+    {
+      "name": "Flight",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        61
+      ]
+    },
+    {
+      "name": "Frictionless Acceleration",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        61,
+        62
+      ]
+    },
+    {
+      "name": "Geokinesis",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        62
+      ]
+    },
+    {
+      "name": "Hyper Leaping",
+      "paxPerGrade": 3,
+      "sourcePages": [
+        62
+      ]
+    },
+    {
+      "name": "Hyper-Cognition",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        63
+      ]
+    },
+    {
+      "name": "Hyper-Musculature",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        63,
+        64
+      ]
+    },
+    {
+      "name": "Molecular Phasing",
+      "paxPerGrade": 6,
+      "sourcePages": [
+        64
+      ]
+    },
+    {
+      "name": "Natural Weapons",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        64,
+        65
+      ]
+    },
+    {
+      "name": "Omni-Tech Arsenal",
+      "paxPerGrade": 6,
+      "sourcePages": [
+        65
+      ]
+    },
+    {
+      "name": "Phytokinesis",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        65,
+        66
+      ]
+    },
+    {
+      "name": "Poly-Limb Musculature",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        66
+      ]
+    },
+    {
+      "name": "Pyrokinesis",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        66,
+        67
+      ]
+    },
+    {
+      "name": "Self-Sustenance",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        67
+      ]
+    },
+    {
+      "name": "Sphere Form",
+      "paxPerGrade": 5,
+      "sourcePages": [
+        67,
+        68
+      ]
+    },
+    {
+      "name": "Toxicity",
+      "paxPerGrade": 4,
+      "sourcePages": [
+        68
+      ]
+    },
+    {
+      "name": "Vocal Resonators",
+      "paxPerGrade": 3,
+      "sourcePages": [
+        68,
+        69
+      ]
+    }
+  ],
+  "skills": [
+    "Acrobatics",
+    "Alien Tech",
+    "Astro-Navigation",
+    "Emergency First Aid",
+    "Galactic History",
+    "Investigation",
+    "Piloting",
+    "Subterfuge",
+    "Survival",
+    "Tech",
+    "Xenobiology",
+    "Xeno-Diplomacy"
+  ],
+  "basicTraits": [
+    "Alien Companion",
+    "Brave",
+    "Insolent Quip",
+    "Public Hero",
+    "Reckless Youth",
+    "Tiny Scale",
+    "Trusted Contact",
+    "Undertown Regular"
+  ],
+  "intermediaryTraits": [
+    "Alien Utility Bag",
+    "Catchphrase",
+    "Heroic Bloodline",
+    "Venerable Mentor"
+  ],
+  "gear": [
+    {
+      "name": "Blaster",
+      "pax": 1,
+      "sourcePage": 72
+    },
+    {
+      "name": "Energy Cuffs",
+      "pax": 1,
+      "sourcePage": 72
+    },
+    {
+      "name": "Holo-Viewer",
+      "pax": 1,
+      "sourcePage": 72
+    },
+    {
+      "name": "ID Mask",
+      "pax": 1,
+      "sourcePage": 73
+    },
+    {
+      "name": "Magno-Traction Boots",
+      "pax": 2,
+      "sourcePage": 73
+    },
+    {
+      "name": "Plumber Badge",
+      "pax": 0,
+      "conditionalCost": "1 PAX for non-affiliated Heroes",
+      "sourcePage": 73
+    },
+    {
+      "name": "UV Sun-Burst Flare",
+      "pax": 1,
+      "sourcePage": 73
+    }
+  ],
+  "combat": {
+    "actionPointsPerTurn": 3,
+    "reactionsPerRound": 1,
+    "reactionConsumesActionPoint": true,
+    "test": "1d20 + relevant Attribute + bonuses",
+    "criticalSuccess": "Natural 20 or result at least Tension + 5",
+    "advantage": "Roll 2d20 and keep highest",
+    "disadvantage": "Roll 2d20 and keep lowest",
+    "damage": "Tier Die + applicable Attribute; target DR is subtracted before Energy loss",
+    "heroPointSpendGrantsVillainPoint": true,
+    "sourcePages": [
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ]
+  },
+  "contentLimitations": {
+    "tierDOnly": true,
+    "maxAptitudeGrade": 1,
+    "coreRulebookProgressionMentioned": "Grade 5",
+    "higherTierRulesNotIncluded": "Tier C and Grade 2 progression are referred to as Core Rulebook material.",
+    "sourcePages": [
+      15,
+      43,
+      46,
+      56
+    ]
+  }
+}
