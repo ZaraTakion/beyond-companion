@@ -97,24 +97,26 @@ export default function CharacterBuilder() {
     const nextArchetype = archetypeCatalog.archetypes.find((item) => item.id === archetypeId);
     if (!nextArchetype) return;
     setDraft((current) => {
-      let nextSkills = current.skills.filter((item) => item.source !== 'archetype');
-      if (archetypeId === 'techno-brain' && !nextSkills.some((item) => item.name === 'Tech')) {
+      let nextSkills = current.skills.filter((item) =>
+        item.source !== 'archetype' && !(archetypeId === 'techno-brain' && item.name === 'Tech'),
+      );
+      if (archetypeId === 'techno-brain') {
         nextSkills = [...nextSkills, { name: 'Tech', source: 'archetype' }];
       }
 
       let nextGear: GearSelection[] = current.gear.map((item) => {
         if (item.source !== 'outlaw-bonus') return item;
         if (item.name === 'Plumber Badge' && current.plumberAffiliated) {
-          return { name: item.name, source: 'plumber-issue' };
+          return { name: item.name, source: 'plumber-issue' } as GearSelection;
         }
-        return { name: item.name, source: 'purchased' };
+        return { name: item.name, source: 'purchased' } as GearSelection;
       });
 
       if (archetypeId === 'outlaw') {
         const existing = nextGear.find((item) => item.name === 'ID Mask');
         if (existing) {
           nextGear = nextGear.map((item) =>
-            item.name === 'ID Mask' ? { name: item.name, source: 'outlaw-bonus' } : item,
+            item.name === 'ID Mask' ? { name: item.name, source: 'outlaw-bonus' } as GearSelection : item,
           );
         } else {
           nextGear = [...nextGear, { name: 'ID Mask', source: 'outlaw-bonus' }];
@@ -231,7 +233,7 @@ export default function CharacterBuilder() {
         const existing = nextGear.find((item) => item.name === name);
         if (existing) {
           nextGear = nextGear.map((item) =>
-            item.name === name ? { name: item.name, source: 'outlaw-bonus' } : item,
+            item.name === name ? { name: item.name, source: 'outlaw-bonus' } as GearSelection : item,
           );
         } else {
           nextGear = [...nextGear, { name, source: 'outlaw-bonus' }];
@@ -249,7 +251,7 @@ export default function CharacterBuilder() {
         if (badge) {
           nextGear = nextGear.map((item) =>
             item.name === 'Plumber Badge'
-              ? { name: item.name, source: plumberAffiliated ? 'plumber-issue' : 'purchased' }
+              ? { name: item.name, source: plumberAffiliated ? 'plumber-issue' : 'purchased' } as GearSelection
               : item,
           );
         } else if (plumberAffiliated) {
@@ -378,7 +380,7 @@ export default function CharacterBuilder() {
             {species.id === 'human' && <label className="field">Skill gratuita de Versatility
               <select value={versatilitySkill} onChange={(event) => chooseVersatilitySkill(event.target.value)}>
                 <option value="">Selecione uma Skill...</option>
-                {skillsCatalog.skills.map((item) => <option key={item.id} value={item.name} disabled={archetype.id === 'techno-brain' && item.name === 'Tech'}>{item.name}</option>)}
+                {skillsCatalog.skills.map((item) => <option key={item.id} value={item.name} disabled={(archetype.id === 'techno-brain' && item.name === 'Tech') || draft.skills.some((skill) => skill.name === item.name && skill.source !== 'versatility')}>{item.name}</option>)}
               </select>
             </label>}
             {archetype.id === 'techno-brain' && <div className="free-note">Tech é concedida gratuitamente pelo Archetype Techno-Brain.</div>}
