@@ -16,12 +16,15 @@
 **Gate:** não iniciar automação de uma regra sem fonte e teste de referência.
 
 ## Fase 1 — MVP de personagem
-- [ ] Especificação completa da ficha digital.
-- [ ] Criador guiado Tier D.
-- [ ] Ledger PAX e validações.
-- [ ] Cálculo das estatísticas derivadas.
-- [ ] Salvamento local e exportação JSON.
-- [ ] Testes de regressão para criação de personagem.
+- [x] Definir o modelo de domínio inicial da ficha Tier D e o ledger de PAX (ADR-005).
+- [x] Implementar validação inicial de espécie, Archetype, Path, habilidades, Grades, Skills, Traits, gear e orçamento PAX.
+- [x] Implementar cálculo inicial de Energy, Defense, Initiative, Attack Bonus e Tier Die.
+- [x] Publicar primeira interface guiada Tier D com seleção de opções e ledger dinâmico.
+- [x] Adicionar testes de domínio usando as cinco fichas prontas como referência.
+- [ ] Executar typecheck, testes e build em ambiente Node/npm.
+- [ ] Revisar segunda leitura os efeitos condicionais e todos os cálculos derivados.
+- [ ] Implementar salvamento local e exportação/importação JSON.
+- [ ] Concluir estados de ficha, edição posterior e navegação de etapas do criador.
 
 ## Fase 2 — Compêndio
 - [ ] Busca e filtros em espécies, Archetypes, aptidões e opções.

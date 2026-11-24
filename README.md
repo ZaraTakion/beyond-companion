@@ -1,6 +1,6 @@
 # Beyond Companion
 
-Companion digital e **não oficial** para **BEN 10: BEYOND — The Roleplaying Game**. O desenvolvimento começa pelo Quickstart v1 fornecido pelo usuário, com arquitetura preparada para incorporar revisões autorizadas sem misturar versões de regras.
+Companion digital e **não oficial** para **BEN 10: BEYOND — The Roleplaying Game**. O desenvolvimento começa pelo Quickstart v1 fornecido pelo usuário, com arquitetura preparada para incorporar revisões autorizadas sem misturar versões de regras. A primeira interface guiada de criação Tier D está publicada em `main`.
 
 > **Estado:** fundação do produto, inventário inicial de regras e protótipo de catálogo. Ainda não é uma implementação completa do sistema nem substitui o livro ou a decisão do Galvan Magister (GM).
 
@@ -17,7 +17,7 @@ Companion digital e **não oficial** para **BEN 10: BEYOND — The Roleplaying G
 
 ## Fonte e fidelidade
 
-A fonte inicial de regras é o PDF `ben10-beyond-rpg-quickstart-v1.pdf`, fornecido pelo usuário e **não incluído neste repositório**. O inventário em `docs/rules-audit/quickstart-v1-inventory.md` registra a cobertura estrutural e o catálogo inicial; `docs/rules-audit/open-questions.md` registra ambiguidades a resolver antes da automação.
+A fonte inicial de regras é o PDF `ben10-beyond-rpg-quickstart-v1.pdf`, fornecido pelo usuário e **não incluído neste repositório**. O inventário em `docs/rules-audit/quickstart-v1-inventory.md` e o status em `docs/rules-audit/STATUS.md` registram seis passagens de auditoria, com catálogos versionados e questões pendentes. O domínio Tier D, ledger de PAX e construtor guiado já estão implementados em primeira versão.
 
 Nenhuma regra da série, de wikis, de outros jogos ou de materiais não fornecidos deve ser apresentada como regra oficial. Cada registro de regra deve guardar sua versão e referência de página. Incertezas devem permanecer identificadas como pendentes.
 
@@ -64,6 +64,6 @@ docs/rules-audit/             inventário e questões pendentes
 
 ## Estado do projeto
 
-Seis passagens de auditoria estruturaram o Quickstart: 7 espécies, 5 Archetypes, 26 Aptitudes e 77 habilidades Grade 1; 12 Skills, 12 Traits, 7 opções de compra de gear e 4 recompensas; regras nucleares, Power-Ups, Squad/Threats, cinco personagens prontos e a aventura introdutória. Os dados são resumos rastreáveis, não uma transcrição integral. A segunda leitura visual, conferência cruzada e execução dos testes ainda estão pendentes. Consulte `docs/ROADMAP.md` e `docs/rules-audit/`.
+Seis passagens de auditoria estruturaram o Quickstart: 7 espécies, 5 Archetypes, 26 Aptitudes e 77 habilidades Grade 1; 12 Skills, 12 Traits, 7 opções de compra de gear e 4 recompensas; regras nucleares, Power-Ups, Squad/Threats, cinco personagens prontos e a aventura introdutória. Os dados são resumos rastreáveis, não uma transcrição integral. A segunda leitura visual, conferência cruzada e execução dos testes ainda estão pendentes. A interface do criador ainda não tem persistência nem exportação de ficha. Consulte `docs/ROADMAP.md` e `docs/rules-audit/`.
 
 Contribuições que alterem regras devem citar a página da fonte e distinguir fatos transcritos, interpretação e house rules. Consulte `CONTRIBUTING.md`.
