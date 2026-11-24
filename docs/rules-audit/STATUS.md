@@ -22,13 +22,14 @@
 - A primeira estruturação das áreas principais do Quickstart foi concluída em seis passes.
 - Os dados publicados são resumos mecânicos em português, com referências de página. Eles não são uma transcrição integral nem substituem a consulta ao PDF.
 - A validação atual é de integridade e organização dos dados; testes foram adicionados ao projeto, mas ainda não foram executados em um ambiente Node/npm nesta sessão.
+- A reconciliação de PAX dos cinco personagens prontos fecha 30 PAX em cada fixture após contabilizar Mind +3 e Precision +1 de Tikk.
 - O catálogo de Creative Uses ainda precisa de revisão e cobertura uniforme para todas as Aptitudes.
 - A segunda leitura visual e a conferência cruzada com todos os exemplos de ficha/aventura permanecem pendentes.
 
 ## Rulings e pontos abertos
 
 1. Molecular Phasing exclui ataques físicos, mas o Quickstart não esclarece se ataques Elementais podem ocorrer durante Phasing.
-2. A reconstrução da ficha de Tikk deixa 3 PAX não alocados a partir das compras explicitamente exibidas; o dado é preservado como sobra, sem inventar uma compra.
+2. A ficha de Tikk fecha 30 PAX quando Precision +1 é contado separadamente de Mind +3 comprado e Bigger Brain +3.
 3. As folhas prontas exibem estatísticas e algumas aquisições, mas não apresentam um ledger completo de todas as compras.
 4. Regras de Tier C e Grade 2+ são apenas parcialmente citadas e remetidas ao Core Rulebook.
 

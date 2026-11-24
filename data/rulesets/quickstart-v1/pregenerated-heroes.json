@@ -103,14 +103,14 @@
         "Blaster with Predictive Targeting: 1d20 +7 (Mind 6 + Blaster 1), 1d6 Energy."
       ],
       "purchases": {
-        "attributes": 9,
+        "attributes": 12,
         "aptitudes": 8,
         "skills": 4,
         "traits": 4,
         "gear": 2,
         "energy": 0,
         "other": 0,
-        "total": 27
+        "total": 30
       },
       "aptitudes": [
         {
@@ -140,10 +140,9 @@
         "Plumber Badge"
       ],
       "notes": [
-        "Mind +6 inclui +3 comprado no atributo e +3 de Bigger Brain; o cap +3 do atributo não conta o bônus da Aptitude.",
-        "O personagem tem 3 PAX não alocados pela reconstrução das compras listadas; não presumir compra não mostrada."
+        "Mind +6 inclui +3 comprados no atributo e +3 de Bigger Brain; Precision +1 também é comprado separadamente. O cap +3 se aplica ao valor base antes do bônus da Aptitude."
       ],
-      "unallocatedPax": 3
+      "unallocatedPax": 0
     },
     {
       "id": "braxxa",
