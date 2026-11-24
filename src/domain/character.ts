@@ -364,7 +364,7 @@ export function validateCharacter(draft: CharacterDraft): CharacterValidation {
       addIssue(issues, 'ARCHETYPE_ABILITY_COUNT', 'No Tier D, escolha exatamente duas Archetype Abilities diferentes.');
     }
     for (const ability of draft.archetypeAbilities) {
-      if (!archetype.abilities.includes(ability)) {
+      if (!archetype.abilities.some((available) => available.name === ability)) {
         addIssue(issues, 'ARCHETYPE_ABILITY_MISMATCH', `${ability} não pertence ao Archetype ${archetype.name}.`);
       }
     }
