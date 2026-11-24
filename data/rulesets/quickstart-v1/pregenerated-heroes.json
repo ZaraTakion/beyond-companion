@@ -69,7 +69,8 @@
       "notes": [
         "Energy 11 implica +1 Energy comprado (2 PAX), necessário para fechar o orçamento de 30 PAX.",
         "O nome Pathfinder é rótulo de papel/personagem; o Archetype mecânico é Prodigy."
-      ]
+      ],
+      "unallocatedPax": 0
     },
     {
       "id": "tikk",
@@ -141,7 +142,8 @@
       "notes": [
         "Mind +6 inclui +3 comprado no atributo e +3 de Bigger Brain; o cap +3 do atributo não conta o bônus da Aptitude.",
         "O personagem tem 3 PAX não alocados pela reconstrução das compras listadas; não presumir compra não mostrada."
-      ]
+      ],
+      "unallocatedPax": 3
     },
     {
       "id": "braxxa",
@@ -215,7 +217,8 @@
       ],
       "notes": [
         "Dano base Four-Fisted Strike confirma Tier Die 1d6 + Force 3 + bônus Brawler +2."
-      ]
+      ],
+      "unallocatedPax": 0
     },
     {
       "id": "ves",
@@ -290,7 +293,8 @@
       ],
       "notes": [
         "Outlaw fornece um item gratuito; o ID Mask é identificado como item concedido pelo Archetype. Holo-Viewer completa 1 PAX de gear pago."
-      ]
+      ],
+      "unallocatedPax": 0
     },
     {
       "id": "jax",
@@ -362,7 +366,8 @@
       "notes": [
         "Versatility concede uma Skill e um Basic Trait gratuitos; Emergency First Aid e Brave estão identificados como bônus.",
         "Energy 11 implica +1 Energy comprado (2 PAX)."
-      ]
+      ],
+      "unallocatedPax": 0
     }
   ]
 }

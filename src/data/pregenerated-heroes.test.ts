@@ -16,7 +16,7 @@ describe('Quickstart v1 pre-generated Hero fixtures', () => {
   it('records the character sheets with page references and PAX breakdowns', () => {
     for (const hero of catalog.heroes) {
       expect(hero.sourcePages.length).toBeGreaterThan(0);
-      expect(hero.purchases.total).toBe(30);
+      expect(hero.purchases.total + hero.unallocatedPax).toBe(30);
       expect(hero.reported.tierDie).toBe('1d6');
     }
   });

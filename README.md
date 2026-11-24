@@ -64,6 +64,6 @@ docs/rules-audit/             inventário e questões pendentes
 
 ## Estado do projeto
 
-A primeira passagem de auditoria conferiu as páginas de espécies (7), Archetypes (5) e Evolutionary Aptitudes (26), com 77 habilidades de Grade 1 resumidas em dados versionados e referências de página. A revisão mecânica de Skills, Traits, equipamentos, pré-gerados e exemplos de combate ainda está pendente. Consulte `docs/ROADMAP.md` e `docs/rules-audit/` para o estado detalhado.
+Seis passagens de auditoria estruturaram o Quickstart: 7 espécies, 5 Archetypes, 26 Aptitudes e 77 habilidades Grade 1; 12 Skills, 12 Traits, 7 opções de compra de gear e 4 recompensas; regras nucleares, Power-Ups, Squad/Threats, cinco personagens prontos e a aventura introdutória. Os dados são resumos rastreáveis, não uma transcrição integral. A segunda leitura visual, conferência cruzada e execução dos testes ainda estão pendentes. Consulte `docs/ROADMAP.md` e `docs/rules-audit/`.
 
 Contribuições que alterem regras devem citar a página da fonte e distinguir fatos transcritos, interpretação e house rules. Consulte `CONTRIBUTING.md`.
