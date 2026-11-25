@@ -400,7 +400,7 @@ export default function CharacterBuilder() {
                 ))}
               </div>
             </div>
-            <div className="builder-reference-grid" aria-label="Referências da espécie, caminho e Archetype">
+            <div className="builder-reference-grid" role="group" aria-label="Referências da espécie, caminho e Archetype">
               <article className="builder-reference-card">
                 <span>UNIQUE PERCEPTION · PDF P. {species.sourcePages.join(', ')}</span>
                 <strong>{species.uniquePerception.name}</strong>
