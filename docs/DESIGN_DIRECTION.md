@@ -66,7 +66,7 @@ O redesign de CSS e textos do dashboard está na branch `prototype/cartoon-sci-f
 
 **Os arquivos de arte originais ainda não foram baixados nem versionados** porque o ambiente desta sessão não conseguiu acessar os downloads externos. Não usar hotlinks como substituto. A incorporação exige baixar do autor, inspecionar spritesheets, selecionar/recortar frames, otimizar arquivos e registrar origem/licença em `THIRD_PARTY_NOTICES.md`.
 
-Typecheck, testes, build, revisão visual responsiva e preview de deployment ainda precisam ser executados antes de considerar o redesign pronto para merge.
+A validação automatizada disponível está documentada em `docs/PROJECT_STATUS.md`. A run #53 aprovou TypeScript, 52 testes de unidade/componente e build de produção no commit correspondente; um teste adicional de navegação e a suíte Playwright foram adicionados depois e ainda precisam ser executados.
 
 
 ## Passagem de memorabilidade visual — edição editorial
@@ -112,4 +112,4 @@ Acessibilidade e consistência:
 - Rodapé, cabeçalhos e etiquetas mantêm o vocabulário cromático do caderno de campo.
 - Corrigido o contraste da nota de fonte no arquivo de espécies para sua superfície clara.
 
-A experiência visual está implementada no código. A aprovação final ainda depende de executar typecheck/testes/build e fazer uma inspeção visual real em larguras de desktop, tablet e telefone. O preview Vercel desta branch não pôde ser consultado pela sessão porque o escopo da equipe retorna 403 de autorização; não houve alteração de hospedagem nem pedido de upgrade.
+A experiência visual está implementada no código. O typecheck, os testes unitários/de componente e o build foram aprovados na run #53 (52 testes, commit registrado em `docs/PROJECT_STATUS.md`). A inspeção visual manual em larguras de desktop, tablet e telefone permanece pendente. A consulta de deployment confirmou que não há projeto Vercel vinculado ao repositório/commit, portanto não existe preview verificável nesta etapa. A workflow Playwright e os seis cenários E2E estão versionados, mas ainda não foram executados; a workflow do PR só passa a ser a versão ativa depois de chegar ao branch base.
