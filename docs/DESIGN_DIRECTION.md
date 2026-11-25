@@ -98,3 +98,18 @@ O antigo seletor circular foi substituído por um índice editorial com os nomes
 A apresentação evita sugerir que grafismos genéricos sejam retratos ou representações canônicas de espécies. Não foram criadas ilustrações, silhuetas de personagens nem imagens. O catálogo continua a ser a única fonte dos nomes e dados exibidos; a referência de páginas do PDF permanece visível.
 
 A lista adapta-se a duas colunas em telas médias e a uma coluna em telas estreitas. A seleção continua acessível por botões com estado aria-pressed e foco visível. Não houve alteração mecânica.
+
+
+## Passagem final — navegação e experiência mobile
+
+A navegação foi unificada como uma moldura persistente do arquivo: sidebar no desktop, masthead com navegação compacta em tablets e barra de seções em três colunas no celular. O cabeçalho de página deixou de competir por posição fixa com a navegação em telas menores.
+
+Acessibilidade e consistência:
+- Incluído link de salto para o conteúdo principal, visível ao receber foco.
+- Marca abreviada BC, com forma original e sem emblemas da franquia.
+- Botão de ação superior muda de destino conforme a página atual.
+- Estados ativos, foco visível, movimento reduzido e alvos táteis foram revistos.
+- Rodapé, cabeçalhos e etiquetas mantêm o vocabulário cromático do caderno de campo.
+- Corrigido o contraste da nota de fonte no arquivo de espécies para sua superfície clara.
+
+A experiência visual está implementada no código. A aprovação final ainda depende de executar typecheck/testes/build e fazer uma inspeção visual real em larguras de desktop, tablet e telefone. O preview Vercel desta branch não pôde ser consultado pela sessão porque o escopo da equipe retorna 403 de autorização; não houve alteração de hospedagem nem pedido de upgrade.
