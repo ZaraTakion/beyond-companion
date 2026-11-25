@@ -15,7 +15,7 @@ describe('SpeciesScanner UI', () => {
 
     expect(galvanButton.getAttribute('aria-pressed')).toBe('true');
     expect(screen.getByRole('heading', { name: 'Galvan' })).toBeTruthy();
-    expect(screen.getByText('Galvan Prime')).toBeTruthy();
+    expect(screen.getAllByText('Galvan Prime')).toHaveLength(2);
     expect(screen.getByText('Micro-Diagnostic')).toBeTruthy();
     expect(screen.getByText('Physical Fragility')).toBeTruthy();
   });
