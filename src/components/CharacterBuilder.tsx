@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom';
 import { useMemo, useRef, useState } from 'react';
 import speciesCatalog from '../../data/rulesets/quickstart-v1/species.json';
 import archetypeCatalog from '../../data/rulesets/quickstart-v1/archetypes.json';
@@ -643,123 +644,126 @@ export default function CharacterBuilder() {
         </aside>
       </div>
 
-      <section className="print-sheet" role="region" aria-label="Ficha de personagem para impressão">
-        <header className="print-sheet-header">
-          <div>
-            <span>BEYOND COMPANION · QUICKSTART V1</span>
-            <h1>{draft.name.trim() || 'Hero sem nome'}</h1>
-            <p>Ficha de personagem · Tier D · Projeto independente de fãs</p>
-          </div>
-          <div className="print-sheet-budget">
-            <strong>{validation.ledger.spent} / 30</strong>
-            <span>PAX utilizados</span>
-            <b>{remainingPax} restantes</b>
-          </div>
-        </header>
-
-        <section className="print-sheet-stat-grid" aria-label="Estatísticas derivadas">
-          <div><span>Energy</span><strong>{validation.derivedStats.energy}</strong></div>
-          <div><span>Defense</span><strong>{validation.derivedStats.defense}</strong></div>
-          <div><span>Initiative</span><strong>{validation.derivedStats.initiative}</strong></div>
-          <div><span>Attack Bonus</span><strong>+{validation.derivedStats.attackBonus}</strong></div>
-          <div><span>Tier Die</span><strong>{validation.derivedStats.tierDie}</strong></div>
-          <div><span>Hero Points / Episode</span><strong>+{heroPointsPerEpisode}</strong></div>
-        </section>
-
-        <div className="print-sheet-columns">
-          <section className="print-sheet-section">
-            <h2>Identidade</h2>
-            <dl>
-              <div><dt>Espécie</dt><dd>{species.name}</dd></div>
-              <div><dt>Archetype</dt><dd>{archetype.name}</dd></div>
-              <div><dt>Evolutionary Path</dt><dd>{draft.evolutionaryPath}</dd></div>
-              <div><dt>Plumber afiliado</dt><dd>{draft.plumberAffiliated ? 'Sim' : 'Não'}</dd></div>
-            </dl>
-            <h3>Archetype Abilities</h3>
-            <ul>{draft.archetypeAbilities.map((name) => <li key={name}>{name}</li>)}</ul>
-            <h3>Archetype Bonus</h3>
-            <p>{archetype.bonus}</p>
-            <h3>Archetype Flaw · {archetype.flaw.name}</h3>
-            <p>{archetype.flaw.summary}</p>
-            <h3>Unique Perception · {species.uniquePerception.name}</h3>
-            <p>{species.uniquePerception.summary}</p>
-            <h3>Complication · {species.complication.name}</h3>
-            <p>{species.complication.summary}</p>
-            <h3>Evolutionary Path · {evolutionaryPath.name}</h3>
-            <p>{evolutionaryPath.summary}</p>
-          </section>
-
-          <section className="print-sheet-section">
-            <h2>Attributes efetivos</h2>
-            <dl>
-              {attributeNames.map((name) => {
-                const base = draft.attributes[name];
-                const effective = validation.derivedStats.effectiveAttributes[name];
-                return (
-                  <div key={name}>
-                    <dt>{attributeLabels[name]}</dt>
-                    <dd>{effective === base ? '+' + effective : '+' + base + ' base → +' + effective + ' efetivo'}</dd>
-                  </div>
-                );
-              })}
-              <div><dt>Energy comprada</dt><dd>{draft.energyBought}</dd></div>
-            </dl>
-          </section>
-
-          <section className="print-sheet-section">
-            <h2>Condições e recursos</h2>
-            <div className="print-condition-grid">
-              <span>□ Tired</span>
-              <span>□ Wounded</span>
-              <span>□ Defeated</span>
+      {createPortal(
+        <section className="print-sheet" role="region" aria-label="Ficha de personagem para impressão">
+          <header className="print-sheet-header">
+            <div>
+              <span>BEYOND COMPANION · QUICKSTART V1</span>
+              <h1>{draft.name.trim() || 'Hero sem nome'}</h1>
+              <p>Ficha de personagem · Tier D · Projeto independente de fãs</p>
             </div>
-            <dl>
-              <div><dt>Omni Die</dt><dd>1</dd></div>
-              <div><dt>Bônus de Hero Points por Episode</dt><dd>+{heroPointsPerEpisode}</dd></div>
-            </dl>
+            <div className="print-sheet-budget">
+              <strong>{validation.ledger.spent} / 30</strong>
+              <span>PAX utilizados</span>
+              <b>{remainingPax} restantes</b>
+            </div>
+          </header>
+  
+          <section className="print-sheet-stat-grid" aria-label="Estatísticas derivadas">
+            <div><span>Energy</span><strong>{validation.derivedStats.energy}</strong></div>
+            <div><span>Defense</span><strong>{validation.derivedStats.defense}</strong></div>
+            <div><span>Initiative</span><strong>{validation.derivedStats.initiative}</strong></div>
+            <div><span>Attack Bonus</span><strong>+{validation.derivedStats.attackBonus}</strong></div>
+            <div><span>Tier Die</span><strong>{validation.derivedStats.tierDie}</strong></div>
+            <div><span>Hero Points / Episode</span><strong>+{heroPointsPerEpisode}</strong></div>
           </section>
-
-          <section className="print-sheet-section">
-            <h2>Evolutionary Aptitudes</h2>
-            <ul>{draft.aptitudePurchases.length
-              ? draft.aptitudePurchases.map((item) => <li key={item.name}>{item.name} · Grade {item.grade}</li>)
-              : <li>Nenhuma selecionada</li>}</ul>
-          </section>
-
-          <section className="print-sheet-section">
-            <h2>Skills</h2>
-            <ul>{draft.skills.length
-              ? draft.skills.map((item) => <li key={item.name}>{item.name}{item.source === 'purchased' ? '' : ' · gratuita'}</li>)
-              : <li>Nenhuma selecionada</li>}</ul>
-            <h2>Traits</h2>
-            <ul>{draft.traits.length
-              ? draft.traits.map((item) => <li key={item.name}>{item.name}{item.source === 'versatility' ? ' · gratuita' : ''}</li>)
-              : <li>Nenhuma selecionada</li>}</ul>
-          </section>
-
-          <section className="print-sheet-section">
-            <h2>Weapons and Gear</h2>
-            <ul>{draft.gear.length
-              ? draft.gear.map((item) => <li key={item.name}>{item.name}{item.source === 'purchased' ? '' : ' · gratuita'}</li>)
-              : <li>Nenhum item selecionado</li>}</ul>
-          </section>
-
-          <section className="print-sheet-section">
-            <h2>Ledger de PAX</h2>
-            {validation.ledger.entries.length
-              ? <dl>{validation.ledger.entries.map((entry) => (
-                  <div key={entry.id}><dt>{entry.label}</dt><dd>{entry.cost}</dd></div>
-                ))}</dl>
-              : <p>Nenhuma compra registrada.</p>}
-            <div className="print-sheet-total"><strong>Total</strong><strong>{validation.ledger.spent} / 30 PAX</strong></div>
-          </section>
-        </div>
-
-        <footer className="print-sheet-footer">
-          <span>{issues.length === 0 ? 'Validações implementadas: sem pendências.' : `Atenção: ${issues.length} pendência(s) na ficha.`}</span>
-          <span>Os efeitos situacionais continuam sujeitos à interpretação do GM · Quickstart v1</span>
-        </footer>
-      </section>
+  
+          <div className="print-sheet-columns">
+            <section className="print-sheet-section">
+              <h2>Identidade</h2>
+              <dl>
+                <div><dt>Espécie</dt><dd>{species.name}</dd></div>
+                <div><dt>Archetype</dt><dd>{archetype.name}</dd></div>
+                <div><dt>Evolutionary Path</dt><dd>{draft.evolutionaryPath}</dd></div>
+                <div><dt>Plumber afiliado</dt><dd>{draft.plumberAffiliated ? 'Sim' : 'Não'}</dd></div>
+              </dl>
+              <h3>Archetype Abilities</h3>
+              <ul>{draft.archetypeAbilities.map((name) => <li key={name}>{name}</li>)}</ul>
+              <h3>Archetype Bonus</h3>
+              <p>{archetype.bonus}</p>
+              <h3>Archetype Flaw · {archetype.flaw.name}</h3>
+              <p>{archetype.flaw.summary}</p>
+              <h3>Unique Perception · {species.uniquePerception.name}</h3>
+              <p>{species.uniquePerception.summary}</p>
+              <h3>Complication · {species.complication.name}</h3>
+              <p>{species.complication.summary}</p>
+              <h3>Evolutionary Path · {evolutionaryPath.name}</h3>
+              <p>{evolutionaryPath.summary}</p>
+            </section>
+  
+            <section className="print-sheet-section">
+              <h2>Attributes efetivos</h2>
+              <dl>
+                {attributeNames.map((name) => {
+                  const base = draft.attributes[name];
+                  const effective = validation.derivedStats.effectiveAttributes[name];
+                  return (
+                    <div key={name}>
+                      <dt>{attributeLabels[name]}</dt>
+                      <dd>{effective === base ? '+' + effective : '+' + base + ' base → +' + effective + ' efetivo'}</dd>
+                    </div>
+                  );
+                })}
+                <div><dt>Energy comprada</dt><dd>{draft.energyBought}</dd></div>
+              </dl>
+            </section>
+  
+            <section className="print-sheet-section">
+              <h2>Condições e recursos</h2>
+              <div className="print-condition-grid">
+                <span>□ Tired</span>
+                <span>□ Wounded</span>
+                <span>□ Defeated</span>
+              </div>
+              <dl>
+                <div><dt>Omni Die</dt><dd>1</dd></div>
+                <div><dt>Bônus de Hero Points por Episode</dt><dd>+{heroPointsPerEpisode}</dd></div>
+              </dl>
+            </section>
+  
+            <section className="print-sheet-section">
+              <h2>Evolutionary Aptitudes</h2>
+              <ul>{draft.aptitudePurchases.length
+                ? draft.aptitudePurchases.map((item) => <li key={item.name}>{item.name} · Grade {item.grade}</li>)
+                : <li>Nenhuma selecionada</li>}</ul>
+            </section>
+  
+            <section className="print-sheet-section">
+              <h2>Skills</h2>
+              <ul>{draft.skills.length
+                ? draft.skills.map((item) => <li key={item.name}>{item.name}{item.source === 'purchased' ? '' : ' · gratuita'}</li>)
+                : <li>Nenhuma selecionada</li>}</ul>
+              <h2>Traits</h2>
+              <ul>{draft.traits.length
+                ? draft.traits.map((item) => <li key={item.name}>{item.name}{item.source === 'versatility' ? ' · gratuita' : ''}</li>)
+                : <li>Nenhuma selecionada</li>}</ul>
+            </section>
+  
+            <section className="print-sheet-section">
+              <h2>Weapons and Gear</h2>
+              <ul>{draft.gear.length
+                ? draft.gear.map((item) => <li key={item.name}>{item.name}{item.source === 'purchased' ? '' : ' · gratuita'}</li>)
+                : <li>Nenhum item selecionado</li>}</ul>
+            </section>
+  
+            <section className="print-sheet-section">
+              <h2>Ledger de PAX</h2>
+              {validation.ledger.entries.length
+                ? <dl>{validation.ledger.entries.map((entry) => (
+                    <div key={entry.id}><dt>{entry.label}</dt><dd>{entry.cost}</dd></div>
+                  ))}</dl>
+                : <p>Nenhuma compra registrada.</p>}
+              <div className="print-sheet-total"><strong>Total</strong><strong>{validation.ledger.spent} / 30 PAX</strong></div>
+            </section>
+          </div>
+  
+          <footer className="print-sheet-footer">
+            <span>{issues.length === 0 ? 'Validações implementadas: sem pendências.' : `Atenção: ${issues.length} pendência(s) na ficha.`}</span>
+            <span>Os efeitos situacionais continuam sujeitos à interpretação do GM · Quickstart v1</span>
+          </footer>
+        </section>
+        , document.body,
+      )}
     </section>
   );
 }

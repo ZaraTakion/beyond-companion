@@ -63,6 +63,23 @@ test('updates effective attributes and the printable character sheet', async ({ 
 
   await page.emulateMedia({ media: 'print' });
   await expect(printable).toBeVisible();
+
+  const printLayout = await page.evaluate(() => {
+    const root = document.getElementById('root');
+    const sheet = document.querySelector('.print-sheet');
+    return {
+      rootDisplay: root ? getComputedStyle(root).display : 'missing',
+      sheetIsDirectBodyChild: sheet?.parentElement === document.body,
+      sheetTop: sheet?.getBoundingClientRect().top,
+      bodyHeight: document.body.scrollHeight,
+      sheetHeight: sheet?.getBoundingClientRect().height ?? 0,
+    };
+  });
+
+  expect(printLayout.rootDisplay).toBe('none');
+  expect(printLayout.sheetIsDirectBodyChild).toBe(true);
+  expect(printLayout.sheetTop).toBe(0);
+  expect(printLayout.bodyHeight).toBeLessThanOrEqual(printLayout.sheetHeight + 1);
 });
 
 test('exports and re-imports a versioned character JSON file', async ({ page }) => {
