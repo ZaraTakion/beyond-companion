@@ -87,7 +87,7 @@ A branch de redesign entrega uma interface responsiva com três áreas:
 - **Guia de consulta:** onze seções catalogadas, referências de páginas e busca dentro da seção ativa.
 - **Construtor Tier D:** cinco etapas, validação de escolhas, ledger de PAX e resumo dos atributos derivados.
 
-Também estão disponíveis navegação por URL (hash), histórico do navegador, exportação manual da ficha em JSON e folha de impressão que pode ser salva como PDF pelo navegador. O aplicativo não mantém salvamento automático, não sincroniza dados com servidor e não exige conta.
+Também estão disponíveis navegação por URL (hash), histórico do navegador, exportação e importação manual de fichas JSON e folha de impressão que pode ser salva como PDF pelo navegador. A importação aceita o formato versionado gerado pelo próprio aplicativo. O aplicativo não mantém salvamento automático, não sincroniza dados com servidor e não exige conta.
 
 A validação automatizada mais recente deve ser consultada no [workflow do GitHub Actions](https://github.com/ZaraTakion/beyond-companion/actions). A suíte cobre TypeScript, testes unitários e build; inspeção visual manual e testes E2E de navegador devem ser registrados separadamente.
 
