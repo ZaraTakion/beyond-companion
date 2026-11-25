@@ -9,7 +9,7 @@ Entregar uma interface de consulta e uso do conteúdo do Quickstart v1, com fide
 1. **Presentation (`src/`)** — React, navegação, pesquisa, formulários e mensagens acessíveis.
 2. **Domain (`src/domain/`)** — cálculos e validações das regras que aparecem no Quickstart, especialmente criação Tier D e PAX.
 3. **Ruleset (`data/rulesets/quickstart-v1/`)** — resumos estruturados das espécies, opções, habilidades, custos, regras, exemplos e aventura presentes no PDF.
-4. **Local persistence (quando implementada)** — salvar preferências e fichas locais sem conta ou backend; deve ser simples e reversível.
+4. **Persistência local** — salvar o rascunho ativo no localStorage, com envelope versionado e backup JSON portátil. A aplicação funciona como site estático e não exige backend, autenticação ou banco de dados remoto.
 
 ## Regras como dados
 
@@ -28,8 +28,12 @@ Cada entrada deve:
 - Não assumir regras ausentes para Tier C, Grades 2–5 ou Tiers superiores.
 - Efeitos situacionais e ambiguidades devem permanecer visíveis e sujeitos à decisão do GM.
 
-## Limites técnicos do produto atual
+## Persistência e limites técnicos
 
+- O navegador mantém um único rascunho ativo por origem/dispositivo; não é um armazenamento de longo prazo garantido pelo navegador.
+- A exportação JSON é o mecanismo portátil de backup e transferência entre dispositivos.
+- O envelope contém identificador de schema, versão e ruleset para impedir a importação silenciosa de formatos incompatíveis.
+- O usuário deve exportar uma cópia para não depender somente do armazenamento do navegador.
 - Sem backend, contas, sincronização, multiplayer ou recursos pagos.
 - Sem ferramentas de campanha não descritas no Quickstart.
 - Sem ruleset do Core Rulebook até haver fonte autorizada e nova aprovação de escopo.
