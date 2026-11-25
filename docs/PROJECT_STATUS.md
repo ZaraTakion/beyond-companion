@@ -42,7 +42,7 @@ O front-end agora possui testes de componente para navegação, atlas de espéci
 - Build de produção: aprovado; Vite transformou 35 módulos.
 - Dependências instaladas: 96 pacotes.
 
-**Limite importante:** depois da run #53 foi acrescentado mais um teste de navegação/rolagem e foi adicionada uma suíte Playwright com seis cenários E2E. Esses testes ainda não têm uma execução CI comprovada no head atual. A workflow de navegador está versionada na branch do PR, mas uma workflow adicionada apenas no head de um PR não passa a ser a workflow executada pelo GitHub Actions até estar no branch base. O PR permanece sem merge.
+**Limite importante:** depois da run #53 foi acrescentado mais um teste de navegação/rolagem e foi adicionada uma suíte Playwright com seis cenários E2E. Esses testes ainda não têm uma execução CI comprovada no head atual. A workflow de navegador está versionada na branch do PR, mas não há execução CI registrada para a versão atual; portanto, os cenários Playwright permanecem sem comprovação.
 
 Não foi feita inspeção visual manual em navegador real nos breakpoints desktop, tablet e celular. Não há projeto Vercel vinculado ao repositório/commit nem URL de preview confirmada.
 
