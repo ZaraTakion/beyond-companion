@@ -79,8 +79,16 @@ docs/decisions/               decisões arquiteturais
 docs/rules-audit/              inventário, auditoria e pendências
 ```
 
-## Estado
+## Estado da interface
 
-O Quickstart foi estruturado em seis passes de auditoria. O domínio Tier D e a primeira interface de criação já foram iniciados com base nesse conteúdo. A revisão cruzada, a execução de typecheck/testes/build e a validação prática continuam pendentes. Ainda não há salvamento local nem exportação da ficha.
+A branch de redesign entrega uma interface responsiva com três áreas:
+
+- **Visão geral:** entrada editorial, aviso de independência e atlas interativo das espécies.
+- **Guia de consulta:** onze seções catalogadas, referências de páginas e busca dentro da seção ativa.
+- **Construtor Tier D:** cinco etapas, validação de escolhas, ledger de PAX e resumo dos atributos derivados.
+
+Também estão disponíveis navegação por URL (hash), histórico do navegador, exportação manual da ficha em JSON e folha de impressão que pode ser salva como PDF pelo navegador. O aplicativo não mantém salvamento automático, não sincroniza dados com servidor e não exige conta.
+
+A validação automatizada mais recente deve ser consultada no [workflow do GitHub Actions](https://github.com/ZaraTakion/beyond-companion/actions). A suíte cobre TypeScript, testes unitários e build; inspeção visual manual e testes E2E de navegador devem ser registrados separadamente.
 
 Contribuições devem citar a página do Quickstart e distinguir texto da fonte, resumo e interpretação.
