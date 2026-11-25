@@ -737,7 +737,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
   .scanner-count strong { font-size: 1.2rem; }
   .scanner-count span { font-size: .4rem; }
   .scanner-console { padding: 8px; }
-  .scanner-orbit-node { width: 53px; }
+  .scanner-orbit-node { width: 53px; --node-radius: min(36vw, 118px); }
   .record-topline { flex-wrap: wrap; }
   .record-title-row { flex-direction: column; }
 }
