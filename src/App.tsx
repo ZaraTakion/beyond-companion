@@ -34,9 +34,9 @@ export default function App() {
       </header>
 
       <section className="hero" id="top">
-        <div className="eyebrow">COMPANION DE MESA · PROTÓTIPO</div>
+        <div className="eyebrow">GUIA RÁPIDO DIGITAL · QUICKSTART V1</div>
         <h1>Seu próximo herói<br /><em>começa aqui.</em></h1>
-        <p>Consulte o Quickstart, compare opções e prepare a criação do seu personagem. Cada regra catalogada aponta para sua página de origem.</p>
+        <p>Consulte as regras, opções e exemplos que estão no PDF Quickstart v1. Esta versão não adiciona conteúdo externo ao documento.</p>
         <div className="hero-meta">
           <span><strong>{ruleset.species.length}</strong> espécies</span>
           <span><strong>{ruleset.archetypes.length}</strong> Archetypes</span>
@@ -62,7 +62,7 @@ export default function App() {
         <section className="content-grid">
           <article className="panel feature-panel">
             <div className="panel-kicker">REGRAS DO QUICKSTART</div>
-            <h2>Uma base rastreável.<br />Sem regras inventadas.</h2>
+            <h2>O Quickstart,<br />em consulta digital.</h2>
             <p>Este protótipo usa um pacote de regras separado da interface. Revisões futuras poderão entrar como outra versão sem alterar fichas já criadas.</p>
             <div className="stat-row">
               <div><strong>{ruleset.tierD.pax}</strong><span>PAX iniciais</span></div>
@@ -73,8 +73,8 @@ export default function App() {
           <article className="panel status-panel">
             <div className="panel-kicker">PRÓXIMO MARCO</div>
             <h2>Criador Tier D</h2>
-            <p>Primeira versão do construtor guiado: escolhas de espécie e Archetype, ledger de PAX, limites de Tier D e estatísticas derivadas.</p>
-            <span className="status-tag">Em implementação · Fase 1</span>
+            <p>O guia está sendo organizado exclusivamente a partir das regras e exemplos presentes no Quickstart v1.</p>
+            <span className="status-tag">Escopo atual · Quickstart v1</span>
           </article>
           <article className="panel note-panel">
             <div className="panel-kicker">FIDELIDADE</div>
@@ -82,7 +82,7 @@ export default function App() {
           </article>
           <article className="panel note-panel">
             <div className="panel-kicker">FONTE ATUAL</div>
-            <p>Somente o PDF Quickstart v1 fornecido pelo usuário. Grades acima de 1 e progressão além do Tier D não serão presumidas.</p>
+            <p>Somente conteúdo presente no PDF Quickstart v1. O Core Rulebook será tratado em uma etapa futura, quando estiver disponível e for conferido.</p>
           </article>
         </section>
       )}

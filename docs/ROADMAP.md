@@ -1,54 +1,57 @@
-# Roadmap inicial
+# Roadmap — Guia Rápido Digital (Quickstart v1)
 
-## Fase 0 — Fundamentos e fidelidade de regras
-- [x] Identificar a fonte de regras: Quickstart v1 fornecido pelo usuário.
+## Regra de escopo
+
+Até a disponibilização e conferência do Core Rulebook oficial, o projeto implementa **somente o conteúdo presente no PDF Quickstart v1 fornecido pelo usuário**. Não adicionar regras de outras fontes, extrapolações ou funcionalidades de companion completo.
+
+## Fase 0 — Inventário e auditoria do PDF
+- [x] Identificar o Quickstart v1 como fonte única.
 - [x] Criar inventário de seções e páginas.
-- [x] Registrar catálogo inicial de espécies, Archetypes, aptidões, Skills, Traits e equipamentos.
-- [x] Auditar Species, Archetypes e Evolutionary Aptitudes Grade 1 (audit pass 01).
-- [x] Auditar Skills, Traits e Weapons/Gear; separar sete opções de compra de quatro recompensas da aventura (audit pass 02).
-- [x] Auditar regras nucleares de criação, Tests, combate, dano, condições, Rescue/Interlude e recursos (audit pass 03).
-- [x] Auditar Power-Ups, Fuse Bots, Plumber Squad e Threat Archetypes do Quickstart (audit pass 04).
-- [x] Catalogar os cinco personagens prontos e reconciliar exemplos básicos de Initiative, dano e PAX (audit pass 05).
-- [x] Catalogar aventura introdutória: Truths, locais, clocks, rescue objectives, threats e rewards (audit pass 06).
-- [ ] Fazer segunda leitura cruzada e corrigir divergências ou ambiguidades.
-- [ ] Resolver ambiguidades que dependem de decisão do GM ou esclarecimento editorial.
+- [x] Catalogar espécies, Archetypes e Evolutionary Aptitudes Grade 1.
+- [x] Catalogar Skills, Traits e Weapons and Gear.
+- [x] Catalogar regras de criação, testes, recursos, combate, dano, Conditions, Rescue e Interlude.
+- [x] Catalogar Power-Ups, Fuse Bots, Squad e Threat Archetypes.
+- [x] Registrar os cinco personagens prontos.
+- [x] Estruturar a aventura introdutória e seus componentes mecânicos.
+- [ ] Fazer segunda leitura visual/cross-check de todos os dados.
+- [ ] Conferir ambiguidades e registrar rulings sem apresentá-los como texto oficial.
 
-**Gate:** não iniciar automação de uma regra sem fonte e teste de referência.
+## Fase 1 — Guia de consulta
+- [x] Criar o catálogo de dados do Quickstart com referências de página.
+- [x] Criar navegação inicial por espécies, Archetypes e Aptitudes.
+- [ ] Completar navegação e pesquisa para todas as seções do PDF.
+- [ ] Exibir detalhes de Skills, Traits, gear, Power-Ups, regras e exemplos.
+- [ ] Integrar a aventura introdutória como referência consultável.
+- [ ] Melhorar acessibilidade, hierarquia visual e navegação mobile.
 
-## Fase 1 — MVP de personagem
-- [x] Definir o modelo de domínio inicial da ficha Tier D e o ledger de PAX (ADR-005).
-- [x] Implementar validação inicial de espécie, Archetype, Path, habilidades, Grades, Skills, Traits, gear e orçamento PAX.
-- [x] Implementar cálculo inicial de Energy, Defense, Initiative, Attack Bonus e Tier Die.
-- [x] Publicar primeira interface guiada Tier D com seleção de opções e ledger dinâmico.
-- [x] Adicionar testes de domínio usando as cinco fichas prontas como referência.
-- [ ] Executar typecheck, testes e build em ambiente Node/npm.
-- [ ] Revisar segunda leitura os efeitos condicionais e todos os cálculos derivados.
-- [ ] Implementar salvamento local e exportação/importação JSON.
-- [ ] Concluir estados de ficha, edição posterior e navegação de etapas do criador.
+## Fase 2 — Criação de personagem coberta pelo Quickstart
+- [x] Criar o modelo de domínio Tier D e ledger PAX.
+- [x] Implementar primeira validação de espécie, Archetype, Path, Grades, Skills, Traits, gear e orçamento.
+- [x] Criar a primeira interface guiada de personagem Tier D.
+- [ ] Executar typecheck, testes e build.
+- [ ] Validar resultados contra as cinco fichas prontas e corrigir divergências justificadamente.
+- [ ] Revisar cálculos condicionais e benefícios gratuitos.
+- [ ] Implementar salvamento local e exportação/importação JSON, caso confirmados como parte da experiência desejada do guia.
 
-## Fase 2 — Compêndio
-- [ ] Busca e filtros em espécies, Archetypes, aptidões e opções.
-- [ ] Referências às páginas do PDF.
-- [ ] Sinalização de regras ambíguas.
-- [ ] Comparação de opções e builds.
+## Fase 3 — Estabilização do Guia Rápido
+- [ ] Concluir a segunda auditoria visual do PDF.
+- [ ] Cobrir regras e seções ainda não expostas na interface.
+- [ ] Verificar acessibilidade com teclado, contraste, zoom e leitor de tela.
+- [ ] Executar testes, typecheck e build em ambiente local.
+- [ ] Revisar o conteúdo de ponta a ponta com o PDF aberto.
+- [ ] Publicar a versão de consulta do Quickstart, sem adicionar regras externas.
 
-## Fase 3 — Ficha de sessão
-- [ ] Energy e Conditions.
-- [ ] Hero Points, Omni Die e recursos de sessão.
-- [ ] Rolagens e Advantage/Disadvantage.
-- [ ] Ataques, dano, DR e condições de status.
+## Fora do roadmap atual
 
-## Fase 4 — Ferramentas do GM
-- [ ] Iniciativa e Action Points.
-- [ ] Encontros e ameaças.
-- [ ] Rescue Clocks, Scene Tension e preparação de cenas.
-- [ ] Gerenciamento de squad e sessão.
+Não iniciar implementação de criação/progressão Tier C completa, Grades 2–5, Tiers superiores, espécies/opções ausentes do PDF, automação de campanhas, contas, multiplayer ou ferramentas avançadas de GM. Essas possibilidades dependem de uma nova definição de escopo após o Core Rulebook oficial estar disponível e ser conferido.
 
-## Fase 5 — Evolução do sistema
-- [ ] Ingerir erratas/revisões autorizadas.
-- [ ] Criar ruleset independente para o Core Rulebook quando disponível e autorizado.
-- [ ] Ferramentas explícitas de house rules e homebrew.
-- [ ] Migração opcional de fichas entre versões.
+## Gate futuro — Core Rulebook oficial
 
-## Critério de avanço
-Cada fase termina com critérios de aceite, testes e revisão do inventário de regras. O roadmap não presume data de publicação do Core Rulebook.
+Somente quando o livro oficial completo estiver disponível e a fonte autorizada tiver sido obtida:
+- abrir uma nova fase de pesquisa e auditoria;
+- catalogar as regras novas;
+- criar um pacote de ruleset independente;
+- documentar diferenças e migrações;
+- decidir com o usuário quais capacidades adicionais entram no produto.
+
+O Quickstart v1 deve permanecer preservado como pacote independente.

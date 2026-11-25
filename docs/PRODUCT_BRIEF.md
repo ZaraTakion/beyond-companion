@@ -1,71 +1,83 @@
-# Product Brief — Beyond Companion
+# Product Brief — Beyond Companion: Guia Rápido Digital
 
 ## Visão
 
-Oferecer uma ferramenta digital clara e confiável para criar, consultar e administrar personagens de BEN 10: BEYOND. A referência de experiência é a conveniência de construtores de ficha como Fichas de Nimb; a implementação, o modelo de dados e a identidade visual serão próprios.
+Oferecer uma versão digital de consulta do **Quickstart v1 de BEN 10: BEYOND — The Roleplaying Game**. O objetivo é facilitar a leitura, a localização de regras e a utilização do material que já está no PDF.
 
-## Usuários e necessidades
+Este produto não é, nesta etapa, um construtor completo para o sistema oficial nem uma implementação antecipada do Core Rulebook.
 
-1. **Jogador:** quer montar um personagem sem calcular PAX, atributos e recursos manualmente.
-2. **Jogador em sessão:** quer localizar rapidamente uma habilidade, verificar custos e acompanhar condições.
-3. **Galvan Magister (GM):** quer consultar regras, validar personagens e futuramente preparar ameaças, cenas e encontros.
-4. **Responsável pelo conteúdo:** precisa atualizar regras sem alterar código de interface e sem apagar fichas antigas.
+## Usuários
 
-## Princípios de produto
+1. **Jogador:** consulta espécies, opções, habilidades, custos e regras durante a criação ou a sessão.
+2. **Galvan Magister (GM):** consulta testes, combate, Conditions, ameaças, clocks e a aventura introdutória que aparecem no Quickstart.
+3. **Leitor do Quickstart:** aprende a terminologia e entende como as regras documentadas se relacionam.
 
-- Fidelidade rastreável: cada elemento de regra tem pacote de versão e página de origem.
-- Nenhuma inferência silenciosa: lacunas ou conflitos são apresentados como pendências.
-- Local-first no MVP: a ficha funciona no navegador sem conta ou serviço pago.
-- Separação entre regra oficial, regra da mesa e homebrew.
-- Acessibilidade e redução da carga cognitiva desde o primeiro componente.
-- Privacidade por padrão: dados pessoais do personagem permanecem no dispositivo até o usuário optar por exportar/compartilhar.
+## Princípios
 
-## Escopo do MVP
+- **Escopo fechado:** implementar somente conteúdo que esteja no PDF Quickstart v1.
+- **Fidelidade rastreável:** cada entrada mecânica guarda página de origem.
+- **Sem extrapolação:** não completar lacunas com wikis, lore da série, outros RPGs ou regras presumidas do futuro livro.
+- **Separação de versões:** Quickstart v1 permanece independente de eventual pacote do Core Rulebook.
+- **Consulta rápida:** organização por assunto, pesquisa, linguagem clara e acesso às referências.
+- **Acessibilidade:** teclado, contraste, foco visível, linguagem simples, responsividade e redução de carga cognitiva.
+- **Local-first:** não exigir conta, backend ou serviço pago nesta fase.
 
-### Incluído
-- Selecionar versão de regras (Quickstart v1).
-- Consultar as 7 espécies, 5 Archetypes e catálogo inicial de aptidões.
-- Criar rascunho de personagem Tier D.
-- Distribuir atributos e compras com orçamento de 30 PAX.
-- Aplicar limites: atributo base máximo +3 no Tier D; máximo Grade 1 para Aptitudes.
-- Calcular Energy, Defense, Initiative, Attack Bonus e Tier Die a partir das regras disponíveis.
-- Exibir página de referência e avisos de interpretação.
-- Salvar e reabrir rascunhos localmente em iterações seguintes.
+## Escopo funcional desta versão
 
-### Fora do MVP
-- Contas, autenticação, sincronização em nuvem e multiplayer.
-- Plataforma completa de combate e automação de turnos.
-- Ferramentas avançadas do GM e biblioteca de NPCs/adversários.
-- Progressão para Tier C+ e Grade 2+, enquanto o conteúdo necessário não estiver disponível em fonte autorizada.
-- Importação ou redistribuição do PDF, ilustrações e logotipos oficiais.
-- Homebrew misturado ao catálogo oficial.
+### Incluído — desde que conste no Quickstart
+
+- Inventário e consulta das seções do PDF.
+- As sete espécies jogáveis e seus dados documentados.
+- Os cinco Archetypes e suas opções.
+- Evolutionary Aptitudes, seus Grades disponíveis, custos e habilidades descritas.
+- Skills, Traits, Weapons and Gear.
+- Criação de Hero Tier D, orçamento PAX e limites explicitamente documentados.
+- Testes, Tension, Advantage/Disadvantage, Hero Points, Villain Points e Omni Die.
+- Battle Scenes, Action Points, Reactions, movimento, dano, DR e status.
+- Rescue Scenes, Clocks, Interludes, Squad Bonding e Perspective Splice.
+- Power-Ups e Fuse Bots apresentados no documento.
+- Plumber Squad e Threat Archetypes do Quickstart.
+- Cinco personagens prontos e a aventura introdutória, incluindo suas ameaças, objetivos e recompensas.
+- Referências de página e avisos para regras ambíguas ou incompletas.
+
+### Não incluído nesta etapa
+
+- Qualquer regra ausente do Quickstart.
+- Criação/progressão completa de Tier C, Grades 2–5 ou Tiers superiores.
+- Espécies, Archetypes, aptidões, Skills, Traits, itens ou ameaças que não estejam no PDF.
+- Regras inferidas a partir do cânone de Ben 10, wikis ou outras edições.
+- Gestão de campanha, multiplayer, contas, sincronização em nuvem ou automações de GM que extrapolem o documento.
+- Conteúdo do futuro livro oficial antes de sua disponibilização e conferência.
 
 ## Requisitos funcionais
 
-- RF-01: o usuário pode escolher um ruleset disponível.
-- RF-02: o usuário pode escolher uma espécie e um Archetype.
-- RF-03: o sistema concede as opções gratuitas da espécie e exige um Evolutionary Path.
-- RF-04: o sistema permite selecionar duas Archetype Abilities no Tier D.
-- RF-05: o sistema calcula o PAX gasto por categoria e impede exceder o orçamento.
-- RF-06: o sistema valida os limites do Tier D e exibe a origem dos limites.
-- RF-07: o sistema mostra resumo da ficha e derivações (Energy, Defense, Initiative, Attack Bonus e Tier Die).
-- RF-08: regras e escolhas são associadas a uma versão imutável do pacote de regras.
-- RF-09: qualquer regra com pendência de interpretação exibe aviso e não é aplicada como regra automática sem política explícita.
+- RF-01: permitir navegar e pesquisar o conteúdo catalogado do Quickstart.
+- RF-02: exibir referências de página para as regras consultadas.
+- RF-03: apresentar separadamente regras explícitas, resumos e pendências de interpretação.
+- RF-04: permitir consultar as opções de personagem Tier D documentadas.
+- RF-05: calcular e validar o orçamento de 30 PAX conforme o Quickstart.
+- RF-06: calcular apenas estatísticas e efeitos cujas regras estejam explicitamente disponíveis no Quickstart.
+- RF-07: manter o pacote Quickstart v1 identificado e imutável.
+- RF-08: não habilitar opções que dependam de regras ausentes.
 
 ## Requisitos não funcionais
 
-- RNF-01: funcionamento local sem conta no MVP.
-- RNF-02: acessível por teclado, com foco visível e rótulos programáticos.
-- RNF-03: respeitar preferência por movimento reduzido.
-- RNF-04: conteúdo legível em telas pequenas e com zoom de 200%.
-- RNF-05: cálculos de regra em funções puras, determinísticas e testadas.
-- RNF-06: pacote de regras validado por schema e versionado.
-- RNF-07: não exigir serviço pago para desenvolvimento ou execução local.
+- RNF-01: funcionamento local, sem conta.
+- RNF-02: acessível por teclado e com foco visível.
+- RNF-03: legível em telas pequenas e com zoom de 200%.
+- RNF-04: regras e cálculos em funções puras, determinísticas e testadas.
+- RNF-05: sem dependências pagas ou serviços com cobrança.
+- RNF-06: nenhum conteúdo do livro distribuído no repositório além de resumos necessários e permitidos.
 
-## Métricas de aceite do MVP
+## Critérios de aceite
 
-- Um personagem Tier D válido pode ser criado sem exceder 30 PAX.
-- Cenários de referência calculam o mesmo resultado esperado que o PDF.
-- Testes cobrem limites, compras gratuitas, custos e cálculos derivados.
-- Nenhum texto de regra exibido sem página de referência no catálogo oficial.
-- A interface pode ser utilizada apenas com teclado.
+- As funcionalidades disponibilizadas são rastreáveis a páginas do Quickstart.
+- As cinco fichas prontas podem ser usadas como casos de referência para as regras que o PDF demonstra.
+- O ledger PAX respeita custos, limites e benefícios gratuitos documentados.
+- As regras incompletas não são apresentadas como regras completas.
+- Typecheck, testes e build passam antes de declarar a versão pronta.
+- A interface permite consulta com teclado e em dispositivos móveis.
+
+## Evolução futura
+
+Quando o Core Rulebook oficial estiver disponível e sua fonte autorizada for obtida, será feita uma nova etapa de escopo. O material completo será auditado e adicionado em um pacote separado, sem alterar silenciosamente o ruleset Quickstart v1.

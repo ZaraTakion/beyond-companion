@@ -1,33 +1,41 @@
 # Estado do projeto — 24/11/2026
 
+## Definição atual
+
+**Beyond Companion é, nesta etapa, um Guia Rápido Digital do PDF Quickstart v1.** O objetivo não é antecipar nem implementar o Core Rulebook completo. Toda funcionalidade precisa corresponder a conteúdo presente no PDF.
+
 ## Repositório
 
 - Público: https://github.com/ZaraTakion/beyond-companion
-- Branch ativa: `main`
-- O Quickstart PDF original não está armazenado no repositório.
+- Branch: `main`
+- Fonte: PDF Quickstart v1 fornecido pelo usuário; o PDF original não está armazenado no repositório.
 
 ## Entregues
 
-- Seis passes de auditoria estruturada cobrindo o Quickstart v1.
-- Dados versionados para espécies, Archetypes, Aptitudes Grade 1, Skills, Traits, gear, regras centrais, Power-Ups, Squad/Threats, cinco personagens prontos e aventura introdutória.
-- Modelo de domínio Tier D com cálculo de PAX e validação de opções.
-- Cálculo inicial de estatísticas derivadas.
-- Primeira interface guiada Tier D: identidade, espécie, Archetype, Path, Attributes, Aptitudes, Skills, Traits e gear.
-- Ledger visual de PAX e lista de validações.
-- Testes unitários escritos para PAX, catálogo e as cinco fichas prontas.
+- Seis passes de auditoria estrutural do Quickstart.
+- Catálogos versionados para espécies, Archetypes, Aptitudes Grade 1, Skills, Traits, gear e Power-Ups.
+- Regras de criação, testes, recursos, combate, dano, Conditions, Rescue, Interlude e Perspective Splice.
+- Plumber Squad, Threat Archetypes, cinco personagens prontos e aventura introdutória.
+- Domínio inicial Tier D e ledger PAX.
+- Primeira interface guiada de criação Tier D e catálogo inicial.
 
-## Não verificado ainda
+## Próximas validações
 
-- Os testes não foram executados nesta sessão.
-- TypeScript typecheck não foi executado.
-- Build Vite não foi executado.
-- A interface não salva a ficha nem exporta/importa JSON.
-- A segunda leitura visual e a revisão cruzada completa do Quickstart continuam pendentes.
-- O domínio ainda não calcula todos os efeitos situacionais de combate e sessão.
+- Segunda leitura visual e cruzada do PDF.
+- Completar consulta e pesquisa de todas as seções do Quickstart.
+- Executar typecheck, testes unitários e build.
+- Conferir cálculos com as cinco fichas prontas.
+- Corrigir problemas de acessibilidade e navegação.
+- Avaliar salvamento local/exportação JSON dentro do escopo do guia.
 
-## Limites
+## Limites explícitos
 
-- Fonte exclusiva: Quickstart v1 do PDF fornecido pelo usuário.
-- Sem implementação de Tier C ou Grade 2+ até haver fonte autorizada.
-- Ambiguidades como Phasing + ataques Elementais permanecem marcadas para decisão do GM.
-- Não publicar PDF, ilustrações, logotipos ou transcrições extensas do livro.
+- Não adicionar regras que não estejam no Quickstart.
+- Não implementar progressão completa de Tier C, Grades 2–5 ou Tiers superiores.
+- Não incorporar espécies, habilidades ou opções externas ao documento.
+- Não iniciar companion completo, gestão de campanha, multiplayer, contas ou automações avançadas.
+- Não incluir o PDF, imagens, logos ou transcrições extensas no repositório.
+
+## Evolução posterior
+
+Quando o Core Rulebook oficial estiver disponível e a fonte autorizada for obtida, o usuário e o projeto poderão definir uma nova etapa. O conteúdo será auditado e adicionado em outro ruleset; o pacote Quickstart v1 continuará preservado.

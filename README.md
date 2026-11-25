@@ -1,39 +1,48 @@
-# Beyond Companion
+# Beyond Companion — Guia Rápido Digital
 
-Companion digital e **não oficial** para **BEN 10: BEYOND — The Roleplaying Game**. O desenvolvimento começa pelo Quickstart v1 fornecido pelo usuário, com arquitetura preparada para incorporar revisões autorizadas sem misturar versões de regras. A primeira interface guiada de criação Tier D está publicada em `main`.
+Guia de consulta digital, não oficial, baseado **exclusivamente no PDF Quickstart v1 de BEN 10: BEYOND — The Roleplaying Game** fornecido pelo usuário.
 
-> **Estado:** fundação do produto, inventário inicial de regras e protótipo de catálogo. Ainda não é uma implementação completa do sistema nem substitui o livro ou a decisão do Galvan Magister (GM).
+## Objetivo
 
-**Repositório:** https://github.com/ZaraTakion/beyond-companion
+Transformar o conteúdo do Quickstart em uma referência digital clara e fácil de consultar. Nesta etapa, o produto implementa somente o que está presente nesse PDF. Não estamos construindo ainda um companion completo para o livro oficial, nem adicionando regras de outras versões, wikis ou do universo de Ben 10.
 
-## Objetivos
+O nome Beyond Companion identifica o projeto; seu escopo atual é um **Guia Rápido Digital do Quickstart v1**.
 
-- Criador de personagens com orçamento PAX e validação de regras.
-- Ficha digital para acompanhar atributos, Energy, Defense, Initiative, ataques, Conditions e recursos.
-- Compêndio pesquisável com páginas de referência.
-- Laboratório de builds para calcular custos e sinalizar interações ambíguas.
-- Ferramentas de combate e GM em fases posteriores.
-- Acessibilidade desde o início: navegação por teclado, contraste, linguagem clara, redução de carga cognitiva e layouts responsivos.
+## Dentro do escopo atual
+
+- Consultar as regras, tabelas, opções e exemplos que aparecem no PDF.
+- Navegar pelo catálogo de espécies, Archetypes, Evolutionary Aptitudes, Skills, Traits, Weapons and Gear e Power-Ups presentes no documento.
+- Consultar regras de criação Tier D e validar compras de 30 PAX.
+- Consultar as regras de testes, combate, dano, Conditions, Rescue Scenes, Interludes e recursos incluídos no Quickstart.
+- Consultar Plumber Squad, Threat Archetypes, personagens prontos e a aventura introdutória.
+- Exibir referências às páginas do PDF e indicar pontos ambíguos sem inventar uma resolução.
+- Oferecer uma interface legível, acessível e responsiva.
+
+## Fora do escopo por enquanto
+
+- Regras, espécies, poderes, classes, opções ou progressões que não estejam no Quickstart v1.
+- Implementação completa do Core Rulebook.
+- Tier C como modo completo de criação e progressão, Grades 2–5 ou Tiers superiores. O Quickstart pode mencionar esses elementos, mas não traz todas as regras necessárias.
+- Ferramentas adicionais de campanha, multiplayer, contas, nuvem ou automação que não sejam necessárias para representar o PDF.
+- Conteúdo criado a partir de wikis, da série, de outros RPGs ou de material não fornecido como fonte autorizada.
+
+## Quando o livro oficial completo estiver disponível
+
+O escopo será reavaliado nessa ocasião. As regras novas entrarão em um pacote de regras separado e versionado, após obtenção e conferência da fonte autorizada. O Quickstart v1 continuará preservado como referência histórica; não será sobrescrito nem misturado com o material novo.
 
 ## Fonte e fidelidade
 
-A fonte inicial de regras é o PDF `ben10-beyond-rpg-quickstart-v1.pdf`, fornecido pelo usuário e **não incluído neste repositório**. O inventário em `docs/rules-audit/quickstart-v1-inventory.md` e o status em `docs/rules-audit/STATUS.md` registram seis passagens de auditoria, com catálogos versionados e questões pendentes. O domínio Tier D, ledger de PAX e construtor guiado já estão implementados em primeira versão.
+A fonte atual é o PDF Quickstart v1 fornecido pelo usuário e não incluído neste repositório. Cada entrada de regra deve manter referência de página. Resumos mecânicos não devem ser confundidos com transcrições literais. Incertezas permanecem marcadas como pendentes.
 
-Nenhuma regra da série, de wikis, de outros jogos ou de materiais não fornecidos deve ser apresentada como regra oficial. Cada registro de regra deve guardar sua versão e referência de página. Incertezas devem permanecer identificadas como pendentes.
+O repositório não inclui o PDF, ilustrações, logotipos ou transcrições extensas. Antes de redistribuir material derivado, verificar as permissões aplicáveis.
 
-## Direitos e independência
+## Stack atual
 
-Este é um projeto comunitário não oficial e não afiliado, patrocinado ou endossado pela Cartoon Network, Warner Bros. Discovery ou D20 Culture. BEN 10, personagens, marcas, ilustrações e textos do jogo pertencem aos respectivos titulares.
-
-O Quickstart contém aviso de direitos que restringe sua reprodução e distribuição. Por isso, este repositório não inclui o PDF, ilustrações, logotipos nem transcrições extensas. O projeto ainda não concede licença aberta para seu código ou conteúdo: consulte `LICENSE`. Antes de redistribuir material derivado ou publicar conteúdo de regras em escala, verificar as permissões aplicáveis.
-
-## Stack inicial
-
-- React + TypeScript + Vite para aplicação web estática.
-- JSON versionado para pacotes de regras.
-- Funções puras TypeScript para cálculos e validações.
+- React, TypeScript e Vite.
+- JSON versionado para o catálogo do Quickstart.
+- Funções TypeScript para cálculos e validações Tier D.
 - Vitest para testes unitários.
-- Persistência local primeiro; backend e contas ficam fora do MVP inicial.
+- Execução local, sem necessidade de backend ou serviço pago.
 
 ## Executar localmente
 
@@ -55,15 +64,15 @@ npm run build
 ## Estrutura
 
 ```text
-src/                         aplicação React, domínio e testes
-data/rulesets/                pacotes de regras versionados
-docs/                         produto, arquitetura, roadmap e auditoria
-docs/decisions/               decisões arquiteturais (ADRs)
-docs/rules-audit/             inventário e questões pendentes
+src/                         interface, domínio e testes
+data/rulesets/quickstart-v1/  dados resumidos e versionados do PDF
+docs/                         produto, arquitetura, roadmap e status
+docs/decisions/               decisões arquiteturais
+docs/rules-audit/              inventário, auditoria e pendências
 ```
 
-## Estado do projeto
+## Estado
 
-Seis passagens de auditoria estruturaram o Quickstart: 7 espécies, 5 Archetypes, 26 Aptitudes e 77 habilidades Grade 1; 12 Skills, 12 Traits, 7 opções de compra de gear e 4 recompensas; regras nucleares, Power-Ups, Squad/Threats, cinco personagens prontos e a aventura introdutória. Os dados são resumos rastreáveis, não uma transcrição integral. A segunda leitura visual, conferência cruzada e execução dos testes ainda estão pendentes. A interface do criador ainda não tem persistência nem exportação de ficha. Consulte `docs/ROADMAP.md` e `docs/rules-audit/`.
+O Quickstart foi estruturado em seis passes de auditoria. O domínio Tier D e a primeira interface de criação já foram iniciados com base nesse conteúdo. A revisão cruzada, a execução de typecheck/testes/build e a validação prática continuam pendentes. Ainda não há salvamento local nem exportação da ficha.
 
-Contribuições que alterem regras devem citar a página da fonte e distinguir fatos transcritos, interpretação e house rules. Consulte `CONTRIBUTING.md`.
+Contribuições devem citar a página do Quickstart e distinguir texto da fonte, resumo e interpretação.
