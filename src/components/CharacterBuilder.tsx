@@ -275,7 +275,7 @@ export default function CharacterBuilder() {
 
       <div className="builder-layout">
         <div className="builder-main">
-          <section className="builder-section">
+          <section className="builder-section builder-step-identity">
             <div className="section-heading"><span>01</span><div><h3>Identidade</h3><p>Defina a identidade e a forma de atuação do Hero.</p></div></div>
             <div className="form-grid">
               <label className="field field-wide">Nome do personagem
@@ -315,7 +315,7 @@ export default function CharacterBuilder() {
             </div>
           </section>
 
-          <section className="builder-section">
+          <section className="builder-section builder-step-attributes">
             <div className="section-heading"><span>02</span><div><h3>Attributes</h3><p>No Tier D, cada ponto base custa 3 PAX e o limite é +3 por atributo.</p></div></div>
             <div className="attribute-grid">
               {attributeNames.map((name) => (
@@ -348,7 +348,7 @@ export default function CharacterBuilder() {
             </label>
           </section>
 
-          <section className="builder-section">
+          <section className="builder-section builder-step-aptitudes">
             <div className="section-heading"><span>03</span><div><h3>Evolutionary Aptitudes</h3><p>As Creative Uses da espécie são gratuitas. Marque as Aptitudes em que você comprou Grade 1.</p></div></div>
             <div className="catalogue-picks">
               {aptitudeOptions.map((item) => {
@@ -364,7 +364,7 @@ export default function CharacterBuilder() {
             <p className="builder-hint">Omni-Tech Arsenal aparece para qualquer espécie. Versatility, para Human, é um benefício gratuito e não uma compra de Grade.</p>
           </section>
 
-          <section className="builder-section">
+          <section className="builder-section builder-step-training">
             <div className="section-heading"><span>04</span><div><h3>Skills e Traits</h3><p>Escolha treinamentos e qualidades. Benefícios gratuitos são identificados na origem.</p></div></div>
             {species.id === 'human' && <label className="field">Skill gratuita de Versatility
               <select value={versatilitySkill} onChange={(event) => chooseVersatilitySkill(event.target.value)}>
@@ -432,7 +432,7 @@ export default function CharacterBuilder() {
             </div>
           </section>
 
-          <section className="builder-section">
+          <section className="builder-section builder-step-gear">
             <div className="section-heading"><span>05</span><div><h3>Weapons and Gear</h3><p>Selecione equipamentos e indique afiliação Plumber.</p></div></div>
             <label className="toggle-row">
               <input type="checkbox" checked={draft.plumberAffiliated} onChange={(event) => setAffiliation(event.target.checked)} />
