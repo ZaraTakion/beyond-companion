@@ -102,9 +102,9 @@ export default function App() {
                   <div className="visual-core"><span>BF</span><i /></div>
                   <div className="visual-crosshair crosshair-top" />
                   <div className="visual-crosshair crosshair-bottom" />
-                  <div className="visual-code">ARQUIVO / 001<br />SETOR TERRESTRE</div>
+                  <div className="visual-code">CADERNO / 001<br />CAMPO DE DESCOBERTA</div>
                   <div className="visual-number">10</div>
-                  <div className="visual-caption">ALIEN<br />FIELD NOTES</div>
+                  <div className="visual-caption">BEYOND<br />FIELD NOTES</div>
                 </div>
                 <div className="hero-side-index"><span>V1</span><span>·</span><span>FIELD NOTES</span></div>
               </section>
