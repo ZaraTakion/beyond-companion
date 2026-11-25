@@ -643,7 +643,7 @@ export default function CharacterBuilder() {
         </aside>
       </div>
 
-      <section className="print-sheet" aria-label="Ficha de personagem para impressão">
+      <section className="print-sheet" role="region" aria-label="Ficha de personagem para impressão">
         <header className="print-sheet-header">
           <div>
             <span>BEYOND COMPANION · QUICKSTART V1</span>
