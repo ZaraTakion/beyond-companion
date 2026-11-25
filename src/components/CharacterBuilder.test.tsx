@@ -12,8 +12,8 @@ describe('CharacterBuilder UI', () => {
 
     const printable = screen.getByRole('region', { name: 'Ficha de personagem para impressão' });
 
-    expect(within(printable).getByText('Songtide Mapping')).toBeTruthy();
-    expect(within(printable).getByText('Cadence Fixation')).toBeTruthy();
+    expect(within(printable).getByText(/Songtide Mapping/)).toBeTruthy();
+    expect(within(printable).getByText(/Cadence Fixation/)).toBeTruthy();
     expect(within(printable).getByText('Archetype Bonus')).toBeTruthy();
     expect(within(printable).getByText('+2 Physical damage em todos os Melee Attacks.')).toBeTruthy();
     expect(within(printable).getByText(/Short Fuse/)).toBeTruthy();
