@@ -114,6 +114,6 @@ A execução mais recente integralmente aprovada de aplicação/E2E é [GitHub A
 
 O PR #3 continua aberto em rascunho e não foi mesclado. A branch `main` não foi alterada nesta revisão. O preview está confirmado **READY**, associado ao commit `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`: [abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-5srho0fms-zaras-projects-f0700f27.vercel.app).
 
-**Ainda pendente:** testes com leitor de tela real; zoom do navegador formal a 200%; e segunda auditoria visual do conteúdo contra todas as páginas do PDF. O repositório não possui `package-lock.json`, então o workflow usa `npm install` e não garante dependências travadas.
+**Ainda pendente:** testes com leitor de tela real; zoom do navegador formal a 200%; e segunda auditoria visual do conteúdo contra todas as páginas do PDF. A atualização documental posterior também foi validada pela [GitHub Actions #78](https://github.com/ZaraTakion/beyond-companion/actions/runs/45712623344). O repositório não possui `package-lock.json`, então o workflow usa `npm install` e não garante dependências travadas.
 
 Contribuições devem citar a página do Quickstart e distinguir texto da fonte, resumo e interpretação.

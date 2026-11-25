@@ -57,7 +57,7 @@ Até a disponibilização e conferência do Core Rulebook oficial, o projeto imp
 - [x] Verificar overflow horizontal em 320, 390, 768, 1024 e 1440 px.
 - [x] Testar impressão por emulação de mídia e round-trip de importação/exportação JSON.
 - [x] Fazer inspeção visual renderizada em desktop (1440 px), tablet (768 px) e mobile (390/320 px), incluindo overview/atlas, onze seções do Guia e cinco áreas do Construtor.
-- [x] Verificar responsividade sem overflow horizontal em 1440, 768, 390 e 320 px; reflow complementar em 720 px.
+- [x] Verificar responsividade sem overflow horizontal em 1440, 768, 390 e 320 px.
 - [ ] Verificar acessibilidade com leitor de tela real e zoom formal a 200%.
 - [x] Revisar paginação da ficha impressa/salva em PDF: 2 páginas com conteúdo, sem folhas extras vazias.
 - [ ] Revisar o conteúdo de ponta a ponta com o PDF aberto.

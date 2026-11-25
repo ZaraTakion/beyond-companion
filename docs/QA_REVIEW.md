@@ -70,16 +70,16 @@ O cenário de impressão confirma que a folha é um filho direto de `document.bo
 | #76 | 10 aprovados / 1 reprovado | Falha na asserção de posição por comparar coordenada do viewport; a medição foi corrigida para coordenada do documento |
 | #77 | **11 aprovados / 0 reprovados** | Revalidação após a correção da asserção de impressão; TypeScript, 53 testes e build também aprovados |
 
-A execução #69 foi a primeira integralmente aprovada após as correções. As execuções #70 e #73–#75 revalidaram os respectivos HEADs. A #76 falhou apenas pela expectativa de coordenada da nova asserção de impressão; a medição passou a considerar `window.scrollY` e a #77 aprovou os 11 cenários. As execuções anteriores permanecem registradas como histórico.
+A execução #69 foi a primeira integralmente aprovada após as correções. As execuções #70 e #73–#75 revalidaram os respectivos HEADs. A #76 falhou apenas pela expectativa de coordenada da nova asserção de impressão; a medição passou a considerar `window.scrollY` e a #77 aprovou os 11 cenários. A #78 validou a sincronização documental posterior sem alterar código. As execuções anteriores permanecem registradas como histórico.
 
 ## Preview Vercel associado ao HEAD
 
 - Projeto: `beyond-companion` (`prj_SEqxYVZeheAkX4ozcxjWFm4tVlXn`).
-- Deployment: `dpl_66B489ZYYadaobMPj4fCBXJRJWBQ`, estado **READY**, target `preview`.
-- Branch/commit confirmados pela API Vercel: `prototype/cartoon-sci-fi-v1` / `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`.
+- Deployment usado na inspeção visual: `dpl_66B489ZYYadaobMPj4fCBXJRJWBQ`, **READY**, código `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`.
+- Preview mais recente após sincronização documental: `dpl_GCiEMQjoXx9CagXqhFy24ZsyW42L`, **READY**, branch `prototype/cartoon-sci-fi-v1`, HEAD documental `a8cc401aaf9ec1984729a9148c411ae9e48c21df` (sem alterações adicionais no código da aplicação).
 - [URL da branch Preview](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app).
-- [URL única do deployment](https://beyond-companion-5srho0fms-zaras-projects-f0700f27.vercel.app).
-- A raiz respondeu HTTP 200. A inspeção visual renderizada foi feita no navegador do desktop remoto Vercel; não se confunde com a checagem HTTP.
+- [URL única do deployment mais recente](https://beyond-companion-no1qm4wd9-zaras-projects-f0700f27.vercel.app).
+- A raiz respondeu HTTP 200.
 
 ## Inspeção visual renderizada e acessibilidade manual
 
@@ -87,7 +87,6 @@ A revisão foi realizada no preview READY associado ao commit de aplicação, po
 - **1440 px:** visão geral, atlas, Guia e Construtor.
 - **768 px:** navegação, cartões e formulários em tablet.
 - **390 px e 320 px:** navegação compacta, atlas e Construtor em mobile.
-- **720 px:** reflow complementar nos três espaços, sem overflow horizontal.
 
 A visão geral e a seleção do atlas foram percorridas, incluindo os sete dossiês de espécies. As onze seções do Guia foram abertas individualmente: Espécies, Archetypes, Evolutionary Aptitudes, Skills, Traits, Armas e equipamentos, Regras básicas, Power-Ups, Squad e ameaças, Heroes prontos e Rush Hour in Undertown. A pesquisa sem resultados exibiu estado vazio e ação para limpar o filtro.
 
@@ -100,7 +99,7 @@ A exportação foi gerada como PDF no Chromium do preview e aberta no visualizad
 ## Limitações restantes
 
 - Não foi executado teste com leitor de tela real.
-- Não foi feita sessão formal de zoom de navegador a 200%; os viewports e o reflow de 720 px não substituem esse teste.
+- Não foi feita sessão formal de zoom de navegador a 200%; os testes nos viewports especificados não substituem esse teste.
 - A segunda leitura visual sistemática dos dados contra todas as páginas do PDF continua pendente.
 - O repositório não contém `package-lock.json`; o workflow utiliza `npm install`, portanto as dependências não estão travadas por lockfile.
 - A auditoria executada é `npm audit --audit-level=high`; não substitui revisão de segurança dedicada.

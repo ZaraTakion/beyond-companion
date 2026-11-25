@@ -11,8 +11,8 @@
 - Pull request #3: https://github.com/ZaraTakion/beyond-companion/pull/3
 - PR aberto, em rascunho, direcionado a `main` e não mesclado.
 - A branch `main` permaneceu sem alterações nesta revisão.
-- HEAD de aplicação e E2E validado: `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`, no [GitHub Actions #77](https://github.com/ZaraTakion/beyond-companion/actions/runs/45712266932). O commit documental posterior será registrado separadamente.
-- Preview Vercel: deployment `dpl_66B489ZYYadaobMPj4fCBXJRJWBQ`, **READY**, target `preview`. [Abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-5srho0fms-zaras-projects-f0700f27.vercel.app).
+- Código de aplicação e E2E validado: `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`, no [GitHub Actions #77](https://github.com/ZaraTakion/beyond-companion/actions/runs/45712266932). A sincronização documental em `a8cc401aaf9ec1984729a9148c411ae9e48c21df` foi validada na [execução #78](https://github.com/ZaraTakion/beyond-companion/actions/runs/45712623344).
+- Preview Vercel: deployment mais recente `dpl_GCiEMQjoXx9CagXqhFy24ZsyW42L`, **READY**, target `preview`; a atualização posterior é apenas documental. [Abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-no1qm4wd9-zaras-projects-f0700f27.vercel.app).
 - Inspeção visual renderizada concluída com Chromium remoto em 1440, 768, 390 e 320 px; overview/atlas, onze seções do Guia e cinco áreas do Construtor foram percorridos. Detalhes em `docs/QA_REVIEW.md`.
 
 ## Entregue no front-end
@@ -55,8 +55,7 @@ A revisão corrigiu violações WCAG identificadas nas execuções anteriores, i
 
 ## Revisão visual concluída e pendências
 
-A inspeção renderizada foi concluída no preview em desktop (1440 px), tablet (768 px) e mobile (390/320 px). A visão geral/atlas, as onze seções do Guia e as cinco áreas do Construtor foram percorridas. Busca, seleção de espécie, resumo, ledger PAX, validação, importação/exportação JSON e impressão foram testados. O reflow complementar em 720 px não apresentou overflow horizontal.
-
+A inspeção renderizada foi concluída no preview em desktop (1440 px), tablet (768 px) e mobile (390/320 px). A visão geral/atlas, as onze seções do Guia e as cinco áreas do Construtor foram percorridas. Busca, seleção de espécie, resumo, ledger PAX, validação, importação/exportação JSON e impressão foram testados. 
 A ficha impressa foi verificada em PDF no visualizador Chromium: duas páginas, ambas com conteúdo. O bug de páginas extras vazias foi corrigido com React Portal e isolação do `#root` na mídia de impressão.
 
 Pendências remanescentes:
