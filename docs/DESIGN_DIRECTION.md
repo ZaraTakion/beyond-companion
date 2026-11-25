@@ -1,35 +1,63 @@
-# Direção visual — Cartoon Sci-Fi
+# Direção visual — Classic Cartoon Alien Field Guide
 
 ## Objetivo
 
-Dar ao Beyond Companion uma identidade de guia de exploração de ficção científica com a energia visual de desenhos animados de ação e interfaces de jogos. O produto continua sendo um guia rápido digital do Quickstart v1.
+Criar uma identidade própria para o Beyond Companion como um **arquivo de exploração alienígena / caderno de campo**, com atmosfera de desenho animado de ação sci-fi do início dos anos 2000. A inspiração em BEN 10 clássico (2005) limita-se a atributos amplos de gênero e atmosfera: aventura, descoberta, ficção científica, humor, cores expressivas e criaturas com silhuetas marcantes. Não copiar personagens, aliens, dispositivos, símbolos, logotipo, lettering, cenas ou artes da franquia.
+
+O produto continua sendo um guia rápido digital do Quickstart v1, não um jogo nem um produto oficial.
 
 ## Linguagem visual
 
-- **Personalidade:** divertida, aventureira, expressiva e legível; não infantilizar o conteúdo das regras.
-- **Paleta:** índigo e azul-noite como base; ciano, verde-lima, amarelo solar, violeta e coral como cores de navegação e destaque.
-- **Superfícies:** cartões claros em papel quente e painéis escuros de cenário, alternados para separar leitura e navegação.
-- **Geometria:** bordas grossas, cantos arredondados assimétricos, contornos escuros e sombras chapadas deslocadas.
-- **Textura:** padrões CSS discretos de pontos, órbitas e retículas; sem imagens geradas e sem imagens oficiais.
-- **Tipografia:** títulos de peso alto e personalidade arredondada; textos de regras com contraste, tamanho e entrelinha priorizados para leitura prolongada.
-- **Interação:** botões com feedback físico, estados coloridos, alvos de toque generosos, foco visível e suporte a movimento reduzido.
-- **Marca:** monograma BC e formas geométricas originais. Não usar o emblema oficial do Omnitrix nem replicar telas do desenho.
+- **Personalidade:** aventura, descoberta, energia, humor e curiosidade; sem infantilizar a leitura das regras.
+- **Paleta:** verde-floresta e carvão na moldura; verde-lima como cor principal de acento; papel creme para superfícies de leitura; ciano e laranja para diferenciação de categorias.
+- **Superfícies:** papel claro para fichas e conteúdo; cenários escuros de floresta/ambiente alienígena para navegação e destaque.
+- **Geometria:** contornos escuros espessos, cantos assimétricos, sombras chapadas, etiquetas e selos editoriais.
+- **Textura:** pontos/retículas discretos, órbitas e linhas de caderno feitos em CSS; sem textura que prejudique legibilidade.
+- **Tipografia:** Fredoka em títulos e Nunito em regras, formulários e controles (SIL OFL 1.1).
+- **Ícones:** Phosphor Fill/Duotone (MIT), com um único peso por contexto.
+- **Ilustração:** cartoon 2D desenhado/cel-shaded, contorno legível e cores chapadas. Preferir CC0 com autor identificado; aceitar CC BY apenas quando atribuição e arquivo de créditos forem mantidos. Não misturar pixel-art, low-poly 3D, doodle e vetores flat no mesmo painel.
+- **Interação:** botões com feedback físico, alvos de toque generosos, foco visível, movimento reduzido e responsividade.
+- **Marca:** monograma BC e grafismos próprios. Não usar emblema oficial do Omnitrix nem replicar telas do desenho.
+
+## Pesquisa e curadoria de assets
+
+A pesquisa detalhada, os autores, as licenças e as URLs de origem estão em [ASSET_CATALOG.md](./ASSET_CATALOG.md).
+
+Candidatos CC0 prioritários:
+- Extra Terrestrial — Daniel Quevedo (OpenGameArt), spritesheet 2D desenhado em Photoshop.
+- Monster Builder Pack — Kenney, 178 peças modulares e arquivos vetoriais para montar criaturas originais.
+- 5 Alien Creatures — johnnytal (OpenGameArt), cinco criaturas cartunescas.
+- 2D space background — Scribe (OpenGameArt), cenário espacial CC0.
+- Alien UFO Pack e Toon Characters — Kenney, para detalhes de cenário e personagens.
+
+Candidato animado CC0:
+- Alien Character 2D Sprites — Yoo Game Art; autor declara não ter usado IA. O pacote tem 39 MB, portanto usar somente frames indispensáveis.
+
+Candidatos com atribuição:
+- Cartoon Creatures — RayB2, CC BY 4.0.
+- Space Cartoon Background — Aetherna, CC BY 3.0.
+
+Não usar materiais sem licença individual verificável. Não usar fan art presumindo autorização. **Nenhuma arte do reboot de 2016 será usada.** A decisão é definitiva.
 
 ## Componentes
 
-- **Visão geral:** capa expressiva, atalhos em cartões coloridos, indicadores de conteúdo e entrada direta para o guia e construtor.
-- **Catálogo de espécies:** seletor CSS colorido e fichas em superfície clara, com dados vindos do catálogo versionado.
-- **Guia de consulta:** abas coloridas, busca e cartões de alto contraste para leitura rápida.
+- **Visão geral:** capa editorial com clima de aventura, grafismos de campo, atalhos em cartões coloridos e indicadores de conteúdo.
+- **Arquivo de espécies:** seletor e fichas de consulta com dados vindos do catálogo versionado. A arte decorativa não deve ser identificada como espécie canônica.
+- **Guia de consulta:** navegação por assunto, busca e cartões claros de leitura rápida.
 - **Criador de Hero:** controles claros, grupos bem delimitados e ledger de PAX destacado.
 
 ## Limites de conteúdo e identidade
 
-- Não incorporar imagens geradas, arte oficial, capturas do desenho, retratos de personagens ou logotipos oficiais.
+- Não incorporar imagens geradas, arte oficial, capturas do desenho, retratos de personagens, logotipos ou emblemas da franquia.
 - Não apresentar o projeto como produto oficial ou afiliado aos detentores dos direitos.
 - Manter o aviso de projeto de fã e o escopo do Quickstart v1.
 - Não preencher lacunas mecânicas: conteúdo ambíguo continua sinalizado na auditoria.
-- O estilo cartoon é aplicado por CSS, tipografia, composição e componentes; não altera regras ou dados do sistema.
+- O design não altera regras ou dados do sistema.
 
-## Validação
+## Estado de implementação
 
-Esta direção está implementada na branch `prototype/cartoon-sci-fi-v1`. Typecheck, testes, build, revisão responsiva e preview de deployment ainda precisam ser verificados antes de considerar a alteração pronta para merge.
+O redesign de CSS e textos do dashboard está na branch `prototype/cartoon-sci-fi-v1`. A pesquisa e seleção preliminar de assets estão documentadas.
+
+**Os arquivos de arte originais ainda não foram baixados nem versionados** porque o ambiente desta sessão não conseguiu acessar os downloads externos. Não usar hotlinks como substituto. A incorporação exige baixar do autor, inspecionar spritesheets, selecionar/recortar frames, otimizar arquivos e registrar origem/licença em `THIRD_PARTY_NOTICES.md`.
+
+Typecheck, testes, build, revisão visual responsiva e preview de deployment ainda precisam ser executados antes de considerar o redesign pronto para merge.
