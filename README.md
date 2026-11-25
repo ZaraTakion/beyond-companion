@@ -49,12 +49,14 @@ O repositório não inclui o PDF, ilustrações, logotipos ou transcrições ext
 - React, TypeScript e Vite.
 - JSON versionado para o catálogo do Quickstart.
 - Funções TypeScript para cálculos e validações Tier D.
-- Vitest para testes unitários.
+- Vitest para domínio, dados e lógica de negócio.
+- Testing Library e jsdom para testes de integração dos componentes React.
+- Playwright para testes E2E em Chromium.
 - Execução local, sem necessidade de backend ou serviço pago.
 
 ## Executar localmente
 
-Requisitos: Node.js 22+ e npm.
+Requisitos: Node.js 22.13+ e npm.
 
 ```bash
 npm install
@@ -93,6 +95,6 @@ A branch de redesign entrega uma interface responsiva com três áreas:
 
 Também estão disponíveis navegação por URL (hash), histórico do navegador, exportação e importação manual de fichas JSON e folha de impressão que pode ser salva como PDF pelo navegador. A importação aceita o formato versionado gerado pelo próprio aplicativo. O aplicativo não mantém salvamento automático, não sincroniza dados com servidor e não exige conta.
 
-A validação automatizada mais recente deve ser consultada no [workflow do GitHub Actions](https://github.com/ZaraTakion/beyond-companion/actions). A suíte cobre TypeScript, testes unitários e build; inspeção visual manual e testes E2E de navegador devem ser registrados separadamente.
+A validação automatizada mais recente deve ser consultada no [workflow do GitHub Actions](https://github.com/ZaraTakion/beyond-companion/actions). O projeto agora inclui TypeScript, testes de domínio/dados, testes de componentes e cenários E2E Playwright. A execução Chromium e a inspeção visual manual devem ser confirmadas separadamente; não considerar um teste configurado como teste executado.
 
 Contribuições devem citar a página do Quickstart e distinguir texto da fonte, resumo e interpretação.
