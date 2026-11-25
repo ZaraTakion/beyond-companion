@@ -32,9 +32,12 @@
 
 ## Validação
 
-- Run #26, no commit `733a152`: typecheck, 32 testes em 8 arquivos e build de produção aprovados.
-- O código do front-end foi atualizado depois desse run. A validação específica do head atual deve ser conferida na [página de Actions](https://github.com/ZaraTakion/beyond-companion/actions).
-- Não declarar inspeção visual manual nem E2E como concluídos até executar uma sessão real de navegador em desktop, tablet e celular.
+- GitHub Actions, [run #38](https://github.com/ZaraTakion/beyond-companion/actions/runs/45624591286), no commit `9d388b4cd765acf04bec81e8e6cbbba02f849199`: aprovado.
+- TypeScript: aprovado.
+- Testes unitários: 8 arquivos, 32 testes aprovados.
+- Build de produção: aprovado; Vite transformou 34 módulos.
+- Status Vercel vinculado ao commit: sucesso.
+- Não foi executado E2E de navegador nem inspeção visual manual em desktop, tablet e celular. Essas verificações continuam separadas da cobertura automatizada.
 
 ## Limites explícitos
 
