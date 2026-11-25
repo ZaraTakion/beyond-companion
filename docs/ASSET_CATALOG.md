@@ -18,7 +18,7 @@ Este documento registra fontes pesquisadas para a identidade visual do Beyond Co
 | 2 | [Kenney — Simple Space](https://kenney.nl/assets/simple-space) | 48 sprites de naves e elementos espaciais para mapas | CC0 1.0 | Pequenos mapas, indicadores e elementos de exploração |
 | 2 | [Kenney — Scribble Platformer](https://kenney.nl/assets/scribble-platformer) | 100+ sprites em estilo desenhado à mão | CC0 1.0 | Alternativa de acabamento rabiscado; não misturar sem teste com a linha principal |
 | 2 | [Kenney — Space Shooter Remastered](https://kenney.nl/assets/space-shooter-remastered) | 295 sprites 2D de naves, armas e efeitos | CC0 1.0 | Efeitos e decoração espacial, sem transformar o guia em HUD de shooter |
-| 3 | [OpenGameArt — Cartoon Enemies](https://opengameart.org/content/cartoon-enemies) | Coleção de inimigos cartunescos 2D | CC0, declarado na página do recurso | Possível apoio ao catálogo de ameaças; revisar o conteúdo e a qualidade antes de incorporar |
+| 3 | [OpenGameArt — Cartoon Creatures](https://opengameart.org/content/cartoon-creatures) | Quatro personagens cartoon de fantasia/horror, incluindo um alien | CC BY 4.0 | Candidato secundário; exige crédito a RayB2 e não representa espécies do Quickstart |
 | 3 | [OpenGameArt — Monster Builder Pack](https://opengameart.org/content/monster-builder-pack) | Kit modular de monstros de Kenney | CC0 | Espelho adicional do pack oficial; preferir download de Kenney |
 | 3 | [OpenGameArt — Alien UFO Pack](https://opengameart.org/content/alien-ufo-pack) | Sprites individuais, spritesheets e fonte vetorial | CC0 | Espelho e referência alternativa do pack oficial |
 | 3 | [Open Doodles](https://www.opendoodles.com/about) | Ilustrações humanas em estilo doodle | CC0 | Elementos de onboarding/tutorial, se o estilo for coerente |
@@ -168,3 +168,56 @@ Embora o Wikimedia Commons registre esses arquivos sob CC BY-SA 2.0 e atribua a 
 
 Esta documentação é mantida apenas como registro da pesquisa já realizada e para evitar que os arquivos sejam selecionados novamente por engano. A descoberta não representa licença geral para a franquia, não modifica a decisão do projeto e não autoriza o uso de outros materiais de BEN 10.
 
+
+
+## 12. Pesquisa aprofundada — direção cartoon de aventura inspirada na era clássica
+
+A direção visual aprovada para o produto é **cartoon sci-fi de aventura, com clima de animação de ação de meados dos anos 2000**. A referência é de linguagem visual ampla: silhuetas legíveis, contornos escuros, cores chapadas e saturadas, composição dinâmica, formas assimétricas, detalhes de exploração e contraste entre cenários espaciais e superfícies de papel. Não reproduzir personagens, designs de alienígenas, relógio/dispositivo, logotipo, tipografia ou elementos de marca de BEN 10.
+
+### Recursos com licença aberta e potencial real
+
+| Recurso | Autor | Licença confirmada na fonte | Estilo/uso | Decisão |
+|---|---|---|---|---|
+| [Extra Terrestrial](https://opengameart.org/content/extra-terrestrial) | Daniel Quevedo | CC0 | Alien 2D simpático, desenhado no Photoshop; spritesheet PNG de 245 KB e PSD | **Primeiro candidato para teste visual**, após inspeção do spritesheet e recorte de um frame adequado |
+| [Monster Builder Pack](https://opengameart.org/content/monster-builder-pack) | Kenney | CC0 | 178 PNG tiles, spritesheets e vetores para montar criaturas com olhos, bocas e membros em seis cores | **Primeiro candidato para construir pequenos mascotes originais**, sem mapear para espécies do RPG |
+| [5 Alien Creatures](https://opengameart.org/content/5-alien-creatures) | johnnytal | CC0 | Cinco criaturas alienígenas absurdas/cartunescas feitas em Paint e GIMP; ZIP de 21,7 KB | **Candidato forte** para cards de descoberta; verificar legibilidade/resolução antes de usar em tamanho grande |
+| [Cartoon Creatures](https://opengameart.org/content/cartoon-creatures) | RayB2 | CC BY 4.0 | Quatro personagens cartoon de fantasia/horror, incluindo um alien super-herói | Candidato secundário; atribuição obrigatória e estética potencialmente mais sombria |
+| [Alien Character 2D Sprites](https://yoogameart.itch.io/alien-character-2d-sprites) | Yoo Game Art | CC0 1.0 | Alien animado em idle, jump, kick, punch e run a 30 FPS; autor declara que não usou IA; pacote grátis 39 MB | Candidato para animação de microinteração, mas pesado para primeira versão; extrair só frames essenciais |
+| [2D space background](https://opengameart.org/content/2d-space-background) | Scribe / Daniel Stephens | CC0 | Paisagem espacial de 3,6 MB, pensada para splash screen | Candidato de fundo em área isolada; otimização obrigatória antes de integrar |
+| [Space Cartoon Background](https://opengameart.org/content/space-cartoon-background) | Aetherna | CC BY 3.0 | Fundo espacial desenhado em estilo cartoon, 4000×2000 | Candidato de cenário; crédito ao autor e inspeção de qualidade obrigatórios |
+| [Alien UFO Pack](https://opengameart.org/content/alien-ufo-pack) | Kenney | CC0 | 46 PNGs, spritesheets e fonte vetorial de UFOs, lasers, explosões e trem de pouso | Apoio para elementos espaciais pequenos, não para representar aliens |
+| [Toon Characters](https://kenney.nl/assets/toon-characters) | Kenney | CC0 | 270 sprites de personagens e poses | Usar apenas se combinar com a arte alienígena escolhida; não misturar estilos sem curadoria |
+
+### Exclusões de estilo e licença
+
+- [Alien Set](https://opengameart.org/content/alien-set) e [Alien 2D Sprites](https://opengameart.org/content/alien-2d-sprites) são CC0, mas pixel-art. Não fazem parte da linha principal, pois o objetivo é ilustração cartoon desenhada/cel-shaded, não pixel-art.
+- [Animated Monsters](https://opengameart.org/content/animated-monsters) é CC0, mas pixel-art e fantasia; não usar na linha principal.
+- [Cartoon Creatures](https://opengameart.org/content/cartoon-creatures) é **CC BY 4.0**, não CC0. Atribuição a RayB2 é necessária caso seja incorporado.
+- Um asset gratuito com licença aberta continua tendo autor. Registrar a licença individual, o autor, o link de origem e eventuais modificações.
+- Nenhuma arte do reboot de 2016 ou material promocional de BEN 10 pode ser usada. A exclusão é definitiva.
+
+### Fontes de descoberta e licenças
+
+- [OpenGameArt — Monster Builder Pack](https://opengameart.org/content/monster-builder-pack): 178 peças, CC0, fonte vetorial e PNG; crédito Kenney opcional.
+- [OpenGameArt — Extra Terrestrial](https://opengameart.org/content/extra-terrestrial): autor Daniel Quevedo, spritesheet PNG e PSD, CC0.
+- [OpenGameArt — 2D space background](https://opengameart.org/content/2d-space-background): autor Scribe, CC0, atribuição não obrigatória.
+- [OpenGameArt — 5 Alien Creatures](https://opengameart.org/content/5-alien-creatures): cinco criaturas, CC0.
+- [OpenGameArt — Cartoon Creatures](https://opengameart.org/content/cartoon-creatures): RayB2, CC BY 4.0.
+- [OpenGameArt — Space Cartoon Background](https://opengameart.org/content/space-cartoon-background): Aetherna, CC BY 3.0.
+- [Yoo Game Art — Alien Character 2D Sprites](https://yoogameart.itch.io/alien-character-2d-sprites): CC0 1.0, sem IA segundo declaração do autor.
+- [Phosphor Icons](https://phosphoricons.com/) e [licença MIT](https://github.com/phosphor-icons/core/blob/main/LICENSE): sistema de ícones consistente, com pesos Fill/Duotone.
+- [Creative Commons — CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) e [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
+
+### Direção visual do site — versão de trabalho
+
+- **Conceito:** caderno de campo alienígena / arquivo de exploração, não HUD militar, não painel de scanner genérico.
+- **Paleta:** verde-floresta e carvão como moldura; verde-lima como cor de destaque; papel creme para leitura; azul-ciano e laranja para categorias e chamadas. O verde é uma referência cromática ampla, não reprodução de símbolo da franquia.
+- **Desenho de interface:** bordas escuras espessas, cartões assimétricos, sombras chapadas, selos de arquivo, retículas discretas, etiquetas e pequenas marcações de campo.
+- **Tipografia:** Fredoka para títulos e Nunito para textos e regras (SIL OFL 1.1).
+- **Arte:** uma ilustração alienígena grande no destaque, criaturas em cards de catálogo, planeta/fundo espacial em áreas de respiro e ícones Phosphor Fill/Duotone.
+- **Leitura:** o conteúdo das regras permanece em cartões de papel claro; cores fortes ficam em navegação, títulos, ilustrações e indicadores.
+- **Acessibilidade:** contraste WCAG, foco visível, áreas clicáveis adequadas, responsividade, sem animação obrigatória e respeito a `prefers-reduced-motion`.
+
+### Estado de integração
+
+A nova composição CSS e os textos do dashboard foram enviados para a branch `prototype/cartoon-sci-fi-v1`. **Os arquivos de arte dos autores ainda não foram incorporados ao repositório.** A tentativa de baixar os binários do OpenGameArt nesta sessão falhou por restrição de rede/DNS. Não usar hotlink remoto como solução permanente. A próxima etapa de integração de arte exige baixar os arquivos originais, inspecionar spritesheets, recortar somente frames necessários, otimizar PNG/WebP e manter `THIRD_PARTY_NOTICES.md` com autor/licença/origem. Não declarar o design como final nem a integração de arte como concluída antes dessa etapa e da validação visual real.
