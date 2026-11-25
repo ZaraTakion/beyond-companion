@@ -19,7 +19,7 @@
 - Atlas interativo com as sete espécies catalogadas e referências de páginas.
 - Guia de consulta com onze seções, navegação por assunto e busca na seção selecionada.
 - Construtor Tier D em cinco etapas, com validação de escolhas, cálculo derivado e ledger de PAX.
-- Exportação manual da ficha em JSON e folha de impressão preparada para impressão ou salvamento como PDF pelo navegador.
+- Importação validada e exportação manual de fichas JSON, além de folha de impressão preparada para impressão ou salvamento como PDF pelo navegador.
 - Navegação por hash, suporte ao histórico voltar/avançar, layout responsivo, link de salto, estados de foco e respeito à preferência por movimento reduzido.
 - README sincronizado com as capacidades atuais.
 
