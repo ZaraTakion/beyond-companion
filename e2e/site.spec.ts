@@ -57,6 +57,9 @@ test('updates effective attributes and the printable character sheet', async ({ 
   await expect(effectiveAttributes.getByText('+3')).toBeVisible();
 
   const printable = page.getByRole('region', { name: 'Ficha de personagem para impressão' });
+  console.log('Selected species:', await page.locator('#builder-species').inputValue());
+  console.log('Live species references:', await page.locator('.builder-reference-grid').innerText());
+  console.log('Printable sheet content:', await printable.innerText());
   await expect(printable.getByText(/Micro-Diagnostic/)).toBeVisible();
   await expect(printable.getByText(/Attributes efetivos/)).toBeVisible();
   await expect(printable.getByText('Omni Die')).toBeVisible();
