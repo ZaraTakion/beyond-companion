@@ -3580,3 +3580,10 @@ summary:focus-visible {
 .side-link.active .side-link-arrow {
   color: #17251d !important;
 }
+
+
+/* Remaining narrow-screen builder copy uses the same dark ink as the other
+   paper panels, keeping explanatory text legible at AA contrast. */
+.builder-section .section-heading p {
+  color: #394735;
+}

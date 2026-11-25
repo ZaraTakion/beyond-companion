@@ -13,6 +13,10 @@ async function openRoute(
   route: typeof mainRoutes[number],
   viewport: string,
 ) {
+  // The app animates page entry. Honor reduced motion so contrast is measured
+  // after the page reaches its stable, fully opaque presentation.
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+
   // A unique query forces a fresh document for each hash so the initial tab
   // state and the hash agree before axe inspects the rendered page.
   await page.goto(`/?a11y=${encodeURIComponent(viewport + '-' + route.label)}${route.hash}`);
