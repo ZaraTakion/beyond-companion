@@ -1,14 +1,18 @@
 // @vitest-environment jsdom
 
 import { cleanup, fireEvent, render, screen, within } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 
 beforeEach(() => {
+  vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
   window.history.replaceState({}, '', '#inicio');
 });
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  vi.restoreAllMocks();
+});
 
 describe('App navigation', () => {
   it('opens the route encoded in the URL hash', () => {
@@ -27,6 +31,15 @@ describe('App navigation', () => {
 
     expect(window.location.hash).toBe('#criar-heroi');
     expect(screen.getByRole('heading', { level: 1, name: 'Crie seu Hero.' })).toBeTruthy();
+  });
+
+  it('resets the viewport after changing sections', () => {
+    render(<App />);
+
+    const navigation = screen.getByRole('navigation', { name: 'Navegação principal' });
+    fireEvent.click(within(navigation).getByRole('button', { name: /Consultar guia/ }));
+
+    expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
   });
 
   it('falls back to the overview for an unknown hash', () => {
