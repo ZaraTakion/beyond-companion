@@ -61,13 +61,17 @@ npm install
 npm run dev
 ```
 
-Verificações:
+Verificações automatizadas:
 
 ```bash
 npm run typecheck
 npm test
 npm run build
+npx playwright install chromium
+npm run test:e2e
 ```
+
+A bateria completa pode ser executada em sequência com `npm run test:all`. A suíte inclui testes de domínio e dados (Vitest), testes de componentes React (Testing Library) e fluxos reais no Chromium (Playwright).
 
 ## Estrutura
 
