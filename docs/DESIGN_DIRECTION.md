@@ -80,3 +80,12 @@ A camada visual foi refinada para funcionar como uma capa de aventura e um atlas
 - **Mobile:** o painel de capa passa a empilhar texto e selo; controles e atalhos permanecem com alvos de toque amplos.
 
 Todos os grafismos desta passagem são CSS original. Não foram adicionadas imagens geradas, capturas da série, logotipos ou artes de terceiros. A atualização não altera o conteúdo mecânico do Quickstart v1.
+
+
+## Segunda passagem — guia de consulta e oficina de personagem
+
+O guia de consulta recebeu uma hierarquia editorial de catálogo: cada entrada agora tem um número de registro, título dominante e referência de página em selo próprio. A navegação por seção permanece como controle horizontal e o conteúdo continua derivado dos mesmos JSONs versionados.
+
+O construtor Tier D foi tratado como uma oficina de criação: cinco etapas identificadas por classe visual, acentos cromáticos próprios, controles maiores e um resumo lateral apresentado como dossiê do Hero. Estados selecionados receberam realce visual; os valores, regras de validação e custos não foram alterados.
+
+A passagem é exclusivamente visual e estrutural. Não foi introduzida nova regra, opção mecânica, custo ou comportamento de criação.
