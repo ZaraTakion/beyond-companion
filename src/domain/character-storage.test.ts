@@ -51,6 +51,14 @@ describe('character backup and local persistence', () => {
     expect(() => decodeCharacterBackup(JSON.stringify(backup))).toThrow(/incompatível/);
   });
 
+  it('rejects a structurally valid draft with unknown species or archetype IDs', () => {
+    const backup = JSON.parse(encodeCharacterBackup(draft)) as {
+      character: CharacterDraft;
+    };
+    backup.character.speciesId = 'unknown-species';
+    expect(() => decodeCharacterBackup(JSON.stringify(backup))).toThrow(/incompatível/);
+  });
+
   it('saves and loads a draft using the versioned storage key', () => {
     const storage = createMemoryStorage();
     saveDraftLocally(draft, storage);
