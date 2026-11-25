@@ -11,8 +11,8 @@
 - Pull request #3: https://github.com/ZaraTakion/beyond-companion/pull/3
 - PR aberto, em rascunho, direcionado a `main` e não mesclado.
 - A branch `main` permaneceu sem alterações nesta revisão.
-- HEAD validado integralmente: `6350fcbeef344ee45194aa6acc2d016446791dc3`, no [GitHub Actions #73](https://github.com/ZaraTakion/beyond-companion/actions/runs/45693824877).
-- Preview Vercel confirmado: projeto `beyond-companion`, deployment `dpl_4iBaEuq2KKqEMHMyXCEQFheB4pW9`, **READY**, target `preview`, no mesmo SHA do HEAD. [Abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-g0372xlg6-zaras-projects-f0700f27.vercel.app).
+- HEAD validado integralmente: `6c09bb22bc47fa39e7aa3a4b6c3a8b27e5b3e761`, no [GitHub Actions #74](https://github.com/ZaraTakion/beyond-companion/actions/runs/45702342595).
+- Preview Vercel confirmado: projeto `beyond-companion`, deployment `dpl_4gy8frePEkdMTX1kHn5MYXe8eRpH`, **READY**, target `preview`, no mesmo SHA do HEAD. [Abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-mmt4gpo2n-zaras-projects-f0700f27.vercel.app).
 - A raiz respondeu HTTP 200 e serviu o HTML esperado. A inspeção visual renderizada segue pendente; o Chromium disponível neste ambiente não consegue acessar o host externo e não foi criado desktop remoto potencialmente faturável.
 
 ## Entregue no front-end
@@ -34,9 +34,9 @@
 - Plumber Squad, Threat Archetypes, cinco personagens prontos e aventura introdutória.
 - Domínio Tier D, validações e ledger PAX cobertos por testes automatizados.
 
-## Validação técnica comprovada — GitHub Actions #73
+## Validação técnica comprovada — GitHub Actions #74
 
-Execução completa: [Run #73](https://github.com/ZaraTakion/beyond-companion/actions/runs/45693824877), HEAD `6350fcbeef344ee45194aa6acc2d016446791dc3`.
+Execução completa: [Run #74](https://github.com/ZaraTakion/beyond-companion/actions/runs/45702342595), HEAD `6c09bb22bc47fa39e7aa3a4b6c3a8b27e5b3e761`.
 
 - Instalação de dependências: aprovada (101 pacotes).
 - `npm audit --audit-level=high`: aprovado.

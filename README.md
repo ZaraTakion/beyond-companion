@@ -99,7 +99,7 @@ Também estão disponíveis navegação por URL (hash), histórico do navegador,
 
 ## Estado de QA confirmado
 
-A execução mais recente integralmente aprovada desta revisão é [GitHub Actions #73](https://github.com/ZaraTakion/beyond-companion/actions/runs/45693824877), no HEAD `6350fcbeef344ee45194aa6acc2d016446791dc3`:
+A execução mais recente integralmente aprovada desta revisão é [GitHub Actions #74](https://github.com/ZaraTakion/beyond-companion/actions/runs/45702342595), no HEAD `6c09bb22bc47fa39e7aa3a4b6c3a8b27e5b3e761`:
 
 - `npm audit --audit-level=high`: aprovado.
 - TypeScript: aprovado.
@@ -110,7 +110,7 @@ A execução mais recente integralmente aprovada desta revisão é [GitHub Actio
 - Teclado e overflow em 320, 390, 768, 1024 e 1440 px: aprovados.
 - Impressão em mídia simulada e exportação/importação JSON em round-trip: aprovadas.
 
-O PR #3 continua aberto em rascunho e não foi mesclado. A branch `main` não foi alterada nesta revisão. O preview está confirmado **READY** e vinculado ao HEAD atual `6350fcbeef344ee45194aa6acc2d016446791dc3`: [abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-g0372xlg6-zaras-projects-f0700f27.vercel.app). A raiz respondeu HTTP 200; isso não substitui avaliação visual renderizada.
+O PR #3 continua aberto em rascunho e não foi mesclado. A branch `main` não foi alterada nesta revisão. O preview está confirmado **READY** e vinculado ao HEAD atual `6350fcbeef344ee45194aa6acc2d016446791dc3`: [abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-mmt4gpo2n-zaras-projects-f0700f27.vercel.app). A raiz respondeu HTTP 200; isso não substitui avaliação visual renderizada.
 
 **Ainda pendente:** inspeção visual renderizada em desktop/tablet/mobile; testes com leitor de tela real e zoom/reflow; conferência da paginação real do PDF impresso; e segunda auditoria visual do conteúdo contra o PDF. O Chromium disponível no ambiente não consegue acessar o host externo; a sessão desktop Vercel pode gerar cobrança e não foi iniciada sem autorização explícita. O repositório não possui `package-lock.json`, então o workflow usa `npm install` e não garante dependências travadas.
 

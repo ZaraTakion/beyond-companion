@@ -50,12 +50,12 @@ Até a disponibilização e conferência do Core Rulebook oficial, o projeto imp
 - [x] Cobrir no catálogo as onze áreas consultáveis presentes no Quickstart.
 - [x] Executar typecheck, testes automatizados de domínio/dados/componentes e build de produção em GitHub Actions.
 - [x] Executar `npm audit --audit-level=high` no workflow.
-- [x] Executar Playwright/Chromium no workflow ativo: [run #73 — 11 testes aprovados](https://github.com/ZaraTakion/beyond-companion/actions/runs/45693824877).
+- [x] Executar Playwright/Chromium no workflow ativo: [run #74 — 11 testes aprovados](https://github.com/ZaraTakion/beyond-companion/actions/runs/45702342595).
 - [x] Executar verificações axe WCAG 2.1 AA nas três áreas principais em desktop e mobile 320/390 px.
 - [x] Verificar o primeiro foco no link de salto e a navegação por teclado entre as áreas.
 - [x] Verificar overflow horizontal em 320, 390, 768, 1024 e 1440 px.
 - [x] Testar impressão por emulação de mídia e round-trip de importação/exportação JSON.
-- [ ] Fazer inspeção visual renderizada em desktop (1440 px), tablet (768 px) e mobile (390/320 px). O preview está confirmado READY no HEAD atual; o browser remoto Vercel ainda não foi iniciado porque pode gerar cobrança e requer autorização explícita.
+- [ ] Fazer inspeção visual renderizada em desktop (1440 px), tablet (768 px) e mobile (390/320 px). O preview está confirmado READY para o HEAD validado na execução #74; a inspeção visual renderizada segue pendente porque o Chromium local está bloqueado para o host externo e o browser remoto Vercel pode gerar cobrança, exigindo autorização explícita.
 - [ ] Verificar acessibilidade com leitor de tela e zoom/reflow em navegadores reais.
 - [ ] Revisar paginação da ficha impressa/salva em PDF.
 - [ ] Revisar o conteúdo de ponta a ponta com o PDF aberto.

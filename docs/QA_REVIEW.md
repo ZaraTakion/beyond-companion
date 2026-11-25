@@ -23,10 +23,10 @@ Correções realizadas:
 - As varreduras de contraste respeitam `prefers-reduced-motion: reduce`, evitando medir cores durante a animação transitória de entrada da página. O teste não ignora regras axe nem desativa a verificação.
 - A exportação JSON agora é testada em round-trip: o arquivo é baixado, importado e o nome original é confirmado na ficha.
 
-## Resultado final comprovado — GitHub Actions #73
+## Resultado final comprovado — GitHub Actions #74
 
-- Execução: [Run #73 — Validate application](https://github.com/ZaraTakion/beyond-companion/actions/runs/45693824877)
-- HEAD validado: `6350fcbeef344ee45194aa6acc2d016446791dc3`
+- Execução: [Run #74 — Validate application](https://github.com/ZaraTakion/beyond-companion/actions/runs/45702342595)
+- HEAD validado: `6c09bb22bc47fa39e7aa3a4b6c3a8b27e5b3e761`
 - Resultado geral: **success**.
 - Instalação de dependências: aprovada; 101 pacotes instalados.
 - `npm audit --audit-level=high`: aprovado.
@@ -62,23 +62,24 @@ O cenário de impressão usa a emulação de mídia `print` do Chromium e confir
 | #69 | **11 aprovados / 0 reprovados** | Primeira bateria integral aprovada após as correções de acessibilidade |
 | #70 | **11 aprovados / 0 reprovados** | Revalidação do HEAD anterior e dos documentos |
 | #71–#72 | Canceladas | Commits intermediários de atualização documental; não contabilizados como falhas de teste |
-| #73 | **11 aprovados / 0 reprovados** | Revalidação completa do HEAD `6350fcbe...` e da documentação |
+| #73 | **11 aprovados / 0 reprovados** | Revalidação do commit de conteúdo `6350fcbe...` |
+| #74 | **11 aprovados / 0 reprovados** | Revalidação do HEAD `6c09bb22...`, incluindo documentação e preview associado |
 
-A execução #69 foi a primeira execução integralmente aprovada após a série de correções. A execução #70 revalidou o HEAD daquele momento. A execução #73 validou o HEAD atual `6350fcbe...` e a documentação atualizada. As execuções anteriores permanecem registradas como histórico e não são apresentadas como aprovadas.
+A execução #69 foi a primeira execução integralmente aprovada após a série de correções. A execução #70 revalidou o HEAD daquele momento. A execução #73 validou o commit de conteúdo `6350fcbe...`. A execução #74 validou o HEAD `6c09bb22...`, incluindo a documentação. As execuções anteriores permanecem registradas como histórico e não são apresentadas como aprovadas.
 
 ## Preview Vercel associado ao HEAD
 
 - Projeto: `beyond-companion` (`prj_SEqxYVZeheAkX4ozcxjWFm4tVlXn`).
-- Deployment: `dpl_4iBaEuq2KKqEMHMyXCEQFheB4pW9`, estado **READY**, target `preview`.
-- Branch/commit confirmados pela API Vercel: `prototype/cartoon-sci-fi-v1` / `6350fcbeef344ee45194aa6acc2d016446791dc3`.
+- Deployment: `dpl_4gy8frePEkdMTX1kHn5MYXe8eRpH`, estado **READY**, target `preview`.
+- Branch/commit confirmados pela API Vercel: `prototype/cartoon-sci-fi-v1` / `6c09bb22bc47fa39e7aa3a4b6c3a8b27e5b3e761`.
 - [URL da branch Preview](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app).
-- [URL única do deployment](https://beyond-companion-g0372xlg6-zaras-projects-f0700f27.vercel.app).
+- [URL única do deployment](https://beyond-companion-mmt4gpo2n-zaras-projects-f0700f27.vercel.app).
 - A página raiz respondeu HTTP 200 e entregou o HTML esperado com os assets de build. Isso confirma disponibilidade HTTP e vínculo com o deployment, **não** substitui a inspeção visual renderizada.
 
 ## Limitações restantes
 
 - A execução comprovada desta revisão ocorreu no GitHub Actions. Não há uma execução local independente confirmada nesta sessão.
-- Ainda não foi concluída inspeção visual renderizada em desktop, tablet ou mobile. O preview está confirmado como **READY** e associado ao HEAD atual (detalhes acima), mas isso não equivale a uma avaliação visual. O Chromium disponível no ambiente de execução não conseguiu abrir o host externo (erro `ERR_BLOCKED_BY_ADMINISTRATOR`). A alternativa de desktop remoto da Vercel pode gerar cobrança para a equipe e não foi iniciada sem autorização explícita para esse recurso.
+- Ainda não foi concluída inspeção visual renderizada em desktop, tablet ou mobile. O preview está confirmado como **READY** e associado ao HEAD de documentação validado pela execução #74 (detalhes acima), mas isso não equivale a uma avaliação visual. O Chromium local disponível no ambiente de execução não conseguiu abrir o host externo (erro `ERR_BLOCKED_BY_ADMINISTRATOR`). A alternativa de desktop remoto da Vercel pode gerar cobrança para a equipe e não foi iniciada sem autorização explícita para esse recurso.
 - Não foi executado teste com leitor de tela real nem avaliação manual de zoom/reflow.
 - A emulação de mídia `print` verifica a folha e seus estilos, mas paginação, margens e resultado do PDF impresso ainda precisam de conferência visual.
 - O repositório não contém `package-lock.json`; o workflow utiliza `npm install`, portanto as dependências não estão travadas por lockfile e a reprodução bit a bit do ambiente não está garantida.
