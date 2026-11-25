@@ -44,6 +44,10 @@ export default function App() {
     document.title = `${currentPage.label} — Beyond Companion`;
   }, [currentPage.label]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [tab]);
+
   function navigate(nextTab: Tab) {
     setTab(nextTab);
     const destination = navigation.find((item) => item.id === nextTab) ?? navigation[0];
