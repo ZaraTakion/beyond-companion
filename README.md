@@ -99,7 +99,7 @@ Também estão disponíveis navegação por URL (hash), histórico do navegador,
 
 ## Estado de QA confirmado
 
-A execução mais recente integralmente aprovada desta revisão é [GitHub Actions #69](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692211385), no commit `b4b6b33e879868b69e77892e951b0c518b9a869b`:
+A execução mais recente integralmente aprovada desta revisão é [GitHub Actions #70](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692698130), no HEAD `5f70a68b2feae826dd34610567165cf7cd54af1e`:
 
 - `npm audit --audit-level=high`: aprovado.
 - TypeScript: aprovado.
@@ -110,8 +110,8 @@ A execução mais recente integralmente aprovada desta revisão é [GitHub Actio
 - Teclado e overflow em 320, 390, 768, 1024 e 1440 px: aprovados.
 - Impressão em mídia simulada e exportação/importação JSON em round-trip: aprovadas.
 
-O PR #3 continua aberto em rascunho e não foi mesclado. A branch `main` não foi alterada nesta revisão. O preview Vercel do PR foi reportado como Ready: [abrir preview](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app).
+O PR #3 continua aberto em rascunho e não foi mesclado. A branch `main` não foi alterada nesta revisão. O preview Vercel correspondente ao HEAD atual ainda não foi confirmado; a consulta por repositório/commit não encontrou projeto vinculado e o acesso à URL previamente compartilhada exige autorização da equipe.
 
-**Ainda pendente:** inspeção visual humana em desktop/tablet/telefone, testes manuais com leitor de tela e zoom, conferência de paginação real do PDF impresso e segunda auditoria visual do conteúdo contra o PDF. O repositório não possui `package-lock.json`, então o workflow usa `npm install` e não garante dependências travadas.
+**Ainda pendente:** confirmar o deployment de preview do HEAD atual e realizar inspeção visual humana em desktop/tablet/telefone; testar com leitor de tela real e zoom/reflow; conferir paginação real do PDF impresso; e concluir a segunda auditoria visual do conteúdo contra o PDF. O repositório não possui `package-lock.json`, então o workflow usa `npm install` e não garante dependências travadas.
 
 Contribuições devem citar a página do Quickstart e distinguir texto da fonte, resumo e interpretação.
