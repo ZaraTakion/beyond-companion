@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ruleset } from './data/ruleset';
 import CharacterBuilder from './components/CharacterBuilder';
 import QuickReference from './components/QuickReference';
+import SpeciesScanner from './components/SpeciesScanner';
 import './styles.css';
 
 type Tab = 'overview' | 'guide' | 'builder';
@@ -84,8 +85,8 @@ export default function App() {
             <div className="dashboard">
               <section className="home-hero">
                 <div className="hero-copy">
-                  <div className="hero-eyebrow"><span className="hero-eyebrow-dot" /> FIELD GUIDE <span>/</span> QUICKSTART 001</div>
-                  <h1>O universo em jogo.<br /><em>As regras à mão.</em></h1>
+                  <div className="hero-eyebrow"><span className="hero-eyebrow-dot" /> ALIEN DATABASE <span>/</span> QUICKSTART 001</div>
+                  <h1>Identifique o desconhecido.<br /><em>Domine as regras.</em></h1>
                   <p>Uma central de consulta para explorar o Quickstart, encontrar regras sem interromper a sessão e preparar seu próximo Hero.</p>
                   <div className="hero-actions">
                     <button type="button" className="button button-dark" onClick={() => setTab('guide')}>Explorar o guia <span aria-hidden="true">→</span></button>
@@ -107,6 +108,8 @@ export default function App() {
                 </div>
                 <div className="hero-side-index"><span>V1</span><span>·</span><span>FIELD NOTES</span></div>
               </section>
+
+              <SpeciesScanner />
 
               <section className="metrics-row" aria-label="Resumo do conteúdo">
                 <div className="metric-card">
