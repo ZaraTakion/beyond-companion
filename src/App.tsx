@@ -63,7 +63,7 @@ export default function App() {
       <a className="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
       <div className="app-layout">
       <aside className="sidebar">
-        <a className="sidebar-brand" href="#inicio" onClick={(event) => { event.preventDefault(); navigate('overview'); }} aria-label="Beyond Companion — início">
+        <a className="sidebar-brand" href="#inicio" onClick={(event) => { event.preventDefault(); navigate('overview'); }}>
           <AppMark />
           <span className="brand-wordmark">BEYOND<span>COMPANION</span></span>
         </a>

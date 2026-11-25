@@ -65,15 +65,27 @@ test('updates effective attributes and the printable character sheet', async ({ 
   await expect(printable).toBeVisible();
 });
 
-test('exports a character as a versioned JSON file', async ({ page }) => {
+test('exports and re-imports a versioned character JSON file', async ({ page }) => {
   await page.getByRole('navigation', { name: 'Navegação principal' })
     .getByRole('button', { name: /Criar um Hero/ }).click();
+
+  const nameField = page.getByLabel('Nome do personagem');
+  await nameField.fill('Hero de teste de round-trip');
 
   const downloadEvent = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Exportar JSON' }).click();
   const download = await downloadEvent;
 
   expect(download.suggestedFilename()).toBe('beyond-companion-hero.json');
+  const exportedPath = await download.path();
+  expect(exportedPath).not.toBeNull();
+
+  await nameField.fill('Valor temporário');
+  await page.locator('input[aria-label="Selecionar arquivo JSON de personagem"]')
+    .setInputFiles(exportedPath!);
+
+  await expect(page.getByRole('status')).toContainText('Ficha importada com sucesso');
+  await expect(nameField).toHaveValue('Hero de teste de round-trip');
 });
 
 test('keeps the mobile layout within the viewport', async ({ page }) => {

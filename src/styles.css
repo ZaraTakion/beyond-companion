@@ -3515,3 +3515,23 @@ summary:focus-visible {
 @media print {
   .print-sheet-stat-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 }
+
+
+/* WCAG 2.1 AA corrections confirmed by axe in CI run #65.
+   Keep the field-guide palette while darkening small labels on paper surfaces. */
+.brand-emblem-core {
+  color: #17251d;
+}
+.species-homeworld > span,
+.species-perception > .species-record-label {
+  color: #455238;
+}
+.species-path-entry > span {
+  color: #596846;
+}
+.metric-index {
+  color: #35452e;
+}
+.launch-topline {
+  color: #394735;
+}
