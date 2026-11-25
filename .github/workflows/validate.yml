@@ -1,0 +1,48 @@
+name: Validate application
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Typecheck, unit tests, build and browser tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: TypeScript validation
+        run: npm run typecheck
+
+      - name: Unit and component tests
+        run: npm test
+
+      - name: Production build
+        run: npm run build
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Browser end-to-end tests
+        run: npm run test:e2e
