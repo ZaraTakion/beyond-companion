@@ -47,7 +47,7 @@ test('updates effective attributes and the printable character sheet', async ({ 
   await page.getByRole('navigation', { name: 'Navegação principal' })
     .getByRole('button', { name: /Criar um Hero/ }).click();
 
-  await page.getByLabel('Espécie').selectOption('galvan');
+  await page.getByLabel('Espécie', { exact: true }).selectOption('galvan');
   await page.getByLabel(/Hyper-Cognition/).check();
 
   const effectiveAttributes = page.getByRole('group', {
