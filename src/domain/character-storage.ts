@@ -1,4 +1,6 @@
 import type { CharacterDraft } from './character';
+import speciesCatalog from '../../data/rulesets/quickstart-v1/species.json';
+import archetypeCatalog from '../../data/rulesets/quickstart-v1/archetypes.json';
 
 export const CHARACTER_BACKUP_SCHEMA = 'beyond-companion.character';
 export const CHARACTER_BACKUP_VERSION = 1;
@@ -65,7 +67,7 @@ export function isCharacterDraft(value: unknown): value is CharacterDraft {
     typeof attributes[name] === 'number' && Number.isFinite(attributes[name]),
   );
 
-  return typeof value.name === 'string'
+  const structurallyValid = typeof value.name === 'string'
     && typeof value.speciesId === 'string'
     && typeof value.archetypeId === 'string'
     && typeof value.evolutionaryPath === 'string'
@@ -82,6 +84,12 @@ export function isCharacterDraft(value: unknown): value is CharacterDraft {
     && Array.isArray(value.gear)
     && value.gear.every(isGearSelection)
     && typeof value.plumberAffiliated === 'boolean';
+
+  if (!structurallyValid) return false;
+
+  const species = speciesCatalog.species.find((item) => item.id === value.speciesId);
+  const archetype = archetypeCatalog.archetypes.find((item) => item.id === value.archetypeId);
+  return Boolean(species && archetype && species.paths.some((path) => path.name === value.evolutionaryPath));
 }
 
 export function encodeCharacterBackup(
