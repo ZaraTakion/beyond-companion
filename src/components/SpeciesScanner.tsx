@@ -15,16 +15,16 @@ export default function SpeciesScanner() {
     <section className="species-scanner" aria-labelledby="species-scanner-title">
       <div className="scanner-heading">
         <div>
-          <div className="section-kicker">BANCO DE DADOS · QUICKSTART V1</div>
-          <h2 id="species-scanner-title">Scanner de espécies<span>.</span></h2>
-          <p>Selecione uma espécie para consultar sua identificação, aptidões e características catalogadas.</p>
+          <div className="section-kicker">GUIA DE EXPLORAÇÃO · QUICKSTART V1</div>
+          <h2 id="species-scanner-title">Catálogo de espécies<span>.</span></h2>
+          <p>Escolha uma espécie e descubra os dados catalogados no Quickstart.</p>
         </div>
         <div className="scanner-count"><strong>{String(species.length).padStart(2, '0')}</strong><span>REGISTROS<br />DISPONÍVEIS</span></div>
       </div>
 
       <div className="scanner-layout">
         <div className="scanner-console">
-          <div className="scanner-console-top"><span><i /> SCAN READY</span><span>SPECIES INDEX / 001</span></div>
+          <div className="scanner-console-top"><span><i /> CATÁLOGO ABERTO</span><span>GUIA DE ESPÉCIES / 001</span></div>
           <div className="scanner-radar" role="group" aria-label="Selecionar espécie">
             <div className="radar-ring radar-ring-outer" />
             <div className="radar-ring radar-ring-middle" />
@@ -32,7 +32,7 @@ export default function SpeciesScanner() {
             <div className="radar-cross radar-cross-horizontal" />
             <div className="radar-cross radar-cross-vertical" />
             <div className="radar-sweep" />
-            <div className="radar-core"><span>BC</span><small>SPECIES<br />SCAN</small></div>
+            <div className="radar-core"><span>BC</span><small>ALIEN<br />GUIDE</small></div>
             {species.map((item, index) => (
               <button
                 key={item.id}
@@ -48,11 +48,11 @@ export default function SpeciesScanner() {
               </button>
             ))}
           </div>
-          <div className="scanner-console-bottom"><span>SELECIONE UM REGISTRO</span><span>7 / 7 INDEXADOS</span></div>
+          <div className="scanner-console-bottom"><span>ESCOLHA UMA ESPÉCIE</span><span>7 / 7 INDEXADOS</span></div>
         </div>
 
         <article className="scanner-record" aria-live="polite">
-          <div className="record-topline"><span>IDENTIFICAÇÃO DE ESPÉCIE</span><span>{pageLabel(selected.sourcePages)}</span></div>
+          <div className="record-topline"><span>FICHA DA ESPÉCIE</span><span>{pageLabel(selected.sourcePages)}</span></div>
           <div className="record-title-row">
             <div><div className="record-index">REGISTRO / {selected.id.toUpperCase()}</div><h3>{selected.name}</h3></div>
             <span className="record-status"><i /> CATALOGADO</span>
