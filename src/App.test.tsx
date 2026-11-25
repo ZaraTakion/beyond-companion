@@ -37,7 +37,7 @@ describe('App navigation', () => {
     render(<App />);
 
     const navigation = screen.getByRole('navigation', { name: 'Navegação principal' });
-    fireEvent.click(within(navigation).getByRole('button', { name: /Consultar guia/ }));
+    fireEvent.click(within(navigation).getByRole('button', { name: /Guia de consulta/ }));
 
     expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
   });
