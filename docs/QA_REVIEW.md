@@ -23,10 +23,10 @@ Correções realizadas:
 - As varreduras de contraste respeitam `prefers-reduced-motion: reduce`, evitando medir cores durante a animação transitória de entrada da página. O teste não ignora regras axe nem desativa a verificação.
 - A exportação JSON agora é testada em round-trip: o arquivo é baixado, importado e o nome original é confirmado na ficha.
 
-## Resultado final comprovado — GitHub Actions #69
+## Resultado final comprovado — GitHub Actions #70
 
-- Execução: [Run #69 — Validate application](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692211385)
-- Commit de código validado: `b4b6b33e879868b69e77892e951b0c518b9a869b`
+- Execução: [Run #69 — Validate application](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692698130)
+- Commit de código validado: `5f70a68b2feae826dd34610567165cf7cd54af1e`
 - Resultado geral: **success**.
 - Instalação de dependências: aprovada; 101 pacotes instalados.
 - `npm audit --audit-level=high`: aprovado.
@@ -59,14 +59,15 @@ O cenário de impressão usa a emulação de mídia `print` do Chromium e confir
 | #66 | 8 aprovados / 3 reprovados | Contraste adicional em opções/navegação e expectativa incorreta de nome de arquivo |
 | #67 | 10 aprovados / 1 reprovado | Contraste em layouts mobile |
 | #68 | 10 aprovados / 1 reprovado | Varredura durante transição visual e contraste residual |
-| #69 | **11 aprovados / 0 reprovados** | Bateria integral aprovada |
+| #69 | **11 aprovados / 0 reprovados** | Primeira bateria integral aprovada após as correções de acessibilidade |
+| #70 | **11 aprovados / 0 reprovados** | Revalidação completa do HEAD final e da documentação |
 
-A execução #69 é a primeira execução integralmente aprovada após a série de correções. As execuções anteriores permanecem registradas como histórico e não são apresentadas como aprovadas.
+A execução #69 foi a primeira execução integralmente aprovada após a série de correções. A execução #70 revalidou o HEAD final, incluindo a documentação. As execuções anteriores permanecem registradas como histórico e não são apresentadas como aprovadas.
 
 ## Limitações restantes
 
 - A execução comprovada desta revisão ocorreu no GitHub Actions. Não há uma execução local independente confirmada nesta sessão.
-- Não foi realizada inspeção visual humana em dispositivos físicos ou em navegadores desktop/tablet/mobile. O preview Vercel do PR foi reportado como **Ready**, mas isso não equivale a uma aprovação visual manual: [abrir preview](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app).
+- Não foi realizada inspeção visual humana em navegadores desktop/tablet/mobile. A URL de preview compartilhada anteriormente não foi confirmada como deployment do HEAD atual: a consulta de deployments do Vercel não encontrou projeto vinculado ao repositório/commit e a leitura da URL antiga foi bloqueada por autorização da equipe. Uma solicitação de acesso foi emitida; até a aprovação e a nova consulta, o estado do preview atual permanece **não verificado**.
 - Não foi executado teste com leitor de tela real nem avaliação manual de zoom/reflow.
 - A emulação de mídia `print` verifica a folha e seus estilos, mas paginação, margens e resultado do PDF impresso ainda precisam de conferência visual.
 - O repositório não contém `package-lock.json`; o workflow utiliza `npm install`, portanto as dependências não estão travadas por lockfile e a reprodução bit a bit do ambiente não está garantida.
