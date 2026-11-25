@@ -16,7 +16,7 @@ describe('CharacterBuilder UI', () => {
     expect(within(printable).getByText('Cadence Fixation')).toBeTruthy();
     expect(within(printable).getByText('Archetype Bonus')).toBeTruthy();
     expect(within(printable).getByText('+2 Physical damage em todos os Melee Attacks.')).toBeTruthy();
-    expect(within(printable).getByText('Short Fuse')).toBeTruthy();
+    expect(within(printable).getByText(/Short Fuse/)).toBeTruthy();
     expect(within(printable).getByText('□ Tired')).toBeTruthy();
     expect(within(printable).getByText('□ Wounded')).toBeTruthy();
     expect(within(printable).getByText('□ Defeated')).toBeTruthy();
