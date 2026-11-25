@@ -190,8 +190,8 @@ const sections: ReferenceSection[] = [
     ...powerUpsCatalog.items,
   ] as unknown as DataRecord[] },
   { id: 'squad', label: labels.squad, title: labels.squad, description: 'Bases e Special Abilities do Plumber Squad, além dos Threat Archetypes.', items: [
-    { name: 'Plumber Squad', content: squadCatalog.squad },
-    ...squadCatalog.threatArchetypes,
+    { name: 'Plumber Squad', sourcePages: squadCatalog.sourcePages, content: squadCatalog.squad },
+    ...squadCatalog.threatArchetypes.map((item) => ({ ...item, sourcePages: squadCatalog.sourcePages })),
   ] as unknown as DataRecord[] },
   { id: 'heroes', label: labels.heroes, title: labels.heroes, description: 'As cinco fichas prontas do Quickstart, incluindo Attributes, escolhas, valores apresentados e distribuição de PAX.', items: heroesCatalog.heroes as unknown as DataRecord[] },
   { id: 'adventure', label: labels.adventure, title: labels.adventure, description: 'Preparação, Truths, atos, locais, Zones, clocks, Rescue objectives, ameaças e recompensas.', items: [adventureCatalog as unknown as DataRecord] },

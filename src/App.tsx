@@ -76,7 +76,7 @@ export default function App() {
 
       <footer className="footer">
         <span>Beyond Companion · protótipo não oficial</span>
-        <span>Ruleset atual: Quickstart v1 · 76 páginas</span>
+        <span>Ruleset atual: Quickstart v1 · {ruleset.source.pageCount} páginas</span>
       </footer>
     </main>
   );
