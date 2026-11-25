@@ -16,7 +16,7 @@ const navigation: { id: Tab; number: string; label: string; hint: string }[] = [
 function AppMark() {
   return (
     <span className="brand-emblem" aria-hidden="true">
-      <span className="brand-emblem-core">B</span>
+      <span className="brand-emblem-core">BC</span>
     </span>
   );
 }
@@ -24,9 +24,13 @@ function AppMark() {
 export default function App() {
   const [tab, setTab] = useState<Tab>('overview');
   const currentPage = navigation.find((item) => item.id === tab) ?? navigation[0];
+  const nextPage: Tab = tab === 'overview' ? 'guide' : tab === 'guide' ? 'builder' : 'overview';
+  const nextPageLabel = tab === 'overview' ? 'Consultar guia' : tab === 'guide' ? 'Criar um Hero' : 'Visão geral';
 
   return (
-    <div className="app-layout">
+    <>
+      <a className="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+      <div className="app-layout">
       <aside className="sidebar">
         <a className="sidebar-brand" href="#inicio" onClick={() => setTab('overview')} aria-label="Beyond Companion — início">
           <AppMark />
@@ -67,7 +71,7 @@ export default function App() {
         </div>
       </aside>
 
-      <main className="main-area" id="inicio">
+      <main className="main-area" id="conteudo-principal">
         <header className="topbar">
           <div className="breadcrumb">
             <span>BEYOND COMPANION</span>
@@ -76,7 +80,7 @@ export default function App() {
           </div>
           <div className="topbar-actions">
             <span className="topbar-version"><span className="status-light" /> {ruleset.displayName}</span>
-            <button type="button" className="button button-quiet" onClick={() => setTab('guide')}>Consultar guia <span aria-hidden="true">↗</span></button>
+            <button type="button" className="button button-quiet" onClick={() => setTab(nextPage)}>{nextPageLabel} <span aria-hidden="true">↗</span></button>
           </div>
         </header>
 
@@ -234,6 +238,7 @@ export default function App() {
           <span className="footer-version">QUICKSTART V1 · {ruleset.source.pageCount} PÁGINAS</span>
         </footer>
       </main>
-    </div>
+      </div>
+    </>
   );
 }
