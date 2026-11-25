@@ -75,7 +75,9 @@ export default function CharacterBuilder() {
       ? 'Ficha recuperada deste dispositivo.'
       : restored.status === 'invalid'
         ? 'O salvamento local anterior não pôde ser lido. Um novo rascunho foi iniciado.'
-        : 'As alterações serão salvas neste dispositivo.',
+        : restored.status === 'unavailable'
+          ? 'O armazenamento local não está disponível neste navegador.'
+          : 'As alterações serão salvas neste dispositivo.',
   );
   const firstRender = useRef(true);
   const [showAllIssues, setShowAllIssues] = useState(false);
@@ -314,7 +316,7 @@ export default function CharacterBuilder() {
       document.body.append(anchor);
       anchor.click();
       anchor.remove();
-      URL.revokeObjectURL(url);
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
       setPersistenceStatus('Backup JSON exportado.');
     } catch {
       setPersistenceStatus('Não foi possível exportar a ficha.');
@@ -360,6 +362,11 @@ export default function CharacterBuilder() {
                 const input = event.currentTarget;
                 const file = input.files?.[0];
                 if (!file) return;
+                if (file.size > 1_000_000) {
+                  setPersistenceStatus('Arquivo muito grande. O limite de importação é 1 MB.');
+                  input.value = '';
+                  return;
+                }
                 void file.text()
                   .then((serialized) => {
                     const imported = decodeCharacterBackup(serialized);
