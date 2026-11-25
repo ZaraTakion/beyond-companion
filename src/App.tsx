@@ -85,26 +85,26 @@ export default function App() {
             <div className="dashboard">
               <section className="home-hero">
                 <div className="hero-copy">
-                  <div className="hero-eyebrow"><span className="hero-eyebrow-dot" /> CARTOON SCI-FI <span>/</span> QUICKSTART 001</div>
-                  <h1>Explore o desconhecido.<br /><em>Crie seu próprio Hero.</em></h1>
-                  <p>Seu guia de bolso para descobrir espécies, consultar o Quickstart e preparar seu próximo Hero.</p>
+                  <div className="hero-eyebrow"><span className="hero-eyebrow-dot" /> ALIEN FIELD GUIDE <span>/</span> QUICKSTART 001</div>
+                  <h1>O universo é maior<br /><em>do que parece.</em></h1>
+                  <p>Abra o arquivo de campo: conheça espécies, entenda as regras e monte seu Hero.</p>
                   <div className="hero-actions">
                     <button type="button" className="button button-dark" onClick={() => setTab('guide')}>Explorar o guia <span aria-hidden="true">→</span></button>
                     <button type="button" className="button button-outline-dark" onClick={() => setTab('builder')}>Criar personagem</button>
                   </div>
-                  <div className="hero-footnote"><span>01</span> REFERÊNCIA DIGITAL · BEN 10: BEYOND RPG</div>
+                  <div className="hero-footnote"><span>01</span> ARQUIVO DE EXPLORAÇÃO · EDIÇÃO QUICKSTART</div>
                 </div>
                 <div className="hero-visual" aria-hidden="true">
                   <div className="visual-grid" />
                   <div className="visual-orbit orbit-one" />
                   <div className="visual-orbit orbit-two" />
                   <div className="visual-orbit orbit-three" />
-                  <div className="visual-core"><span>BC</span><i /></div>
+                  <div className="visual-core"><span>BF</span><i /></div>
                   <div className="visual-crosshair crosshair-top" />
                   <div className="visual-crosshair crosshair-bottom" />
-                  <div className="visual-code">FIELD / 001<br />EARTH SECTOR</div>
+                  <div className="visual-code">ARQUIVO / 001<br />SETOR TERRESTRE</div>
                   <div className="visual-number">10</div>
-                  <div className="visual-caption">QUICKSTART<br />EDITION</div>
+                  <div className="visual-caption">ALIEN<br />FIELD NOTES</div>
                 </div>
                 <div className="hero-side-index"><span>V1</span><span>·</span><span>FIELD NOTES</span></div>
               </section>
