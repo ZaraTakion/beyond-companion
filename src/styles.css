@@ -742,3 +742,70 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
   .record-title-row { flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) { .radar-sweep { animation: none; } }
+
+
+/* Character draft persistence and portable backups */
+.builder-persistence {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 18px;
+  padding: 13px 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(18, 27, 20, .72);
+}
+.builder-persistence-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  color: var(--muted);
+  font-size: .76rem;
+  line-height: 1.45;
+}
+.builder-persistence-status .status-light { flex: 0 0 auto; }
+.builder-persistence-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.builder-action {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 36px;
+  padding: 8px 11px;
+  border: 1px solid rgba(196, 255, 85, .28);
+  border-radius: 8px;
+  color: #e7f2df;
+  background: rgba(196, 255, 85, .07);
+  font-size: .72rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.builder-action:hover { background: rgba(196, 255, 85, .15); border-color: rgba(196, 255, 85, .5); }
+.builder-action-muted { border-color: var(--line); color: var(--muted); background: transparent; }
+.builder-import-action { position: relative; overflow: hidden; }
+.builder-import-action input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.builder-action:focus-within, .builder-action:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .builder-persistence { align-items: stretch; flex-direction: column; }
+  .builder-persistence-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .builder-action { width: 100%; }
+  .builder-action-muted { grid-column: 1 / -1; }
+}
