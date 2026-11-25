@@ -70,7 +70,7 @@ test('updates effective attributes and the printable character sheet', async ({ 
     return {
       rootDisplay: root ? getComputedStyle(root).display : 'missing',
       sheetIsDirectBodyChild: sheet?.parentElement === document.body,
-      sheetTop: sheet?.getBoundingClientRect().top,
+      sheetDocumentTop: window.scrollY + (sheet?.getBoundingClientRect().top ?? 0),
       bodyHeight: document.body.scrollHeight,
       sheetHeight: sheet?.getBoundingClientRect().height ?? 0,
     };
@@ -78,7 +78,7 @@ test('updates effective attributes and the printable character sheet', async ({ 
 
   expect(printLayout.rootDisplay).toBe('none');
   expect(printLayout.sheetIsDirectBodyChild).toBe(true);
-  expect(printLayout.sheetTop).toBe(0);
+  expect(printLayout.sheetDocumentTop).toBe(0);
   expect(printLayout.bodyHeight).toBeLessThanOrEqual(printLayout.sheetHeight + 1);
 });
 
