@@ -29,7 +29,7 @@ Até a disponibilização e conferência do Core Rulebook oficial, o projeto imp
 - [x] Criar o modelo de domínio Tier D e ledger PAX.
 - [x] Implementar primeira validação de espécie, Archetype, Path, Grades, Skills, Traits, gear e orçamento.
 - [x] Criar a primeira interface guiada de personagem Tier D.
-- [ ] Executar typecheck, testes e build em ambiente de integração.
+- [x] Executar typecheck, testes e build em GitHub Actions (Node.js 22).
 - [x] Criar fixtures de domínio e reconciliar resultados das cinco fichas prontas catalogadas.
 - [ ] Ampliar a cobertura dos cálculos condicionais e benefícios gratuitos conforme a auditoria mecânica.
 - [x] Implementar salvamento local automático e exportação/importação JSON versionada.
@@ -38,7 +38,7 @@ Até a disponibilização e conferência do Core Rulebook oficial, o projeto imp
 - [ ] Concluir a segunda auditoria visual do PDF.
 - [ ] Cobrir regras e seções ainda não expostas na interface.
 - [ ] Verificar acessibilidade com teclado, contraste, zoom e leitor de tela.
-- [ ] Executar testes, typecheck e build em ambiente local.
+- [ ] Executar teste de aceitação manual em ambiente local/dispositivos reais após a validação de CI.
 - [ ] Revisar o conteúdo de ponta a ponta com o PDF aberto.
 - [ ] Publicar a versão de consulta do Quickstart, sem adicionar regras externas.
 
