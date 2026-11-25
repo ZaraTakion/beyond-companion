@@ -99,7 +99,7 @@ Também estão disponíveis navegação por URL (hash), histórico do navegador,
 
 ## Estado de QA confirmado
 
-A execução mais recente integralmente aprovada desta revisão é [GitHub Actions #70](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692698130), no HEAD `5f70a68b2feae826dd34610567165cf7cd54af1e`:
+A execução mais recente integralmente aprovada desta revisão é [GitHub Actions #73](https://github.com/ZaraTakion/beyond-companion/actions/runs/45693824877), no HEAD `6350fcbeef344ee45194aa6acc2d016446791dc3`:
 
 - `npm audit --audit-level=high`: aprovado.
 - TypeScript: aprovado.
@@ -110,8 +110,8 @@ A execução mais recente integralmente aprovada desta revisão é [GitHub Actio
 - Teclado e overflow em 320, 390, 768, 1024 e 1440 px: aprovados.
 - Impressão em mídia simulada e exportação/importação JSON em round-trip: aprovadas.
 
-O PR #3 continua aberto em rascunho e não foi mesclado. A branch `main` não foi alterada nesta revisão. O preview Vercel correspondente ao HEAD atual ainda não foi confirmado; a consulta por repositório/commit não encontrou projeto vinculado e o acesso à URL previamente compartilhada exige autorização da equipe.
+O PR #3 continua aberto em rascunho e não foi mesclado. A branch `main` não foi alterada nesta revisão. O preview está confirmado **READY** e vinculado ao HEAD atual `6350fcbeef344ee45194aa6acc2d016446791dc3`: [abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-g0372xlg6-zaras-projects-f0700f27.vercel.app). A raiz respondeu HTTP 200; isso não substitui avaliação visual renderizada.
 
-**Ainda pendente:** confirmar o deployment de preview do HEAD atual e realizar inspeção visual humana em desktop/tablet/telefone; testar com leitor de tela real e zoom/reflow; conferir paginação real do PDF impresso; e concluir a segunda auditoria visual do conteúdo contra o PDF. O repositório não possui `package-lock.json`, então o workflow usa `npm install` e não garante dependências travadas.
+**Ainda pendente:** inspeção visual renderizada em desktop/tablet/mobile; testes com leitor de tela real e zoom/reflow; conferência da paginação real do PDF impresso; e segunda auditoria visual do conteúdo contra o PDF. O Chromium disponível no ambiente não consegue acessar o host externo; a sessão desktop Vercel pode gerar cobrança e não foi iniciada sem autorização explícita. O repositório não possui `package-lock.json`, então o workflow usa `npm install` e não garante dependências travadas.
 
 Contribuições devem citar a página do Quickstart e distinguir texto da fonte, resumo e interpretação.

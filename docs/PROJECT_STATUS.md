@@ -11,8 +11,9 @@
 - Pull request #3: https://github.com/ZaraTakion/beyond-companion/pull/3
 - PR aberto, em rascunho, direcionado a `main` e não mesclado.
 - A branch `main` permaneceu sem alterações nesta revisão.
-- HEAD validado integralmente: `5f70a68b2feae826dd34610567165cf7cd54af1e`, no [GitHub Actions #70](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692698130).
-- O preview Vercel atual não foi confirmado: a consulta por repositório/commit não encontrou um projeto vinculado e o acesso à URL antiga exige autorização da equipe. O status será reavaliado depois da autorização.
+- HEAD validado integralmente: `6350fcbeef344ee45194aa6acc2d016446791dc3`, no [GitHub Actions #73](https://github.com/ZaraTakion/beyond-companion/actions/runs/45693824877).
+- Preview Vercel confirmado: projeto `beyond-companion`, deployment `dpl_4iBaEuq2KKqEMHMyXCEQFheB4pW9`, **READY**, target `preview`, no mesmo SHA do HEAD. [Abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-g0372xlg6-zaras-projects-f0700f27.vercel.app).
+- A raiz respondeu HTTP 200 e serviu o HTML esperado. A inspeção visual renderizada segue pendente; o Chromium disponível neste ambiente não consegue acessar o host externo e não foi criado desktop remoto potencialmente faturável.
 
 ## Entregue no front-end
 
@@ -33,9 +34,9 @@
 - Plumber Squad, Threat Archetypes, cinco personagens prontos e aventura introdutória.
 - Domínio Tier D, validações e ledger PAX cobertos por testes automatizados.
 
-## Validação técnica comprovada — GitHub Actions #70
+## Validação técnica comprovada — GitHub Actions #73
 
-Execução completa: [Run #70](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692698130), HEAD `5f70a68b2feae826dd34610567165cf7cd54af1e`.
+Execução completa: [Run #73](https://github.com/ZaraTakion/beyond-companion/actions/runs/45693824877), HEAD `6350fcbeef344ee45194aa6acc2d016446791dc3`.
 
 - Instalação de dependências: aprovada (101 pacotes).
 - `npm audit --audit-level=high`: aprovado.
@@ -54,7 +55,7 @@ A revisão corrigiu violações WCAG identificadas nas execuções anteriores, i
 
 ## Pendências e limitações
 
-- Não foi feita inspeção visual manual em desktop/tablet/mobile. A URL previamente informada ainda não foi confirmada como deployment do HEAD atual; o Vercel exige autorização de equipe para consultar a implantação e abrir o browser. A avaliação visual segue pendente.
+- A implantação Preview foi confirmada como READY e ligada ao HEAD atual; a raiz respondeu HTTP 200. Ainda não foi feita inspeção visual renderizada em desktop/tablet/mobile: o Chromium deste ambiente está bloqueado para conexão externa e a sessão desktop Vercel pode gerar cobrança, por isso não foi iniciada sem autorização.
 - Leitor de tela real e zoom/reflow precisam de avaliação manual.
 - A paginação final da ficha em PDF/impresso precisa de revisão visual.
 - A segunda auditoria visual sistemática dos dados, comparando todos os resumos e referências com o PDF aberto, permanece pendente.
