@@ -243,8 +243,11 @@ export default function QuickReference() {
             return (
               <article className="reference-card" key={String(item.id ?? title) + '-' + index}>
                 <div className="reference-card-heading">
-                  <h4>{title}</h4>
-                  {pageReference(item) && <span>{pageReference(item)}</span>}
+                  <div className="reference-card-title">
+                    <span className="reference-card-index">REGISTRO {String(index + 1).padStart(2, '0')}</span>
+                    <h4>{title}</h4>
+                  </div>
+                  {pageReference(item) && <span className="reference-card-page">{pageReference(item)}</span>}
                 </div>
                 {renderRecordFields(item, 0)}
               </article>
