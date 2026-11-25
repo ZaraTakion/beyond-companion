@@ -59,9 +59,10 @@ function isGearSelection(value: unknown): boolean {
 export function isCharacterDraft(value: unknown): value is CharacterDraft {
   if (!isRecord(value) || !isRecord(value.attributes)) return false;
 
+  const attributes = value.attributes;
   const attributeNames = ['agility', 'force', 'mind', 'precision', 'resistance', 'spirit'];
   const attributesValid = attributeNames.every((name) =>
-    typeof value.attributes?.[name] === 'number' && Number.isFinite(value.attributes[name]),
+    typeof attributes[name] === 'number' && Number.isFinite(attributes[name]),
   );
 
   return typeof value.name === 'string'
