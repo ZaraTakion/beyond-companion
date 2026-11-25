@@ -19,19 +19,20 @@ Até a disponibilização e conferência do Core Rulebook oficial, o projeto imp
 ## Fase 1 — Guia de consulta
 - [x] Criar o catálogo de dados do Quickstart com referências de página.
 - [x] Criar navegação inicial por espécies, Archetypes e Aptitudes.
-- [ ] Completar navegação e pesquisa para todas as seções do PDF.
-- [ ] Exibir detalhes de Skills, Traits, gear, Power-Ups, regras e exemplos.
-- [ ] Integrar a aventura introdutória como referência consultável.
-- [ ] Melhorar acessibilidade, hierarquia visual e navegação mobile.
+- [x] Completar navegação e pesquisa nas onze seções do Quickstart.
+- [x] Exibir registros de Skills, Traits, gear, Power-Ups, regras, personagens prontos e exemplos catalogados.
+- [x] Integrar a aventura introdutória como referência consultável.
+- [x] Aplicar hierarquia visual responsiva, controles semânticos, foco visível e suporte a movimento reduzido.
+- [ ] Validar a experiência com teclado, contraste, zoom e leitor de tela.
 
 ## Fase 2 — Criação de personagem coberta pelo Quickstart
 - [x] Criar o modelo de domínio Tier D e ledger PAX.
 - [x] Implementar primeira validação de espécie, Archetype, Path, Grades, Skills, Traits, gear e orçamento.
 - [x] Criar a primeira interface guiada de personagem Tier D.
-- [ ] Executar typecheck, testes e build.
-- [ ] Validar resultados contra as cinco fichas prontas e corrigir divergências justificadamente.
-- [ ] Revisar cálculos condicionais e benefícios gratuitos.
-- [ ] Implementar salvamento local e exportação/importação JSON, caso confirmados como parte da experiência desejada do guia.
+- [ ] Executar typecheck, testes e build em ambiente de integração.
+- [x] Criar fixtures de domínio e reconciliar resultados das cinco fichas prontas catalogadas.
+- [ ] Ampliar a cobertura dos cálculos condicionais e benefícios gratuitos conforme a auditoria mecânica.
+- [x] Implementar salvamento local automático e exportação/importação JSON versionada.
 
 ## Fase 3 — Estabilização do Guia Rápido
 - [ ] Concluir a segunda auditoria visual do PDF.
