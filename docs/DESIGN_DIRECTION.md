@@ -6,6 +6,12 @@ Criar uma identidade própria para o Beyond Companion como um **arquivo de explo
 
 O produto continua sendo um guia rápido digital do Quickstart v1, não um jogo nem um produto oficial.
 
+## Identidade independente
+
+Beyond Companion deve se apresentar de forma clara como um projeto independente, feito por fãs e não oficial. A página inicial exibe um aviso de independência; o rodapé repete uma versão compacta em todas as páginas. A redação não deve sugerir patrocínio, aprovação ou vínculo com Warner Bros. Discovery, Cartoon Network ou quaisquer titulares de direitos.
+
+O aviso de fã **não funciona como licença** e não autoriza a reprodução de arte oficial, capturas da série, personagens, logotipos ou materiais de terceiros. Cada arquivo incorporado exige licença verificável compatível com o uso ou autorização expressa. A identidade visual pode se inspirar em atributos amplos da série animada original de 2005, sem copiar elementos protegidos.
+
 ## Linguagem visual
 
 - **Personalidade:** aventura, descoberta, energia, humor e curiosidade; sem infantilizar a leitura das regras.
