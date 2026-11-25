@@ -9,11 +9,9 @@ import {
   validateCharacter,
   type AttributeName,
   type CharacterDraft,
-  type CharacterValidation,
   type GearSelection,
   type SkillSelection,
   type TraitSelection,
-  type ValidationIssue,
 } from '../domain/character';
 
 const attributeLabels: Record<AttributeName, string> = {
@@ -273,7 +271,7 @@ export default function CharacterBuilder() {
     };
     const filename = (draft.name.trim() || 'hero')
       .normalize('NFD')
-      .replace(/[\\u0300-\\u036f]/g, '')
+      .replace(/\p{Diacritic}/gu, '')
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-|-$/g, '') || 'hero';
