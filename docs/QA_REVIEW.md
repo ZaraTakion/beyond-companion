@@ -2,50 +2,85 @@
 
 ## Escopo
 
-A revisão considerou estrutura React/TypeScript/Vite, navegação, visão geral, atlas de espécies, guia de consulta, construtor Tier D, importação/exportação, impressão, domínio de personagem, ledger PAX, catálogos JSON, testes, configuração de CI e documentação.
+A revisão cobre React, TypeScript, Vite, navegação e histórico, visão geral e atlas de espécies, Guia de Consulta, construtor Tier D, regras e domínio de personagem, ledger PAX, catálogos JSON, importação/exportação, impressão, acessibilidade, responsividade, E2E, workflow e documentação.
 
-## Correções aplicadas
+A fonte de conteúdo continua sendo exclusivamente o PDF Quickstart v1 fornecido pelo usuário. Esta revisão é de engenharia e interface; não amplia o conteúdo mecânico.
 
-- **Importação de ficha:** parser separado em `src/domain/character-io.ts`, com validação do formato, versão, ruleset, espécie, Archetype, Evolutionary Path, atributos e coleções.
-- **Proteção de arquivo:** limite de 1 MB e limites estruturais para as coleções importadas; violações mecânicas válidas estruturalmente continuam sendo mostradas pelo validador do personagem.
-- **Ledger PAX:** custos e orçamento agora exigem inteiros não negativos; valores fracionários, `NaN` e orçamento negativo são rejeitados.
-- **Referências do Guia:** páginas de origem aninhadas são coletadas e apresentadas no nível das entradas de regras básicas; Conditions recebem referência à página 25 do Quickstart.
-- **Navegação:** mudança de área retorna a janela ao topo.
-- **Catálogo de dano:** o teste foi corrigido para enumerar os cinco tipos presentes no PDF: Elemental, Pulse, Magical, Physical e Psychic.
-- **Testes de interface:** cobertura com Testing Library para navegação, pesquisa, mudança de seção, atlas, seleção de espécie, atributos derivados, compras PAX e conteúdo da ficha imprimível.
-- **Testes frágeis:** corrigidos seletores que assumiam texto separado quando o nome estava composto dentro de um título e que falhavam quando o planeta aparecia no índice e no dossiê.
-- **Teste de rolagem:** incluído cenário para verificar que a navegação retorna ao topo, com mock da API não implementada pelo jsdom.
-- **Browser suite:** seis cenários Playwright definidos para navegação, pesquisa, atlas, construtor, exportação JSON e largura mobile. A workflow correspondente está versionada em `.github/workflows/validate.yml`.
+## Diagnóstico e correções aplicadas
 
-## Resultado automatizado comprovado
+A execução #65 identificou violações reais de contraste na identidade da interface e em textos de apoio sobre superfícies claras, além de uma divergência entre o nome acessível e o texto visível do link de marca `.sidebar-brand`.
 
-- [GitHub Actions — run #53](https://github.com/ZaraTakion/beyond-companion/actions/runs/45636588005)
-- Commit validado: `79646a3871c921dc3f93a580870058d7e4003cd1`
-- TypeScript: aprovado.
-- Vitest + Testing Library: **13 arquivos, 52 testes aprovados, 0 falhas**.
-- Build de produção: aprovado, 35 módulos transformados.
-- Instalação de dependências: 96 pacotes.
+A inspeção ampliada do Guia e do Construtor encontrou ocorrências adicionais em estados mobile: opções do construtor, navegação do Guia, indicadores de estado, resumos e mensagens de validação. Os pontos foram corrigidos sem remover nem enfraquecer a regra axe.
 
-A execução #50 havia identificado duas falhas apenas nos testes de interface: a consulta textual de Songtide Mapping e o planeta Galvan Prime duplicado no índice/dossiê. Os seletores foram corrigidos e a execução #53 passou.
+Correções realizadas:
 
-## Limites que permanecem
+- Escurecimento de textos pequenos sobre superfícies claras em marca, atlas, cartões e indicadores, com combinações que ultrapassam 4,5:1.
+- Ajuste de textos de apoio, navegação por seção e listas do Guia.
+- Ajuste das descrições e indicadores do Construtor em cartões e painéis claros.
+- Correção do nome acessível do link da marca: a etiqueta redundante foi removida para que o nome seja fornecido pelo texto visível.
+- As varreduras axe passaram a acumular todas as violações das rotas inspecionadas antes de falhar, em vez de parar no primeiro problema.
+- Cada rota de teste abre um documento novo e confirma que o item correto da navegação principal está ativo.
+- As varreduras de contraste respeitam `prefers-reduced-motion: reduce`, evitando medir cores durante a animação transitória de entrada da página. O teste não ignora regras axe nem desativa a verificação.
+- A exportação JSON agora é testada em round-trip: o arquivo é baixado, importado e o nome original é confirmado na ficha.
 
-- A run #53 antecede um teste adicional de rolagem e a workflow Playwright; esses incrementos não possuem execução CI confirmada neste relatório.
-- Os seis cenários E2E ainda precisam ser executados em Chromium.
-- Não houve inspeção visual manual ou screenshot em desktop, tablet e celular.
-- A consulta de deployments confirmou que não há projeto Vercel vinculado ao repositório/commit; nenhuma URL de preview foi confirmada.
-- Não existe `package-lock.json`; a instalação utiliza `npm install` com faixas de versão no `package.json`. Um lockfile e `npm ci` são recomendados para builds reproduzíveis.
-- Não foi feita auditoria independente de vulnerabilidades com `npm audit`.
-- A workflow Playwright está na branch do PR e ainda não tem execução registrada. Não se deve afirmar que E2E ou validação visual foram aprovados.
+## Resultado final comprovado — GitHub Actions #69
+
+- Execução: [Run #69 — Validate application](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692211385)
+- Commit de código validado: `b4b6b33e879868b69e77892e951b0c518b9a869b`
+- Resultado geral: **success**.
+- Instalação de dependências: aprovada; 101 pacotes instalados.
+- `npm audit --audit-level=high`: aprovado.
+- TypeScript (`npm run typecheck`): aprovado.
+- Vitest + Testing Library: **13 arquivos, 53 testes aprovados, 0 falhas**.
+- Build de produção: aprovado; Vite 8.3.8 concluiu o build.
+- Instalação de Chromium: aprovada.
+- Playwright/Chromium: **11 testes aprovados, 0 falhas**.
+
+### Cobertura E2E e acessibilidade executada
+
+- Navegação entre visão geral, Guia e Construtor.
+- Pesquisa no Guia e troca de seção.
+- Seleção de espécie e atualização do dossiê.
+- Atributos efetivos e conteúdo da ficha em mídia de impressão.
+- Exportação e importação JSON versionada em round-trip.
+- Layout mobile.
+- axe com tags WCAG 2 A, AA, 2.1 A e 2.1 AA nas três áreas principais, em desktop e nos viewports mobile de 320 e 390 px.
+- Primeiro foco do teclado no link “Pular para o conteúdo”.
+- Navegação por teclado entre as áreas usando Tab e Enter.
+- Ausência de overflow horizontal em 320, 390, 768, 1024 e 1440 px.
+
+O cenário de impressão usa a emulação de mídia `print` do Chromium e confirma a visibilidade e o conteúdo da folha de personagem. O cenário JSON confirma que a ficha exportada pode ser reimportada e restaura os dados testados.
+
+## Histórico das execuções de correção
+
+| Execução | Resultado E2E | Motivo observado |
+|---|---:|---|
+| #65 | 8 aprovados / 2 reprovados | Primeiras violações axe em contraste e nome acessível |
+| #66 | 8 aprovados / 3 reprovados | Contraste adicional em opções/navegação e expectativa incorreta de nome de arquivo |
+| #67 | 10 aprovados / 1 reprovado | Contraste em layouts mobile |
+| #68 | 10 aprovados / 1 reprovado | Varredura durante transição visual e contraste residual |
+| #69 | **11 aprovados / 0 reprovados** | Bateria integral aprovada |
+
+A execução #69 é a primeira execução integralmente aprovada após a série de correções. As execuções anteriores permanecem registradas como histórico e não são apresentadas como aprovadas.
+
+## Limitações restantes
+
+- A execução comprovada desta revisão ocorreu no GitHub Actions. Não há uma execução local independente confirmada nesta sessão.
+- Não foi realizada inspeção visual humana em dispositivos físicos ou em navegadores desktop/tablet/mobile. O preview Vercel do PR foi reportado como **Ready**, mas isso não equivale a uma aprovação visual manual: [abrir preview](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app).
+- Não foi executado teste com leitor de tela real nem avaliação manual de zoom/reflow.
+- A emulação de mídia `print` verifica a folha e seus estilos, mas paginação, margens e resultado do PDF impresso ainda precisam de conferência visual.
+- O repositório não contém `package-lock.json`; o workflow utiliza `npm install`, portanto as dependências não estão travadas por lockfile e a reprodução bit a bit do ambiente não está garantida.
+- A auditoria executada é `npm audit --audit-level=high`; ela valida o limiar configurado pelo comando, não substitui revisão de segurança dedicada.
+- A segunda leitura visual sistemática dos dados contra todas as páginas do PDF continua pendente.
 
 ## Fidelidade e direitos
 
-- O conteúdo permanece limitado ao Quickstart v1.
-- As correções de engenharia não introduzem regras, custos, espécies ou opções mecânicas.
-- Nenhuma arte foi gerada nem incorporada nesta revisão.
-- Nenhuma captura da série, ilustração oficial, logo ou imagem do reboot de 2016 foi adicionada.
-- O aviso de projeto de fã permanece explícito e não é tratado como licença de uso de material protegido.
+- O escopo continua limitado ao Quickstart v1.
+- Nenhuma mecânica, espécie, custo, opção ou regra foi acrescentada por causa desta revisão.
+- Nenhuma imagem ou ilustração foi gerada por IA ou adicionada nesta revisão.
+- Não foram incorporadas capturas da série, artes oficiais, logotipos ou materiais do reboot de 2016.
+- O aviso de projeto independente de fãs não é tratado como autorização para uso de propriedade intelectual.
 
 ## Estado do repositório
 
-Pull Request #3 continua aberto em rascunho e não mesclado. A branch `main` não foi alterada.
+O PR #3 continua aberto e em rascunho, direcionado a `main`, sem merge. A branch `main` permaneceu intacta. No momento da verificação, o PR estava marcado como mergeable e sem threads de revisão pendentes.

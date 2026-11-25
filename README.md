@@ -52,7 +52,8 @@ O repositório não inclui o PDF, ilustrações, logotipos ou transcrições ext
 - Vitest para domínio, dados e lógica de negócio.
 - Testing Library e jsdom para testes de integração dos componentes React.
 - Playwright para testes E2E em Chromium.
-- Execução local, sem necessidade de backend ou serviço pago.
+- axe-core/Playwright para verificações automatizadas WCAG 2.1 A/AA.
+- Execução da interface sem backend, contas ou serviços pagos.
 
 ## Executar localmente
 
@@ -66,14 +67,15 @@ npm run dev
 Verificações automatizadas:
 
 ```bash
+npm audit --audit-level=high
 npm run typecheck
 npm test
 npm run build
-npx playwright install chromium
+npx playwright install --with-deps chromium
 npm run test:e2e
 ```
 
-A bateria completa pode ser executada em sequência com `npm run test:all`. A suíte inclui testes de domínio e dados (Vitest), testes de componentes React (Testing Library) e fluxos reais no Chromium (Playwright).
+A suíte Playwright executa navegação, pesquisa, atlas, Construtor, impressão, exportação/importação JSON, acessibilidade e overflow responsivo. A workflow do GitHub Actions executa essas etapas em sequência.
 
 ## Estrutura
 
@@ -95,6 +97,21 @@ A branch de redesign entrega uma interface responsiva com três áreas:
 
 Também estão disponíveis navegação por URL (hash), histórico do navegador, exportação e importação manual de fichas JSON e folha de impressão que pode ser salva como PDF pelo navegador. A importação aceita o formato versionado gerado pelo próprio aplicativo. O aplicativo não mantém salvamento automático, não sincroniza dados com servidor e não exige conta.
 
-A validação automatizada mais recente deve ser consultada no [workflow do GitHub Actions](https://github.com/ZaraTakion/beyond-companion/actions). O projeto agora inclui TypeScript, testes de domínio/dados, testes de componentes e cenários E2E Playwright. A execução Chromium e a inspeção visual manual devem ser confirmadas separadamente; não considerar um teste configurado como teste executado.
+## Estado de QA confirmado
+
+A execução mais recente integralmente aprovada desta revisão é [GitHub Actions #69](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692211385), no commit `b4b6b33e879868b69e77892e951b0c518b9a869b`:
+
+- `npm audit --audit-level=high`: aprovado.
+- TypeScript: aprovado.
+- Vitest: **13 arquivos e 53 testes aprovados**.
+- Build de produção: aprovado.
+- Playwright/Chromium: **11 testes aprovados**.
+- axe: aprovado nas páginas principais em desktop e mobile 320/390 px.
+- Teclado e overflow em 320, 390, 768, 1024 e 1440 px: aprovados.
+- Impressão em mídia simulada e exportação/importação JSON em round-trip: aprovadas.
+
+O PR #3 continua aberto em rascunho e não foi mesclado. A branch `main` não foi alterada nesta revisão. O preview Vercel do PR foi reportado como Ready: [abrir preview](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app).
+
+**Ainda pendente:** inspeção visual humana em desktop/tablet/telefone, testes manuais com leitor de tela e zoom, conferência de paginação real do PDF impresso e segunda auditoria visual do conteúdo contra o PDF. O repositório não possui `package-lock.json`, então o workflow usa `npm install` e não garante dependências travadas.
 
 Contribuições devem citar a página do Quickstart e distinguir texto da fonte, resumo e interpretação.

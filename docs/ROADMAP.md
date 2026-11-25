@@ -25,6 +25,7 @@ Até a disponibilização e conferência do Core Rulebook oficial, o projeto imp
 - [x] Exibir detalhes catalogados de Skills, Traits, gear, Power-Ups, regras, exemplos e personagens prontos.
 - [x] Integrar a aventura introdutória como referência consultável.
 - [x] Implementar hierarquia visual, foco visível, movimento reduzido e responsividade.
+- [x] Executar axe nas rotas principais em desktop e mobile (320/390 px), sem desativar as regras.
 - [ ] Fazer validação manual com leitor de tela, zoom e dispositivos físicos.
 
 ## Fase 2 — Criação de personagem coberta pelo Quickstart
@@ -38,6 +39,9 @@ Até a disponibilização e conferência do Core Rulebook oficial, o projeto imp
 - [x] Incluir Unique Perception, Complication, Evolutionary Path, Archetype Bonus e Flaw na ficha para impressão.
 - [x] Incluir Conditions, Omni Die e bônus de Hero Points por Episode na folha de impressão.
 - [x] Implementar importação versionada e exportação manual JSON com validação estrutural e limite de arquivo.
+- [x] Testar exportação e reimportação JSON em round-trip no Chromium.
+- [x] Verificar a folha de personagem na emulação de mídia print do Chromium.
+- [ ] Conferir visualmente a paginação e o PDF final em navegadores/visualizadores reais.
 - [ ] Salvamento automático local: permanece fora do escopo atual; a ficha pode ser salva manualmente por exportação JSON.
 
 ## Fase 3 — Estabilização do Guia Rápido
@@ -45,13 +49,17 @@ Até a disponibilização e conferência do Core Rulebook oficial, o projeto imp
 - [ ] Concluir a segunda auditoria visual do PDF e conferir os resumos contra todas as páginas.
 - [x] Cobrir no catálogo as onze áreas consultáveis presentes no Quickstart.
 - [x] Executar typecheck, testes automatizados de domínio/dados/componentes e build de produção em GitHub Actions.
-- [x] Adicionar testes React com Testing Library e ambiente jsdom.
-- [x] Preparar testes E2E Playwright para Chromium, navegação, busca, atlas, construtor, impressão, exportação e viewport mobile.
-- [ ] Executar a bateria Playwright no workflow ativo e revisar seus resultados.
+- [x] Executar `npm audit --audit-level=high` no workflow.
+- [x] Executar Playwright/Chromium no workflow ativo: [run #69 — 11 testes aprovados](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692211385).
+- [x] Executar verificações axe WCAG 2.1 AA nas três áreas principais em desktop e mobile 320/390 px.
+- [x] Verificar o primeiro foco no link de salto e a navegação por teclado entre as áreas.
+- [x] Verificar overflow horizontal em 320, 390, 768, 1024 e 1440 px.
+- [x] Testar impressão por emulação de mídia e round-trip de importação/exportação JSON.
 - [ ] Fazer inspeção visual manual em desktop, tablet e telefone.
-- [ ] Verificar acessibilidade com teclado, contraste, zoom e leitor de tela em navegadores reais.
+- [ ] Verificar acessibilidade com leitor de tela e zoom/reflow em navegadores reais.
+- [ ] Revisar paginação da ficha impressa/salva em PDF.
 - [ ] Revisar o conteúdo de ponta a ponta com o PDF aberto.
-- [ ] Publicar o guia após revisão e aprovação do PR; a branch de trabalho permanece sem merge.
+- [ ] Publicar o guia após revisão visual, conferência de conteúdo e aprovação do PR; a branch de trabalho permanece sem merge.
 
 ## Fora do roadmap atual
 

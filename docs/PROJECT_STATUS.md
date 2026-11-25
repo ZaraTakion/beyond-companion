@@ -9,48 +9,58 @@
 - Repositório público: https://github.com/ZaraTakion/beyond-companion
 - Branch de trabalho: `prototype/cartoon-sci-fi-v1`
 - Pull request #3: https://github.com/ZaraTakion/beyond-companion/pull/3
-- Estado do PR: aberto, em rascunho e não mesclado em `main`.
-- Fonte: PDF Quickstart v1 fornecido pelo usuário; o arquivo original não está armazenado no repositório.
+- PR aberto, em rascunho, direcionado a `main` e não mesclado.
+- A branch `main` permaneceu sem alterações nesta revisão.
+- Commit de código validado integralmente: `b4b6b33e879868b69e77892e951b0c518b9a869b`, no [GitHub Actions #69](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692211385).
+- O preview Vercel do PR foi reportado como Ready; isso não representa revisão visual humana.
 
 ## Entregue no front-end
 
 - Direção visual autoral de caderno de campo sci-fi/cartoon, sem arte gerada, capturas da série, logos ou artes oficiais.
 - Visão geral com aviso claro de projeto de fã independente.
 - Atlas interativo com as sete espécies catalogadas e referências de páginas.
-- Guia de consulta com onze seções, navegação por assunto e busca na seção selecionada.
-- Construtor Tier D em cinco etapas, com validação de escolhas, cálculo derivado e ledger de PAX.
-- Importação validada e exportação manual de fichas JSON, além de folha de impressão preparada para impressão ou salvamento como PDF pelo navegador.
-- Navegação por hash, suporte ao histórico voltar/avançar, layout responsivo, link de salto, estados de foco e respeito à preferência por movimento reduzido.
-- README sincronizado com as capacidades atuais.
+- Guia de consulta com onze seções, navegação por assunto, pesquisa na seção ativa e referências do PDF.
+- Construtor Tier D em cinco etapas, com validação de escolhas, cálculos derivados e ledger de PAX.
+- Importação validada e exportação manual de fichas JSON, com limite de arquivo e validação estrutural.
+- Folha de personagem preparada para impressão e salvamento como PDF pelo navegador.
+- Navegação por hash e histórico voltar/avançar.
+- Layout responsivo, link para saltar ao conteúdo, estados de foco e respeito a movimento reduzido.
 
 ## Base de conteúdo
 
 - Catálogos versionados para espécies, Archetypes, Aptitudes Grade 1, Skills, Traits, Weapons and Gear e Power-Ups.
 - Regras de criação, testes, recursos, combate, dano, Conditions, Rescue, Interlude e Perspective Splice.
 - Plumber Squad, Threat Archetypes, cinco personagens prontos e aventura introdutória.
-- Domínio Tier D e ledger PAX cobertos por testes unitários.
+- Domínio Tier D, validações e ledger PAX cobertos por testes automatizados.
 
-## Revisão técnica e validação — 25/11/2026
+## Validação técnica comprovada — GitHub Actions #69
 
-A revisão corrigiu a importação de JSON da ficha, os limites do ledger PAX, a apresentação das referências de página nas regras básicas e o retorno ao topo ao trocar de área. O teste de dano agora afirma explicitamente os cinco tipos do PDF: Elemental, Pulse, Magical, Physical e Psychic.
+Execução completa: [Run #69](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692211385), commit `b4b6b33e879868b69e77892e951b0c518b9a869b`.
 
-O front-end agora possui testes de componente para navegação, atlas de espécies, guia de consulta e construtor. A bateria executada no GitHub Actions foi:
-
-- [Run #53](https://github.com/ZaraTakion/beyond-companion/actions/runs/45636588005), commit `79646a3871c921dc3f93a580870058d7e4003cd1`: concluída com sucesso.
+- Instalação de dependências: aprovada (101 pacotes).
+- `npm audit --audit-level=high`: aprovado.
 - TypeScript: aprovado.
-- Vitest + Testing Library: **13 arquivos, 52 testes aprovados, 0 falhas**.
-- Build de produção: aprovado; Vite transformou 35 módulos.
-- Dependências instaladas: 96 pacotes.
+- Vitest + Testing Library: **13 arquivos, 53 testes aprovados, 0 falhas**.
+- Build de produção: aprovado.
+- Instalação de Chromium: aprovada.
+- Playwright/Chromium: **11 testes aprovados, 0 falhas**.
+- axe: aprovado nas três áreas principais, em desktop e em mobile 320/390 px.
+- Teclado: link de salto como primeiro foco e navegação entre áreas aprovados.
+- Overflow: aprovado em 320, 390, 768, 1024 e 1440 px.
+- Impressão: folha verificada na emulação de mídia `print`.
+- JSON: exportação e reimportação em round-trip aprovadas.
 
-**Limite importante:** depois da run #53 foi acrescentado mais um teste de navegação/rolagem e foi adicionada uma suíte Playwright com seis cenários E2E. Esses testes ainda não têm uma execução CI comprovada no head atual. A workflow de navegador está versionada na branch do PR, mas não há execução CI registrada para a versão atual; portanto, os cenários Playwright permanecem sem comprovação.
+A revisão corrigiu violações WCAG identificadas nas execuções anteriores, incluindo contrastes em componentes da visão geral, Guia e Construtor e o nome acessível do link da marca. A verificação axe permaneceu ativa durante todas as correções.
 
-Não foi feita inspeção visual manual em navegador real nos breakpoints desktop, tablet e celular. Não há projeto Vercel vinculado ao repositório/commit nem URL de preview confirmada.
+## Pendências e limitações
 
-## Pontos de manutenção pendentes
-
-- O repositório ainda não contém `package-lock.json`; a instalação usa `npm install` e faixas de versão do `package.json`, não uma árvore de dependências travada.
-- Não foi executada auditoria independente de vulnerabilidades das dependências.
-- Os cenários Playwright foram escritos, mas ainda precisam de execução em Chromium após a workflow ser ativada no branch base ou num ambiente local com browser instalado.
+- Não foi feita inspeção visual manual em dispositivos físicos ou navegadores desktop/tablet/mobile. A implantação preview foi reportada como Ready, mas ainda precisa de avaliação visual humana.
+- Leitor de tela real e zoom/reflow precisam de avaliação manual.
+- A paginação final da ficha em PDF/impresso precisa de revisão visual.
+- A segunda auditoria visual sistemática dos dados, comparando todos os resumos e referências com o PDF aberto, permanece pendente.
+- Não existe `package-lock.json`; CI utiliza `npm install`, e a árvore de dependências não está fixada.
+- A auditoria de dependências confirmada usa o limiar `high` do npm audit.
+- A validação desta sessão foi executada no GitHub Actions; não se declara execução local.
 
 ## Limites explícitos
 
@@ -60,6 +70,7 @@ Não foi feita inspeção visual manual em navegador real nos breakpoints deskto
 - Não iniciar companion completo, gestão de campanha, multiplayer, contas ou sincronização em nuvem.
 - O construtor não mantém salvamento automático nem sincronização: o jogador exporta o JSON manualmente.
 - Não incluir o PDF, imagens, logos ou transcrições extensas no repositório.
+- Não usar material do reboot de 2016.
 
 ## Evolução posterior
 
