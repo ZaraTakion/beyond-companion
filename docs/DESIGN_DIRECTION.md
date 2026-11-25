@@ -67,3 +67,16 @@ O redesign de CSS e textos do dashboard está na branch `prototype/cartoon-sci-f
 **Os arquivos de arte originais ainda não foram baixados nem versionados** porque o ambiente desta sessão não conseguiu acessar os downloads externos. Não usar hotlinks como substituto. A incorporação exige baixar do autor, inspecionar spritesheets, selecionar/recortar frames, otimizar arquivos e registrar origem/licença em `THIRD_PARTY_NOTICES.md`.
 
 Typecheck, testes, build, revisão visual responsiva e preview de deployment ainda precisam ser executados antes de considerar o redesign pronto para merge.
+
+
+## Passagem de memorabilidade visual — edição editorial
+
+A camada visual foi refinada para funcionar como uma capa de aventura e um atlas de campo, não como um dashboard genérico. A hierarquia agora depende de poucos elementos reconhecíveis: título expressivo, moldura escura, papel de arquivo, selos assimétricos e acentos cromáticos independentes por seção.
+
+- **Abertura:** capa em dois planos, com tipografia grande e um selo geométrico abstrato construído em CSS.
+- **Arquivo de espécies:** prancheta de atlas em papel claro; os marcadores circulares continuam sendo controles do catálogo, mas deixam de parecer um radar militar.
+- **Consulta e criação:** cartões de leitura com o mesmo contorno e sombra física; cores de apoio variam para orientar sem competir com o texto.
+- **Ritmo:** blocos de informação alternam superfícies escuras e claras, com mais respiro e títulos de maior presença.
+- **Mobile:** o painel de capa passa a empilhar texto e selo; controles e atalhos permanecem com alvos de toque amplos.
+
+Todos os grafismos desta passagem são CSS original. Não foram adicionadas imagens geradas, capturas da série, logotipos ou artes de terceiros. A atualização não altera o conteúdo mecânico do Quickstart v1.
