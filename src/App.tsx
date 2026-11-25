@@ -85,9 +85,9 @@ export default function App() {
             <div className="dashboard">
               <section className="home-hero">
                 <div className="hero-copy">
-                  <div className="hero-eyebrow"><span className="hero-eyebrow-dot" /> ALIEN DATABASE <span>/</span> QUICKSTART 001</div>
-                  <h1>Identifique o desconhecido.<br /><em>Domine as regras.</em></h1>
-                  <p>Uma central de consulta para explorar o Quickstart, encontrar regras sem interromper a sessão e preparar seu próximo Hero.</p>
+                  <div className="hero-eyebrow"><span className="hero-eyebrow-dot" /> CARTOON SCI-FI <span>/</span> QUICKSTART 001</div>
+                  <h1>Explore o desconhecido.<br /><em>Crie seu próprio Hero.</em></h1>
+                  <p>Seu guia de bolso para descobrir espécies, consultar o Quickstart e preparar seu próximo Hero.</p>
                   <div className="hero-actions">
                     <button type="button" className="button button-dark" onClick={() => setTab('guide')}>Explorar o guia <span aria-hidden="true">→</span></button>
                     <button type="button" className="button button-outline-dark" onClick={() => setTab('builder')}>Criar personagem</button>
