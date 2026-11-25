@@ -40,9 +40,11 @@ O repositório não inclui o PDF, ilustrações, logotipos ou transcrições ext
 
 - React, TypeScript e Vite.
 - JSON versionado para o catálogo do Quickstart.
-- Funções TypeScript para cálculos e validações Tier D.
-- Vitest para testes unitários.
-- Execução local, sem necessidade de backend ou serviço pago.
+- Funções TypeScript puras para cálculos e validações Tier D.
+- Salvamento automático de um rascunho no navegador, sem conta ou servidor.
+- Backup de ficha em JSON versionado, com validação de formato na importação.
+- Vitest para testes unitários do domínio e da persistência.
+- Aplicação estática: nenhum backend remoto ou serviço pago é necessário para o escopo atual.
 
 ## Executar localmente
 
@@ -73,6 +75,6 @@ docs/rules-audit/              inventário, auditoria e pendências
 
 ## Estado
 
-O Quickstart foi estruturado em seis passes de auditoria. O domínio Tier D e a primeira interface de criação já foram iniciados com base nesse conteúdo. A revisão cruzada, a execução de typecheck/testes/build e a validação prática continuam pendentes. Ainda não há salvamento local nem exportação da ficha.
+O Quickstart foi estruturado em seis passes de auditoria. O domínio Tier D e a primeira interface de criação já foram iniciados com base nesse conteúdo. A revisão cruzada, a execução de typecheck/testes/build e a validação prática continuam pendentes. O construtor agora recupera automaticamente o último rascunho neste navegador e permite exportar/importar backups JSON. O salvamento é local ao dispositivo e não sincroniza entre navegadores.
 
 Contribuições devem citar a página do Quickstart e distinguir texto da fonte, resumo e interpretação.
