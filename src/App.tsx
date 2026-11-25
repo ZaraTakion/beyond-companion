@@ -63,7 +63,7 @@ export default function App() {
         </div>
         <div className="sidebar-bottom">
           <span className="sidebar-bottom-mark">BC / 001</span>
-          <span>PROTÓTIPO NÃO OFICIAL</span>
+          <span>PROJETO DE FÃ · NÃO OFICIAL</span>
         </div>
       </aside>
 
@@ -85,14 +85,14 @@ export default function App() {
             <div className="dashboard">
               <section className="home-hero">
                 <div className="hero-copy">
-                  <div className="hero-eyebrow"><span className="hero-eyebrow-dot" /> ALIEN FIELD GUIDE <span>/</span> QUICKSTART 001</div>
+                  <div className="hero-eyebrow"><span className="hero-eyebrow-dot" /> ARQUIVO DE CAMPO <span>/</span> PROJETO DE FÃ</div>
                   <h1>O universo é maior<br /><em>do que parece.</em></h1>
-                  <p>Abra o arquivo de campo: conheça espécies, entenda as regras e monte seu Hero.</p>
+                  <p>Um guia independente, feito por fãs, para explorar o Quickstart v1, consultar as regras e montar seu Hero.</p>
                   <div className="hero-actions">
                     <button type="button" className="button button-dark" onClick={() => setTab('guide')}>Explorar o guia <span aria-hidden="true">→</span></button>
                     <button type="button" className="button button-outline-dark" onClick={() => setTab('builder')}>Criar personagem</button>
                   </div>
-                  <div className="hero-footnote"><span>01</span> ARQUIVO DE EXPLORAÇÃO · EDIÇÃO QUICKSTART</div>
+                  <div className="hero-footnote"><span>01</span> PROJETO INDEPENDENTE DE FÃS · NÃO OFICIAL</div>
                 </div>
                 <div className="hero-visual" aria-hidden="true">
                   <div className="visual-grid" />
@@ -107,6 +107,16 @@ export default function App() {
                   <div className="visual-caption">ALIEN<br />FIELD NOTES</div>
                 </div>
                 <div className="hero-side-index"><span>V1</span><span>·</span><span>FIELD NOTES</span></div>
+              </section>
+
+              <section className="fan-project-notice" aria-labelledby="fan-project-heading">
+                <div className="fan-notice-stamp" aria-hidden="true">FÃ<br />001</div>
+                <div className="fan-notice-copy">
+                  <div className="fan-notice-kicker">AVISO DE INDEPENDÊNCIA</div>
+                  <h2 id="fan-project-heading">Feito por fãs. Não é um produto oficial.</h2>
+                  <p>Beyond Companion é um projeto independente de fãs e um guia rápido digital do Quickstart v1 de BEN 10: BEYOND — The Roleplaying Game. Não possui vínculo, patrocínio ou aprovação da Warner Bros. Discovery, Cartoon Network ou dos titulares dos direitos da franquia. BEN 10, seus personagens, nomes, marcas e materiais oficiais pertencem aos respectivos titulares.</p>
+                </div>
+                <span className="fan-notice-side">INDEPENDENT FAN PROJECT</span>
               </section>
 
               <SpeciesScanner />
@@ -220,7 +230,7 @@ export default function App() {
 
         <footer className="app-footer">
           <div><span className="footer-mark">BC</span><strong>BEYOND COMPANION</strong><span>GUIA RÁPIDO DIGITAL</span></div>
-          <p>Projeto de fã, não oficial e sem vínculo com os detentores dos direitos de BEN 10: BEYOND.</p>
+          <p>Projeto independente de fãs, sem vínculo, patrocínio ou aprovação da Warner Bros. Discovery, Cartoon Network ou dos titulares de BEN 10. Marcas, personagens e materiais oficiais pertencem aos respectivos titulares.</p>
           <span className="footer-version">QUICKSTART V1 · {ruleset.source.pageCount} PÁGINAS</span>
         </footer>
       </main>
