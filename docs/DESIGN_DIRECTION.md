@@ -89,3 +89,12 @@ O guia de consulta recebeu uma hierarquia editorial de catálogo: cada entrada a
 O construtor Tier D foi tratado como uma oficina de criação: cinco etapas identificadas por classe visual, acentos cromáticos próprios, controles maiores e um resumo lateral apresentado como dossiê do Hero. Estados selecionados receberam realce visual; os valores, regras de validação e custos não foram alterados.
 
 A passagem é exclusivamente visual e estrutural. Não foi introduzida nova regra, opção mecânica, custo ou comportamento de criação.
+
+
+## Terceira passagem — arquivo de espécies
+
+O antigo seletor circular foi substituído por um índice editorial com os nomes completos e mundos natais dos registros. A seleção atualiza um dossiê ao lado, com hierarquia para mundo natal, Evolutionary Aptitudes, Unique Perception, Complication e Evolutionary Paths.
+
+A apresentação evita sugerir que grafismos genéricos sejam retratos ou representações canônicas de espécies. Não foram criadas ilustrações, silhuetas de personagens nem imagens. O catálogo continua a ser a única fonte dos nomes e dados exibidos; a referência de páginas do PDF permanece visível.
+
+A lista adapta-se a duas colunas em telas médias e a uma coluna em telas estreitas. A seleção continua acessível por botões com estado aria-pressed e foco visível. Não houve alteração mecânica.
