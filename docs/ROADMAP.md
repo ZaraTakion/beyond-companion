@@ -50,7 +50,7 @@ Até a disponibilização e conferência do Core Rulebook oficial, o projeto imp
 - [x] Cobrir no catálogo as onze áreas consultáveis presentes no Quickstart.
 - [x] Executar typecheck, testes automatizados de domínio/dados/componentes e build de produção em GitHub Actions.
 - [x] Executar `npm audit --audit-level=high` no workflow.
-- [x] Executar Playwright/Chromium no workflow ativo: [run #69 — 11 testes aprovados](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692211385).
+- [x] Executar Playwright/Chromium no workflow ativo: [run #70 — 11 testes aprovados](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692698130).
 - [x] Executar verificações axe WCAG 2.1 AA nas três áreas principais em desktop e mobile 320/390 px.
 - [x] Verificar o primeiro foco no link de salto e a navegação por teclado entre as áreas.
 - [x] Verificar overflow horizontal em 320, 390, 768, 1024 e 1440 px.
