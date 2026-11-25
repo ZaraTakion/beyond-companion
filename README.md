@@ -8,6 +8,14 @@ Transformar o conteúdo do Quickstart em uma referência digital clara e fácil 
 
 O nome Beyond Companion identifica o projeto; seu escopo atual é um **Guia Rápido Digital do Quickstart v1**.
 
+## Identidade independente e aviso
+
+Beyond Companion é um projeto independente, feito por fãs, e não um produto oficial. O site organiza o Quickstart v1 de BEN 10: BEYOND — The Roleplaying Game. Não possui vínculo, patrocínio ou aprovação da Warner Bros. Discovery, Cartoon Network ou dos respectivos titulares de direitos.
+
+BEN 10, seus personagens, nomes, marcas e materiais oficiais pertencem aos seus respectivos titulares. O aviso de independência esclarece a natureza do projeto, mas **não concede autorização para reproduzir imagens, logotipos, capturas de episódios, ilustrações ou outros materiais protegidos**. Cada asset externo precisa de licença compatível ou autorização documentada.
+
+A referência estética é a atmosfera da série animada original de BEN 10 (2005). O reboot de 2016 permanece fora da direção visual e não será utilizado.
+
 ## Dentro do escopo atual
 
 - Consultar as regras, tabelas, opções e exemplos que aparecem no PDF.
@@ -41,25 +49,33 @@ O repositório não inclui o PDF, ilustrações, logotipos ou transcrições ext
 - React, TypeScript e Vite.
 - JSON versionado para o catálogo do Quickstart.
 - Funções TypeScript para cálculos e validações Tier D.
-- Vitest para testes unitários.
-- Execução local, sem necessidade de backend ou serviço pago.
+- Vitest para domínio, dados e lógica de negócio.
+- Testing Library e jsdom para testes de integração dos componentes React.
+- Playwright para testes E2E em Chromium.
+- axe-core/Playwright para verificações automatizadas WCAG 2.1 A/AA.
+- Execução da interface sem backend, contas ou serviços pagos.
 
 ## Executar localmente
 
-Requisitos: Node.js 22+ e npm.
+Requisitos: Node.js 22.13+ e npm.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Verificações:
+Verificações automatizadas:
 
 ```bash
+npm audit --audit-level=high
 npm run typecheck
 npm test
 npm run build
+npx playwright install --with-deps chromium
+npm run test:e2e
 ```
+
+A suíte Playwright executa navegação, pesquisa, atlas, Construtor, impressão, exportação/importação JSON, acessibilidade e overflow responsivo. A workflow do GitHub Actions executa essas etapas em sequência.
 
 ## Estrutura
 
@@ -71,8 +87,33 @@ docs/decisions/               decisões arquiteturais
 docs/rules-audit/              inventário, auditoria e pendências
 ```
 
-## Estado
+## Estado da interface
 
-O Quickstart foi estruturado em seis passes de auditoria. O domínio Tier D e a primeira interface de criação já foram iniciados com base nesse conteúdo. A revisão cruzada, a execução de typecheck/testes/build e a validação prática continuam pendentes. Ainda não há salvamento local nem exportação da ficha.
+A branch de redesign entrega uma interface responsiva com três áreas:
+
+- **Visão geral:** entrada editorial, aviso de independência e atlas interativo das espécies.
+- **Guia de consulta:** onze seções catalogadas, referências de páginas e busca dentro da seção ativa.
+- **Construtor Tier D:** cinco etapas, validação de escolhas, ledger de PAX e resumo dos atributos derivados.
+
+Também estão disponíveis navegação por URL (hash), histórico do navegador, exportação e importação manual de fichas JSON e folha de impressão que pode ser salva como PDF pelo navegador. A importação aceita o formato versionado gerado pelo próprio aplicativo. O aplicativo não mantém salvamento automático, não sincroniza dados com servidor e não exige conta.
+
+## Estado de QA confirmado
+
+A execução mais recente integralmente aprovada de aplicação/E2E é [GitHub Actions #77](https://github.com/ZaraTakion/beyond-companion/actions/runs/45712266932), no commit `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`:
+
+- `npm audit --audit-level=high`: aprovado.
+- TypeScript: aprovado.
+- Vitest: **13 arquivos e 53 testes aprovados**.
+- Build de produção: aprovado.
+- Playwright/Chromium: **11 testes aprovados**.
+- axe: aprovado nas páginas principais em desktop e mobile 320/390 px.
+- Teclado e overflow em 320, 390, 768, 1024 e 1440 px: aprovados.
+- Impressão: correção de paginação validada em PDF renderizado de 2 páginas, ambas com conteúdo e sem folhas extras vazias.
+- Exportação/importação JSON em round-trip: aprovada; importação inválida preserva os dados atuais.
+- Inspeção visual renderizada concluída em 1440, 768, 390 e 320 px: overview/atlas, onze seções do Guia e cinco áreas do Construtor. Sem overflow horizontal.
+
+O PR #3 continua aberto em rascunho e não foi mesclado. A branch `main` não foi alterada nesta revisão. O preview está confirmado **READY**, associado ao commit `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`: [abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-5srho0fms-zaras-projects-f0700f27.vercel.app).
+
+**Ainda pendente:** testes com leitor de tela real; zoom do navegador formal a 200%; e segunda auditoria visual do conteúdo contra todas as páginas do PDF. A atualização documental posterior também foi validada pela [GitHub Actions #78](https://github.com/ZaraTakion/beyond-companion/actions/runs/45712623344). O repositório não possui `package-lock.json`, então o workflow usa `npm install` e não garante dependências travadas.
 
 Contribuições devem citar a página do Quickstart e distinguir texto da fonte, resumo e interpretação.

@@ -167,9 +167,30 @@ function renderValue(value: unknown, label: string, depth: number): ReactNode {
   return <p className="reference-value">{renderPrimitive(value as string | number | boolean)}</p>;
 }
 
+function collectSourcePages(value: unknown): number[] {
+  if (Array.isArray(value)) return value.flatMap(collectSourcePages);
+  if (!isRecord(value)) return [];
+
+  const pages: number[] = [];
+  for (const [key, child] of Object.entries(value)) {
+    if (key === 'sourcePage' && Number.isInteger(child) && Number(child) > 0) {
+      pages.push(Number(child));
+    } else if (key === 'sourcePages' && Array.isArray(child)) {
+      pages.push(...child.filter((page): page is number => Number.isInteger(page) && page > 0));
+    } else {
+      pages.push(...collectSourcePages(child));
+    }
+  }
+  return [...new Set(pages)].sort((left, right) => left - right);
+}
+
 const coreRuleEntries = Object.entries(coreRulesCatalog)
   .filter(([key]) => !['rulesetId', 'status'].includes(key))
-  .map(([key, value]) => ({ name: labelFor(key), content: value }));
+  .map(([key, value]) => ({
+    name: labelFor(key),
+    content: value,
+    sourcePages: key === 'statusConditions' ? [25] : collectSourcePages(value),
+  }));
 
 const sections: ReferenceSection[] = [
   { id: 'species', label: labels.species, title: labels.species, description: 'Mundos natais, Evolutionary Aptitudes, Unique Perception, Complications, grupos e Evolutionary Paths.', items: speciesCatalog.species as unknown as DataRecord[] },
@@ -214,10 +235,23 @@ export default function QuickReference() {
           <h2>Guia de consulta</h2>
           <p>Selecione uma seção para consultar os registros e use a busca para localizar informações dentro dela.</p>
         </div>
-        <label className="reference-search">
-          <span className="sr-only">Buscar na seção atual</span>
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar nome, regra, efeito..." />
-        </label>
+        <div className="reference-search-wrap">
+          <label className="reference-search">
+            <span className="sr-only">Buscar na seção atual</span>
+            <input
+              type="search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Buscar nome, regra, efeito..."
+              aria-controls="reference-results"
+            />
+          </label>
+          {query && (
+            <button type="button" className="reference-search-clear" onClick={() => setQuery('')}>
+              Limpar busca
+            </button>
+          )}
+        </div>
       </div>
 
       <nav className="reference-nav" aria-label="Seções do Guia Rápido">
@@ -233,25 +267,28 @@ export default function QuickReference() {
 
       <div className="reference-section-heading">
         <div><h3>{section.title}</h3><p>{section.description}</p></div>
-        <span>{filteredItems.length} {filteredItems.length === 1 ? 'registro' : 'registros'}</span>
+        <span aria-live="polite">{filteredItems.length} {filteredItems.length === 1 ? 'registro' : 'registros'}</span>
       </div>
 
       {filteredItems.length > 0 ? (
-        <div className="reference-cards">
+        <div className="reference-cards" id="reference-results">
           {filteredItems.map((item, index) => {
             const title = displayTitle(item, section.title + ' ' + (index + 1));
             return (
               <article className="reference-card" key={String(item.id ?? title) + '-' + index}>
                 <div className="reference-card-heading">
-                  <h4>{title}</h4>
-                  {pageReference(item) && <span>{pageReference(item)}</span>}
+                  <div className="reference-card-title">
+                    <span className="reference-card-index">REGISTRO {String(index + 1).padStart(2, '0')}</span>
+                    <h4>{title}</h4>
+                  </div>
+                  {pageReference(item) && <span className="reference-card-page">{pageReference(item)}</span>}
                 </div>
                 {renderRecordFields(item, 0)}
               </article>
             );
           })}
         </div>
-      ) : <p className="empty">Nenhum registro desta seção corresponde à busca.</p>}
+      ) : <p className="empty" id="reference-results" role="status">Nenhum registro desta seção corresponde à busca. Experimente outro termo ou limpe a busca.</p>}
 
       <p className="reference-disclaimer">Os textos são resumos de consulta do Quickstart v1. Consulte a página indicada no PDF para conferir o contexto original. Uma informação ausente do catálogo não deve ser tratada como regra inexistente.</p>
     </section>

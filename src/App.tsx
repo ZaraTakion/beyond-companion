@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ruleset } from './data/ruleset';
 import CharacterBuilder from './components/CharacterBuilder';
 import QuickReference from './components/QuickReference';
@@ -7,28 +7,63 @@ import './styles.css';
 
 type Tab = 'overview' | 'guide' | 'builder';
 
-const navigation: { id: Tab; number: string; label: string; hint: string }[] = [
-  { id: 'overview', number: '00', label: 'Visão geral', hint: 'Ponto de partida' },
-  { id: 'guide', number: '01', label: 'Guia de consulta', hint: 'Regras e referências' },
-  { id: 'builder', number: '02', label: 'Criar um Hero', hint: 'Ficha Tier D' },
+const navigation: { id: Tab; number: string; label: string; hint: string; hash: string }[] = [
+  { id: 'overview', number: '00', label: 'Visão geral', hint: 'Ponto de partida', hash: 'inicio' },
+  { id: 'guide', number: '01', label: 'Guia de consulta', hint: 'Regras e referências', hash: 'guia' },
+  { id: 'builder', number: '02', label: 'Criar um Hero', hint: 'Ficha Tier D', hash: 'criar-heroi' },
 ];
+
+function tabFromHash(hash: string): Tab {
+  return navigation.find((item) => `#${item.hash}` === hash)?.id ?? 'overview';
+}
 
 function AppMark() {
   return (
     <span className="brand-emblem" aria-hidden="true">
-      <span className="brand-emblem-core">B</span>
+      <span className="brand-emblem-core">BC</span>
     </span>
   );
 }
 
 export default function App() {
-  const [tab, setTab] = useState<Tab>('overview');
+  const [tab, setTab] = useState<Tab>(() => tabFromHash(window.location.hash));
   const currentPage = navigation.find((item) => item.id === tab) ?? navigation[0];
 
+  useEffect(() => {
+    const syncFromLocation = () => setTab(tabFromHash(window.location.hash));
+    window.addEventListener('hashchange', syncFromLocation);
+    window.addEventListener('popstate', syncFromLocation);
+    syncFromLocation();
+    return () => {
+      window.removeEventListener('hashchange', syncFromLocation);
+      window.removeEventListener('popstate', syncFromLocation);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.title = `${currentPage.label} — Beyond Companion`;
+  }, [currentPage.label]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [tab]);
+
+  function navigate(nextTab: Tab) {
+    setTab(nextTab);
+    const destination = navigation.find((item) => item.id === nextTab) ?? navigation[0];
+    if (window.location.hash !== `#${destination.hash}`) {
+      window.history.pushState({ tab: nextTab }, '', `#${destination.hash}`);
+    }
+  }
+  const nextPage: Tab = tab === 'overview' ? 'guide' : tab === 'guide' ? 'builder' : 'overview';
+  const nextPageLabel = tab === 'overview' ? 'Consultar guia' : tab === 'guide' ? 'Criar um Hero' : 'Visão geral';
+
   return (
-    <div className="app-layout">
+    <>
+      <a className="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+      <div className="app-layout">
       <aside className="sidebar">
-        <a className="sidebar-brand" href="#inicio" onClick={() => setTab('overview')} aria-label="Beyond Companion — início">
+        <a className="sidebar-brand" href="#inicio" onClick={(event) => { event.preventDefault(); navigate('overview'); }}>
           <AppMark />
           <span className="brand-wordmark">BEYOND<span>COMPANION</span></span>
         </a>
@@ -40,7 +75,7 @@ export default function App() {
               key={item.id}
               type="button"
               className={tab === item.id ? 'side-link active' : 'side-link'}
-              onClick={() => setTab(item.id)}
+              onClick={() => navigate(item.id)}
               aria-current={tab === item.id ? 'page' : undefined}
             >
               <span className="side-link-number">{item.number}</span>
@@ -63,11 +98,11 @@ export default function App() {
         </div>
         <div className="sidebar-bottom">
           <span className="sidebar-bottom-mark">BC / 001</span>
-          <span>PROTÓTIPO NÃO OFICIAL</span>
+          <span>PROJETO DE FÃ · NÃO OFICIAL</span>
         </div>
       </aside>
 
-      <main className="main-area" id="inicio">
+      <main className="main-area" id="conteudo-principal">
         <header className="topbar">
           <div className="breadcrumb">
             <span>BEYOND COMPANION</span>
@@ -76,7 +111,7 @@ export default function App() {
           </div>
           <div className="topbar-actions">
             <span className="topbar-version"><span className="status-light" /> {ruleset.displayName}</span>
-            <button type="button" className="button button-quiet" onClick={() => setTab('guide')}>Consultar guia <span aria-hidden="true">↗</span></button>
+            <button type="button" className="button button-quiet" onClick={() => navigate(nextPage)}>{nextPageLabel} <span aria-hidden="true">↗</span></button>
           </div>
         </header>
 
@@ -85,28 +120,38 @@ export default function App() {
             <div className="dashboard">
               <section className="home-hero">
                 <div className="hero-copy">
-                  <div className="hero-eyebrow"><span className="hero-eyebrow-dot" /> ALIEN DATABASE <span>/</span> QUICKSTART 001</div>
-                  <h1>Identifique o desconhecido.<br /><em>Domine as regras.</em></h1>
-                  <p>Uma central de consulta para explorar o Quickstart, encontrar regras sem interromper a sessão e preparar seu próximo Hero.</p>
+                  <div className="hero-eyebrow"><span className="hero-eyebrow-dot" /> ARQUIVO DE CAMPO <span>/</span> PROJETO DE FÃ</div>
+                  <h1>O universo é maior<br /><em>do que parece.</em></h1>
+                  <p>Um guia independente, feito por fãs, para explorar o Quickstart v1, consultar as regras e montar seu Hero.</p>
                   <div className="hero-actions">
-                    <button type="button" className="button button-dark" onClick={() => setTab('guide')}>Explorar o guia <span aria-hidden="true">→</span></button>
-                    <button type="button" className="button button-outline-dark" onClick={() => setTab('builder')}>Criar personagem</button>
+                    <button type="button" className="button button-dark" onClick={() => navigate('guide')}>Explorar o guia <span aria-hidden="true">→</span></button>
+                    <button type="button" className="button button-outline-dark" onClick={() => navigate('builder')}>Criar personagem</button>
                   </div>
-                  <div className="hero-footnote"><span>01</span> REFERÊNCIA DIGITAL · BEN 10: BEYOND RPG</div>
+                  <div className="hero-footnote"><span>01</span> PROJETO INDEPENDENTE DE FÃS · NÃO OFICIAL</div>
                 </div>
                 <div className="hero-visual" aria-hidden="true">
                   <div className="visual-grid" />
                   <div className="visual-orbit orbit-one" />
                   <div className="visual-orbit orbit-two" />
                   <div className="visual-orbit orbit-three" />
-                  <div className="visual-core"><span>BC</span><i /></div>
+                  <div className="visual-core"><span>BF</span><i /></div>
                   <div className="visual-crosshair crosshair-top" />
                   <div className="visual-crosshair crosshair-bottom" />
-                  <div className="visual-code">FIELD / 001<br />EARTH SECTOR</div>
+                  <div className="visual-code">CADERNO / 001<br />CAMPO DE DESCOBERTA</div>
                   <div className="visual-number">10</div>
-                  <div className="visual-caption">QUICKSTART<br />EDITION</div>
+                  <div className="visual-caption">BEYOND<br />FIELD NOTES</div>
                 </div>
                 <div className="hero-side-index"><span>V1</span><span>·</span><span>FIELD NOTES</span></div>
+              </section>
+
+              <section className="fan-project-notice" aria-labelledby="fan-project-heading">
+                <div className="fan-notice-stamp" aria-hidden="true">FÃ<br />001</div>
+                <div className="fan-notice-copy">
+                  <div className="fan-notice-kicker">AVISO DE INDEPENDÊNCIA</div>
+                  <h2 id="fan-project-heading">Feito por fãs. Não é um produto oficial.</h2>
+                  <p>Beyond Companion é um projeto independente de fãs e um guia rápido digital do Quickstart v1 de BEN 10: BEYOND — The Roleplaying Game. Não possui vínculo, patrocínio ou aprovação da Warner Bros. Discovery, Cartoon Network ou dos titulares dos direitos da franquia. BEN 10, seus personagens, nomes, marcas e materiais oficiais pertencem aos respectivos titulares.</p>
+                </div>
+                <span className="fan-notice-side">INDEPENDENT FAN PROJECT</span>
               </section>
 
               <SpeciesScanner />
@@ -140,24 +185,24 @@ export default function App() {
                     <div className="section-kicker">NAVEGAÇÃO RÁPIDA</div>
                     <h2>Encontre seu próximo passo.</h2>
                   </div>
-                  <button type="button" className="text-link" onClick={() => setTab('guide')}>Ver todas as seções <span aria-hidden="true">↗</span></button>
+                  <button type="button" className="text-link" onClick={() => navigate('guide')}>Ver todas as seções <span aria-hidden="true">↗</span></button>
                 </div>
                 <div className="launch-grid">
-                  <button type="button" className="launch-card" onClick={() => setTab('guide')}>
+                  <button type="button" className="launch-card" onClick={() => navigate('guide')}>
                     <span className="launch-topline"><span>01</span><span>ENCICLOPÉDIA</span></span>
                     <span className="launch-icon launch-icon-orbit" aria-hidden="true"><i /></span>
                     <strong>Explore o sistema</strong>
                     <span className="launch-description">Espécies, Archetypes, Aptitudes, Skills, Traits e equipamentos.</span>
                     <span className="launch-cta">Abrir referências <b>↗</b></span>
                   </button>
-                  <button type="button" className="launch-card" onClick={() => setTab('guide')}>
+                  <button type="button" className="launch-card" onClick={() => navigate('guide')}>
                     <span className="launch-topline"><span>02</span><span>NA MESA</span></span>
                     <span className="launch-icon launch-icon-target" aria-hidden="true"><i /></span>
                     <strong>Consulte as regras</strong>
                     <span className="launch-description">Tests, recursos, Battle, Damage, Conditions e cenas de jogo.</span>
                     <span className="launch-cta">Consultar regras <b>↗</b></span>
                   </button>
-                  <button type="button" className="launch-card launch-card-accent" onClick={() => setTab('builder')}>
+                  <button type="button" className="launch-card launch-card-accent" onClick={() => navigate('builder')}>
                     <span className="launch-topline"><span>03</span><span>CONSTRUÇÃO</span></span>
                     <span className="launch-icon launch-icon-shield" aria-hidden="true"><i /></span>
                     <strong>Monte seu Hero</strong>
@@ -172,7 +217,7 @@ export default function App() {
                   <div className="section-kicker">PERSONAGEM · TIER D</div>
                   <h2>Trinta PAX.<br /><em>Uma identidade só sua.</em></h2>
                   <p>Construa seu personagem com as opções do Quickstart e acompanhe os custos enquanto escolhe.</p>
-                  <button type="button" className="button button-lime" onClick={() => setTab('builder')}>Começar ficha <span aria-hidden="true">→</span></button>
+                  <button type="button" className="button button-lime" onClick={() => navigate('builder')}>Começar ficha <span aria-hidden="true">→</span></button>
                 </div>
                 <div className="bottom-feature-stats" aria-label="Valores base do Tier D">
                   <div><span>ENERGY BASE</span><strong>{ruleset.tierD.baseEnergy}</strong></div>
@@ -220,10 +265,11 @@ export default function App() {
 
         <footer className="app-footer">
           <div><span className="footer-mark">BC</span><strong>BEYOND COMPANION</strong><span>GUIA RÁPIDO DIGITAL</span></div>
-          <p>Projeto de fã, não oficial e sem vínculo com os detentores dos direitos de BEN 10: BEYOND.</p>
+          <p>Projeto independente de fãs, sem vínculo, patrocínio ou aprovação da Warner Bros. Discovery, Cartoon Network ou dos titulares de BEN 10. Marcas, personagens e materiais oficiais pertencem aos respectivos titulares.</p>
           <span className="footer-version">QUICKSTART V1 · {ruleset.source.pageCount} PÁGINAS</span>
         </footer>
       </main>
-    </div>
+      </div>
+    </>
   );
 }

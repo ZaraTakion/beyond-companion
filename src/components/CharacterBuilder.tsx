@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { useMemo, useRef, useState } from 'react';
 import speciesCatalog from '../../data/rulesets/quickstart-v1/species.json';
 import archetypeCatalog from '../../data/rulesets/quickstart-v1/archetypes.json';
 import aptitudeCatalog from '../../data/rulesets/quickstart-v1/aptitudes.json';
@@ -13,6 +14,7 @@ import {
   type SkillSelection,
   type TraitSelection,
 } from '../domain/character';
+import { MAX_CHARACTER_FILE_BYTES, parseCharacterExport } from '../domain/character-io';
 
 const attributeLabels: Record<AttributeName, string> = {
   agility: 'Agility (AGI)',
@@ -54,9 +56,14 @@ function makeInitialDraft(): CharacterDraft {
 export default function CharacterBuilder() {
   const [draft, setDraft] = useState<CharacterDraft>(makeInitialDraft);
   const [showAllIssues, setShowAllIssues] = useState(false);
+  const [importMessage, setImportMessage] = useState('');
+  const importInputRef = useRef<HTMLInputElement>(null);
 
   const species = speciesCatalog.species.find((item) => item.id === draft.speciesId)!;
   const archetype = archetypeCatalog.archetypes.find((item) => item.id === draft.archetypeId)!;
+  const evolutionaryPath = species.paths.find((path) => path.name === draft.evolutionaryPath) ?? species.paths[0];
+  const heroPointsPerEpisode = (archetype.id === 'prodigy' ? 1 : 0)
+    + (draft.traits.some((trait) => trait.name === 'Heroic Bloodline') ? 1 : 0);
   const validation = useMemo(() => validateCharacter(draft), [draft]);
 
   const aptitudeOptions = useMemo(() => {
@@ -258,6 +265,56 @@ export default function CharacterBuilder() {
   const visibleIssues = showAllIssues ? issues : issues.slice(0, 4);
   const remainingPax = validation.ledger.remaining;
 
+  function exportCharacter() {
+    const payload = {
+      format: 'beyond-companion-character',
+      schemaVersion: 1,
+      ruleset: 'Quickstart v1',
+      exportedAt: new Date().toISOString(),
+      character: draft,
+      derivedStats: validation.derivedStats,
+      paxLedger: validation.ledger,
+      validation: { valid: issues.length === 0, issues },
+    };
+    const filename = (draft.name.trim() || 'hero')
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '') || 'hero';
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `beyond-companion-${filename}.json`;
+    link.style.display = 'none';
+    document.body.append(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  async function importCharacter(file: File) {
+    try {
+      if (file.size > MAX_CHARACTER_FILE_BYTES) {
+        throw new RangeError('O arquivo de ficha excede o limite de 1 MB.');
+      }
+      const importedDraft = parseCharacterExport(await file.text());
+      setDraft(importedDraft);
+      setShowAllIssues(false);
+      setImportMessage('Ficha importada com sucesso. Revise as validações antes de usar.');
+    } catch {
+      setImportMessage('Não foi possível importar. Use um JSON do Quickstart v1 com até 1 MB.');
+    }
+  }
+
+  function resetCharacter() {
+    if (!window.confirm('Reiniciar a ficha e descartar as escolhas atuais?')) return;
+    setDraft(makeInitialDraft());
+    setShowAllIssues(false);
+    setImportMessage('');
+  }
+
   return (
     <section className="builder">
       <div className="builder-intro">
@@ -266,26 +323,62 @@ export default function CharacterBuilder() {
           <h2>Crie seu Hero Tier D</h2>
           <p>As escolhas são validadas com base no pacote Quickstart v1. Benefícios gratuitos aparecem separados do gasto em PAX.</p>
         </div>
-        <div className="pax-meter" aria-live="polite">
+        <div className={remainingPax < 0 ? 'pax-meter over-budget' : 'pax-meter'} aria-live="polite">
           <span>PAX usados</span>
           <strong>{validation.ledger.spent}<small> / 30</small></strong>
           <span className={remainingPax < 0 ? 'negative' : 'remaining'}>{remainingPax} restantes</span>
+          <div
+            className="pax-meter-track"
+            role="progressbar"
+            aria-label="Orçamento de PAX utilizado"
+            aria-valuemin={0}
+            aria-valuemax={30}
+            aria-valuenow={Math.min(30, Math.max(0, validation.ledger.spent))}
+            aria-valuetext={`${validation.ledger.spent} de 30 PAX utilizados`}
+          >
+            <span style={{ width: `${Math.min(100, Math.max(0, validation.ledger.spent / 30 * 100))}%` }} />
+          </div>
         </div>
       </div>
 
+      <div className="builder-toolbar" aria-label="Ações da ficha">
+        <button type="button" className="builder-action" onClick={() => importInputRef.current?.click()}>Importar JSON</button>
+        <button type="button" className="builder-action" onClick={exportCharacter}>Exportar JSON</button>
+        <button type="button" className="builder-action builder-action-primary" onClick={() => window.print()}>Imprimir / Salvar PDF</button>
+        <button type="button" className="builder-action builder-action-reset" onClick={resetCharacter}>Reiniciar ficha</button>
+        <input
+          ref={importInputRef}
+          className="sr-only"
+          type="file"
+          accept="application/json,.json"
+          aria-label="Selecionar arquivo JSON de personagem"
+          onChange={(event) => {
+            const file = event.currentTarget.files?.[0];
+            if (file) void importCharacter(file);
+            event.currentTarget.value = '';
+          }}
+        />
+      </div>
+      {importMessage && <p className="builder-import-message" role="status">{importMessage}</p>}
+
       <div className="builder-layout">
         <div className="builder-main">
-          <section className="builder-section">
+          <section className="builder-section builder-step-identity">
             <div className="section-heading"><span>01</span><div><h3>Identidade</h3><p>Defina a identidade e a forma de atuação do Hero.</p></div></div>
             <div className="form-grid">
               <label className="field field-wide">Nome do personagem
                 <input value={draft.name} onChange={(event) => setDraft((current) => ({ ...current, name: event.target.value }))} placeholder="Digite o nome..." />
               </label>
-              <label className="field">Espécie
-                <select value={draft.speciesId} onChange={(event) => changeSpecies(event.target.value)}>
+              <div className="field">
+                <label htmlFor="builder-species">Espécie</label>
+                <select
+                  id="builder-species"
+                  value={draft.speciesId}
+                  onChange={(event) => changeSpecies(event.target.value)}
+                >
                   {speciesCatalog.species.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
                 </select>
-              </label>
+              </div>
               <label className="field">Archetype
                 <select value={draft.archetypeId} onChange={(event) => changeArchetype(event.target.value)}>
                   {archetypeCatalog.archetypes.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
@@ -313,9 +406,33 @@ export default function CharacterBuilder() {
                 ))}
               </div>
             </div>
+            <div className="builder-reference-grid" role="group" aria-label="Referências da espécie, caminho e Archetype">
+              <article className="builder-reference-card">
+                <span>UNIQUE PERCEPTION · PDF P. {species.sourcePages.join(', ')}</span>
+                <strong>{species.uniquePerception.name}</strong>
+                <p>{species.uniquePerception.summary}</p>
+              </article>
+              <article className="builder-reference-card">
+                <span>COMPLICATION · PDF P. {species.sourcePages.join(', ')}</span>
+                <strong>{species.complication.name}</strong>
+                <p>{species.complication.summary}</p>
+              </article>
+              <article className="builder-reference-card">
+                <span>EVOLUTIONARY PATH · PDF P. {species.sourcePages.join(', ')}</span>
+                <strong>{evolutionaryPath.name}</strong>
+                <p>{evolutionaryPath.summary}</p>
+              </article>
+              <article className="builder-reference-card">
+                <span>ARCHETYPE · PDF P. {archetype.sourcePages.join(', ')}</span>
+                <strong>Bonus</strong>
+                <p>{archetype.bonus}</p>
+                <strong>Flaw · {archetype.flaw.name}</strong>
+                <p>{archetype.flaw.summary}</p>
+              </article>
+            </div>
           </section>
 
-          <section className="builder-section">
+          <section className="builder-section builder-step-attributes">
             <div className="section-heading"><span>02</span><div><h3>Attributes</h3><p>No Tier D, cada ponto base custa 3 PAX e o limite é +3 por atributo.</p></div></div>
             <div className="attribute-grid">
               {attributeNames.map((name) => (
@@ -346,9 +463,26 @@ export default function CharacterBuilder() {
               />
               <small>2 PAX por ponto. Energy inicial: {validation.derivedStats.energy}.</small>
             </label>
+            <div className="effective-attribute-summary" role="group" aria-label="Atributos efetivos após bônus de Aptitudes">
+              <strong>Attributes efetivos</strong>
+              <small>Valores finais após os bônus de Evolutionary Aptitudes selecionadas.</small>
+              <div className="effective-attribute-grid">
+                {attributeNames.map((name) => {
+                  const base = draft.attributes[name];
+                  const effective = validation.derivedStats.effectiveAttributes[name];
+                  return (
+                    <div key={name}>
+                      <span>{attributeLabels[name].split(' ')[0]}</span>
+                      <strong>+{effective}</strong>
+                      {effective !== base && <small>base +{base}</small>}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </section>
 
-          <section className="builder-section">
+          <section className="builder-section builder-step-aptitudes">
             <div className="section-heading"><span>03</span><div><h3>Evolutionary Aptitudes</h3><p>As Creative Uses da espécie são gratuitas. Marque as Aptitudes em que você comprou Grade 1.</p></div></div>
             <div className="catalogue-picks">
               {aptitudeOptions.map((item) => {
@@ -364,7 +498,7 @@ export default function CharacterBuilder() {
             <p className="builder-hint">Omni-Tech Arsenal aparece para qualquer espécie. Versatility, para Human, é um benefício gratuito e não uma compra de Grade.</p>
           </section>
 
-          <section className="builder-section">
+          <section className="builder-section builder-step-training">
             <div className="section-heading"><span>04</span><div><h3>Skills e Traits</h3><p>Escolha treinamentos e qualidades. Benefícios gratuitos são identificados na origem.</p></div></div>
             {species.id === 'human' && <label className="field">Skill gratuita de Versatility
               <select value={versatilitySkill} onChange={(event) => chooseVersatilitySkill(event.target.value)}>
@@ -432,7 +566,7 @@ export default function CharacterBuilder() {
             </div>
           </section>
 
-          <section className="builder-section">
+          <section className="builder-section builder-step-gear">
             <div className="section-heading"><span>05</span><div><h3>Weapons and Gear</h3><p>Selecione equipamentos e indique afiliação Plumber.</p></div></div>
             <label className="toggle-row">
               <input type="checkbox" checked={draft.plumberAffiliated} onChange={(event) => setAffiliation(event.target.checked)} />
@@ -509,6 +643,127 @@ export default function CharacterBuilder() {
           <p className="builder-disclaimer">A validação cobre as regras de criação já catalogadas. Interações ambíguas e efeitos situacionais continuam dependendo do GM.</p>
         </aside>
       </div>
+
+      {createPortal(
+        <section className="print-sheet" role="region" aria-label="Ficha de personagem para impressão">
+          <header className="print-sheet-header">
+            <div>
+              <span>BEYOND COMPANION · QUICKSTART V1</span>
+              <h1>{draft.name.trim() || 'Hero sem nome'}</h1>
+              <p>Ficha de personagem · Tier D · Projeto independente de fãs</p>
+            </div>
+            <div className="print-sheet-budget">
+              <strong>{validation.ledger.spent} / 30</strong>
+              <span>PAX utilizados</span>
+              <b>{remainingPax} restantes</b>
+            </div>
+          </header>
+  
+          <section className="print-sheet-stat-grid" aria-label="Estatísticas derivadas">
+            <div><span>Energy</span><strong>{validation.derivedStats.energy}</strong></div>
+            <div><span>Defense</span><strong>{validation.derivedStats.defense}</strong></div>
+            <div><span>Initiative</span><strong>{validation.derivedStats.initiative}</strong></div>
+            <div><span>Attack Bonus</span><strong>+{validation.derivedStats.attackBonus}</strong></div>
+            <div><span>Tier Die</span><strong>{validation.derivedStats.tierDie}</strong></div>
+            <div><span>Hero Points / Episode</span><strong>+{heroPointsPerEpisode}</strong></div>
+          </section>
+  
+          <div className="print-sheet-columns">
+            <section className="print-sheet-section">
+              <h2>Identidade</h2>
+              <dl>
+                <div><dt>Espécie</dt><dd>{species.name}</dd></div>
+                <div><dt>Archetype</dt><dd>{archetype.name}</dd></div>
+                <div><dt>Evolutionary Path</dt><dd>{draft.evolutionaryPath}</dd></div>
+                <div><dt>Plumber afiliado</dt><dd>{draft.plumberAffiliated ? 'Sim' : 'Não'}</dd></div>
+              </dl>
+              <h3>Archetype Abilities</h3>
+              <ul>{draft.archetypeAbilities.map((name) => <li key={name}>{name}</li>)}</ul>
+              <h3>Archetype Bonus</h3>
+              <p>{archetype.bonus}</p>
+              <h3>Archetype Flaw · {archetype.flaw.name}</h3>
+              <p>{archetype.flaw.summary}</p>
+              <h3>Unique Perception · {species.uniquePerception.name}</h3>
+              <p>{species.uniquePerception.summary}</p>
+              <h3>Complication · {species.complication.name}</h3>
+              <p>{species.complication.summary}</p>
+              <h3>Evolutionary Path · {evolutionaryPath.name}</h3>
+              <p>{evolutionaryPath.summary}</p>
+            </section>
+  
+            <section className="print-sheet-section">
+              <h2>Attributes efetivos</h2>
+              <dl>
+                {attributeNames.map((name) => {
+                  const base = draft.attributes[name];
+                  const effective = validation.derivedStats.effectiveAttributes[name];
+                  return (
+                    <div key={name}>
+                      <dt>{attributeLabels[name]}</dt>
+                      <dd>{effective === base ? '+' + effective : '+' + base + ' base → +' + effective + ' efetivo'}</dd>
+                    </div>
+                  );
+                })}
+                <div><dt>Energy comprada</dt><dd>{draft.energyBought}</dd></div>
+              </dl>
+            </section>
+  
+            <section className="print-sheet-section">
+              <h2>Condições e recursos</h2>
+              <div className="print-condition-grid">
+                <span>□ Tired</span>
+                <span>□ Wounded</span>
+                <span>□ Defeated</span>
+              </div>
+              <dl>
+                <div><dt>Omni Die</dt><dd>1</dd></div>
+                <div><dt>Bônus de Hero Points por Episode</dt><dd>+{heroPointsPerEpisode}</dd></div>
+              </dl>
+            </section>
+  
+            <section className="print-sheet-section">
+              <h2>Evolutionary Aptitudes</h2>
+              <ul>{draft.aptitudePurchases.length
+                ? draft.aptitudePurchases.map((item) => <li key={item.name}>{item.name} · Grade {item.grade}</li>)
+                : <li>Nenhuma selecionada</li>}</ul>
+            </section>
+  
+            <section className="print-sheet-section">
+              <h2>Skills</h2>
+              <ul>{draft.skills.length
+                ? draft.skills.map((item) => <li key={item.name}>{item.name}{item.source === 'purchased' ? '' : ' · gratuita'}</li>)
+                : <li>Nenhuma selecionada</li>}</ul>
+              <h2>Traits</h2>
+              <ul>{draft.traits.length
+                ? draft.traits.map((item) => <li key={item.name}>{item.name}{item.source === 'versatility' ? ' · gratuita' : ''}</li>)
+                : <li>Nenhuma selecionada</li>}</ul>
+            </section>
+  
+            <section className="print-sheet-section">
+              <h2>Weapons and Gear</h2>
+              <ul>{draft.gear.length
+                ? draft.gear.map((item) => <li key={item.name}>{item.name}{item.source === 'purchased' ? '' : ' · gratuita'}</li>)
+                : <li>Nenhum item selecionado</li>}</ul>
+            </section>
+  
+            <section className="print-sheet-section">
+              <h2>Ledger de PAX</h2>
+              {validation.ledger.entries.length
+                ? <dl>{validation.ledger.entries.map((entry) => (
+                    <div key={entry.id}><dt>{entry.label}</dt><dd>{entry.cost}</dd></div>
+                  ))}</dl>
+                : <p>Nenhuma compra registrada.</p>}
+              <div className="print-sheet-total"><strong>Total</strong><strong>{validation.ledger.spent} / 30 PAX</strong></div>
+            </section>
+          </div>
+  
+          <footer className="print-sheet-footer">
+            <span>{issues.length === 0 ? 'Validações implementadas: sem pendências.' : `Atenção: ${issues.length} pendência(s) na ficha.`}</span>
+            <span>Os efeitos situacionais continuam sujeitos à interpretação do GM · Quickstart v1</span>
+          </footer>
+        </section>
+        , document.body,
+      )}
     </section>
   );
 }

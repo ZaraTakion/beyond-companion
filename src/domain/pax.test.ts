@@ -19,9 +19,18 @@ describe('summarizePax', () => {
     expect(result.remaining).toBe(-1);
   });
 
-  it('rejeita custos negativos', () => {
+  it('rejeita custos negativos e fracionários', () => {
     expect(() => summarizePax([
-      { id: 'bad', label: 'Bad cost', cost: -1, source: 'gear' },
+      { id: 'negative', label: 'Negative cost', cost: -1, source: 'gear' },
     ])).toThrow(RangeError);
+    expect(() => summarizePax([
+      { id: 'fraction', label: 'Fractional cost', cost: 1.5, source: 'gear' },
+    ])).toThrow(RangeError);
+  });
+
+  it('rejeita orçamentos negativos, fracionários ou não numéricos', () => {
+    expect(() => summarizePax([], -1)).toThrow(RangeError);
+    expect(() => summarizePax([], 30.5)).toThrow(RangeError);
+    expect(() => summarizePax([], Number.NaN)).toThrow(RangeError);
   });
 });

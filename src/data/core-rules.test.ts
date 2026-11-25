@@ -29,8 +29,8 @@ describe('Quickstart v1 core rules catalog', () => {
     expect(core.interlude.options).toHaveLength(4);
   });
 
-  it('records the six damage types and core dice rules', () => {
-    expect(Object.keys(core.damage.types)).toHaveLength(5);
+  it('records the five damage types and core dice rules', () => {
+    expect(Object.keys(core.damage.types)).toEqual(['elemental', 'pulse', 'magical', 'physical', 'psychic']);
     expect(core.tests.formula).toContain('1d20');
     expect(core.resources.omniDie.die).toBe('d10');
   });

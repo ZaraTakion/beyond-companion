@@ -1,0 +1,223 @@
+# Catálogo de arte, ícones e tipografia — Cartoon Sci-Fi
+
+Este documento registra fontes pesquisadas para a identidade visual do Beyond Companion. O objetivo é usar arte real de artistas e bibliotecas abertas, sem gerar imagens e sem utilizar material oficial da franquia.
+
+**Regra de licenciamento:** “gratuito” não significa automaticamente “sem direitos autorais”. A seleção prioriza CC0 para ilustrações e sprites, MIT/ISC para bibliotecas de ícones e SIL OFL para fontes. Cada arquivo efetivamente incorporado deve manter sua origem e licença registrada aqui ou em `THIRD_PARTY_NOTICES.md`. As páginas oficiais das bibliotecas prevalecem sobre agregadores.
+
+## 1. Primeira seleção recomendada
+
+| Prioridade | Fonte | Conteúdo | Licença verificada | Uso previsto |
+|---|---|---|---|---|
+| 1 | [Kenney — Monster Builder Pack](https://kenney.nl/assets/monster-builder-pack) | 170+ sprites; partes modulares de olhos, bocas, membros e criaturas em seis cores | CC0 1.0 | Principal fonte para pequenas criaturas/mascotes originais, sem associá-las às espécies do RPG |
+| 1 | [Kenney — Alien UFO Pack](https://kenney.nl/assets/alien-ufo-pack) | 50 sprites 2D de UFOs, lasers, explosões e elementos alienígenas | CC0 1.0 | Decoração espacial, veículos e efeitos |
+| 1 | [Kenney — Planets](https://kenney.nl/assets/planets) | 50+ sprites 2D de planetas e elementos combináveis | CC0 1.0 | Cartões de mundos, fundos decorativos e navegação do catálogo |
+| 1 | [Kenney — UI Pack](https://kenney.nl/assets/ui-pack) | 430 elementos de interface | CC0 1.0 | Botões, painéis, controles e detalhes de interface |
+| 1 | [Kenney — UI Pack Sci-Fi](https://kenney.nl/assets/ui-pack-sci-fi) | 130 peças 2D de interface espacial | CC0 1.0 | Detalhes de interface sci-fi; aplicar seletivamente para não voltar ao visual de painel militar |
+| 2 | [Kenney — Toon Characters](https://kenney.nl/assets/toon-characters) | 270 sprites 2D em poses de personagens | CC0 1.0 | Ilustrações secundárias de personagens e poses; validar a adequação visual antes de usar |
+| 2 | [Kenney — Background Elements](https://kenney.nl/assets/background-elements) | 110 elementos 2D de fundo | CC0 1.0 | Cenários, molduras, partículas e composição das páginas |
+| 2 | [Kenney — Simple Space](https://kenney.nl/assets/simple-space) | 48 sprites de naves e elementos espaciais para mapas | CC0 1.0 | Pequenos mapas, indicadores e elementos de exploração |
+| 2 | [Kenney — Scribble Platformer](https://kenney.nl/assets/scribble-platformer) | 100+ sprites em estilo desenhado à mão | CC0 1.0 | Alternativa de acabamento rabiscado; não misturar sem teste com a linha principal |
+| 2 | [Kenney — Space Shooter Remastered](https://kenney.nl/assets/space-shooter-remastered) | 295 sprites 2D de naves, armas e efeitos | CC0 1.0 | Efeitos e decoração espacial, sem transformar o guia em HUD de shooter |
+| 3 | [OpenGameArt — Cartoon Creatures](https://opengameart.org/content/cartoon-creatures) | Quatro personagens cartoon de fantasia/horror, incluindo um alien | CC BY 4.0 | Candidato secundário; exige crédito a RayB2 e não representa espécies do Quickstart |
+| 3 | [OpenGameArt — Monster Builder Pack](https://opengameart.org/content/monster-builder-pack) | Kit modular de monstros de Kenney | CC0 | Espelho adicional do pack oficial; preferir download de Kenney |
+| 3 | [OpenGameArt — Alien UFO Pack](https://opengameart.org/content/alien-ufo-pack) | Sprites individuais, spritesheets e fonte vetorial | CC0 | Espelho e referência alternativa do pack oficial |
+| 3 | [Open Doodles](https://www.opendoodles.com/about) | Ilustrações humanas em estilo doodle | CC0 | Elementos de onboarding/tutorial, se o estilo for coerente |
+
+Kenney declara que os packs publicados no catálogo oficial são CC0 e que não exigem atribuição; o próprio autor pede que o logotipo Kenney não seja reutilizado como marca do projeto. Crédito é opcional e recomendado como cortesia.
+
+## 2. Ícones de interface
+
+| Biblioteca | Licença | Uso recomendado |
+|---|---|---|
+| [Phosphor Icons](https://phosphoricons.com/) | MIT | Primeira escolha para ícones com personalidade mais arredondada; usar pesos Fill ou Duotone quando adequados |
+| [Lucide](https://lucide.dev/) | ISC | Ícones técnicos e utilitários, com traço consistente e discreto |
+| [Game-icons.net](https://game-icons.net/) | CC BY 3.0; alguns ícones individuais podem ser CC0 | Biblioteca temática de jogo, criaturas, elementos, poderes e equipamentos; registrar autor e atribuição de cada ícone usado |
+
+O Game-icons.net exige crédito ao autor para conteúdo CC BY 3.0. Não copiar a biblioteca inteira para o projeto sem um inventário de autores e créditos. Para ícones de navegação e acessibilidade, preferir Phosphor ou Lucide.
+
+## 3. Tipografia
+
+| Fonte | Licença | Papel visual |
+|---|---|---|
+| [Fredoka](https://fonts.google.com/specimen/Fredoka) | SIL Open Font License 1.1 | Títulos, chamadas e nomes de seções; arredondada e expressiva |
+| [Lilita One](https://fonts.google.com/specimen/Lilita+One) | SIL Open Font License 1.1 | Uso pontual em títulos de impacto e etiquetas curtas |
+| [Nunito](https://fonts.google.com/specimen/Nunito) | SIL Open Font License 1.1 | Texto corrido, campos, controles e leitura de regras |
+| [Baloo 2](https://fonts.google.com/specimen/Baloo+2) | SIL Open Font License 1.1 | Alternativa de display mais descontraída; testar legibilidade em tamanhos pequenos |
+
+Direção tipográfica proposta: **Fredoka para headings + Nunito para corpo e controles**. Lilita One e Baloo 2 são alternativas, não devem competir entre si. O texto das regras deve continuar confortável e legível, sem fonte display.
+
+## 4. Critérios de incorporação
+
+1. Dar preferência a arquivos CC0 do autor original. Evitar fontes agregadoras quando existir página oficial do criador.
+2. Conferir licença do pack e, quando houver, dos arquivos individuais antes de copiar para `public/assets`.
+3. Não usar logos, capturas, personagens, retratos, emblemas, artes oficiais ou material promocional de BEN 10.
+4. Não rotular mascotes genéricos como qualquer uma das sete espécies jogáveis: a arte é decorativa e não é representação canônica do RPG.
+5. Manter um único estilo principal: ilustração 2D cartoon colorida, contornos claros e formas expressivas. Não misturar sprites pixel-art, low-poly 3D, doodles e vetor flat na mesma área.
+6. Otimizar imagens para WebP/PNG/SVG conforme o original; definir dimensões e `alt`; usar lazy loading fora do primeiro viewport.
+7. Nunca depender do hotlink de imagens de prévia de um marketplace. Baixar os arquivos originais do criador e versionar só os arquivos necessários, junto com créditos/licenças.
+8. Confirmar contraste, leitura em dispositivos móveis, tamanho de download e `prefers-reduced-motion`.
+
+## 5. Estado desta pesquisa
+
+- As fontes e os termos acima foram pesquisados em páginas oficiais e catálogos dos próprios autores.
+- Esta lista é uma seleção de candidatos, não significa que todos os arquivos já tenham sido baixados ou incorporados.
+- A incorporação final exige examinar os arquivos originais dos packs, selecionar sprites que combinem visualmente e registrar os nomes dos arquivos efetivamente usados.
+- Não foram adicionadas imagens geradas.
+- Não foram adicionadas artes oficiais nem assets com licença desconhecida.
+
+## Fontes primárias de licença
+
+- [Kenney — Support / FAQ](https://kenney.nl/support): uso dos assets em projetos pessoais/comerciais e ausência de obrigação de atribuição para packs CC0.
+- [Creative Commons — CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+- [Phosphor — MIT license](https://github.com/phosphor-icons/core/blob/main/LICENSE).
+- [Lucide — ISC license](https://lucide.dev/license).
+- [Game-icons.net — About and attribution](https://game-icons.net/about.html).
+- [Open Doodles — CC0](https://www.opendoodles.com/about).
+- [Google Fonts — Fredoka metadata](https://github.com/google/fonts/blob/main/ofl/fredoka/METADATA.pb).
+- [Google Fonts — Lilita One metadata](https://github.com/google/fonts/blob/main/ofl/lilitaone/METADATA.pb).
+- [Google Fonts — Nunito metadata](https://github.com/google/fonts/blob/main/ofl/nunito/METADATA.pb).
+- [Google Fonts — Baloo 2 OFL text](https://github.com/google/fonts/blob/main/ofl/baloo2/OFL.txt).
+
+
+## 6. Pesquisa ampliada — ilustração e personagens
+
+### Novas fontes examinadas
+
+| Recurso | Autor | Tipo | Licença declarada na página original | Curadoria |
+|---|---|---|---|---|
+| [Alien Portrait](https://opengameart.org/content/alien-portrait) | pauliuw | Retrato alienígena 2D desenhado e colorido, com várias versões PNG e arquivo-fonte | CC0 | Candidato para uma arte de destaque ou cartão editorial; conferir a prévia e o conteúdo integral antes de integrar |
+| [Space Backdrop](https://opengameart.org/content/space-backdrop) | beren77 | Fundo espacial 1280×800 | CC0 | Candidato para fundo discreto com camada de cor/contraste por trás de texto; o próprio autor informa que a prévia tem mais contraste do que o arquivo integral |
+| [Alien Character 2D Sprites](https://yoogameart.itch.io/alien-character-2d-sprites) | Yoo Game Art | Personagem alienígena animado em PNG: idle, jump, kick, punch e run | CC0 1.0 | Candidato para uma área de boas-vindas/mascote secundário. O pacote gratuito tem 39 MB; selecionar apenas sprites necessários para não aumentar o peso do site |
+| [Monster Builder Pack](https://kenney.nl/assets/monster-builder-pack) | Kenney | Criaturas modulares; mais de 170 peças de olhos, bocas e membros em seis cores | CC0 | Primeira escolha para pequenos mascotes ou silhuetas decorativas originais. Não nomear nem apresentar as montagens como espécies canônicas |
+| [Toon Characters](https://kenney.nl/assets/toon-characters) | Kenney | Personagens 2D com 270 sprites em diferentes poses | CC0 | Apoio para painéis de tutorial e onboarding; revisar se combina com a linha visual principal |
+| [Alien UFO Pack](https://kenney.nl/assets/alien-ufo-pack) | Kenney | 2D UFOs, partes, lasers e efeitos | CC0 | Melhor para adornos, navegação temática, pequenas ilustrações e divisores |
+| [Planets](https://kenney.nl/assets/planets) | Kenney | Mais de 50 planetas 2D | CC0 | Melhor para fichas de mundos, cartões e elementos de cenário |
+| [Background Elements](https://kenney.nl/assets/background-elements) | Kenney | 110 elementos de fundo 2D | CC0 | Camadas de cenário e detalhes decorativos |
+| [Simple Space](https://kenney.nl/assets/simple-space) | Kenney | 48 sprites 2D de naves/objetos espaciais | CC0 | Ilustrações menores de exploração espacial |
+| [Open Doodles](https://www.opendoodles.com/about) | Pablo Stanley | Ilustrações humanas em estilo doodle | CC0 | Uso restrito a onboarding/tutorial; não mistura bem com alien/cartoon de ação |
+
+**Evidência de licença:** a página oficial do Kenney declara que seus packs de assets são CC0, inclusive em projetos comerciais, e que não é obrigatória atribuição; também proíbe usar a marca/logotipo Kenney como marca própria. [Kenney Support](https://kenney.nl/support). A página itch.io do Monster Builder Pack informa CC0 1.0, 170+ sprites e ausência de obrigação de atribuição. [Monster Builder Pack — itch.io](https://kenney-assets.itch.io/monster-builder-pack). As páginas do OpenGameArt identificam a licença CC0 e os autores individuais de Alien Portrait e Space Backdrop. [Alien Portrait](https://opengameart.org/content/alien-portrait) · [Space Backdrop](https://opengameart.org/content/space-backdrop). A página do Yoo Game Art declara CC0 1.0 e lista as animações incluídas. [Alien Character 2D Sprites](https://yoogameart.itch.io/alien-character-2d-sprites).
+
+### Biblioteca de descoberta
+
+[ Tiddybub — 2d-assets](https://github.com/Tiddybub/2d-assets) é um índice comunitário de packs 2D CC0 com arquivos originais e um SOURCE.md por pacote. É útil para descobrir outros criadores, mas cada pacote deve ser verificado na página de origem e no seu SOURCE.md antes de ser incorporado. Não tratar uma listagem agregada como substituta da licença individual. A coleção contém materiais de estilos diferentes; filtrar apenas cartoon, space e alien.
+
+### Material examinado, mas não selecionado
+
+- [Free CC0 Fantasy Monster Sprites — SpriteCanvas](https://spritecanvas.itch.io/free-cc0-monster-sprites): a página declara CC0, mas explica que as artes e animações foram geradas por IA e depois ajustadas manualmente. Não será usado na identidade principal porque a direção aprovada prioriza arte de autores/ilustradores e não imagens geradas.
+- Packs pixel-art, low-poly 3D e doodles genéricos podem ser CC0, mas não serão misturados com o conjunto principal de arte cartoon 2D. Só serão reconsiderados se uma tela específica exigir esse estilo.
+
+## 7. Pesquisa ampliada — ícones
+
+| Biblioteca | Quantidade indicada pela fonte | Licença | Indicação |
+|---|---:|---|---|
+| [Phosphor Icons](https://phosphoricons.com/) | Mais de 1.200 ícones; 6 pesos | MIT | **Preferida para o tom cartoon:** pesos Fill e Duotone em ícones de navegação e ações; manter espessura/linguagem consistente |
+| [Tabler Icons](https://tabler.io/icons) | Mais de 6.500 variantes outline/filled | MIT | Excelente alternativa para ícones utilitários; escolher filled onde o contorno fino parecer técnico demais |
+| [Iconoir](https://iconoir.com/) | 1.383 ícones, 1.671 arquivos incluindo variantes sólidas | MIT | Alternativa equilibrada para interface, mas visual mais minimalista |
+| [Lucide](https://lucide.dev/) | Mais de 2.100 ícones | ISC | Melhor para utilitários discretos; não é a primeira escolha estética para o estilo cartoon |
+| [Game-icons.net](https://game-icons.net/) | 4.180 ícones na data consultada | CC BY 3.0 | Excelente biblioteca temática (Creature & Monster, Vehicle, GUI, Body etc.); usar apenas ícones individualmente registrados com autor, link e atribuição |
+
+**Escolha inicial:** Phosphor para a interface geral; Game-icons.net somente para ícones de jogo específicos quando for possível registrar o autor de cada pictograma. Tabler é o fallback para ações e controles que não existam no conjunto Phosphor.
+
+Licenças conferidas nas fontes oficiais: [Phosphor — MIT](https://github.com/phosphor-icons/core/blob/main/LICENSE), [Tabler — MIT](https://tabler.io/license), [Iconoir FAQ — MIT](https://iconoir.com/docs/faq), [Lucide — ISC](https://lucide.dev/license) e [Game-icons.net — CC BY 3.0](https://game-icons.net/).
+
+## 8. Decisão de curadoria recomendada
+
+Para evitar um site visualmente incoerente, não integrar dezenas de packs. A proposta é selecionar um conjunto principal pequeno:
+
+1. **Personagem/mascote secundário:** Monster Builder Pack de Kenney, ou Alien Character 2D Sprites de Yoo Game Art se a estética da ilustração for compatível depois da inspeção.
+2. **Cenário:** Planets + pequenos elementos de Background Elements; usar Space Backdrop de beren77 apenas em páginas onde o fundo escuro contribuir para o contraste.
+3. **Veículos e efeitos:** Alien UFO Pack.
+4. **Ícones:** Phosphor Fill/Duotone como sistema principal; Game-icons para símbolos de criatura/poder/equipamento mediante atribuição individual.
+5. **Fontes:** Fredoka nos títulos e Nunito na leitura das regras.
+
+O guia não deve virar um jogo de ação nem um catálogo de imagens. Ilustrações devem ajudar a orientar a navegação e criar personalidade; as regras, os custos e as referências de página continuam sendo o conteúdo central.
+
+## 9. Status de download e integração
+
+**Pesquisa e seleção preliminar concluídas; importação física pendente.** O ambiente de execução desta sessão não conseguiu resolver os hosts externos para baixar arquivos binários (erro de DNS), então nenhum PNG/SVG/ZIP de terceiros foi copiado para o repositório nesta etapa. Não foram usados hotlinks de prévias de marketplace como substituto. Antes do próximo commit com arte real, baixar os packs diretamente das páginas dos autores, inspecionar os arquivos e dimensões, selecionar um subconjunto pequeno, guardar as licenças/notices e verificar impacto no tamanho do bundle.
+
+
+## 10. Personagens alienígenas — pesquisa adicional no OpenGameArt
+
+| Recurso | Autor | O que contém | Licença | Avaliação para o projeto |
+|---|---|---|---|---|
+| [Extra Terrestrial](https://opengameart.org/content/extra-terrestrial) | Daniel Quevedo | Alien 2D simpático, verde, com jetpack; spritesheet PNG e PSD | CC0 | **Candidato forte** para mascote/cartão editorial; o próprio artista descreve a arte como uma criatura extraterrestre cute feita no Photoshop |
+| [Characters Pack](https://opengameart.org/content/characters-11) | 3DPyramid | Pacote de personagens cartoon em PNG | CC0 | Candidato para retratos genéricos, após inspeção de consistência e dimensão |
+| [Alien Portrait](https://opengameart.org/content/alien-portrait) | pauliuw | Retrato alienígena colorido, contorno, shaded e variantes de cor | CC0 | Candidato para ilustração de ficha; validar se o acabamento combina com a linguagem cartoon atual |
+| [Alien Sprite Sheet](https://opengameart.org/content/alienspritesheet) | rrodi411 | Sprite sheet 2D com movimentos em quatro direções | CC0 | Candidato a pequenos detalhes dinâmicos; conferir resolução e aparência |
+| [Aliens and Items](https://opengameart.org/content/aliens-and-items) | marionline | Pequenos sprites 2D de itens que viram alienígenas | CC0 | Uso de detalhe/ícone em tamanho pequeno; não tem resolução para banner ou retrato grande |
+| [Alien UFO Pack](https://kenney.nl/assets/alien-ufo-pack) | Kenney | Elementos alienígenas e UFOs | CC0 | Melhor para veículos e elementos de cenário do que para retratos |
+| [Alien Character 2D Sprites](https://yoogameart.itch.io/alien-character-2d-sprites) | Yoo Game Art | Um alienígena animado, com idle, jump, kick, punch e run | CC0 | Candidato para animação de boas-vindas; pacote gratuito 39 MB, então extrair apenas os frames indispensáveis |
+
+**Não selecionados para a identidade principal:** [Alien Set](https://opengameart.org/content/alien-set), [Alien 2D Sprites](https://opengameart.org/content/alien-2d-sprites) e [Little alien sprite sheet](https://opengameart.org/content/little-alien-sprite-sheet) são recursos CC0, mas explicitamente pixel-art. Guardar como alternativas para uma experiência visual separada; não misturar pixel-art com a linha cartoon desenhada/ilustrada do dashboard.
+
+Outras referências confirmadas nas páginas dos autores: [Extra Terrestrial — CC0](https://opengameart.org/content/extra-terrestrial), [Characters Pack — CC0](https://opengameart.org/content/characters-11), [Alien Sprite Sheet — CC0](https://opengameart.org/content/alienspritesheet), [Aliens and Items — CC0](https://opengameart.org/content/aliens-and-items).
+
+
+## 11. Referências oficiais do reboot de 2016 — EXCLUÍDAS
+
+**Decisão explícita do projeto: não usar nenhuma imagem, personagem, fundo, arte promocional, sprite ou outro recurso visual do reboot de BEN 10 de 2016.** Os recursos registrados nesta seção foram pesquisados apenas para verificar a licença e ficam formalmente rejeitados para o Beyond Companion.
+
+A pesquisa anterior identificou estes dois arquivos do reboot:
+
+- [Ben Tennyson (Ben 10 2016 reboot).svg](https://commons.wikimedia.org/wiki/File:Ben_Tennyson_(Ben_10_2016_reboot).svg)
+- [Ben 10 Background.png](https://commons.wikimedia.org/wiki/File:Ben_10_Background.png)
+
+Embora o Wikimedia Commons registre esses arquivos sob CC BY-SA 2.0 e atribua a origem ao projeto "Ben 10!" publicado no perfil oficial Cartoon Network no Scratch, **a existência de licença não significa que o projeto os aprova esteticamente**. A decisão visual do usuário é definitiva: nenhum desses arquivos será incorporado, referenciado como inspiração visual, usado em protótipos, screenshots ou materiais de divulgação.
+
+Esta documentação é mantida apenas como registro da pesquisa já realizada e para evitar que os arquivos sejam selecionados novamente por engano. A descoberta não representa licença geral para a franquia, não modifica a decisão do projeto e não autoriza o uso de outros materiais de BEN 10.
+
+
+
+## 12. Pesquisa aprofundada — direção cartoon de aventura inspirada na era clássica
+
+A direção visual aprovada para o produto é **cartoon sci-fi de aventura, com clima de animação de ação de meados dos anos 2000**. A referência é de linguagem visual ampla: silhuetas legíveis, contornos escuros, cores chapadas e saturadas, composição dinâmica, formas assimétricas, detalhes de exploração e contraste entre cenários espaciais e superfícies de papel. Não reproduzir personagens, designs de alienígenas, relógio/dispositivo, logotipo, tipografia ou elementos de marca de BEN 10.
+
+### Recursos com licença aberta e potencial real
+
+| Recurso | Autor | Licença confirmada na fonte | Estilo/uso | Decisão |
+|---|---|---|---|---|
+| [Extra Terrestrial](https://opengameart.org/content/extra-terrestrial) | Daniel Quevedo | CC0 | Alien 2D simpático, desenhado no Photoshop; spritesheet PNG de 245 KB e PSD | **Primeiro candidato para teste visual**, após inspeção do spritesheet e recorte de um frame adequado |
+| [Monster Builder Pack](https://opengameart.org/content/monster-builder-pack) | Kenney | CC0 | 178 PNG tiles, spritesheets e vetores para montar criaturas com olhos, bocas e membros em seis cores | **Primeiro candidato para construir pequenos mascotes originais**, sem mapear para espécies do RPG |
+| [5 Alien Creatures](https://opengameart.org/content/5-alien-creatures) | johnnytal | CC0 | Cinco criaturas alienígenas absurdas/cartunescas feitas em Paint e GIMP; ZIP de 21,7 KB | **Candidato forte** para cards de descoberta; verificar legibilidade/resolução antes de usar em tamanho grande |
+| [Cartoon Creatures](https://opengameart.org/content/cartoon-creatures) | RayB2 | CC BY 4.0 | Quatro personagens cartoon de fantasia/horror, incluindo um alien super-herói | Candidato secundário; atribuição obrigatória e estética potencialmente mais sombria |
+| [Alien Character 2D Sprites](https://yoogameart.itch.io/alien-character-2d-sprites) | Yoo Game Art | CC0 1.0 | Alien animado em idle, jump, kick, punch e run a 30 FPS; autor declara que não usou IA; pacote grátis 39 MB | Candidato para animação de microinteração, mas pesado para primeira versão; extrair só frames essenciais |
+| [2D space background](https://opengameart.org/content/2d-space-background) | Scribe / Daniel Stephens | CC0 | Paisagem espacial de 3,6 MB, pensada para splash screen | Candidato de fundo em área isolada; otimização obrigatória antes de integrar |
+| [Space Cartoon Background](https://opengameart.org/content/space-cartoon-background) | Aetherna | CC BY 3.0 | Fundo espacial desenhado em estilo cartoon, 4000×2000 | Candidato de cenário; crédito ao autor e inspeção de qualidade obrigatórios |
+| [Alien UFO Pack](https://opengameart.org/content/alien-ufo-pack) | Kenney | CC0 | 46 PNGs, spritesheets e fonte vetorial de UFOs, lasers, explosões e trem de pouso | Apoio para elementos espaciais pequenos, não para representar aliens |
+| [Toon Characters](https://kenney.nl/assets/toon-characters) | Kenney | CC0 | 270 sprites de personagens e poses | Usar apenas se combinar com a arte alienígena escolhida; não misturar estilos sem curadoria |
+
+### Exclusões de estilo e licença
+
+- [Alien Set](https://opengameart.org/content/alien-set) e [Alien 2D Sprites](https://opengameart.org/content/alien-2d-sprites) são CC0, mas pixel-art. Não fazem parte da linha principal, pois o objetivo é ilustração cartoon desenhada/cel-shaded, não pixel-art.
+- [Animated Monsters](https://opengameart.org/content/animated-monsters) é CC0, mas pixel-art e fantasia; não usar na linha principal.
+- [Cartoon Creatures](https://opengameart.org/content/cartoon-creatures) é **CC BY 4.0**, não CC0. Atribuição a RayB2 é necessária caso seja incorporado.
+- Um asset gratuito com licença aberta continua tendo autor. Registrar a licença individual, o autor, o link de origem e eventuais modificações.
+- Nenhuma arte do reboot de 2016 ou material promocional de BEN 10 pode ser usada. A exclusão é definitiva.
+
+### Fontes de descoberta e licenças
+
+- [OpenGameArt — Monster Builder Pack](https://opengameart.org/content/monster-builder-pack): 178 peças, CC0, fonte vetorial e PNG; crédito Kenney opcional.
+- [OpenGameArt — Extra Terrestrial](https://opengameart.org/content/extra-terrestrial): autor Daniel Quevedo, spritesheet PNG e PSD, CC0.
+- [OpenGameArt — 2D space background](https://opengameart.org/content/2d-space-background): autor Scribe, CC0, atribuição não obrigatória.
+- [OpenGameArt — 5 Alien Creatures](https://opengameart.org/content/5-alien-creatures): cinco criaturas, CC0.
+- [OpenGameArt — Cartoon Creatures](https://opengameart.org/content/cartoon-creatures): RayB2, CC BY 4.0.
+- [OpenGameArt — Space Cartoon Background](https://opengameart.org/content/space-cartoon-background): Aetherna, CC BY 3.0.
+- [Yoo Game Art — Alien Character 2D Sprites](https://yoogameart.itch.io/alien-character-2d-sprites): CC0 1.0, sem IA segundo declaração do autor.
+- [Phosphor Icons](https://phosphoricons.com/) e [licença MIT](https://github.com/phosphor-icons/core/blob/main/LICENSE): sistema de ícones consistente, com pesos Fill/Duotone.
+- [Creative Commons — CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) e [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
+
+### Direção visual do site — versão de trabalho
+
+- **Conceito:** caderno de campo alienígena / arquivo de exploração, não HUD militar, não painel de scanner genérico.
+- **Paleta:** verde-floresta e carvão como moldura; verde-lima como cor de destaque; papel creme para leitura; azul-ciano e laranja para categorias e chamadas. O verde é uma referência cromática ampla, não reprodução de símbolo da franquia.
+- **Desenho de interface:** bordas escuras espessas, cartões assimétricos, sombras chapadas, selos de arquivo, retículas discretas, etiquetas e pequenas marcações de campo.
+- **Tipografia:** Fredoka para títulos e Nunito para textos e regras (SIL OFL 1.1).
+- **Arte:** uma ilustração alienígena grande no destaque, criaturas em cards de catálogo, planeta/fundo espacial em áreas de respiro e ícones Phosphor Fill/Duotone.
+- **Leitura:** o conteúdo das regras permanece em cartões de papel claro; cores fortes ficam em navegação, títulos, ilustrações e indicadores.
+- **Acessibilidade:** contraste WCAG, foco visível, áreas clicáveis adequadas, responsividade, sem animação obrigatória e respeito a `prefers-reduced-motion`.
+
+### Estado de integração
+
+A nova composição CSS e os textos do dashboard foram enviados para a branch `prototype/cartoon-sci-fi-v1`. **Os arquivos de arte dos autores ainda não foram incorporados ao repositório.** A tentativa de baixar os binários do OpenGameArt nesta sessão falhou por restrição de rede/DNS. Não usar hotlink remoto como solução permanente. A próxima etapa de integração de arte exige baixar os arquivos originais, inspecionar spritesheets, recortar somente frames necessários, otimizar PNG/WebP e manter `THIRD_PARTY_NOTICES.md` com autor/licença/origem. Não declarar o design como final nem a integração de arte como concluída antes dessa etapa e da validação visual real.
