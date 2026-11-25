@@ -60,10 +60,14 @@ function makeInitialDraft(): CharacterDraft {
 export default function CharacterBuilder() {
   const [restored] = useState(() => {
     if (typeof window === 'undefined') return { draft: makeInitialDraft(), status: 'empty' as const };
-    const result = loadSavedDraft(window.localStorage);
-    if (result.status === 'loaded') return { draft: result.draft, status: 'loaded' as const };
-    if (result.status === 'invalid') return { draft: makeInitialDraft(), status: 'invalid' as const };
-    return { draft: makeInitialDraft(), status: 'empty' as const };
+    try {
+      const result = loadSavedDraft(window.localStorage);
+      if (result.status === 'loaded') return { draft: result.draft, status: 'loaded' as const };
+      if (result.status === 'invalid') return { draft: makeInitialDraft(), status: 'invalid' as const };
+      return { draft: makeInitialDraft(), status: 'empty' as const };
+    } catch {
+      return { draft: makeInitialDraft(), status: 'unavailable' as const };
+    }
   });
   const [draft, setDraft] = useState<CharacterDraft>(restored.draft);
   const [persistenceStatus, setPersistenceStatus] = useState(
@@ -353,7 +357,8 @@ export default function CharacterBuilder() {
               accept="application/json,.json"
               aria-label="Importar backup de personagem em JSON"
               onChange={(event) => {
-                const file = event.currentTarget.files?.[0];
+                const input = event.currentTarget;
+                const file = input.files?.[0];
                 if (!file) return;
                 void file.text()
                   .then((serialized) => {
@@ -366,7 +371,7 @@ export default function CharacterBuilder() {
                     setPersistenceStatus(error instanceof Error ? error.message : 'Não foi possível importar este arquivo.');
                   })
                   .finally(() => {
-                    event.currentTarget.value = '';
+                    input.value = '';
                   });
               }}
             />
