@@ -30,14 +30,27 @@
 - Plumber Squad, Threat Archetypes, cinco personagens prontos e aventura introdutória.
 - Domínio Tier D e ledger PAX cobertos por testes unitários.
 
-## Validação
+## Revisão técnica e validação — 25/11/2026
 
-- GitHub Actions, [run #38](https://github.com/ZaraTakion/beyond-companion/actions/runs/45624591286), no commit `9d388b4cd765acf04bec81e8e6cbbba02f849199`: aprovado.
+A revisão corrigiu a importação de JSON da ficha, os limites do ledger PAX, a apresentação das referências de página nas regras básicas e o retorno ao topo ao trocar de área. O teste de dano agora afirma explicitamente os cinco tipos do PDF: Elemental, Pulse, Magical, Physical e Psychic.
+
+O front-end agora possui testes de componente para navegação, atlas de espécies, guia de consulta e construtor. A bateria executada no GitHub Actions foi:
+
+- [Run #53](https://github.com/ZaraTakion/beyond-companion/actions/runs/45636588005), commit `79646a3871c921dc3f93a580870058d7e4003cd1`: concluída com sucesso.
 - TypeScript: aprovado.
-- Testes unitários: 8 arquivos, 32 testes aprovados.
-- Build de produção: aprovado; Vite transformou 34 módulos.
-- Status Vercel vinculado ao commit: sucesso.
-- Não foi executado E2E de navegador nem inspeção visual manual em desktop, tablet e celular. Essas verificações continuam separadas da cobertura automatizada.
+- Vitest + Testing Library: **13 arquivos, 52 testes aprovados, 0 falhas**.
+- Build de produção: aprovado; Vite transformou 35 módulos.
+- Dependências instaladas: 96 pacotes.
+
+**Limite importante:** depois da run #53 foi acrescentado mais um teste de navegação/rolagem e foi adicionada uma suíte Playwright com seis cenários E2E. Esses testes ainda não têm uma execução CI comprovada no head atual. A workflow de navegador está versionada na branch do PR, mas uma workflow adicionada apenas no head de um PR não passa a ser a workflow executada pelo GitHub Actions até estar no branch base. O PR permanece sem merge.
+
+Não foi feita inspeção visual manual em navegador real nos breakpoints desktop, tablet e celular. Não há projeto Vercel vinculado ao repositório/commit nem URL de preview confirmada.
+
+## Pontos de manutenção pendentes
+
+- O repositório ainda não contém `package-lock.json`; a instalação usa `npm install` e faixas de versão do `package.json`, não uma árvore de dependências travada.
+- Não foi executada auditoria independente de vulnerabilidades das dependências.
+- Os cenários Playwright foram escritos, mas ainda precisam de execução em Chromium após a workflow ser ativada no branch base ou num ambiente local com browser instalado.
 
 ## Limites explícitos
 
