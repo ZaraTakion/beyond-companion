@@ -3,10 +3,26 @@ import { expect, test } from '@playwright/test';
 
 const wcagTags = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
 const mainRoutes = [
-  { hash: '#inicio', label: 'visão geral' },
-  { hash: '#guia', label: 'guia de consulta' },
-  { hash: '#criar-heroi', label: 'construtor de personagem' },
+  { hash: '#inicio', label: 'visão geral', navigationLabel: /Visão geral/ },
+  { hash: '#guia', label: 'guia de consulta', navigationLabel: /Guia de consulta/ },
+  { hash: '#criar-heroi', label: 'construtor de personagem', navigationLabel: /Criar um Hero/ },
 ];
+
+async function openRoute(
+  page: import('@playwright/test').Page,
+  route: typeof mainRoutes[number],
+  viewport: string,
+) {
+  // A unique query forces a fresh document for each hash so the initial tab
+  // state and the hash agree before axe inspects the rendered page.
+  await page.goto(`/?a11y=${encodeURIComponent(viewport + '-' + route.label)}${route.hash}`);
+
+  const navigation = page.getByRole('navigation', { name: 'Navegação principal' });
+  await expect(
+    navigation.getByRole('button', { name: route.navigationLabel }),
+    `A rota ${route.hash} deve marcar sua própria navegação como ativa.`,
+  ).toHaveAttribute('aria-current', 'page');
+}
 
 async function collectAccessibilityViolations(
   page: import('@playwright/test').Page,
@@ -29,7 +45,7 @@ test('passes automated WCAG 2.1 AA checks on all main sections', async ({ page }
   const violations: Array<Record<string, unknown>> = [];
 
   for (const route of mainRoutes) {
-    await page.goto(`/${route.hash}`);
+    await openRoute(page, route, 'desktop');
     violations.push(...await collectAccessibilityViolations(page, route.label));
   }
 
@@ -44,8 +60,9 @@ test('passes automated WCAG 2.1 AA checks on narrow mobile layouts', async ({ pa
 
   for (const width of [320, 390]) {
     await page.setViewportSize({ width, height: 844 });
+
     for (const route of mainRoutes) {
-      await page.goto(`/${route.hash}`);
+      await openRoute(page, route, `mobile-${width}px`);
       violations.push(...await collectAccessibilityViolations(
         page,
         `${route.label} mobile ${width}px`,
@@ -77,7 +94,7 @@ test('exposes the skip link as the first keyboard focus target', async ({ page }
 });
 
 test('supports keyboard navigation between the main sections', async ({ page }) => {
-  await page.goto('/#inicio');
+  await page.goto('/?a11y=keyboard#inicio');
   const navigation = page.getByRole('navigation', { name: 'Navegação principal' });
   const overview = navigation.getByRole('button', { name: /Visão geral/ });
   const guide = navigation.getByRole('button', { name: /Guia de consulta/ });
@@ -97,7 +114,7 @@ test('supports keyboard navigation between the main sections', async ({ page }) 
 test('keeps the layout free of horizontal overflow at common breakpoints', async ({ page }) => {
   for (const width of [320, 390, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 900 });
-    await page.goto('/#criar-heroi');
+    await page.goto(`/?a11y=overflow-${width}#criar-heroi`);
 
     const dimensions = await page.evaluate(() => ({
       viewport: document.documentElement.clientWidth,

@@ -3551,3 +3551,32 @@ summary:focus-visible {
 .sidebar-nav .side-link[aria-current="page"] .side-link-arrow {
   color: #17251d;
 }
+
+
+/* WCAG follow-up from Chromium run #67. These overrides cover the light
+   field-note cards and muted controls used in the narrow layouts. */
+.page-intro-stamp > span,
+.reference-section-heading > span[aria-live="polite"] {
+  color: #101a14;
+}
+.reference-nav-item:not(.active) {
+  color: #b9c9b0;
+}
+.reference-bullets li {
+  color: #17251d;
+}
+.builder-step-aptitudes .section-heading p {
+  color: #273528;
+}
+.summary-stats span {
+  color: #273528;
+}
+.validation-card li {
+  color: #17251d;
+}
+.side-link.active .side-link-number,
+.side-link.active .side-link-copy strong,
+.side-link.active .side-link-copy small,
+.side-link.active .side-link-arrow {
+  color: #17251d !important;
+}
