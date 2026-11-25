@@ -136,3 +136,20 @@ O guia não deve virar um jogo de ação nem um catálogo de imagens. Ilustraç�
 ## 9. Status de download e integração
 
 **Pesquisa e seleção preliminar concluídas; importação física pendente.** O ambiente de execução desta sessão não conseguiu resolver os hosts externos para baixar arquivos binários (erro de DNS), então nenhum PNG/SVG/ZIP de terceiros foi copiado para o repositório nesta etapa. Não foram usados hotlinks de prévias de marketplace como substituto. Antes do próximo commit com arte real, baixar os packs diretamente das páginas dos autores, inspecionar os arquivos e dimensões, selecionar um subconjunto pequeno, guardar as licenças/notices e verificar impacto no tamanho do bundle.
+
+
+## 10. Personagens alienígenas — pesquisa adicional no OpenGameArt
+
+| Recurso | Autor | O que contém | Licença | Avaliação para o projeto |
+|---|---|---|---|---|
+| [Extra Terrestrial](https://opengameart.org/content/extra-terrestrial) | Daniel Quevedo | Alien 2D simpático, verde, com jetpack; spritesheet PNG e PSD | CC0 | **Candidato forte** para mascote/cartão editorial; o próprio artista descreve a arte como uma criatura extraterrestre cute feita no Photoshop |
+| [Characters Pack](https://opengameart.org/content/characters-11) | 3DPyramid | Pacote de personagens cartoon em PNG | CC0 | Candidato para retratos genéricos, após inspeção de consistência e dimensão |
+| [Alien Portrait](https://opengameart.org/content/alien-portrait) | pauliuw | Retrato alienígena colorido, contorno, shaded e variantes de cor | CC0 | Candidato para ilustração de ficha; validar se o acabamento combina com a linguagem cartoon atual |
+| [Alien Sprite Sheet](https://opengameart.org/content/alienspritesheet) | rrodi411 | Sprite sheet 2D com movimentos em quatro direções | CC0 | Candidato a pequenos detalhes dinâmicos; conferir resolução e aparência |
+| [Aliens and Items](https://opengameart.org/content/aliens-and-items) | marionline | Pequenos sprites 2D de itens que viram alienígenas | CC0 | Uso de detalhe/ícone em tamanho pequeno; não tem resolução para banner ou retrato grande |
+| [Alien UFO Pack](https://kenney.nl/assets/alien-ufo-pack) | Kenney | Elementos alienígenas e UFOs | CC0 | Melhor para veículos e elementos de cenário do que para retratos |
+| [Alien Character 2D Sprites](https://yoogameart.itch.io/alien-character-2d-sprites) | Yoo Game Art | Um alienígena animado, com idle, jump, kick, punch e run | CC0 | Candidato para animação de boas-vindas; pacote gratuito 39 MB, então extrair apenas os frames indispensáveis |
+
+**Não selecionados para a identidade principal:** [Alien Set](https://opengameart.org/content/alien-set), [Alien 2D Sprites](https://opengameart.org/content/alien-2d-sprites) e [Little alien sprite sheet](https://opengameart.org/content/little-alien-sprite-sheet) são recursos CC0, mas explicitamente pixel-art. Guardar como alternativas para uma experiência visual separada; não misturar pixel-art com a linha cartoon desenhada/ilustrada do dashboard.
+
+Outras referências confirmadas nas páginas dos autores: [Extra Terrestrial — CC0](https://opengameart.org/content/extra-terrestrial), [Characters Pack — CC0](https://opengameart.org/content/characters-11), [Alien Sprite Sheet — CC0](https://opengameart.org/content/alienspritesheet), [Aliens and Items — CC0](https://opengameart.org/content/aliens-and-items).
