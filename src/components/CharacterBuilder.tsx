@@ -457,7 +457,7 @@ export default function CharacterBuilder() {
               />
               <small>2 PAX por ponto. Energy inicial: {validation.derivedStats.energy}.</small>
             </label>
-            <div className="effective-attribute-summary" aria-label="Atributos efetivos após bônus de Aptitudes">
+            <div className="effective-attribute-summary" role="group" aria-label="Atributos efetivos após bônus de Aptitudes">
               <strong>Attributes efetivos</strong>
               <small>Valores finais após os bônus de Evolutionary Aptitudes selecionadas.</small>
               <div className="effective-attribute-grid">
