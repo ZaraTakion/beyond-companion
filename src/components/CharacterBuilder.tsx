@@ -9,9 +9,11 @@ import {
   validateCharacter,
   type AttributeName,
   type CharacterDraft,
+  type CharacterValidation,
   type GearSelection,
   type SkillSelection,
   type TraitSelection,
+  type ValidationIssue,
 } from '../domain/character';
 
 const attributeLabels: Record<AttributeName, string> = {
@@ -258,6 +260,41 @@ export default function CharacterBuilder() {
   const visibleIssues = showAllIssues ? issues : issues.slice(0, 4);
   const remainingPax = validation.ledger.remaining;
 
+  function exportCharacter() {
+    const payload = {
+      format: 'beyond-companion-character',
+      schemaVersion: 1,
+      ruleset: 'Quickstart v1',
+      exportedAt: new Date().toISOString(),
+      character: draft,
+      derivedStats: validation.derivedStats,
+      paxLedger: validation.ledger,
+      validation: { valid: issues.length === 0, issues },
+    };
+    const filename = (draft.name.trim() || 'hero')
+      .normalize('NFD')
+      .replace(/[\\u0300-\\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '') || 'hero';
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `beyond-companion-${filename}.json`;
+    link.style.display = 'none';
+    document.body.append(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  function resetCharacter() {
+    if (!window.confirm('Reiniciar a ficha e descartar as escolhas atuais?')) return;
+    setDraft(makeInitialDraft());
+    setShowAllIssues(false);
+  }
+
   return (
     <section className="builder">
       <div className="builder-intro">
@@ -266,11 +303,28 @@ export default function CharacterBuilder() {
           <h2>Crie seu Hero Tier D</h2>
           <p>As escolhas são validadas com base no pacote Quickstart v1. Benefícios gratuitos aparecem separados do gasto em PAX.</p>
         </div>
-        <div className="pax-meter" aria-live="polite">
+        <div className={remainingPax < 0 ? 'pax-meter over-budget' : 'pax-meter'} aria-live="polite">
           <span>PAX usados</span>
           <strong>{validation.ledger.spent}<small> / 30</small></strong>
           <span className={remainingPax < 0 ? 'negative' : 'remaining'}>{remainingPax} restantes</span>
+          <div
+            className="pax-meter-track"
+            role="progressbar"
+            aria-label="Orçamento de PAX utilizado"
+            aria-valuemin={0}
+            aria-valuemax={30}
+            aria-valuenow={Math.min(30, Math.max(0, validation.ledger.spent))}
+            aria-valuetext={`${validation.ledger.spent} de 30 PAX utilizados`}
+          >
+            <span style={{ width: `${Math.min(100, Math.max(0, validation.ledger.spent / 30 * 100))}%` }} />
+          </div>
         </div>
+      </div>
+
+      <div className="builder-toolbar" aria-label="Ações da ficha">
+        <button type="button" className="builder-action" onClick={exportCharacter}>Exportar ficha (.json)</button>
+        <button type="button" className="builder-action builder-action-primary" onClick={() => window.print()}>Imprimir / Salvar PDF</button>
+        <button type="button" className="builder-action builder-action-reset" onClick={resetCharacter}>Reiniciar ficha</button>
       </div>
 
       <div className="builder-layout">
@@ -509,6 +563,93 @@ export default function CharacterBuilder() {
           <p className="builder-disclaimer">A validação cobre as regras de criação já catalogadas. Interações ambíguas e efeitos situacionais continuam dependendo do GM.</p>
         </aside>
       </div>
+
+      <section className="print-sheet" aria-label="Ficha de personagem para impressão">
+        <header className="print-sheet-header">
+          <div>
+            <span>BEYOND COMPANION · QUICKSTART V1</span>
+            <h1>{draft.name.trim() || 'Hero sem nome'}</h1>
+            <p>Ficha de personagem · Tier D · Projeto independente de fãs</p>
+          </div>
+          <div className="print-sheet-budget">
+            <strong>{validation.ledger.spent} / 30</strong>
+            <span>PAX utilizados</span>
+            <b>{remainingPax} restantes</b>
+          </div>
+        </header>
+
+        <section className="print-sheet-stat-grid" aria-label="Estatísticas derivadas">
+          <div><span>Energy</span><strong>{validation.derivedStats.energy}</strong></div>
+          <div><span>Defense</span><strong>{validation.derivedStats.defense}</strong></div>
+          <div><span>Initiative</span><strong>{validation.derivedStats.initiative}</strong></div>
+          <div><span>Attack Bonus</span><strong>+{validation.derivedStats.attackBonus}</strong></div>
+          <div><span>Tier Die</span><strong>{validation.derivedStats.tierDie}</strong></div>
+        </section>
+
+        <div className="print-sheet-columns">
+          <section className="print-sheet-section">
+            <h2>Identidade</h2>
+            <dl>
+              <div><dt>Espécie</dt><dd>{species.name}</dd></div>
+              <div><dt>Archetype</dt><dd>{archetype.name}</dd></div>
+              <div><dt>Evolutionary Path</dt><dd>{draft.evolutionaryPath}</dd></div>
+              <div><dt>Plumber afiliado</dt><dd>{draft.plumberAffiliated ? 'Sim' : 'Não'}</dd></div>
+            </dl>
+            <h3>Archetype Abilities</h3>
+            <ul>{draft.archetypeAbilities.map((name) => <li key={name}>{name}</li>)}</ul>
+          </section>
+
+          <section className="print-sheet-section">
+            <h2>Attributes</h2>
+            <dl>
+              {attributeNames.map((name) => (
+                <div key={name}><dt>{attributeLabels[name]}</dt><dd>{draft.attributes[name]}</dd></div>
+              ))}
+              <div><dt>Energy adicional</dt><dd>{draft.energyBought}</dd></div>
+            </dl>
+          </section>
+
+          <section className="print-sheet-section">
+            <h2>Evolutionary Aptitudes</h2>
+            <ul>{draft.aptitudePurchases.length
+              ? draft.aptitudePurchases.map((item) => <li key={item.name}>{item.name} · Grade {item.grade}</li>)
+              : <li>Nenhuma selecionada</li>}</ul>
+          </section>
+
+          <section className="print-sheet-section">
+            <h2>Skills</h2>
+            <ul>{draft.skills.length
+              ? draft.skills.map((item) => <li key={item.name}>{item.name}{item.source === 'purchased' ? '' : ' · gratuita'}</li>)
+              : <li>Nenhuma selecionada</li>}</ul>
+            <h2>Traits</h2>
+            <ul>{draft.traits.length
+              ? draft.traits.map((item) => <li key={item.name}>{item.name}{item.source === 'versatility' ? ' · gratuita' : ''}</li>)
+              : <li>Nenhuma selecionada</li>}</ul>
+          </section>
+
+          <section className="print-sheet-section">
+            <h2>Weapons and Gear</h2>
+            <ul>{draft.gear.length
+              ? draft.gear.map((item) => <li key={item.name}>{item.name}{item.source === 'purchased' ? '' : ' · gratuita'}</li>)
+              : <li>Nenhum item selecionado</li>}</ul>
+          </section>
+
+          <section className="print-sheet-section">
+            <h2>Ledger de PAX</h2>
+            {validation.ledger.entries.length
+              ? <dl>{validation.ledger.entries.map((entry) => (
+                  <div key={entry.id}><dt>{entry.label}</dt><dd>{entry.cost}</dd></div>
+                ))}</dl>
+              : <p>Nenhuma compra registrada.</p>}
+            <div className="print-sheet-total"><strong>Total</strong><strong>{validation.ledger.spent} / 30 PAX</strong></div>
+          </section>
+        </div>
+
+        <footer className="print-sheet-footer">
+          <span>{issues.length === 0 ? 'Validações implementadas: sem pendências.' : `Atenção: ${issues.length} pendência(s) na ficha.`}</span>
+          <span>Os efeitos situacionais continuam sujeitos à interpretação do GM · Quickstart v1</span>
+        </footer>
+      </section>
     </section>
   );
 }
