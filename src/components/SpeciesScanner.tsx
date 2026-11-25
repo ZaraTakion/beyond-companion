@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type CSSProperties } from 'react';
 import speciesCatalog from '../../data/rulesets/quickstart-v1/species.json';
 
 const species = speciesCatalog.species;
@@ -38,7 +38,7 @@ export default function SpeciesScanner() {
                 key={item.id}
                 type="button"
                 className={selected.id === item.id ? 'scanner-orbit-node selected' : 'scanner-orbit-node'}
-                style={{ '--node-angle': `${(360 / species.length) * index}deg` } as React.CSSProperties}
+                style={{ '--node-angle': `${(360 / species.length) * index}deg` } as CSSProperties & { '--node-angle': string }}
                 onClick={() => setSelectedId(item.id)}
                 aria-pressed={selected.id === item.id}
                 aria-label={`Consultar ${item.name}`}
