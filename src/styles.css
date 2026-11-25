@@ -3392,3 +3392,18 @@ summary:focus-visible {
   outline-offset: 3px;
   border-radius: 4px;
 }
+
+
+.builder-import-message {
+  margin: -6px 0 15px;
+  padding: 10px 13px;
+  border: 1px solid #6f8c54;
+  border-radius: 9px 13px 8px 12px;
+  color: #edf4e3;
+  background: #263d2d;
+  font-size: .75rem;
+  line-height: 1.5;
+}
+@media print {
+  .builder-import-message { display: none !important; }
+}
