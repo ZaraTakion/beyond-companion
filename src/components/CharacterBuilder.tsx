@@ -368,11 +368,16 @@ export default function CharacterBuilder() {
               <label className="field field-wide">Nome do personagem
                 <input value={draft.name} onChange={(event) => setDraft((current) => ({ ...current, name: event.target.value }))} placeholder="Digite o nome..." />
               </label>
-              <label className="field">Espécie
-                <select value={draft.speciesId} onChange={(event) => changeSpecies(event.target.value)}>
+              <div className="field">
+                <label htmlFor="builder-species">Espécie</label>
+                <select
+                  id="builder-species"
+                  value={draft.speciesId}
+                  onChange={(event) => changeSpecies(event.target.value)}
+                >
                   {speciesCatalog.species.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
                 </select>
-              </label>
+              </div>
               <label className="field">Archetype
                 <select value={draft.archetypeId} onChange={(event) => changeArchetype(event.target.value)}>
                   {archetypeCatalog.archetypes.map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
