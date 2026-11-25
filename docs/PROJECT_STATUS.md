@@ -11,8 +11,8 @@
 - Pull request #3: https://github.com/ZaraTakion/beyond-companion/pull/3
 - PR aberto, em rascunho, direcionado a `main` e não mesclado.
 - A branch `main` permaneceu sem alterações nesta revisão.
-- Commit de código validado integralmente: `b4b6b33e879868b69e77892e951b0c518b9a869b`, no [GitHub Actions #69](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692211385).
-- O preview Vercel do PR foi reportado como Ready; isso não representa revisão visual humana.
+- HEAD validado integralmente: `5f70a68b2feae826dd34610567165cf7cd54af1e`, no [GitHub Actions #70](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692698130).
+- O preview Vercel atual não foi confirmado: a consulta por repositório/commit não encontrou um projeto vinculado e o acesso à URL antiga exige autorização da equipe. O status será reavaliado depois da autorização.
 
 ## Entregue no front-end
 
@@ -33,9 +33,9 @@
 - Plumber Squad, Threat Archetypes, cinco personagens prontos e aventura introdutória.
 - Domínio Tier D, validações e ledger PAX cobertos por testes automatizados.
 
-## Validação técnica comprovada — GitHub Actions #69
+## Validação técnica comprovada — GitHub Actions #70
 
-Execução completa: [Run #69](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692211385), commit `b4b6b33e879868b69e77892e951b0c518b9a869b`.
+Execução completa: [Run #70](https://github.com/ZaraTakion/beyond-companion/actions/runs/45692698130), HEAD `5f70a68b2feae826dd34610567165cf7cd54af1e`.
 
 - Instalação de dependências: aprovada (101 pacotes).
 - `npm audit --audit-level=high`: aprovado.
@@ -54,7 +54,7 @@ A revisão corrigiu violações WCAG identificadas nas execuções anteriores, i
 
 ## Pendências e limitações
 
-- Não foi feita inspeção visual manual em dispositivos físicos ou navegadores desktop/tablet/mobile. A implantação preview foi reportada como Ready, mas ainda precisa de avaliação visual humana.
+- Não foi feita inspeção visual manual em desktop/tablet/mobile. A URL previamente informada ainda não foi confirmada como deployment do HEAD atual; o Vercel exige autorização de equipe para consultar a implantação e abrir o browser. A avaliação visual segue pendente.
 - Leitor de tela real e zoom/reflow precisam de avaliação manual.
 - A paginação final da ficha em PDF/impresso precisa de revisão visual.
 - A segunda auditoria visual sistemática dos dados, comparando todos os resumos e referências com o PDF aberto, permanece pendente.
