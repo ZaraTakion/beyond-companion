@@ -153,3 +153,40 @@ O guia não deve virar um jogo de ação nem um catálogo de imagens. Ilustraç�
 **Não selecionados para a identidade principal:** [Alien Set](https://opengameart.org/content/alien-set), [Alien 2D Sprites](https://opengameart.org/content/alien-2d-sprites) e [Little alien sprite sheet](https://opengameart.org/content/little-alien-sprite-sheet) são recursos CC0, mas explicitamente pixel-art. Guardar como alternativas para uma experiência visual separada; não misturar pixel-art com a linha cartoon desenhada/ilustrada do dashboard.
 
 Outras referências confirmadas nas páginas dos autores: [Extra Terrestrial — CC0](https://opengameart.org/content/extra-terrestrial), [Characters Pack — CC0](https://opengameart.org/content/characters-11), [Alien Sprite Sheet — CC0](https://opengameart.org/content/alienspritesheet), [Aliens and Items — CC0](https://opengameart.org/content/aliens-and-items).
+
+
+## 11. BEN 10 — exceções oficiais licenciadas sob Creative Commons
+
+A pesquisa encontrou uma exceção importante: **alguns arquivos de BEN 10 foram publicados pelo próprio perfil oficial `cartoonnetwork` no Scratch em 2016**. A página do perfil mostra o projeto "Ben 10!" entre os projetos compartilhados pelo perfil oficial. O projeto original é `https://scratch.mit.edu/projects/157455323/`. O Wikimedia Commons registra os dois arquivos abaixo como provenientes desse projeto e como licenciados sob **Creative Commons Attribution-ShareAlike 2.0 (CC BY-SA 2.0)**, após revisão por usuários/revisores do Commons em abril de 2025.
+
+| Arquivo | Conteúdo e dimensões | Licença registrada | Observação |
+|---|---|---|---|
+| [Ben Tennyson (Ben 10 2016 reboot).svg](https://commons.wikimedia.org/wiki/File:Ben_Tennyson_(Ben_10_2016_reboot).svg) | Ilustração vetorial oficial de Ben Tennyson segurando o dispositivo; arquivo SVG nominal 122 × 235, 151 KB | CC BY-SA 2.0; atribuição a Cartoon Network | Melhor candidato para um detalhe/personagem em pequeno cartão editorial; a dimensão nominal é pequena |
+| [Ben 10 Background.png](https://commons.wikimedia.org/wiki/File:Ben_10_Background.png) | Arte promocional de baixa qualidade do reboot 2016 com vários aliens; 960 × 720, 273 KB | CC BY-SA 2.0; atribuição a Cartoon Network | Pode servir como referência/arte de seção, mas a própria página descreve a imagem como de baixa qualidade promocional |
+
+### Evidência da origem e licença
+
+- [Perfil oficial Cartoon Network no Scratch](https://scratch.mit.edu/users/cartoonnetwork/) — o projeto `Ben 10!` aparece na lista de projetos compartilhados pelo perfil.
+- [Projeto original BEN 10! no Scratch](https://scratch.mit.edu/projects/157455323/) — fonte indicada para ambos os arquivos.
+- [Wikimedia Commons — Ben Tennyson SVG](https://commons.wikimedia.org/wiki/File:Ben_Tennyson_(Ben_10_2016_reboot).svg) — identifica Cartoon Network como autor, associa a origem ao projeto do perfil oficial, registra a revisão da licença em 24/04/2025 e apresenta CC BY-SA 2.0.
+- [Wikimedia Commons — Ben 10 Background](https://commons.wikimedia.org/wiki/File:Ben_10_Background.png) — identifica Cartoon Network como autor, registra a revisão em 26/04/2025 e apresenta CC BY-SA 2.0.
+- [Categoria de arquivos licenciados do perfil oficial Cartoon Network no Scratch](https://commons.wikimedia.org/wiki/Category:Files_from_the_official_Cartoon_Network_Scratch_account) — lista os dois recursos Ben 10 mencionados.
+- [Creative Commons — explicação de CC BY-SA](https://creativecommons.org/licenses/by-sa/2.0/) — permite compartilhar e adaptar com atribuição; adaptações devem ser distribuídas sob a mesma licença ou uma compatível.
+
+### Condições obrigatórias e limites
+
+1. Esta não é uma licença geral para BEN 10, para personagens individuais, para episódios, para imagens baixadas do Google, para artes promocionais ou para outros arquivos publicados por fãs. A evidência encontrada vale para **estes arquivos específicos** oriundos do projeto oficial indicado.
+2. A atribuição deve identificar **Cartoon Network**, apontar para a fonte e para a licença CC BY-SA 2.0 e declarar eventuais alterações. A apresentação não pode sugerir que Cartoon Network apoia, patrocina ou endossa o Beyond Companion.
+3. Se o arquivo for adaptado/alterado, a adaptação precisa cumprir a condição ShareAlike (CC BY-SA 2.0 ou compatível). Deve-se manter os termos de licença e a atribuição junto ao asset.
+4. A Creative Commons esclarece que licenças CC cobrem direitos autorais e direitos similares, mas não concedem automaticamente direitos de marca. A FAQ oficial explica que direitos de terceiros fora do escopo da licença podem exigir autorização adicional: [CC FAQ](https://creativecommons.org/faq/).
+5. A página de marcas do próprio Cartoon Network declara que BEN 10 e os personagens/elementos relacionados são marcas registradas e protegidos por direitos autorais de Cartoon Network: [Cartoon Network — Trademark Information](https://www.cartoonnetwork.com/legal/trademark.html). Portanto, não reutilizar o logotipo como marca do site, não criar aparência de produto oficial e preservar o aviso de projeto independente.
+6. No Brasil, a Lei 9.610/1998 prevê, no art. 29, autorização prévia e expressa para modalidades como reprodução, adaptação e outras utilizações de obras protegidas. A licença pública documentada é a autorização específica para estes arquivos, sujeita às suas condições; dúvidas sobre alcance em um uso concreto devem ser avaliadas juridicamente: [Lei 9.610/1998 — Planalto](https://www.planalto.gov.br/ccivil_03/leis/l9610.htm).
+
+### Decisão de uso no Beyond Companion
+
+- **Permitido para avaliação de incorporação:** o SVG de Ben Tennyson e o PNG de fundo, exatamente como foram publicados, respeitando a licença e o crédito.
+- **Não autorizado por esta descoberta:** qualquer outro desenho de Ben, Gwen, Max, aliens, Omnitrix, logotipo, captura de episódio, arte de fã ou material de jogos que não tenha licença específica verificável.
+- **Ainda não incorporado ao código:** registrar esta fonte no catálogo não significa que o arquivo já tenha sido copiado para o projeto. Antes de incorporar, conferir mais uma vez a página original, baixar o original sem transformar, versionar o texto de atribuição e decidir o local de uso.
+- **Recomendação visual:** usar o SVG apenas como detalhe pontual se o projeto aceitar uma referência explícita ao Ben 10 2016 reboot. Para a identidade principal do Beyond Companion, manter mascotes/aliens originais CC0 e deixar a obra oficial como pequena referência, não como branding nem como conjunto de ícones da interface.
+
+**Conclusão desta busca:** encontrei duas artes específicas de BEN 10 cuja disponibilização sob CC BY-SA 2.0 é documentada a partir de um projeto publicado pelo perfil oficial Cartoon Network no Scratch. Elas não são "sem direito autoral" nem CC0: continuam protegidas, mas têm uma permissão pública específica para reutilização sob as condições acima. Não encontrei evidência equivalente para o restante das artes e personagens da franquia nesta busca.
