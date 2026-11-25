@@ -167,9 +167,30 @@ function renderValue(value: unknown, label: string, depth: number): ReactNode {
   return <p className="reference-value">{renderPrimitive(value as string | number | boolean)}</p>;
 }
 
+function collectSourcePages(value: unknown): number[] {
+  if (Array.isArray(value)) return value.flatMap(collectSourcePages);
+  if (!isRecord(value)) return [];
+
+  const pages: number[] = [];
+  for (const [key, child] of Object.entries(value)) {
+    if (key === 'sourcePage' && Number.isInteger(child) && Number(child) > 0) {
+      pages.push(Number(child));
+    } else if (key === 'sourcePages' && Array.isArray(child)) {
+      pages.push(...child.filter((page): page is number => Number.isInteger(page) && page > 0));
+    } else {
+      pages.push(...collectSourcePages(child));
+    }
+  }
+  return [...new Set(pages)].sort((left, right) => left - right);
+}
+
 const coreRuleEntries = Object.entries(coreRulesCatalog)
   .filter(([key]) => !['rulesetId', 'status'].includes(key))
-  .map(([key, value]) => ({ name: labelFor(key), content: value }));
+  .map(([key, value]) => ({
+    name: labelFor(key),
+    content: value,
+    sourcePages: key === 'statusConditions' ? [25] : collectSourcePages(value),
+  }));
 
 const sections: ReferenceSection[] = [
   { id: 'species', label: labels.species, title: labels.species, description: 'Mundos natais, Evolutionary Aptitudes, Unique Perception, Complications, grupos e Evolutionary Paths.', items: speciesCatalog.species as unknown as DataRecord[] },
