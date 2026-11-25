@@ -3377,3 +3377,18 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
   .reference-search-wrap { width: 100%; margin-top: 12px; }
   .reference-search-wrap .reference-search input { width: 100%; }
 }
+
+
+/* Shared typography and keyboard affordances */
+:root { font-family: "Nunito", ui-sans-serif, system-ui, sans-serif; }
+body { font-family: "Nunito", ui-sans-serif, system-ui, sans-serif; }
+h1, h2, h3, h4, h5 {
+  font-family: "Fredoka", "Trebuchet MS", sans-serif;
+  text-wrap: balance;
+}
+button, input, select, textarea { font: inherit; }
+summary:focus-visible {
+  outline: 3px solid #f5c96a;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
