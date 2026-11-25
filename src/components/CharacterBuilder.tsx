@@ -1,10 +1,16 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import speciesCatalog from '../../data/rulesets/quickstart-v1/species.json';
 import archetypeCatalog from '../../data/rulesets/quickstart-v1/archetypes.json';
 import aptitudeCatalog from '../../data/rulesets/quickstart-v1/aptitudes.json';
 import skillsCatalog from '../../data/rulesets/quickstart-v1/skills.json';
 import traitsCatalog from '../../data/rulesets/quickstart-v1/traits.json';
 import gearCatalog from '../../data/rulesets/quickstart-v1/gear.json';
+import {
+  decodeCharacterBackup,
+  loadSavedDraft,
+  saveDraftLocally,
+  encodeCharacterBackup,
+} from '../domain/character-storage';
 import {
   validateCharacter,
   type AttributeName,
@@ -52,8 +58,37 @@ function makeInitialDraft(): CharacterDraft {
 }
 
 export default function CharacterBuilder() {
-  const [draft, setDraft] = useState<CharacterDraft>(makeInitialDraft);
+  const [restored] = useState(() => {
+    if (typeof window === 'undefined') return { draft: makeInitialDraft(), status: 'empty' as const };
+    const result = loadSavedDraft(window.localStorage);
+    if (result.status === 'loaded') return { draft: result.draft, status: 'loaded' as const };
+    if (result.status === 'invalid') return { draft: makeInitialDraft(), status: 'invalid' as const };
+    return { draft: makeInitialDraft(), status: 'empty' as const };
+  });
+  const [draft, setDraft] = useState<CharacterDraft>(restored.draft);
+  const [persistenceStatus, setPersistenceStatus] = useState(
+    restored.status === 'loaded'
+      ? 'Ficha recuperada deste dispositivo.'
+      : restored.status === 'invalid'
+        ? 'O salvamento local anterior não pôde ser lido. Um novo rascunho foi iniciado.'
+        : 'As alterações serão salvas neste dispositivo.',
+  );
+  const firstRender = useRef(true);
   const [showAllIssues, setShowAllIssues] = useState(false);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+
+    try {
+      saveDraftLocally(draft, window.localStorage);
+      setPersistenceStatus('Salvo neste dispositivo.');
+    } catch {
+      setPersistenceStatus('Não foi possível salvar neste navegador. Exporte um backup JSON.');
+    }
+  }, [draft]);
 
   const species = speciesCatalog.species.find((item) => item.id === draft.speciesId)!;
   const archetype = archetypeCatalog.archetypes.find((item) => item.id === draft.archetypeId)!;
@@ -258,6 +293,37 @@ export default function CharacterBuilder() {
   const visibleIssues = showAllIssues ? issues : issues.slice(0, 4);
   const remainingPax = validation.ledger.remaining;
 
+  function exportCharacter() {
+    try {
+      const serialized = encodeCharacterBackup(draft);
+      const blob = new Blob([serialized], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      const safeName = (draft.name.trim() || 'novo-hero')
+        .normalize('NFKD')
+        .replace(/[\\u0300-\\u036f]/g, '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '') || 'novo-hero';
+      anchor.href = url;
+      anchor.download = `beyond-companion-${safeName}.json`;
+      document.body.append(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(url);
+      setPersistenceStatus('Backup JSON exportado.');
+    } catch {
+      setPersistenceStatus('Não foi possível exportar a ficha.');
+    }
+  }
+
+  function resetCharacter() {
+    if (!window.confirm('Iniciar uma nova ficha? A ficha atual será substituída neste dispositivo. Exporte um backup antes, caso queira mantê-la.')) return;
+    setDraft(makeInitialDraft());
+    setShowAllIssues(false);
+    setPersistenceStatus('Nova ficha iniciada.');
+  }
+
   return (
     <section className="builder">
       <div className="builder-intro">
@@ -270,6 +336,42 @@ export default function CharacterBuilder() {
           <span>PAX usados</span>
           <strong>{validation.ledger.spent}<small> / 30</small></strong>
           <span className={remainingPax < 0 ? 'negative' : 'remaining'}>{remainingPax} restantes</span>
+        </div>
+      </div>
+
+      <div className="builder-persistence">
+        <div className="builder-persistence-status" role="status" aria-live="polite">
+          <span className="status-light" />
+          <span>{persistenceStatus}</span>
+        </div>
+        <div className="builder-persistence-actions">
+          <button type="button" className="builder-action" onClick={exportCharacter}>Exportar JSON</button>
+          <label className="builder-action builder-import-action">
+            Importar JSON
+            <input
+              type="file"
+              accept="application/json,.json"
+              aria-label="Importar backup de personagem em JSON"
+              onChange={(event) => {
+                const file = event.currentTarget.files?.[0];
+                if (!file) return;
+                void file.text()
+                  .then((serialized) => {
+                    const imported = decodeCharacterBackup(serialized);
+                    setDraft(imported);
+                    setShowAllIssues(false);
+                    setPersistenceStatus('Backup importado; salvando neste dispositivo.');
+                  })
+                  .catch((error: unknown) => {
+                    setPersistenceStatus(error instanceof Error ? error.message : 'Não foi possível importar este arquivo.');
+                  })
+                  .finally(() => {
+                    event.currentTarget.value = '';
+                  });
+              }}
+            />
+          </label>
+          <button type="button" className="builder-action builder-action-muted" onClick={resetCharacter}>Nova ficha</button>
         </div>
       </div>
 
