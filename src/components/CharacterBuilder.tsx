@@ -111,6 +111,9 @@ export default function CharacterBuilder() {
 
   const species = speciesCatalog.species.find((item) => item.id === draft.speciesId)!;
   const archetype = archetypeCatalog.archetypes.find((item) => item.id === draft.archetypeId)!;
+  const evolutionaryPath = species.paths.find((path) => path.name === draft.evolutionaryPath) ?? species.paths[0];
+  const heroPointsPerEpisode = (archetype.id === 'prodigy' ? 1 : 0)
+    + (draft.traits.some((trait) => trait.name === 'Heroic Bloodline') ? 1 : 0);
   const validation = useMemo(() => validateCharacter(draft), [draft]);
 
   const aptitudeOptions = useMemo(() => {
@@ -453,6 +456,30 @@ export default function CharacterBuilder() {
                 ))}
               </div>
             </div>
+            <div className="builder-reference-grid" aria-label="Referências da espécie, caminho e Archetype">
+              <article className="builder-reference-card">
+                <span>UNIQUE PERCEPTION · PDF P. {species.sourcePages.join(', ')}</span>
+                <strong>{species.uniquePerception.name}</strong>
+                <p>{species.uniquePerception.summary}</p>
+              </article>
+              <article className="builder-reference-card">
+                <span>COMPLICATION · PDF P. {species.sourcePages.join(', ')}</span>
+                <strong>{species.complication.name}</strong>
+                <p>{species.complication.summary}</p>
+              </article>
+              <article className="builder-reference-card">
+                <span>EVOLUTIONARY PATH · PDF P. {species.sourcePages.join(', ')}</span>
+                <strong>{evolutionaryPath.name}</strong>
+                <p>{evolutionaryPath.summary}</p>
+              </article>
+              <article className="builder-reference-card">
+                <span>ARCHETYPE · PDF P. {archetype.sourcePages.join(', ')}</span>
+                <strong>Bonus</strong>
+                <p>{archetype.bonus}</p>
+                <strong>Flaw · {archetype.flaw.name}</strong>
+                <p>{archetype.flaw.summary}</p>
+              </article>
+            </div>
           </section>
 
           <section className="builder-section builder-step-attributes">
@@ -486,6 +513,23 @@ export default function CharacterBuilder() {
               />
               <small>2 PAX por ponto. Energy inicial: {validation.derivedStats.energy}.</small>
             </label>
+            <div className="effective-attribute-summary" aria-label="Atributos efetivos após bônus de Aptitudes">
+              <strong>Attributes efetivos</strong>
+              <small>Valores finais após os bônus de Evolutionary Aptitudes selecionadas.</small>
+              <div className="effective-attribute-grid">
+                {attributeNames.map((name) => {
+                  const base = draft.attributes[name];
+                  const effective = validation.derivedStats.effectiveAttributes[name];
+                  return (
+                    <div key={name}>
+                      <span>{attributeLabels[name].split(' ')[0]}</span>
+                      <strong>+{effective}</strong>
+                      {effective !== base && <small>base +{base}</small>}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </section>
 
           <section className="builder-section builder-step-aptitudes">
@@ -670,6 +714,7 @@ export default function CharacterBuilder() {
           <div><span>Initiative</span><strong>{validation.derivedStats.initiative}</strong></div>
           <div><span>Attack Bonus</span><strong>+{validation.derivedStats.attackBonus}</strong></div>
           <div><span>Tier Die</span><strong>{validation.derivedStats.tierDie}</strong></div>
+          <div><span>Hero Points / Episode</span><strong>+{heroPointsPerEpisode}</strong></div>
         </section>
 
         <div className="print-sheet-columns">
@@ -683,15 +728,45 @@ export default function CharacterBuilder() {
             </dl>
             <h3>Archetype Abilities</h3>
             <ul>{draft.archetypeAbilities.map((name) => <li key={name}>{name}</li>)}</ul>
+            <h3>Archetype Bonus</h3>
+            <p>{archetype.bonus}</p>
+            <h3>Archetype Flaw · {archetype.flaw.name}</h3>
+            <p>{archetype.flaw.summary}</p>
+            <h3>Unique Perception · {species.uniquePerception.name}</h3>
+            <p>{species.uniquePerception.summary}</p>
+            <h3>Complication · {species.complication.name}</h3>
+            <p>{species.complication.summary}</p>
+            <h3>Evolutionary Path · {evolutionaryPath.name}</h3>
+            <p>{evolutionaryPath.summary}</p>
           </section>
 
           <section className="print-sheet-section">
-            <h2>Attributes</h2>
+            <h2>Attributes efetivos</h2>
             <dl>
-              {attributeNames.map((name) => (
-                <div key={name}><dt>{attributeLabels[name]}</dt><dd>{draft.attributes[name]}</dd></div>
-              ))}
-              <div><dt>Energy adicional</dt><dd>{draft.energyBought}</dd></div>
+              {attributeNames.map((name) => {
+                const base = draft.attributes[name];
+                const effective = validation.derivedStats.effectiveAttributes[name];
+                return (
+                  <div key={name}>
+                    <dt>{attributeLabels[name]}</dt>
+                    <dd>{effective === base ? '+' + effective : '+' + base + ' base → +' + effective + ' efetivo'}</dd>
+                  </div>
+                );
+              })}
+              <div><dt>Energy comprada</dt><dd>{draft.energyBought}</dd></div>
+            </dl>
+          </section>
+
+          <section className="print-sheet-section">
+            <h2>Condições e recursos</h2>
+            <div className="print-condition-grid">
+              <span>□ Tired</span>
+              <span>□ Wounded</span>
+              <span>□ Defeated</span>
+            </div>
+            <dl>
+              <div><dt>Omni Die</dt><dd>1</dd></div>
+              <div><dt>Bônus de Hero Points por Episode</dt><dd>+{heroPointsPerEpisode}</dd></div>
             </dl>
           </section>
 
