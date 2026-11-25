@@ -13,6 +13,7 @@ import {
   type SkillSelection,
   type TraitSelection,
 } from '../domain/character';
+import { MAX_CHARACTER_FILE_BYTES, parseCharacterExport } from '../domain/character-io';
 
 const attributeLabels: Record<AttributeName, string> = {
   agility: 'Agility (AGI)',
@@ -49,58 +50,6 @@ function makeInitialDraft(): CharacterDraft {
     gear: [{ name: 'Plumber Badge', source: 'plumber-issue' }],
     plumberAffiliated: true,
   };
-}
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === 'object' && value !== null && !Array.isArray(value);
-}
-
-function isCharacterDraft(value: unknown): value is CharacterDraft {
-  if (!isRecord(value) || !isRecord(value.attributes)) return false;
-
-  const species = speciesCatalog.species.find((item) => item.id === value.speciesId);
-  const archetype = archetypeCatalog.archetypes.find((item) => item.id === value.archetypeId);
-  if (!species || !archetype || !species.paths.some((path) => path.name === value.evolutionaryPath)) return false;
-
-  const attributes = value.attributes;
-  const validAttributes = attributeNames.every((name) =>
-    Number.isInteger(attributes[name]) && Number(attributes[name]) >= 0,
-  );
-  const validAbilities = Array.isArray(value.archetypeAbilities)
-    && value.archetypeAbilities.length <= 2
-    && value.archetypeAbilities.every((name) =>
-      typeof name === 'string' && archetype.abilities.some((ability) => ability.name === name),
-    );
-  const validAptitudes = Array.isArray(value.aptitudePurchases)
-    && value.aptitudePurchases.every((item) =>
-      isRecord(item) && typeof item.name === 'string' && Number.isInteger(item.grade),
-    );
-  const validSkills = Array.isArray(value.skills)
-    && value.skills.every((item) =>
-      isRecord(item) && typeof item.name === 'string'
-      && ['purchased', 'versatility', 'archetype'].includes(String(item.source)),
-    );
-  const validTraits = Array.isArray(value.traits)
-    && value.traits.every((item) =>
-      isRecord(item) && typeof item.name === 'string'
-      && ['basic', 'intermediary'].includes(String(item.category))
-      && ['purchased', 'versatility'].includes(String(item.source)),
-    );
-  const validGear = Array.isArray(value.gear)
-    && value.gear.every((item) =>
-      isRecord(item) && typeof item.name === 'string'
-      && ['purchased', 'outlaw-bonus', 'plumber-issue'].includes(String(item.source)),
-    );
-
-  return typeof value.name === 'string'
-    && validAttributes
-    && Number.isInteger(value.energyBought) && Number(value.energyBought) >= 0
-    && validAbilities
-    && validAptitudes
-    && validSkills
-    && validTraits
-    && validGear
-    && typeof value.plumberAffiliated === 'boolean';
 }
 
 export default function CharacterBuilder() {
@@ -346,20 +295,15 @@ export default function CharacterBuilder() {
 
   async function importCharacter(file: File) {
     try {
-      const payload: unknown = JSON.parse(await file.text());
-      if (
-        !isRecord(payload)
-        || payload.format !== 'beyond-companion-character'
-        || payload.schemaVersion !== 1
-        || !isCharacterDraft(payload.character)
-      ) {
-        throw new Error('Formato de ficha não reconhecido.');
+      if (file.size > MAX_CHARACTER_FILE_BYTES) {
+        throw new RangeError('O arquivo de ficha excede o limite de 1 MB.');
       }
-      setDraft(payload.character);
+      const importedDraft = parseCharacterExport(await file.text());
+      setDraft(importedDraft);
       setShowAllIssues(false);
       setImportMessage('Ficha importada com sucesso. Revise as validações antes de usar.');
     } catch {
-      setImportMessage('Não foi possível importar. Selecione um JSON exportado pelo Beyond Companion.');
+      setImportMessage('Não foi possível importar. Use um JSON do Quickstart v1 com até 1 MB.');
     }
   }
 
