@@ -11,9 +11,9 @@
 - Pull request #3: https://github.com/ZaraTakion/beyond-companion/pull/3
 - PR aberto, em rascunho, direcionado a `main` e não mesclado.
 - A branch `main` permaneceu sem alterações nesta revisão.
-- HEAD validado integralmente: `6c09bb22bc47fa39e7aa3a4b6c3a8b27e5b3e761`, no [GitHub Actions #74](https://github.com/ZaraTakion/beyond-companion/actions/runs/45702342595).
-- Preview Vercel confirmado: projeto `beyond-companion`, deployment `dpl_4gy8frePEkdMTX1kHn5MYXe8eRpH`, **READY**, target `preview`, no mesmo SHA do HEAD. [Abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-mmt4gpo2n-zaras-projects-f0700f27.vercel.app).
-- A raiz respondeu HTTP 200 e serviu o HTML esperado. A inspeção visual renderizada segue pendente; o Chromium disponível neste ambiente não consegue acessar o host externo e não foi criado desktop remoto potencialmente faturável.
+- HEAD de aplicação e E2E validado: `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`, no [GitHub Actions #77](https://github.com/ZaraTakion/beyond-companion/actions/runs/45712266932). O commit documental posterior será registrado separadamente.
+- Preview Vercel: deployment `dpl_66B489ZYYadaobMPj4fCBXJRJWBQ`, **READY**, target `preview`. [Abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-5srho0fms-zaras-projects-f0700f27.vercel.app).
+- Inspeção visual renderizada concluída com Chromium remoto em 1440, 768, 390 e 320 px; overview/atlas, onze seções do Guia e cinco áreas do Construtor foram percorridos. Detalhes em `docs/QA_REVIEW.md`.
 
 ## Entregue no front-end
 
@@ -23,7 +23,7 @@
 - Guia de consulta com onze seções, navegação por assunto, pesquisa na seção ativa e referências do PDF.
 - Construtor Tier D em cinco etapas, com validação de escolhas, cálculos derivados e ledger de PAX.
 - Importação validada e exportação manual de fichas JSON, com limite de arquivo e validação estrutural.
-- Folha de personagem preparada para impressão e salvamento como PDF pelo navegador.
+- Folha de personagem preparada para impressão via React Portal, isolada do layout interativo para evitar páginas vazias no PDF.
 - Navegação por hash e histórico voltar/avançar.
 - Layout responsivo, link para saltar ao conteúdo, estados de foco e respeito a movimento reduzido.
 
@@ -34,9 +34,9 @@
 - Plumber Squad, Threat Archetypes, cinco personagens prontos e aventura introdutória.
 - Domínio Tier D, validações e ledger PAX cobertos por testes automatizados.
 
-## Validação técnica comprovada — GitHub Actions #74
+## Validação técnica comprovada — GitHub Actions #77
 
-Execução completa: [Run #74](https://github.com/ZaraTakion/beyond-companion/actions/runs/45702342595), HEAD `6c09bb22bc47fa39e7aa3a4b6c3a8b27e5b3e761`.
+Execução completa: [Run #77](https://github.com/ZaraTakion/beyond-companion/actions/runs/45712266932), commit de aplicação/E2E `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`.
 
 - Instalação de dependências: aprovada (101 pacotes).
 - `npm audit --audit-level=high`: aprovado.
@@ -48,20 +48,23 @@ Execução completa: [Run #74](https://github.com/ZaraTakion/beyond-companion/ac
 - axe: aprovado nas três áreas principais, em desktop e em mobile 320/390 px.
 - Teclado: link de salto como primeiro foco e navegação entre áreas aprovados.
 - Overflow: aprovado em 320, 390, 768, 1024 e 1440 px.
-- Impressão: folha verificada na emulação de mídia `print`.
+- Impressão: correção validada por E2E e PDF manual no preview; 2 páginas com conteúdo, sem páginas extras em branco.
 - JSON: exportação e reimportação em round-trip aprovadas.
 
 A revisão corrigiu violações WCAG identificadas nas execuções anteriores, incluindo contrastes em componentes da visão geral, Guia e Construtor e o nome acessível do link da marca. A verificação axe permaneceu ativa durante todas as correções.
 
-## Pendências e limitações
+## Revisão visual concluída e pendências
 
-- A implantação Preview foi confirmada como READY e ligada ao HEAD atual; a raiz respondeu HTTP 200. Ainda não foi feita inspeção visual renderizada em desktop/tablet/mobile: o Chromium deste ambiente está bloqueado para conexão externa e a sessão desktop Vercel pode gerar cobrança, por isso não foi iniciada sem autorização.
-- Leitor de tela real e zoom/reflow precisam de avaliação manual.
-- A paginação final da ficha em PDF/impresso precisa de revisão visual.
-- A segunda auditoria visual sistemática dos dados, comparando todos os resumos e referências com o PDF aberto, permanece pendente.
-- Não existe `package-lock.json`; CI utiliza `npm install`, e a árvore de dependências não está fixada.
-- A auditoria de dependências confirmada usa o limiar `high` do npm audit.
-- A validação desta sessão foi executada no GitHub Actions; não se declara execução local.
+A inspeção renderizada foi concluída no preview em desktop (1440 px), tablet (768 px) e mobile (390/320 px). A visão geral/atlas, as onze seções do Guia e as cinco áreas do Construtor foram percorridas. Busca, seleção de espécie, resumo, ledger PAX, validação, importação/exportação JSON e impressão foram testados. O reflow complementar em 720 px não apresentou overflow horizontal.
+
+A ficha impressa foi verificada em PDF no visualizador Chromium: duas páginas, ambas com conteúdo. O bug de páginas extras vazias foi corrigido com React Portal e isolação do `#root` na mídia de impressão.
+
+Pendências remanescentes:
+- Leitor de tela real e zoom formal do navegador a 200%.
+- Segunda auditoria visual sistemática dos dados, comparando resumos e referências com o PDF.
+- Ausência de `package-lock.json`; CI utiliza `npm install`, sem dependências travadas.
+- `npm audit` está configurado para o limiar `high`.
+- Testes automatizados executados no GitHub Actions; não se declara execução local independente.
 
 ## Limites explícitos
 

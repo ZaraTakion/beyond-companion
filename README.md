@@ -99,7 +99,7 @@ Também estão disponíveis navegação por URL (hash), histórico do navegador,
 
 ## Estado de QA confirmado
 
-A execução mais recente integralmente aprovada desta revisão é [GitHub Actions #74](https://github.com/ZaraTakion/beyond-companion/actions/runs/45702342595), no HEAD `6c09bb22bc47fa39e7aa3a4b6c3a8b27e5b3e761`:
+A execução mais recente integralmente aprovada de aplicação/E2E é [GitHub Actions #77](https://github.com/ZaraTakion/beyond-companion/actions/runs/45712266932), no commit `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`:
 
 - `npm audit --audit-level=high`: aprovado.
 - TypeScript: aprovado.
@@ -108,10 +108,12 @@ A execução mais recente integralmente aprovada desta revisão é [GitHub Actio
 - Playwright/Chromium: **11 testes aprovados**.
 - axe: aprovado nas páginas principais em desktop e mobile 320/390 px.
 - Teclado e overflow em 320, 390, 768, 1024 e 1440 px: aprovados.
-- Impressão em mídia simulada e exportação/importação JSON em round-trip: aprovadas.
+- Impressão: correção de paginação validada em PDF renderizado de 2 páginas, ambas com conteúdo e sem folhas extras vazias.
+- Exportação/importação JSON em round-trip: aprovada; importação inválida preserva os dados atuais.
+- Inspeção visual renderizada concluída em 1440, 768, 390 e 320 px: overview/atlas, onze seções do Guia e cinco áreas do Construtor. Sem overflow horizontal.
 
-O PR #3 continua aberto em rascunho e não foi mesclado. A branch `main` não foi alterada nesta revisão. O preview está confirmado **READY** e vinculado ao HEAD atual `6350fcbeef344ee45194aa6acc2d016446791dc3`: [abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-mmt4gpo2n-zaras-projects-f0700f27.vercel.app). A raiz respondeu HTTP 200; isso não substitui avaliação visual renderizada.
+O PR #3 continua aberto em rascunho e não foi mesclado. A branch `main` não foi alterada nesta revisão. O preview está confirmado **READY**, associado ao commit `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`: [abrir preview da branch](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app). [URL única do deployment](https://beyond-companion-5srho0fms-zaras-projects-f0700f27.vercel.app).
 
-**Ainda pendente:** inspeção visual renderizada em desktop/tablet/mobile; testes com leitor de tela real e zoom/reflow; conferência da paginação real do PDF impresso; e segunda auditoria visual do conteúdo contra o PDF. O Chromium disponível no ambiente não consegue acessar o host externo; a sessão desktop Vercel pode gerar cobrança e não foi iniciada sem autorização explícita. O repositório não possui `package-lock.json`, então o workflow usa `npm install` e não garante dependências travadas.
+**Ainda pendente:** testes com leitor de tela real; zoom do navegador formal a 200%; e segunda auditoria visual do conteúdo contra todas as páginas do PDF. O repositório não possui `package-lock.json`, então o workflow usa `npm install` e não garante dependências travadas.
 
 Contribuições devem citar a página do Quickstart e distinguir texto da fonte, resumo e interpretação.

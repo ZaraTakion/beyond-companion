@@ -8,6 +8,8 @@ A fonte de conteúdo continua sendo exclusivamente o PDF Quickstart v1 fornecido
 
 ## Diagnóstico e correções aplicadas
 
+A inspeção visual do navegador encontrou um defeito funcional na impressão: a folha era posicionada dentro do layout principal, cuja altura permanecia reservada mesmo quando os controles ficavam invisíveis. O PDF resultante tinha cinco páginas, com páginas finais vazias. A correção moveu a folha imprimível para `document.body` por React Portal e remove o `#root` do layout de impressão. O PDF verificado no preview passou a ter **duas páginas, ambas com conteúdo**, sem páginas extras em branco. Uma asserção E2E foi adicionada para proteger esse comportamento.
+
 A execução #65 identificou violações reais de contraste na identidade da interface e em textos de apoio sobre superfícies claras, além de uma divergência entre o nome acessível e o texto visível do link de marca `.sidebar-brand`.
 
 A inspeção ampliada do Guia e do Construtor encontrou ocorrências adicionais em estados mobile: opções do construtor, navegação do Guia, indicadores de estado, resumos e mensagens de validação. Os pontos foram corrigidos sem remover nem enfraquecer a regra axe.
@@ -23,10 +25,10 @@ Correções realizadas:
 - As varreduras de contraste respeitam `prefers-reduced-motion: reduce`, evitando medir cores durante a animação transitória de entrada da página. O teste não ignora regras axe nem desativa a verificação.
 - A exportação JSON agora é testada em round-trip: o arquivo é baixado, importado e o nome original é confirmado na ficha.
 
-## Resultado final comprovado — GitHub Actions #74
+## Resultado final comprovado — GitHub Actions #77
 
-- Execução: [Run #74 — Validate application](https://github.com/ZaraTakion/beyond-companion/actions/runs/45702342595)
-- HEAD validado: `6c09bb22bc47fa39e7aa3a4b6c3a8b27e5b3e761`
+- Execução: [Run #77 — Validate application](https://github.com/ZaraTakion/beyond-companion/actions/runs/45712266932)
+- HEAD de aplicação e E2E validado: `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`
 - Resultado geral: **success**.
 - Instalação de dependências: aprovada; 101 pacotes instalados.
 - `npm audit --audit-level=high`: aprovado.
@@ -49,7 +51,7 @@ Correções realizadas:
 - Navegação por teclado entre as áreas usando Tab e Enter.
 - Ausência de overflow horizontal em 320, 390, 768, 1024 e 1440 px.
 
-O cenário de impressão usa a emulação de mídia `print` do Chromium e confirma a visibilidade e o conteúdo da folha de personagem. O cenário JSON confirma que a ficha exportada pode ser reimportada e restaura os dados testados.
+O cenário de impressão confirma que a folha é um filho direto de `document.body`, que o `#root` fica fora do layout de impressão e que o documento não conserva a altura da interface. A inspeção manual do PDF no preview confirmou **2 páginas com conteúdo** (Identidade/atributos na primeira; Skills/Traits/equipamentos/ledger na segunda), sem páginas vazias adicionais. O cenário JSON confirma round-trip; a importação inválida preserva os dados atuais e exibe mensagem de erro.
 
 ## Histórico das execuções de correção
 
@@ -63,28 +65,46 @@ O cenário de impressão usa a emulação de mídia `print` do Chromium e confir
 | #70 | **11 aprovados / 0 reprovados** | Revalidação do HEAD anterior e dos documentos |
 | #71–#72 | Canceladas | Commits intermediários de atualização documental; não contabilizados como falhas de teste |
 | #73 | **11 aprovados / 0 reprovados** | Revalidação do commit de conteúdo `6350fcbe...` |
-| #74 | **11 aprovados / 0 reprovados** | Revalidação do HEAD `6c09bb22...`, incluindo documentação e preview associado |
+| #74 | **11 aprovados / 0 reprovados** | Revalidação do HEAD `6c09bb22...` |
+| #75 | **11 aprovados / 0 reprovados** | Revalidação do HEAD `06fa6efd...` |
+| #76 | 10 aprovados / 1 reprovado | Falha na asserção de posição por comparar coordenada do viewport; a medição foi corrigida para coordenada do documento |
+| #77 | **11 aprovados / 0 reprovados** | Revalidação após a correção da asserção de impressão; TypeScript, 53 testes e build também aprovados |
 
-A execução #69 foi a primeira execução integralmente aprovada após a série de correções. A execução #70 revalidou o HEAD daquele momento. A execução #73 validou o commit de conteúdo `6350fcbe...`. A execução #74 validou o HEAD `6c09bb22...`, incluindo a documentação. As execuções anteriores permanecem registradas como histórico e não são apresentadas como aprovadas.
+A execução #69 foi a primeira integralmente aprovada após as correções. As execuções #70 e #73–#75 revalidaram os respectivos HEADs. A #76 falhou apenas pela expectativa de coordenada da nova asserção de impressão; a medição passou a considerar `window.scrollY` e a #77 aprovou os 11 cenários. As execuções anteriores permanecem registradas como histórico.
 
 ## Preview Vercel associado ao HEAD
 
 - Projeto: `beyond-companion` (`prj_SEqxYVZeheAkX4ozcxjWFm4tVlXn`).
-- Deployment: `dpl_4gy8frePEkdMTX1kHn5MYXe8eRpH`, estado **READY**, target `preview`.
-- Branch/commit confirmados pela API Vercel: `prototype/cartoon-sci-fi-v1` / `6c09bb22bc47fa39e7aa3a4b6c3a8b27e5b3e761`.
+- Deployment: `dpl_66B489ZYYadaobMPj4fCBXJRJWBQ`, estado **READY**, target `preview`.
+- Branch/commit confirmados pela API Vercel: `prototype/cartoon-sci-fi-v1` / `a00c9c559b7e57c7f1ecf901c0f45f3beab8befb`.
 - [URL da branch Preview](https://beyond-companion-git-prototype-c-5a723b-zaras-projects-f0700f27.vercel.app).
-- [URL única do deployment](https://beyond-companion-mmt4gpo2n-zaras-projects-f0700f27.vercel.app).
-- A página raiz respondeu HTTP 200 e entregou o HTML esperado com os assets de build. Isso confirma disponibilidade HTTP e vínculo com o deployment, **não** substitui a inspeção visual renderizada.
+- [URL única do deployment](https://beyond-companion-5srho0fms-zaras-projects-f0700f27.vercel.app).
+- A raiz respondeu HTTP 200. A inspeção visual renderizada foi feita no navegador do desktop remoto Vercel; não se confunde com a checagem HTTP.
+
+## Inspeção visual renderizada e acessibilidade manual
+
+A revisão foi realizada no preview READY associado ao commit de aplicação, por Chromium em desktop remoto Vercel, nos viewports CSS:
+- **1440 px:** visão geral, atlas, Guia e Construtor.
+- **768 px:** navegação, cartões e formulários em tablet.
+- **390 px e 320 px:** navegação compacta, atlas e Construtor em mobile.
+- **720 px:** reflow complementar nos três espaços, sem overflow horizontal.
+
+A visão geral e a seleção do atlas foram percorridas, incluindo os sete dossiês de espécies. As onze seções do Guia foram abertas individualmente: Espécies, Archetypes, Evolutionary Aptitudes, Skills, Traits, Armas e equipamentos, Regras básicas, Power-Ups, Squad e ameaças, Heroes prontos e Rush Hour in Undertown. A pesquisa sem resultados exibiu estado vazio e ação para limpar o filtro.
+
+As cinco áreas do Construtor foram percorridas: Identidade, Attributes, Evolutionary Aptitudes, Skills e Traits, Weapons and Gear. Foram exercitados a ficha-resumo, os atributos derivados, o ledger PAX, estados de validação, seleção dinâmica de espécie e round-trip JSON. A importação inválida exibiu mensagem e manteve a ficha anterior.
+
+Em 1440, 768, 390 e 320 px, `document.documentElement.scrollWidth` permaneceu igual à largura do viewport nas áreas verificadas. O fluxo de teclado foi conferido manualmente: o skip link aparece como primeiro destino, torna-se visível ao receber foco e salta para o conteúdo principal; os controles mostram indicador de foco. Os testes axe e de teclado permanecem cobertos no CI.
+
+A exportação foi gerada como PDF no Chromium do preview e aberta no visualizador do navegador: **2 de 2 páginas continham conteúdo**, sem páginas em branco adicionais. A primeira página apresenta identidade, atributos e recursos; a segunda apresenta Skills, Traits, Weapons and Gear e ledger PAX.
 
 ## Limitações restantes
 
-- A execução comprovada desta revisão ocorreu no GitHub Actions. Não há uma execução local independente confirmada nesta sessão.
-- Ainda não foi concluída inspeção visual renderizada em desktop, tablet ou mobile. O preview está confirmado como **READY** e associado ao HEAD de documentação validado pela execução #74 (detalhes acima), mas isso não equivale a uma avaliação visual. O Chromium local disponível no ambiente de execução não conseguiu abrir o host externo (erro `ERR_BLOCKED_BY_ADMINISTRATOR`). A alternativa de desktop remoto da Vercel pode gerar cobrança para a equipe e não foi iniciada sem autorização explícita para esse recurso.
-- Não foi executado teste com leitor de tela real nem avaliação manual de zoom/reflow.
-- A emulação de mídia `print` verifica a folha e seus estilos, mas paginação, margens e resultado do PDF impresso ainda precisam de conferência visual.
-- O repositório não contém `package-lock.json`; o workflow utiliza `npm install`, portanto as dependências não estão travadas por lockfile e a reprodução bit a bit do ambiente não está garantida.
-- A auditoria executada é `npm audit --audit-level=high`; ela valida o limiar configurado pelo comando, não substitui revisão de segurança dedicada.
+- Não foi executado teste com leitor de tela real.
+- Não foi feita sessão formal de zoom de navegador a 200%; os viewports e o reflow de 720 px não substituem esse teste.
 - A segunda leitura visual sistemática dos dados contra todas as páginas do PDF continua pendente.
+- O repositório não contém `package-lock.json`; o workflow utiliza `npm install`, portanto as dependências não estão travadas por lockfile.
+- A auditoria executada é `npm audit --audit-level=high`; não substitui revisão de segurança dedicada.
+- A execução automatizada desta revisão ocorreu no GitHub Actions; não se declara execução local independente.
 
 ## Fidelidade e direitos
 
@@ -96,4 +116,4 @@ A execução #69 foi a primeira execução integralmente aprovada após a série
 
 ## Estado do repositório
 
-O PR #3 continua aberto e em rascunho, direcionado a `main`, sem merge. A branch `main` permaneceu intacta. No momento da verificação, o PR estava marcado como mergeable e sem threads de revisão pendentes.
+O PR #3 continua aberto e em rascunho, direcionado a `main`, sem merge. A branch `main` permaneceu intacta durante esta revisão.

@@ -26,7 +26,7 @@ Até a disponibilização e conferência do Core Rulebook oficial, o projeto imp
 - [x] Integrar a aventura introdutória como referência consultável.
 - [x] Implementar hierarquia visual, foco visível, movimento reduzido e responsividade.
 - [x] Executar axe nas rotas principais em desktop e mobile (320/390 px), sem desativar as regras.
-- [ ] Fazer validação manual com leitor de tela, zoom e dispositivos físicos.
+- [ ] Fazer validação manual com leitor de tela real e zoom do navegador a 200%.
 
 ## Fase 2 — Criação de personagem coberta pelo Quickstart
 
@@ -41,7 +41,8 @@ Até a disponibilização e conferência do Core Rulebook oficial, o projeto imp
 - [x] Implementar importação versionada e exportação manual JSON com validação estrutural e limite de arquivo.
 - [x] Testar exportação e reimportação JSON em round-trip no Chromium.
 - [x] Verificar a folha de personagem na emulação de mídia print do Chromium.
-- [ ] Conferir visualmente a paginação e o PDF final em navegadores/visualizadores reais.
+- [x] Corrigir a paginação: folha isolada do layout da aplicação por React Portal.
+- [x] Conferir PDF no visualizador Chromium: 2 páginas com conteúdo, sem folhas extras vazias.
 - [ ] Salvamento automático local: permanece fora do escopo atual; a ficha pode ser salva manualmente por exportação JSON.
 
 ## Fase 3 — Estabilização do Guia Rápido
@@ -50,14 +51,15 @@ Até a disponibilização e conferência do Core Rulebook oficial, o projeto imp
 - [x] Cobrir no catálogo as onze áreas consultáveis presentes no Quickstart.
 - [x] Executar typecheck, testes automatizados de domínio/dados/componentes e build de produção em GitHub Actions.
 - [x] Executar `npm audit --audit-level=high` no workflow.
-- [x] Executar Playwright/Chromium no workflow ativo: [run #74 — 11 testes aprovados](https://github.com/ZaraTakion/beyond-companion/actions/runs/45702342595).
+- [x] Executar Playwright/Chromium no workflow ativo: [run #77 — 11 testes aprovados](https://github.com/ZaraTakion/beyond-companion/actions/runs/45712266932).
 - [x] Executar verificações axe WCAG 2.1 AA nas três áreas principais em desktop e mobile 320/390 px.
 - [x] Verificar o primeiro foco no link de salto e a navegação por teclado entre as áreas.
 - [x] Verificar overflow horizontal em 320, 390, 768, 1024 e 1440 px.
 - [x] Testar impressão por emulação de mídia e round-trip de importação/exportação JSON.
-- [ ] Fazer inspeção visual renderizada em desktop (1440 px), tablet (768 px) e mobile (390/320 px). O preview está confirmado READY para o HEAD validado na execução #74; a inspeção visual renderizada segue pendente porque o Chromium local está bloqueado para o host externo e o browser remoto Vercel pode gerar cobrança, exigindo autorização explícita.
-- [ ] Verificar acessibilidade com leitor de tela e zoom/reflow em navegadores reais.
-- [ ] Revisar paginação da ficha impressa/salva em PDF.
+- [x] Fazer inspeção visual renderizada em desktop (1440 px), tablet (768 px) e mobile (390/320 px), incluindo overview/atlas, onze seções do Guia e cinco áreas do Construtor.
+- [x] Verificar responsividade sem overflow horizontal em 1440, 768, 390 e 320 px; reflow complementar em 720 px.
+- [ ] Verificar acessibilidade com leitor de tela real e zoom formal a 200%.
+- [x] Revisar paginação da ficha impressa/salva em PDF: 2 páginas com conteúdo, sem folhas extras vazias.
 - [ ] Revisar o conteúdo de ponta a ponta com o PDF aberto.
 - [ ] Publicar o guia após revisão visual, conferência de conteúdo e aprovação do PR; a branch de trabalho permanece sem merge.
 
