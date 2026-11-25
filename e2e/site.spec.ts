@@ -76,7 +76,7 @@ test('exports and re-imports a versioned character JSON file', async ({ page }) 
   await page.getByRole('button', { name: 'Exportar JSON' }).click();
   const download = await downloadEvent;
 
-  expect(download.suggestedFilename()).toBe('beyond-companion-hero.json');
+  expect(download.suggestedFilename()).toBe('beyond-companion-hero-de-teste-de-round-trip.json');
   const exportedPath = await download.path();
   expect(exportedPath).not.toBeNull();
 

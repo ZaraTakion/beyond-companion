@@ -3535,3 +3535,19 @@ summary:focus-visible {
 .launch-topline {
   color: #394735;
 }
+
+
+/* Follow-up axe findings from CI run #66: small supporting copy and the
+   selected navigation item must retain readable contrast on paper surfaces. */
+.option-card small,
+.catalogue-pick small,
+.toggle-row small,
+.field small {
+  color: #394735;
+}
+.sidebar-nav .side-link[aria-current="page"] .side-link-number,
+.sidebar-nav .side-link[aria-current="page"] .side-link-copy strong,
+.sidebar-nav .side-link[aria-current="page"] .side-link-copy small,
+.sidebar-nav .side-link[aria-current="page"] .side-link-arrow {
+  color: #17251d;
+}
