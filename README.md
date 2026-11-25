@@ -8,6 +8,14 @@ Transformar o conteúdo do Quickstart em uma referência digital clara e fácil 
 
 O nome Beyond Companion identifica o projeto; seu escopo atual é um **Guia Rápido Digital do Quickstart v1**.
 
+## Identidade independente e aviso
+
+Beyond Companion é um projeto independente, feito por fãs, e não um produto oficial. O site organiza o Quickstart v1 de BEN 10: BEYOND — The Roleplaying Game. Não possui vínculo, patrocínio ou aprovação da Warner Bros. Discovery, Cartoon Network ou dos respectivos titulares de direitos.
+
+BEN 10, seus personagens, nomes, marcas e materiais oficiais pertencem aos seus respectivos titulares. O aviso de independência esclarece a natureza do projeto, mas **não concede autorização para reproduzir imagens, logotipos, capturas de episódios, ilustrações ou outros materiais protegidos**. Cada asset externo precisa de licença compatível ou autorização documentada.
+
+A referência estética é a atmosfera da série animada original de BEN 10 (2005). O reboot de 2016 permanece fora da direção visual e não será utilizado.
+
 ## Dentro do escopo atual
 
 - Consultar as regras, tabelas, opções e exemplos que aparecem no PDF.
